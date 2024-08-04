@@ -3,7 +3,7 @@ import HomePage from "./home"
 import { CardDetailsPage } from "./cardDetailsPage"
 
 export const AppRoutes = () => (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
         <Routes>
             <Route exact path='/' element={<HomePage />} />
             <Route exact path='/details/:id' element={<CardDetailsPage />} />
