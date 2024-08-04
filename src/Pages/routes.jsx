@@ -3,7 +3,8 @@ import HomePage from "./home"
 import { CardDetailsPage } from "./cardDetailsPage"
 
 export const AppRoutes = () => (
-    <BrowserRouter>
+
+    <BrowserRouter basename='/Pokemon'>
         <Routes>
             <Route exact path='/' element={<HomePage />} />
             <Route exact path='/details/:id' element={<CardDetailsPage />} />
