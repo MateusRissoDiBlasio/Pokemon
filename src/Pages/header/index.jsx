@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../Context/theme';
 import styled from 'styled-components';
-import PokemonImage from '/pokemon.svg'
+import PokemonImage from 'pokemon.svg'
 import { ThemeToggleButton } from '../../components/Buttons/Theme-toggle';
 
 
