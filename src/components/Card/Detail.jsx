@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ThemeContext, themes } from '../../Context/theme';
 import { Button } from '../Buttons/Button'
 import { ThemeToggleButton } from '../Buttons/Theme-toggle';
-import PokemonImage from '/pokemon.svg'
+import PokemonImage from 'pokemon.svg'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
@@ -106,7 +106,7 @@ export function CardDetails() {
         
         <div>
           <ThemeToggleButton />
-          <a href="/Pokemon"> <Button>Go back</Button></a>
+          <a href="/Pokemon/"> <Button>Go back</Button></a>
         </div>
         <img src={PokemonImage} alt="" width={'200px'} />
         
