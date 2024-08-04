@@ -85,10 +85,6 @@ export function CardDetails() {
         moves: response.data.moves.map(element => element.move.name),
       }))
       
-      
-      console.log(response.data.abilities)
-      
-
     } catch (error) {
       console.error('Error fetching Pokémon data:', error);
     }
@@ -177,7 +173,6 @@ export function CardDetails() {
               ))}
             </UlMoves>
             <UlGif>
-              {/* <img src={pokemonDetails.imagegif} alt="" /> */}
               {pokemonDetails.imagegif !== null ? <img src={pokemonDetails.imagegif} alt={pokemonDetails.name} width={''} height={''} /> : <img className='noImage' src='../../src/images/No-Pokemon-Image-Placeholder.png' alt={pokemonDetails.name} width={'120px'} height={'120px'} /> }
             </UlGif>
           </UlMovesDiv>            
