@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Button } from '../../components/Buttons/Button'
+import NoImagePlaceHolder from '/No-Pokemon-Image-card.png'
 
 
 export function CardsList({ pokemon }) {
@@ -40,7 +41,7 @@ export function CardsList({ pokemon }) {
                             
                             {poke.name === 'mimikyu-totem-busted' ? <img src={poke.exception2} alt={poke.name} width={'300px'} /> : null}
                             
-                            {noImage.includes(poke.name) ? <img className='noImage' src='../../src/images/No-Pokemon-Image-card.png' alt={poke.name} width={'250px'} /> : null}
+                            {noImage.includes(poke.name) ? <img className='noImage' src={NoImagePlaceHolder} alt={poke.name} width={'250px'} /> : null}
                             
                         </DivImgCard>
                         {hidden === 0 ? <h1 style={{ color: theme.detail}}>Click for details</h1> : null }                                              
@@ -79,7 +80,7 @@ export function CardsList({ pokemon }) {
                         
                         {poke.name === 'mimikyu-totem-busted' ? <img src={poke.exception2} alt={poke.name} width={'300px'} /> : null}
                         
-                        {noImage.includes(poke.name) ? <img className='noImage' src='../../src/images/No-Pokemon-Image-card.png' alt={poke.name} width={'250px'} /> : null}
+                        {noImage.includes(poke.name) ? <img className='noImage' src={NoImagePlaceHolder} alt={poke.name} width={'250px'} /> : null}
                                                             
                     </DivImgCard>
                     {hidden === index ? <h1 style={{ color: theme.detail}}>Click for details</h1> : null}
