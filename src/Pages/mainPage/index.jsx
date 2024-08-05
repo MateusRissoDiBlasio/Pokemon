@@ -7,6 +7,7 @@ import { LoadMoreButton } from '../../components/Buttons/LoadMore';
 import { PokemonByTypeList } from '../../components/FilterByType/PokemonByTypeList';
 import { Button } from '../../components/Buttons/Button';
 import { ScrollButton } from '../../components/Buttons/ScrollButton'
+import Go from '/go.png'
 
 export function MainPage() {
     const { theme } = useContext(ThemeContext)
@@ -191,7 +192,7 @@ export function MainPage() {
                         onKeyDown={ e => e.key ==='Enter' ? handleEnter() :''}                        
                     
                     />
-                    <button onClick={ () => {handleEnter(); handleClick()}} onMouseEnter={() => setHovering(0)} onMouseLeave={() => setHovering(-1)} style={{ color: hovering ? theme.color : theme.revcolor, backgroundColor: setHovering ? theme.background : theme.color, border: theme.btnBorder }}><img src="/go.png"></img>!</button>
+                    <button onClick={ () => {handleEnter(); handleClick()}} onMouseEnter={() => setHovering(0)} onMouseLeave={() => setHovering(-1)} style={{ color: hovering ? theme.color : theme.revcolor, backgroundColor: setHovering ? theme.background : theme.color, border: theme.btnBorder }}><img src={Go}></img>!</button>
                     {visible === true ? <h2 key={errorMessage} style={{ color: 'red' }}>{errorMessage}</h2> : null}
                     {loading ? <p className={'load'}>Loading...</p> : ''}
                     
@@ -218,7 +219,7 @@ export function MainPage() {
                     onAnimationEnd={() => setShake(false)}
                     onKeyDown={ e => e.key ==='Enter' ? handleEnter() :''}
                 />
-                <button onClick={ () => {handleEnter(); handleClick()}} onMouseEnter={() => setHovering(0)} onMouseLeave={() => setHovering(-1)} style={{ color: hovering ? theme.color : theme.revcolor, backgroundColor: hovering ? theme.background : theme.color, border: theme.btnBorder }}><img src="/go.png"></img>!</button>
+                <button onClick={ () => {handleEnter(); handleClick()}} onMouseEnter={() => setHovering(0)} onMouseLeave={() => setHovering(-1)} style={{ color: hovering ? theme.color : theme.revcolor, backgroundColor: hovering ? theme.background : theme.color, border: theme.btnBorder }}><img src={Go}></img>!</button>
                 {visible === true ? <h2 key={errorMessage} style={{ color: 'red' }}>{errorMessage}</h2> : null}
                 {loading ? <p className={'load'} >Loading...</p> : ''}
                 

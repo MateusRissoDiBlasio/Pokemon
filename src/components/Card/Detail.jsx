@@ -122,7 +122,7 @@ export function CardDetails() {
 
                     {pokemonDetails.types?.map((type, index) => (
                       <>
-                        <img src={`../src/images/poke-types/Mezastar/${type}.png`} alt={type} />
+                        <img src={`../Mezastar/${type}.png`} alt={type} />
                         <p key={index}>{type}</p>
                       </>
                     ))}
