@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 
+
 export function CardDetails() {
 
   const [pokemonDetails, setPokemonDetails] = useState({});
@@ -122,7 +123,7 @@ export function CardDetails() {
 
                     {pokemonDetails.types?.map((type, index) => (
                       <>
-                        <img src={`../Mezastar/${type}.png`} alt={type} />
+                        <img src={`../dist/${type}.png`} alt={type} />
                         <p key={index}>{type}</p>
                       </>
                     ))}
