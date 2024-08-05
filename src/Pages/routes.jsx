@@ -4,9 +4,9 @@ import { CardDetailsPage } from "./cardDetailsPage"
 
 export const AppRoutes = () => (
 
-    <BrowserRouter basename="/Pokemon">
+    <BrowserRouter basename=".">
         <Routes>
-            <Route exact path='/' element={<HomePage />} />
+            <Route exact path='/pokemon' element={<HomePage />} />
             <Route exact path='/details/:id' element={<CardDetailsPage />} />
         </Routes>
     </BrowserRouter>
