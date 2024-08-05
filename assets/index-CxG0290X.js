@@ -844,4 +844,4 @@ align-items: center;
   .noImage{
     border-radius: 15px;
   }
-`;function Lw(){return w.jsx(kw,{})}const Fw=()=>w.jsx(ry,{basename:"Pokemon/",children:w.jsxs(Jg,{children:[w.jsx(Ds,{exact:!0,path:"/Pokemon/",element:w.jsx(Sw,{})}),w.jsx(Ds,{exact:!0,path:"/details/:id",element:w.jsx(Lw,{})})]})});function zw(){return w.jsx(ay,{children:w.jsx(Fw,{})})}Hl.createRoot(document.getElementById("root")).render(w.jsx(fe.StrictMode,{children:w.jsx(zw,{})}));
+`;function Lw(){return w.jsx(kw,{})}const Fw=()=>w.jsx(ry,{basename:"/",children:w.jsxs(Jg,{children:[w.jsx(Ds,{exact:!0,path:"/Pokemon/",element:w.jsx(Sw,{})}),w.jsx(Ds,{exact:!0,path:"/details/:id",element:w.jsx(Lw,{})})]})});function zw(){return w.jsx(ay,{children:w.jsx(Fw,{})})}Hl.createRoot(document.getElementById("root")).render(w.jsx(fe.StrictMode,{children:w.jsx(zw,{})}));
