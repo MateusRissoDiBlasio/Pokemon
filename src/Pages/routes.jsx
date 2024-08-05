@@ -4,10 +4,12 @@ import { CardDetailsPage } from "./cardDetailsPage"
 
 export const AppRoutes = () => (
 
-    <BrowserRouter basename='/Pokemon'>
+    <BrowserRouter basename="Pokemon/">
         <Routes>
-            <Route exact path='/' element={<HomePage />} />
+            <Route exact path='/Pokemon/' element={<HomePage />} />
             <Route exact path='/details/:id' element={<CardDetailsPage />} />
         </Routes>
     </BrowserRouter>
 )
+
+
