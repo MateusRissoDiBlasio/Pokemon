@@ -144,7 +144,7 @@ export function CardDetails() {
 
                   {pokemonDetails.name === 'mimikyu-totem-busted' ? <img src={pokemonDetails.exception2} alt={pokemonDetails.name} width={'250px'} height={'250px'} /> : null}
 
-                  {noImage.includes(pokemonDetails.name) ? <img className='noImage' src='../../src/images/No-Pokemon-Image-Placeholder.png' alt={pokemonDetails.name} width={'250px'} /> : null}
+                  {noImage.includes(pokemonDetails.name) ? <img className='noImage' src='/No-Pokemon-Image-Placeholder.png' alt={pokemonDetails.name} width={'250px'} /> : null}
 
               </Poke>
 
@@ -174,7 +174,7 @@ export function CardDetails() {
               ))}
             </UlMoves>
             <UlGif>
-              {pokemonDetails.imagegif !== null ? <img src={pokemonDetails.imagegif} alt={pokemonDetails.name} width={''} height={''} /> : <img className='noImage' src='../../src/images/No-Pokemon-Image-Placeholder.png' alt={pokemonDetails.name} width={'120px'} height={'120px'} /> }
+              {pokemonDetails.imagegif !== null ? <img src={pokemonDetails.imagegif} alt={pokemonDetails.name} width={''} height={''} /> : <img className='noImage' src='/No-Pokemon-Image-Placeholder.png' alt={pokemonDetails.name} width={'120px'} height={'120px'} /> }
             </UlGif>
           </UlMovesDiv>            
 
