@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ThemeContext, themes } from '../../Context/theme';
 import { Button } from '../Buttons/Button'
 import { ThemeToggleButton } from '../Buttons/Theme-toggle';
-import PokemonImage from './pokemon.svg'
+import PokemonImage from '/pokemon.svg'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
