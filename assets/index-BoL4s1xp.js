@@ -844,4 +844,4 @@ align-items: center;
   .noImage{
     border-radius: 15px;
   }
-`;function Fw(){return w.jsx(Ew,{})}const zw=()=>w.jsx(iy,{basename:".",children:w.jsxs(qg,{children:[w.jsx(Ds,{exact:!0,path:"/pokemon",element:w.jsx(kw,{})}),w.jsx(Ds,{exact:!0,path:"/details/:id",element:w.jsx(Fw,{})})]})});function Iw(){return w.jsx(uy,{children:w.jsx(zw,{})})}Hl.createRoot(document.getElementById("root")).render(w.jsx(fe.StrictMode,{children:w.jsx(Iw,{})}));
+`;function Fw(){return w.jsx(Ew,{})}const zw=()=>w.jsx(iy,{basename:"/",children:w.jsxs(qg,{children:[w.jsx(Ds,{exact:!0,path:"/",element:w.jsx(kw,{})}),w.jsx(Ds,{exact:!0,path:"/details/:id",element:w.jsx(Fw,{})})]})});function Iw(){return w.jsx(uy,{children:w.jsx(zw,{})})}Hl.createRoot(document.getElementById("root")).render(w.jsx(fe.StrictMode,{children:w.jsx(Iw,{})}));
