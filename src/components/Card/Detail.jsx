@@ -123,7 +123,7 @@ export function CardDetails() {
 
                     {pokemonDetails.types?.map((type, index) => (
                       <>
-                        <img src={`./Pokemon/Mezastar/${type}.png`} alt={type} />
+                        <img src={`../Pokemon/Mezastar/${type}.png`} alt={type} />
                         <p key={index}>{type}</p>
                       </>
                     ))}
@@ -560,24 +560,3 @@ align-items: center;
     border-radius: 15px;
   }
 `
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
