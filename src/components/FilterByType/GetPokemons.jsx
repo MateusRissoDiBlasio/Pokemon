@@ -15,7 +15,7 @@ async function getPokemons(limit, offset) {
 }
 
 async function getPokemonData(name) {
-    const response = await fetch(`${baseUrl}pokemon/${name}`)
+    const response = await fetch([`${baseUrl}pokemon/${name}`])
     return await response.json([])
 }
 
