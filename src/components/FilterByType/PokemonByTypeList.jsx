@@ -6,9 +6,10 @@ import styled from "styled-components"
 import { Link } from 'react-router-dom'
 import { LoadMoreTypes } from "../Buttons/LoadMore"
 import { ScrollButton } from "../Buttons/ScrollButton"
+import NoImagePlaceHolder from '/No-Pokemon-Image-card.png'
 
 const response = await fetch(`https://pokeapi.co/api/v2/type`)
-    const data = await response.json()
+    const data = await response.json([])
     const { results } = data
 
     const pokemonTypesNames = results.map((type) => {
@@ -86,7 +87,7 @@ const PokemonByTypeList = () => {
                                                 
                                                 {pokemon.name === 'mimikyu-totem-busted' ? <img src={pokemon.sprites.other.home.front_shiny} alt={pokemon.name} width={'300px'} /> : null}
                                                 
-                                                {noImage.includes(pokemon.name) ? <img className='noImage' src='../../src/images/No-Pokemon-Image-card.png' alt={pokemon.name} width={'250px'} /> : null}
+                                                {noImage.includes(pokemon.name) ? <img className='noImage' src={NoImagePlaceHolder} alt={pokemon.name} width={'250px'} /> : null}
                                                                                                                                                
                                             </DivImgCard>
                                             
