@@ -35,7 +35,7 @@ const PokemonByTypeList = () => {
 
     useEffect(() => {
         async function fetchData() {
-            (value !== ('All' && 'all')) ? setLimit(1302) : setLimit(limit)
+            (value !== ('All' && 'all')) ? setLimit(150) : setLimit(limit)
 
             const renderPokemons = await getPokemons(limit, offset)
             setPokemons([...pokemons, ...renderPokemons])
@@ -57,7 +57,8 @@ const PokemonByTypeList = () => {
     })
 
     const limitFilteredPokemons = filteredPokemons.slice(0, renderAmount)
-
+    const uniqueName = limitFilteredPokemons.filter((obj,index) => limitFilteredPokemons.findIndex((item) => item.name === obj.name) === index);
+    console.log(limitFilteredPokemons)
     const [hidden, setHidden] = useState(-1);
 
     return (
@@ -66,7 +67,7 @@ const PokemonByTypeList = () => {
             <Select value={value} onChange={handleSelectChange} />
         
                         <DivCardContainer >
-                            {limitFilteredPokemons.map((pokemon,index) => {
+                            {uniqueName.map((pokemon,index) => {
                                 
                                 return (
                                     <Link key={index} to={`/details/${pokemon.name}`}>
