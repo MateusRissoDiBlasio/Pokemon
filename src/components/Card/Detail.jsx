@@ -518,18 +518,18 @@ justify-content: space-between;
 }
 
 @media screen and (min-width: 320px) and (max-width: 374px) {
-  margin-bottom: 10px;     
+  // margin-bottom: 10px;     
   width: 270px;
 }
 
 @media screen and (min-width: 375px) and (max-width: 425px) {
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
   width: 270px;
 }
 
 @media screen and (min-width: 426px) and (max-width: 500px) {
   width: 300px;
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
 }
 `
 

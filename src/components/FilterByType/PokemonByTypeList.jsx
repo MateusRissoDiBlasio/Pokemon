@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect, useState, useRef } from "react"
 import { getPokemons } from "../../components/FilterByType/GetPokemons"
 import { ThemeContext } from "../../Context/theme"
 import { Select, SelectStyle } from "../../components/FilterByType/FilterByType"
@@ -19,46 +19,157 @@ const response = await fetch(`https://pokeapi.co/api/v2/type`)
     const filteredTypes = pokemonTypesNames.filter((type) => type !== 'unknown' && type !== 'stellar')
 
 const PokemonByTypeList = () => {
-    const [offset, setOffset] = useState(0)
-    const [limit, setLimit] = useState(10)
+    const [offset, setOffset] = useState(-100)
+    const [limit, setLimit] = useState(0)
     const [pokemons, setPokemons] = useState([])
     const [value, setValue] = useState('All')
     const [renderAmount, setRenderAmount] = useState(10)
+    const [active, setActive] = useState('')
+    const [show, setShow] = useState(false)
+    const [loadLimit, setLoadLimit] = useState(0)
+    
+    
+    const noImage = ['koraidon-limited-build', 'koraidon-sprinting-build', 'koraidon-swimming-build', 'koraidon-gliding-build', 'miraidon-low-power-mode', 'miraidon-drive-mode', 'miraidon-aquatic-mode', 'miraidon-glide-mode'];
+    
+    const offsetLimits = [{types: [ 'ground', 'rock', 'bug', 'ghost', 'steel', 'fire', 'electric', 'ice', 'dragon', 'dark', 'fairy'], limitValue: 1200 }, {types: [ 'fighting', 'poison'], limitValue: 1300 }, {types: [ 'psychic'], limitValue: 1400}, {types: [ 'flying', 'grass'], limitValue: 1600}, {types: [ 'normal'], limitValue: 1700}, {types: [ 'water'], limitValue: 2000}]
 
-    const noImage = ['koraidon-limited-build', 'koraidon-sprinting-build', 'koraidon-swimming-build', 'koraidon-gliding-build', 'miraidon-low-power-mode', 'miraidon-drive-mode', 'miraidon-aquatic-mode', 'miraidon-glide-mode'];    
+
     
     const { theme } = useContext(ThemeContext)
 
     const handleSelectChange = (e) => {
-        setValue(e.target.value);      
-    }
+        setValue(e.target.value);
+        const filteredLimits = offsetLimits.filter(l => l.types.includes(e.target.value))
+        // setOffset(+100)      
+        // setLimit(-100)
+        setActive(true);
+        setLoadLimit(filteredLimits[0].limitValue)
 
+        
+
+        // if (offsetLimits[0].types.includes(e.target.value)){
+        //     setLoadLimit(offsetLimits[0].limitValue)   
+        // }else if(offsetLimits[1].types.includes(e.target.value)){
+        //     setLoadLimit(offsetLimits[1].limitValue)
+        // }else if(offsetLimits[2].types.includes(e.target.value)){
+        //     setLoadLimit(offsetLimits[2].limitValue)
+        // }else if(e.target.value ==='psychic'){
+        //     setLoadLimit(1400)
+        // }else if(e.target.value ==='normal'){
+        //     setLoadLimit(1700)
+        // }else if(e.target.value ==='water'){
+        //     setLoadLimit(2000)
+        // }
+
+        // if(offsetLimits.filter(l => l.types.includes(e.target.value))){
+            
+        //     setAwesome(true)
+            
+
+        // }{  setAwesome(false)}
+
+        // console.log(awesome)
+
+        
+
+        // console.log(offsetLimits.filter(l => e.target.value.includes(l.types)))
+        
+    }
+    console.log(loadLimit)
+
+    // const reloadPage = () => {
+    //     window.location.reload();
+    // };
+
+    
     useEffect(() => {
         async function fetchData() {
-            (value !== ('All' && 'all')) ? setLimit(150) : setLimit(limit)
+            (value !== ('All' && 'all')) ? setLimit(0) : setLimit(limit)
 
-            const renderPokemons = await getPokemons(limit, offset)
+            const renderPokemons = await getPokemons(limit+100, offset+100)
             setPokemons([...pokemons, ...renderPokemons])
         }
         fetchData()
     }, [limit, offset, value]);
 
-    const filteredPokemons = pokemons.filter((pokemon, index) => {
-        if (pokemon.types.length > 1) {
+    if(offset === loadLimit){
+        setActive(false)
+        setShow(true)
+        setOffset(loadLimit+100)
+    }
+
+
+    const filteredPokemons = pokemons.filter((pokemon) => {
+        if (pokemon.types.length > 1 && pokemon.types[1].type.name === value) {
             return (
-                (pokemon.types[0].type.name === value) ||
-                (pokemon.types[1].type.name === value)
+                (pokemon)
+                
             )
-        } else {
+        } else if (pokemon.types.length > 0 && pokemon.types[0].type.name === value){
             return (
-                (pokemon.types[0].type.name === value)
+                (pokemon)
             )
         }
     })
 
+    // const filteredPokemons = pokemons.filter((pokemon, index) => {
+    //     if (pokemon.types.length > 1) {
+    //         return (
+    //             (pokemon.types[0].type.name === value) ||
+    //             (pokemon.types[1].type.name === value)
+    //         )
+    //     } else {
+    //         return (
+    //             (pokemon.types[0].type.name === value)
+    //         )
+    //     }
+    // })
+
     const limitFilteredPokemons = filteredPokemons.slice(0, renderAmount)
     const uniqueName = limitFilteredPokemons.filter((obj,index) => limitFilteredPokemons.findIndex((item) => item.name === obj.name) === index);
-    console.log(limitFilteredPokemons)
+    
+    
+    // const desiredInfo = pokemons.filter((desire) => { return desire.types[0].type.name === "grass" })
+    
+    // console.log(offset)
+    // console.log(pokemons)
+    // console.log(limitFilteredPokemons)
+    // console.log(uniqueName)
+
+
+    // const uniqueNameLength = uniqueName.length
+
+    // function usePrevious(uniqueNameLength) {
+    //     const ref = useRef();
+    //     useEffect(() => {
+    //       ref.current = uniqueNameLength; //assign the value of ref to the argument
+    //     }); //this code will run when the value of 'value' changes
+    //     return ref.current; //in the end, return the current ref value.
+    //   }
+
+    // function Check() {
+        
+    //     const prevCheck = usePrevious(uniqueNameLength)
+    //     console.log(uniqueName.length)
+    //     console.log(prevCheck)
+    //   }
+
+    // Check()
+    
+//     const [ifDontLoad, setIfDontLoad] = useState(false)  
+
+//     if(uniqueName.length === usePrevious(uniqueNameLength)){
+
+//         setIfDontLoad(true)
+
+//     }
+
+// console.log(ifDontLoad)
+    
+    
+    // console.log(desiredInfo)
+
+
     const [hidden, setHidden] = useState(-1);
 
     return (
@@ -101,7 +212,7 @@ const PokemonByTypeList = () => {
                         </DivCardContainer>
 
                         <DivBtn>
-                            { filteredTypes.includes(value) ? <LoadMoreTypes setRenderAmount={setRenderAmount} renderAmount={renderAmount} setOffset={setOffset} offset={offset} /> : null }                           
+                            { filteredTypes.includes(value) && active ? <LoadMoreTypes setRenderAmount={setRenderAmount} renderAmount={renderAmount} setOffset={setOffset} offset={offset} /> : <p className={show ? 'limitreached' : 'hide'}>WE RAN OUT OF POKÉMONS<br/>FROM THIS TYPE <br/> THERE ARE {uniqueName.length} {value} POKÉMONS</p> }                           
                         </DivBtn>
 
                         <DivScrollBtn>
@@ -152,6 +263,45 @@ margin-top: 1rem;
             justify-content: center;
             display: flex;
         }
+
+p{
+    display: flex;
+    // height: 68px;
+    height: 102px;
+    text-align: center;
+}
+
+.limitreached{
+    color: red;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size:20px;
+    justify-content: center;
+    padding: 5px;
+    align-itens: center
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    
+}
+
+.hide{
+    
+    opacity: 0;
+
+}
+
+@keyframes fadeInOpacity {
+        0% {
+		opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+
 `
 
 const DivCard = styled.div`
