@@ -251,7 +251,7 @@ display: flex;
 font-size: 50px;
 border-radius: 50%;
 cursor: pointer;
-`,uw=await fetch("https://pokeapi.co/api/v2/type"),cw=await uw.json([]),{results:fw}=cw,dw=fw.map(e=>e.name),rf=dw.filter(e=>e!=="unknown"&&e!=="stellar"),pw=()=>{const[e,t]=_.useState(-100),[n,r]=_.useState(0),[i,o]=_.useState([]),[l,s]=_.useState("All"),[a,u]=_.useState(10),[c,f]=_.useState(""),[h,v]=_.useState(!1),[g,y]=_.useState(0),P=["koraidon-limited-build","koraidon-sprinting-build","koraidon-swimming-build","koraidon-gliding-build","miraidon-low-power-mode","miraidon-drive-mode","miraidon-aquatic-mode","miraidon-glide-mode"],m=[{types:["ground","rock","bug","ghost","steel","fire","electric","ice","dragon","dark","fairy"],limitValue:1200},{types:["fighting","poison"],limitValue:1300},{types:["psychic"],limitValue:1400},{types:["flying","grass"],limitValue:1600},{types:["normal"],limitValue:1700},{types:["water"],limitValue:2e3}],{theme:d}=_.useContext(Ct),p=N=>{s(N.target.value);const L=m.filter(ee=>ee.types.includes(N.target.value));f(!0),y(L[0].limitValue)};console.log(g),_.useEffect(()=>{async function N(){r(l!=="all"?0:n);const L=await K1(n+100,e+100);o([...i,...L])}N()},[n,e,l]),e===g&&(f(!1),v(!0),t(g+100));const C=i.filter(N=>{if(N.types.length>1&&N.types[1].type.name===l)return N;if(N.types.length>0&&N.types[0].type.name===l)return N}).slice(0,a),E=C.filter((N,L)=>C.findIndex(ee=>ee.name===N.name)===L),[k,O]=_.useState(-1);return w.jsxs(hw,{style:{color:d.color,backgroundColor:d.background},children:[w.jsx(J1,{value:l,onChange:p}),w.jsx(mw,{children:E.map((N,L)=>w.jsx(Bs,{to:`/details/${N.name}`,children:w.jsxs(yw,{style:{color:k===N?d.hover:d.color,backgroundColor:k===N?d.hover:d.cardBackground,border:d.cardBorder},onMouseEnter:()=>O(N),onMouseLeave:()=>O(-1),children:[w.jsx("h4",{children:N.name}),w.jsxs(vw,{children:[N.sprites.other.dream_world.front_default===void 0?w.jsx("img",{src:N.sprites.other["official-artwork"].front_default,alt:N.name}):null,N.sprites.other.dream_world.front_default===null&&N.name!=="mimikyu-busted"&&N.name!=="mimikyu-totem-busted"&&!P.includes(N.name)?w.jsx("img",{src:N.sprites.other["official-artwork"].front_default,alt:N.name}):null,N.sprites.other.dream_world.front_default!==void 0&&N.sprites.other.dream_world.front_default!==null&&N.name!=="mimikyu-busted"&&N.name!=="mimikyu-totem-busted"&&!P.includes(N.name)?w.jsx("img",{src:N.sprites.other.dream_world.front_default,alt:N.name}):null,N.name==="mimikyu-busted"?w.jsx("img",{src:N.sprites.other["official-artwork"].front_shiny,alt:N.name,width:"300px"}):null,N.name==="mimikyu-totem-busted"?w.jsx("img",{src:N.sprites.other.home.front_shiny,alt:N.name,width:"300px"}):null,P.includes(N.name)?w.jsx("img",{className:"noImage",src:Ks,alt:N.name,width:"250px"}):null]}),k===N?w.jsx("h1",{style:{color:d.detail},children:"Click for details"}):null]},L)},L))}),w.jsx(gw,{children:rf.includes(l)&&c?w.jsx(Q1,{setRenderAmount:u,renderAmount:a,setOffset:t,offset:e}):w.jsxs("p",{className:h?"limitreached":"hide",children:["WE RAN OUT OF POKÉMONS",w.jsx("br",{}),"FROM THIS TYPE ",w.jsx("br",{})," THERE ARE ",E.length," ",l," POKÉMONS"]})}),w.jsx(ww,{children:rf.includes(l)?w.jsx(Fm,{}):null})]})},mw=U.div`
+`,uw=await fetch("https://pokeapi.co/api/v2/type"),cw=await uw.json([]),{results:fw}=cw,dw=fw.map(e=>e.name),rf=dw.filter(e=>e!=="unknown"&&e!=="stellar"),pw=()=>{const[e,t]=_.useState(-100),[n,r]=_.useState(0),[i,o]=_.useState([]),[l,s]=_.useState("All"),[a,u]=_.useState(10),[c,f]=_.useState(!1),[h,v]=_.useState(!1),[g,y]=_.useState(0),P=["koraidon-limited-build","koraidon-sprinting-build","koraidon-swimming-build","koraidon-gliding-build","miraidon-low-power-mode","miraidon-drive-mode","miraidon-aquatic-mode","miraidon-glide-mode"],m=[{types:["ground","rock","bug","ghost","steel","fire","electric","ice","dragon","dark","fairy"],limitValue:1200},{types:["fighting","poison"],limitValue:1300},{types:["psychic"],limitValue:1400},{types:["flying","grass"],limitValue:1600},{types:["normal"],limitValue:1700},{types:["water"],limitValue:2e3}],{theme:d}=_.useContext(Ct),p=N=>{s(N.target.value);const L=m.filter(ee=>ee.types.includes(N.target.value));f(!0),y(L[0].limitValue)};_.useEffect(()=>{async function N(){r(l!=="all"?0:n);const L=await K1(n+100,e+100);o([...i,...L])}N()},[n,e,l]),e===g&&(f(!1),v(!0),t(g+100));const C=i.filter(N=>{if(N.types.length>1&&N.types[1].type.name===l)return N;if(N.types.length>0&&N.types[0].type.name===l)return N}).slice(0,a),E=C.filter((N,L)=>C.findIndex(ee=>ee.name===N.name)===L);console.log(e),console.log(i),console.log(C),console.log(E),console.log(g);const[k,O]=_.useState(-1);return w.jsxs(hw,{style:{color:d.color,backgroundColor:d.background},children:[w.jsx(J1,{value:l,onChange:p}),w.jsx(mw,{children:E.map((N,L)=>w.jsx(Bs,{to:`/details/${N.name}`,children:w.jsxs(yw,{style:{color:k===N?d.hover:d.color,backgroundColor:k===N?d.hover:d.cardBackground,border:d.cardBorder},onMouseEnter:()=>O(N),onMouseLeave:()=>O(-1),children:[w.jsx("h4",{children:N.name}),w.jsxs(vw,{children:[N.sprites.other.dream_world.front_default===void 0?w.jsx("img",{src:N.sprites.other["official-artwork"].front_default,alt:N.name}):null,N.sprites.other.dream_world.front_default===null&&N.name!=="mimikyu-busted"&&N.name!=="mimikyu-totem-busted"&&!P.includes(N.name)?w.jsx("img",{src:N.sprites.other["official-artwork"].front_default,alt:N.name}):null,N.sprites.other.dream_world.front_default!==void 0&&N.sprites.other.dream_world.front_default!==null&&N.name!=="mimikyu-busted"&&N.name!=="mimikyu-totem-busted"&&!P.includes(N.name)?w.jsx("img",{src:N.sprites.other.dream_world.front_default,alt:N.name}):null,N.name==="mimikyu-busted"?w.jsx("img",{src:N.sprites.other["official-artwork"].front_shiny,alt:N.name,width:"300px"}):null,N.name==="mimikyu-totem-busted"?w.jsx("img",{src:N.sprites.other.home.front_shiny,alt:N.name,width:"300px"}):null,P.includes(N.name)?w.jsx("img",{className:"noImage",src:Ks,alt:N.name,width:"250px"}):null]}),k===N?w.jsx("h1",{style:{color:d.detail},children:"Click for details"}):null]},L)},L))}),w.jsx(gw,{children:rf.includes(l)&&c?w.jsx(Q1,{setRenderAmount:u,renderAmount:a,setOffset:t,offset:e}):w.jsxs("p",{className:h?"limitreached":"hide",children:["WE RAN OUT OF POKÉMONS",w.jsx("br",{}),"FROM THIS TYPE ",w.jsx("br",{})," THERE ARE ",E.length," ",l," POKÉMONS"]})}),w.jsx(ww,{children:rf.includes(l)?w.jsx(Fm,{}):null})]})},mw=U.div`
    display: flex;
    flex-wrap: wrap;
    align-items: Flex-start;
@@ -325,7 +325,29 @@ p{
         100% {
             opacity: 1;
         }
+}
 
+@media screen and (min-width: 320px) and (max-width: 374px) {
+    .limitreached{      
+        font-size: 18px;
+        margin-bottom: 25px;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 425px) {
+    .limitreached{      
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+        
+}
+
+@media screen and (min-width: 426px) and (max-width: 500px) {
+    .limitreached{      
+        font-size: 18px;
+        margin-bottom: 25px;
+    }
+}
 `,yw=U.div`
     min-width: 220px;
     min-height: 265px;
