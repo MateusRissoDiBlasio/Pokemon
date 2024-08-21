@@ -124,8 +124,8 @@ const DivCardContainerSearch = styled.div`
 const DivCard = styled.div`
     min-width: 200px;
     max-width: 220px;
-    min-height: 265px;
-    max-height: 300px;
+    min-height: 290px;
+    max-height: 325px;
     border-radius: 5px;
     padding: 0.5rem;
 
@@ -133,7 +133,7 @@ const DivCard = styled.div`
         text-transform: uppercase;
         text-align: center;
         color: white;
-        min-height: 50px; 
+        min-height: 75px; 
         max-width: 200px;
         font-family: "Orbitron", sans-serif;
         font-size: 20px;

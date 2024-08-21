@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState, useRef } from "react"
-import { getPokemons } from "../../components/FilterByType/GetPokemons"
+import { getPokemons, getPokemons2 } from "../../components/FilterByType/GetPokemons"
 import { ThemeContext } from "../../Context/theme"
 import { Select, SelectStyle } from "../../components/FilterByType/FilterByType"
 import styled from "styled-components"
@@ -27,11 +27,11 @@ const PokemonByTypeList = () => {
     const [active, setActive] = useState(false)
     const [show, setShow] = useState(false)
     const [loadLimit, setLoadLimit] = useState(0)
-    
+    const [count, setCount] = useState(0)
     
     const noImage = ['koraidon-limited-build', 'koraidon-sprinting-build', 'koraidon-swimming-build', 'koraidon-gliding-build', 'miraidon-low-power-mode', 'miraidon-drive-mode', 'miraidon-aquatic-mode', 'miraidon-glide-mode'];
     
-    const offsetLimits = [{types: ['ground', 'rock', 'bug', 'ghost', 'steel', 'fire', 'electric', 'ice', 'dragon', 'dark', 'fairy'], limitValue: 1200 }, {types: ['fighting', 'poison'], limitValue: 1300 }, {types: ['psychic'], limitValue: 1400}, {types: ['flying', 'grass'], limitValue: 1600}, {types: ['normal'], limitValue: 1700}, {types: ['water'], limitValue: 2000}]
+    const offsetLimits = [{types: ['ground', 'rock', 'bug', 'ghost', 'steel', 'fire', 'electric', 'ice', 'dragon', 'dark', 'fairy'], limitValue: 1200 }, {types: ['fighting', 'poison'], limitValue: 1300 }, {types: ['psychic'], limitValue: 1300}, {types: ['flying', 'grass'], limitValue: 1300}, {types: ['normal'], limitValue: 1400}, {types: ['water'], limitValue: 1800}]
 
 
     
@@ -45,16 +45,43 @@ const PokemonByTypeList = () => {
     }
     
     useEffect(() => {
+        
+
+        if(count === 6){
+                
+            setOffset(342)   
+           }
+
+        if(count === 8){
+                
+            setOffset(344)   
+        }
         async function fetchData() {
             (value !== ('All' && 'all')) ? setLimit(0) : setLimit(limit)
+                      
 
-            const renderPokemons = await getPokemons(limit+100, offset+100)
+            // if(count !== 6){
+                
+            //  setOffset(+100)   
+            // }
+
+            
+
+            // if(count === 7){
+
+            //     setOffset(offset+100)
+                
+            // }          
+
+            const renderPokemons = await getPokemons(limit+100, offset)
             setPokemons([...pokemons, ...renderPokemons])
         }
+        setCount(count+1)
+        
         fetchData()
     }, [limit, offset, value]);
 
-    if(offset === loadLimit){
+    if(offset === loadLimit+44){
         setActive(false)
         setShow(true)
         setOffset(loadLimit+100)
@@ -76,11 +103,16 @@ const PokemonByTypeList = () => {
     const limitFilteredPokemons = filteredPokemons.slice(0, renderAmount);
     const uniqueName = limitFilteredPokemons.filter((obj,index) => limitFilteredPokemons.findIndex((item) => item.name === obj.name) === index);
         
+    
+    // console.log(pokemons);
+    // console.log(limitFilteredPokemons);
+    // console.log(uniqueName);
+    // console.log(loadLimit);
+    console.log(limit);
     console.log(offset);
-    console.log(pokemons);
-    console.log(limitFilteredPokemons);
-    console.log(uniqueName);
-    console.log(loadLimit);
+    console.log(count);
+
+    // getPokemons2()
 
     const [hidden, setHidden] = useState(-1);
 
@@ -240,7 +272,7 @@ p{
 
 const DivCard = styled.div`
     min-width: 220px;
-    min-height: 265px;
+    min-height: 290px;
     border-radius: 5px;
     padding: 0.5rem;
 
@@ -248,7 +280,7 @@ const DivCard = styled.div`
         text-transform: uppercase;
         text-align: center;
         color: white;
-        min-height: 50px;
+        min-height: 75px;
         max-width: 200px;
         font-family: "Orbitron", sans-serif;
         font-size: 20px;
