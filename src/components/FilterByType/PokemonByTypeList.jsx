@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState, useRef } from "react"
-import { getPokemons, getPokemons2 } from "../../components/FilterByType/GetPokemons"
+// import { getPokemons, getPokemons2 } from "../../components/FilterByType/GetPokemons"
+import { getPokemons } from "../../components/FilterByType/GetPokemons"
 import { ThemeContext } from "../../Context/theme"
 import { Select, SelectStyle } from "../../components/FilterByType/FilterByType"
 import styled from "styled-components"
@@ -31,7 +32,7 @@ const PokemonByTypeList = () => {
     
     const noImage = ['koraidon-limited-build', 'koraidon-sprinting-build', 'koraidon-swimming-build', 'koraidon-gliding-build', 'miraidon-low-power-mode', 'miraidon-drive-mode', 'miraidon-aquatic-mode', 'miraidon-glide-mode'];
     
-    const offsetLimits = [{types: ['ground', 'rock', 'bug', 'ghost', 'steel', 'fire', 'electric', 'ice', 'dragon', 'dark', 'fairy'], limitValue: 1200 }, {types: ['fighting', 'poison'], limitValue: 1300 }, {types: ['psychic'], limitValue: 1300}, {types: ['flying', 'grass'], limitValue: 1300}, {types: ['normal'], limitValue: 1400}, {types: ['water'], limitValue: 1800}]
+    const offsetLimits = [{types: ['ground', 'rock', 'bug', 'ghost', 'steel', 'fire', 'electric', 'ice', 'dragon', 'dark', 'fairy', 'fighting', 'poison', 'psychic', 'flying', 'grass'], limitValue: 1300 }, {types: ['normal'], limitValue: 1400}, {types: ['water'], limitValue: 1800}]
 
 
     
