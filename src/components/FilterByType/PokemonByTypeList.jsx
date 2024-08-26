@@ -20,7 +20,7 @@ const response = await fetch(`https://pokeapi.co/api/v2/type`)
     const filteredTypes = pokemonTypesNames.filter((type) => type !== 'unknown' && type !== 'stellar')
 
 const PokemonByTypeList = () => {
-    const [offset, setOffset] = useState(-100)
+    const [offset, setOffset] = useState(0)
     const [limit, setLimit] = useState(0)
     const [pokemons, setPokemons] = useState([])
     const [value, setValue] = useState('All')
@@ -32,7 +32,7 @@ const PokemonByTypeList = () => {
     
     const noImage = ['koraidon-limited-build', 'koraidon-sprinting-build', 'koraidon-swimming-build', 'koraidon-gliding-build', 'miraidon-low-power-mode', 'miraidon-drive-mode', 'miraidon-aquatic-mode', 'miraidon-glide-mode'];
     
-    const offsetLimits = [{types: ['ground', 'rock', 'bug', 'ghost', 'steel', 'fire', 'electric', 'ice', 'dragon', 'dark', 'fairy', 'fighting', 'poison', 'psychic', 'flying', 'grass'], limitValue: 1300 }, {types: ['normal'], limitValue: 1400}, {types: ['water'], limitValue: 1800}]
+    const offsetLimits = [{types: ['ground', 'rock', 'bug', 'ghost', 'steel', 'fire', 'electric', 'ice', 'dragon', 'dark', 'fairy', 'fighting'], limitValue: 1300 }, {types: ['poison', 'psychic'], limitValue: 1400}, {types: ['flying', 'grass'], limitValue: 1700}, {types: ['normal'], limitValue: 1800}, {types: ['water'], limitValue: 2100}]
 
 
     
@@ -45,44 +45,36 @@ const PokemonByTypeList = () => {
         setLoadLimit(filteredLimits[0].limitValue);
     }
     
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
-        
-
-        if(count === 6){
-                
-            setOffset(342)   
-           }
-
-        if(count === 8){
-                
-            setOffset(344)   
-        }
+        setLoading(true);
+       
         async function fetchData() {
-            (value !== ('All' && 'all')) ? setLimit(0) : setLimit(limit)
-                      
-
-            // if(count !== 6){
-                
-            //  setOffset(+100)   
-            // }
-
+        
+        try{
             
-
-            // if(count === 7){
-
-            //     setOffset(offset+100)
-                
-            // }          
-
+            (value !== ('All' && 'all')) ? setLimit(0) : setLimit(limit)                             
+            
             const renderPokemons = await getPokemons(limit+100, offset)
             setPokemons([...pokemons, ...renderPokemons])
-        }
-        setCount(count+1)
         
+        setCount(count+1)
+       
+        }catch(error){
+            console.log(error)
+        }
+
+        finally {
+            setLoading(false);
+         }
+ 
+    }
         fetchData()
     }, [limit, offset, value]);
 
-    if(offset === loadLimit+44){
+// console.log(value)
+
+    if(offset === loadLimit && value !== 'All'){
         setActive(false)
         setShow(true)
         setOffset(loadLimit+100)
@@ -109,9 +101,9 @@ const PokemonByTypeList = () => {
     // console.log(limitFilteredPokemons);
     // console.log(uniqueName);
     // console.log(loadLimit);
-    console.log(limit);
-    console.log(offset);
-    console.log(count);
+    // console.log(limit);
+    // console.log(offset);
+    // console.log(count);
 
     // getPokemons2()
 
@@ -162,7 +154,10 @@ const PokemonByTypeList = () => {
 
                         <DivScrollBtn>
                             { filteredTypes.includes(value) ? <ScrollButton /> : null }
-                        </DivScrollBtn>                                            
+                        </DivScrollBtn>  
+
+                        {loading ? <p className={'load'}>Loading...</p> : ''}
+                                          
 
         </DivCardByType>
     )
@@ -199,7 +194,25 @@ const DivCardByType = styled.div`
         label{
             display:flex;
             justify-content: center;               
-        }        
+        }
+        p{
+            display:flex;
+            justify-content: center;
+        }
+        .load{
+            font-size: 1.5rem;
+            font-family: "Orbitron", sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            opacity: 1;
+            animation-name: fadeInOpacity;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in;
+            animation-duration: 0.3s;
+            color: red;
+            text-shadow: 1px 1px black;
+            margin-top: 5px;
+        }           
 `
 
 const DivBtn = styled.div`
@@ -252,13 +265,15 @@ p{
     .limitreached{      
         font-size: 18px;
         margin-bottom: 25px;
+        max-width: 90vw;
     }
 }
 
 @media screen and (min-width: 375px) and (max-width: 425px) {
     .limitreached{      
-    font-size: 18px;
-    margin-bottom: 25px;
+        font-size: 18px;
+        margin-bottom: 25px;
+        max-width: 90vw;
 }
         
 }
@@ -267,6 +282,7 @@ p{
     .limitreached{      
         font-size: 18px;
         margin-bottom: 25px;
+        max-width: 90vw;
     }
 }
 `

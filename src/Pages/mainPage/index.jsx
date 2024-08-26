@@ -51,14 +51,14 @@ export function MainPage() {
     const scrollDown = () => {
         window.scrollBy({
             
-        top: 300,
+        top: 325,
         behavior: 'smooth'
 
         });
     };
     
     const [loading, setLoading] = useState(false);
-    const [data, setData] = useState(null);
+    // const [data, setData] = useState(null);
 
     const getPokemonsByName = async (name) => {
         
@@ -75,7 +75,7 @@ export function MainPage() {
 
             }
             setPokemons([pokemonData]);
-            setData(pokemonData)
+            // setData(pokemonData)
 
             if( search.trim() === pokemonData.name){
                 setVisible(false)
@@ -192,7 +192,7 @@ export function MainPage() {
                         onKeyDown={ e => e.key ==='Enter' ? handleEnter() :''}                        
                     
                     />
-                    <button onClick={ () => {handleEnter(); handleClick()}} onMouseEnter={() => setHovering(0)} onMouseLeave={() => setHovering(-1)} style={{ color: hovering ? theme.color : theme.revcolor, backgroundColor: setHovering ? theme.background : theme.color, border: theme.btnBorder }}><img src={Go}></img>!</button>
+                    <button onClick={ () => {handleEnter(); handleClick()}} onMouseEnter={() => setHovering(0)} onMouseLeave={() => setHovering(-1)} style={{ color: hovering ? theme.color : theme.revcolor, backgroundColor: hovering ? theme.background : theme.color, border: theme.btnBorder }}><img src={Go}></img>!</button>
                     {visible === true ? <h2 key={errorMessage} style={{ color: 'red' }}>{errorMessage}</h2> : null}
                     {loading ? <p className={'load'}>Loading...</p> : ''}
                     

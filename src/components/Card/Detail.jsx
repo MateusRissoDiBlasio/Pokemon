@@ -278,8 +278,20 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-items: center;
-  height: 90vh;
+  height: 88vh;
   padding: 0.5rem;
+
+    @media screen and (min-width: 320px) and (max-width: 374px) {
+
+    height: 84vh;
+
+    }
+
+    @media screen and (min-width: 375px) and (max-width: 500px) {
+
+    height: 80vh;
+
+    }
 `
 
 const ContainerDetailsDiv = styled.div`
