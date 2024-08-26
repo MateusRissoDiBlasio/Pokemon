@@ -51,15 +51,14 @@ export function MainPage() {
     const scrollDown = () => {
         window.scrollBy({
             
-        top: 325,
+        top: 350,
         behavior: 'smooth'
 
         });
     };
     
     const [loading, setLoading] = useState(false);
-    // const [data, setData] = useState(null);
-
+    
     const getPokemonsByName = async (name) => {
         
         setLoading(true);
@@ -75,7 +74,6 @@ export function MainPage() {
 
             }
             setPokemons([pokemonData]);
-            // setData(pokemonData)
 
             if( search.trim() === pokemonData.name){
                 setVisible(false)
@@ -90,7 +88,7 @@ export function MainPage() {
                 setVisible(true)
                 setShake(true)
             }
-        }  finally {
+        } finally {
             setLoading(false);
           }
         
@@ -192,8 +190,8 @@ export function MainPage() {
                         onKeyDown={ e => e.key ==='Enter' ? handleEnter() :''}                        
                     
                     />
-                    <button onClick={ () => {handleEnter(); handleClick()}} onMouseEnter={() => setHovering(0)} onMouseLeave={() => setHovering(-1)} style={{ color: hovering ? theme.color : theme.revcolor, backgroundColor: hovering ? theme.background : theme.color, border: theme.btnBorder }}><img src={Go}></img>!</button>
-                    {visible === true ? <h2 key={errorMessage} style={{ color: 'red' }}>{errorMessage}</h2> : null}
+                    <button onClick={ () => {handleEnter(); handleClick()}} onMouseEnter={() => setHovering(0)} onMouseLeave={() => setHovering(-1)} style={{ color: hovering ? theme.color : theme.revcolor, backgroundColor: hovering ? theme.background : theme.color, border: theme.btnBorder }}><img src={Go} alt="GO logo"></img>!</button>
+                    {visible === true ? <h2 key={errorMessage} style={{color: 'red'}}>{errorMessage}</h2> : null}
                     {loading ? <p className={'load'}>Loading...</p> : ''}
                     
                 </DivSearchPoke>
@@ -219,8 +217,8 @@ export function MainPage() {
                     onAnimationEnd={() => setShake(false)}
                     onKeyDown={ e => e.key ==='Enter' ? handleEnter() :''}
                 />
-                <button onClick={ () => {handleEnter(); handleClick()}} onMouseEnter={() => setHovering(0)} onMouseLeave={() => setHovering(-1)} style={{ color: hovering ? theme.color : theme.revcolor, backgroundColor: hovering ? theme.background : theme.color, border: theme.btnBorder }}><img src={Go}></img>!</button>
-                {visible === true ? <h2 key={errorMessage} style={{ color: 'red' }}>{errorMessage}</h2> : null}
+                <button onClick={ () => {handleEnter(); handleClick()}} onMouseEnter={() => setHovering(0)} onMouseLeave={() => setHovering(-1)} style={{ color: hovering ? theme.color : theme.revcolor, backgroundColor: hovering ? theme.background : theme.color, border: theme.btnBorder }}><img src={Go} alt="GO logo"></img>!</button>
+                {visible === true ? <h2 key={errorMessage} style={{color: 'red'}}>{errorMessage}</h2> : null}
                 {loading ? <p className={'load'} >Loading...</p> : ''}
                 
             </DivSearchPoke>
@@ -262,7 +260,6 @@ const DivMainPage = styled.div`
         font-size: 1.5rem;
         margin-bottom: 10px;
         font-weight: bold;
-        color: var(--black);
         font-family: "Orbitron", sans-serif;
         text-align: center;
     }

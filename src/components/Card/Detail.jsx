@@ -9,8 +9,6 @@ import axios from 'axios';
 import NoImagePlaceHolder from '/No-Pokemon-Image-Placeholder.png'
 
 
-
-
 export function CardDetails() {
 
   const [pokemonDetails, setPokemonDetails] = useState({});
@@ -27,11 +25,11 @@ export function CardDetails() {
         const filteredAbilities = response.data.flavor_text_entries
         const filteredAbilitiesText = filteredAbilities.filter(filteredAbility => { return filteredAbility.language.name === 'en' });
 
-        if ( response.data.effect_entries.length === 1 ){
+        if (response.data.effect_entries.length === 1){
             
         return response.data.effect_entries[0].effect
                  
-            } else if( response.data.effect_entries.length === 0 ){
+            } else if(response.data.effect_entries.length === 0){
 
               return filteredAbilitiesText[0].flavor_text
               
@@ -49,7 +47,7 @@ export function CardDetails() {
       return abilitiesTexts;
       
     } catch (error) {
-      console.error('Erro ao obter detalhes da habilidade:', error);
+      console.error('Error while geting ability details:', error);
       return null;
         }
   }
@@ -81,15 +79,15 @@ export function CardDetails() {
         ...prevState,
         types: response.data.types.map(element => element.type.name),
         abilities: uniqueAbilityNames.map((element,index) => ({
-          name: element.ability.name,
-          text: abilitiesTexts[index]
+        name: element.ability.name,
+        text: abilitiesTexts[index]
 
         })),
         moves: response.data.moves.map(element => element.move.name),
       }))
       
     } catch (error) {
-      console.error('Error fetching Pokémon data:', error);
+      console.error('Error geting Pokémon data:', error);
     }
   };
  
@@ -103,9 +101,9 @@ export function CardDetails() {
   const { theme } = useContext(ThemeContext)
   return (
     
-    <div style={{ color: theme.color, backgroundColor: theme.background }}>
+    <div style={{color: theme.color, backgroundColor: theme.background}}>
       
-      <HeaderDetails style={{ color: theme.cardColor, backgroundColor: theme.detailsHeaderColor }}>
+      <HeaderDetails style={{color: theme.cardColor, backgroundColor: theme.detailsHeaderColor}}>
         
         <div>
           <ThemeToggleButton />
@@ -333,35 +331,35 @@ const Type = styled.div`
 
    @media screen and (min-width: 320px) and (max-width: 500px) {
 
- 	padding: 0;
-        gap: 5px;
+      padding: 0;
+       gap: 5px;
 
     }
 
-@media screen and (min-width: 320px) and (max-width: 374px) {
+    @media screen and (min-width: 320px) and (max-width: 374px) {
 
-      margin-right: 5px;
+          margin-right: 5px;
 
-}
+    }
 
-@media screen and (min-width: 320px) and (max-width: 425px) {
+    @media screen and (min-width: 320px) and (max-width: 425px) {
 
-      h4{
-        font-size: 1.5rem;
-      }
+          h4{
+            font-size: 1.5rem;
+          }
 
-      p{
-        font-size: 1.0rem;
-      }
+          p{
+            font-size: 1.0rem;
+          }
 
-}
+    }
 
- @media screen and (min-width: 375px) and (max-width: 500px) {
+    @media screen and (min-width: 375px) and (max-width: 500px) {
 
 
-      margin-right: 15px;
+          margin-right: 15px;
 
-}
+    }
 `
 
 const Poke = styled.div`
@@ -429,156 +427,149 @@ const TitlesDiv = styled.div`
     font-weight: 300;
   }
 
-@media screen and (min-width: 320px) and (max-width: 425px) {
-  
-  max-width: 90vw;
-  margin-left: 10px;
+  @media screen and (min-width: 320px) and (max-width: 425px) {
+    
+    max-width: 90vw;
+    margin-left: 10px;
 
-  h4{
-  font-size: 1.5rem;
+    h4{
+    font-size: 1.5rem;
+    }
+
   }
 
-}
+  @media screen and (min-width: 426px) and (max-width: 500px) {
 
-@media screen and (min-width: 426px) and (max-width: 500px) {
+    max-width: 90vw;
+    margin-left: 10px;
 
-  max-width: 90vw;
-  margin-left: 10px;
-
-}
+  }
 `
 
 const UlAbilities = styled.ul`
-width: 600px;
-max-height: 140px;
-border-radius: 5px;
-padding: 8px;
-margin-bottom: 10px;
-overflow-y: auto;
-  
-  li {
-    font-size: 1.2rem;
-    list-style: none;
-    font-family: "Roboto", sans-serif;
-    text-align: justify;
-    margin-bottom: 10px;
-      strong{
-        text-transform: uppercase;
-        font-family: "Orbitron", sans-serif;
+  width: 600px;
+  max-height: 140px;
+  border-radius: 5px;
+  padding: 8px;
+  margin-bottom: 10px;
+  overflow-y: auto;
+    
+    li {
+      font-size: 1.2rem;
+      list-style: none;
+      font-family: "Roboto", sans-serif;
+      text-align: justify;
+      margin-bottom: 10px;
+        strong{
+          text-transform: uppercase;
+          font-family: "Orbitron", sans-serif;
+        }
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 500px) {
+
+      max-width: 90vw;
+
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 374px) {
+
+      max-height: 120px;
+
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 425px) {
+
+      li {
+        font-size: 1.0rem;   
       }
-  }
-
-@media screen and (min-width: 320px) and (max-width: 500px) {
-
-  max-width: 90vw;
-
-}
-
-@media screen and (min-width: 320px) and (max-width: 374px) {
-
-  max-height: 120px;
-
-}
-
-@media screen and (min-width: 320px) and (max-width: 425px) {
-
-  li {
-    font-size: 1.0rem;   
-  }
-       
-}
+          
+    }
 `
 
 const UlMovesDiv = styled.ul`
-display: flex;
-width: 600px;
-justify-content: space-between;
+  display: flex;
+  width: 600px;
+  justify-content: space-between;
 
-@media screen and (min-width: 320px) and (max-width: 500px) {
+  @media screen and (min-width: 320px) and (max-width: 500px) {
 
-   width: 90vw;
-        
-}
+    width: 90vw;
+          
+  }
 `
 
 const UlMoves = styled.ul`
-display: grid;
-grid-template-columns: auto 200px;
-overflow-y: auto;
-min-height: 80px;
-max-height: 125px; 
-width: 400px;
-border-radius: 5px;
-padding: 8px;
-background-color: grey;
-justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 200px;
+  overflow-y: auto;
+  min-height: 80px;
+  max-height: 125px; 
+  width: 400px;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: grey;
+  justify-content: space-between;
 
-  li {
-    text-align: center;
-    font-size: 1rem;
-    list-style: none;
-    font-family: "Roboto", sans-serif;
-    text-transform: uppercase;
-  }
-
-@media screen and (min-width: 320px) and (max-width: 500px) {
-  display: flex;
-  flex-direction: column;
-  
-   li {
-    font-size: 0.8rem;
+    li {
+      text-align: center;
+      font-size: 1rem;
+      list-style: none;
+      font-family: "Roboto", sans-serif;
+      text-transform: uppercase;
     }
-}
 
-@media screen and (min-width: 320px) and (max-width: 374px) {
-  // margin-bottom: 10px;     
-  width: 270px;
-}
+    @media screen and (min-width: 320px) and (max-width: 500px) {
+      display: flex;
+      flex-direction: column;
+      
+      li {
+        font-size: 0.8rem;
+        }
+    }
 
-@media screen and (min-width: 375px) and (max-width: 425px) {
-  // margin-bottom: 20px;
-  width: 270px;
-}
+    @media screen and (min-width: 320px) and (max-width: 425px) {
+      width: 270px;
+    }
 
-@media screen and (min-width: 426px) and (max-width: 500px) {
-  width: 300px;
-  // margin-bottom: 20px;
-}
+    @media screen and (min-width: 426px) and (max-width: 500px) {
+      width: 300px;
+    }
 `
 
 const UlGif = styled.ul`
-display: flex;
-justify-content: center;
-width: 200px;
-align-items: center;
-  img{
-    opacity: 1;
-	  animation-name: fadeInOpacity;
-	  animation-iteration-count: 1;
-    animation-timing-function: ease-in;
-    animation-duration: 2s;
-    max-width: 120px;
-    max-height: 120px;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  align-items: center;
+    img{
+      opacity: 1;
+      animation-name: fadeInOpacity;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-in;
+      animation-duration: 2s;
+      max-width: 120px;
+      max-height: 120px;
+      }
+      
+      @keyframes fadeInOpacity {
+          0% {
+      opacity: 0;
+          }
+          100% {
+              opacity: 1;
+          }
+      }
     }
-    
-    @keyframes fadeInOpacity {
-        0% {
-		opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
+
+    .noImage{
+      border-radius: 15px;
     }
-  }
 
-  .noImage{
-    border-radius: 15px;
-  }
-
-  @media screen and (min-width: 320px) and (max-width: 374px) {
- 
-  .noImage{
-  margin-left: 5px;
-  }
-}
+    @media screen and (min-width: 320px) and (max-width: 374px) {
+  
+      .noImage{
+      margin-left: 5px;
+      }
+    }
 `

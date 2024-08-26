@@ -17,9 +17,9 @@ export function Header() {
             </HeaderTopInfo>
 
             <HeaderContainer>
-                <img className="reverse" src={PokeBallGif}></img>
-                <img src={PokemonImage} />
-                <img className="right" src={PokeBallGif}></img>
+                <img className="reverse" src={PokeBallGif} alt="pokeball"></img>
+                <img src={PokemonImage} alt="pokelogo"/>
+                <img className="right" src={PokeBallGif} alt="pokeball"></img>
             </HeaderContainer>
         </div>
     )

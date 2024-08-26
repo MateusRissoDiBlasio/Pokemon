@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState, useRef } from "react"
-// import { getPokemons, getPokemons2 } from "../../components/FilterByType/GetPokemons"
 import { getPokemons } from "../../components/FilterByType/GetPokemons"
 import { ThemeContext } from "../../Context/theme"
 import { Select, SelectStyle } from "../../components/FilterByType/FilterByType"
@@ -28,14 +27,12 @@ const PokemonByTypeList = () => {
     const [active, setActive] = useState(false)
     const [show, setShow] = useState(false)
     const [loadLimit, setLoadLimit] = useState(0)
-    const [count, setCount] = useState(0)
     
     const noImage = ['koraidon-limited-build', 'koraidon-sprinting-build', 'koraidon-swimming-build', 'koraidon-gliding-build', 'miraidon-low-power-mode', 'miraidon-drive-mode', 'miraidon-aquatic-mode', 'miraidon-glide-mode'];
     
     const offsetLimits = [{types: ['ground', 'rock', 'bug', 'ghost', 'steel', 'fire', 'electric', 'ice', 'dragon', 'dark', 'fairy', 'fighting'], limitValue: 1300 }, {types: ['poison', 'psychic'], limitValue: 1400}, {types: ['flying', 'grass'], limitValue: 1700}, {types: ['normal'], limitValue: 1800}, {types: ['water'], limitValue: 2100}]
 
 
-    
     const { theme } = useContext(ThemeContext)
 
     const handleSelectChange = (e) => {
@@ -57,8 +54,6 @@ const PokemonByTypeList = () => {
             
             const renderPokemons = await getPokemons(limit+100, offset)
             setPokemons([...pokemons, ...renderPokemons])
-        
-        setCount(count+1)
        
         }catch(error){
             console.log(error)
@@ -72,7 +67,6 @@ const PokemonByTypeList = () => {
         fetchData()
     }, [limit, offset, value]);
 
-// console.log(value)
 
     if(offset === loadLimit && value !== 'All'){
         setActive(false)
@@ -96,21 +90,10 @@ const PokemonByTypeList = () => {
     const limitFilteredPokemons = filteredPokemons.slice(0, renderAmount);
     const uniqueName = limitFilteredPokemons.filter((obj,index) => limitFilteredPokemons.findIndex((item) => item.name === obj.name) === index);
         
-    
-    // console.log(pokemons);
-    // console.log(limitFilteredPokemons);
-    // console.log(uniqueName);
-    // console.log(loadLimit);
-    // console.log(limit);
-    // console.log(offset);
-    // console.log(count);
-
-    // getPokemons2()
-
     const [hidden, setHidden] = useState(-1);
 
     return (
-        <DivCardByType style={{ color: theme.color, backgroundColor: theme.background }}>
+        <DivCardByType style={{color: theme.color, backgroundColor: theme.background}}>
             
             <Select value={value} onChange={handleSelectChange} />
         
@@ -119,7 +102,7 @@ const PokemonByTypeList = () => {
                                 
                                 return (
                                     <Link key={index} to={`/details/${pokemon.name}`}>
-                                        <DivCard key={index} style={ {color: hidden === pokemon ? theme.hover : theme.color, backgroundColor: hidden === pokemon ? theme.hover : theme.cardBackground, border: theme.cardBorder }} 
+                                        <DivCard key={index} style={{color: hidden === pokemon ? theme.hover : theme.color, backgroundColor: hidden === pokemon ? theme.hover : theme.cardBackground, border: theme.cardBorder}} 
                                                 onMouseEnter={() => setHidden(pokemon)}
                                                 onMouseLeave={() => setHidden(-1)} >
                                             
@@ -140,7 +123,7 @@ const PokemonByTypeList = () => {
                                                                                                                                                
                                             </DivImgCard>
                                             
-                                            {hidden === pokemon ? <h1 style={{ color: theme.detail}}>Click for details</h1> : null }                                              
+                                            {hidden === pokemon ? <h1 style={{color: theme.detail}}>Click for details</h1> : null}                                              
                                                                                 
                                         </DivCard>
                                     </Link>
@@ -149,11 +132,11 @@ const PokemonByTypeList = () => {
                         </DivCardContainer>
 
                         <DivBtn>
-                            { filteredTypes.includes(value) && active ? <LoadMoreTypes setRenderAmount={setRenderAmount} renderAmount={renderAmount} setOffset={setOffset} offset={offset} /> : <p className={show ? 'limitreached' : 'hide'}>WE RAN OUT OF POKÉMONS<br/>FROM THIS TYPE <br/> THERE ARE {uniqueName.length} {value} POKÉMONS</p> }                           
+                            {filteredTypes.includes(value) && active ? <LoadMoreTypes setRenderAmount={setRenderAmount} renderAmount={renderAmount} setOffset={setOffset} offset={offset} /> : <p className={show ? 'limitreached' : 'hide'}>WE RAN OUT OF POKÉMONS<br/>FROM THIS TYPE <br/> THERE ARE {uniqueName.length} {value} POKÉMONS</p>}                           
                         </DivBtn>
 
                         <DivScrollBtn>
-                            { filteredTypes.includes(value) ? <ScrollButton /> : null }
+                            {filteredTypes.includes(value) ? <ScrollButton /> : null}
                         </DivScrollBtn>  
 
                         {loading ? <p className={'load'}>Loading...</p> : ''}
@@ -216,75 +199,74 @@ const DivCardByType = styled.div`
 `
 
 const DivBtn = styled.div`
-margin-top: 1rem;
-    div{
-            justify-content: center;
-            display: flex;
-        }
+    margin-top: 1rem;
+        div{
+                justify-content: center;
+                display: flex;
+            }
 
-p{
-    display: flex;
-    // height: 68px;
-    height: 102px;
-    text-align: center;
-}
-
-.limitreached{
-    color: red;
-    font-family: "Orbitron", sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size:20px;
-    justify-content: center;
-    padding: 5px;
-    align-itens: center
-    opacity: 1;
-    animation-name: fadeInOpacity;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in;
-    animation-duration: 2s;
-    
-}
-
-.hide{
-    
-    opacity: 0;
-
-}
-
-@keyframes fadeInOpacity {
-        0% {
-		opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-}
-
-@media screen and (min-width: 320px) and (max-width: 374px) {
-    .limitreached{      
-        font-size: 18px;
-        margin-bottom: 25px;
-        max-width: 90vw;
+    p{
+        display: flex;
+        height: 102px;
+        text-align: center;
     }
-}
 
-@media screen and (min-width: 375px) and (max-width: 425px) {
-    .limitreached{      
-        font-size: 18px;
-        margin-bottom: 25px;
-        max-width: 90vw;
-}
+    .limitreached{
+        color: red;
+        font-family: "Orbitron", sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size:20px;
+        justify-content: center;
+        padding: 5px;
+        align-itens: center
+        opacity: 1;
+        animation-name: fadeInOpacity;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+        animation-duration: 2s;
         
-}
-
-@media screen and (min-width: 426px) and (max-width: 500px) {
-    .limitreached{      
-        font-size: 18px;
-        margin-bottom: 25px;
-        max-width: 90vw;
     }
-}
+
+    .hide{
+        
+        opacity: 0;
+
+    }
+
+    @keyframes fadeInOpacity {
+            0% {
+            opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 374px) {
+        .limitreached{      
+            font-size: 18px;
+            margin-bottom: 25px;
+            max-width: 90vw;
+        }
+    }
+
+    @media screen and (min-width: 375px) and (max-width: 425px) {
+        .limitreached{      
+            font-size: 18px;
+            margin-bottom: 25px;
+            max-width: 90vw;
+    }
+            
+    }
+
+    @media screen and (min-width: 426px) and (max-width: 500px) {
+        .limitreached{      
+            font-size: 18px;
+            margin-bottom: 25px;
+            max-width: 90vw;
+        }
+    }
 `
 
 const DivCard = styled.div`
@@ -337,16 +319,15 @@ const DivCard = styled.div`
 `
 
 const DivImgCard = styled.div`
-   
-   margin: 0.5rem;
+    margin: 0.5rem;
 `
 
 const DivScrollBtn = styled.div`
-display: flex;
-font-size: 40px;
-border-radius: 40px;
-cursor: pointer;
-justify-content: center;
+    display: flex;
+    font-size: 40px;
+    border-radius: 40px;
+    cursor: pointer;
+    justify-content: center;
 `
 
 export { PokemonByTypeList }

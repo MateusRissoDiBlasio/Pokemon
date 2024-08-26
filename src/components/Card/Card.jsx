@@ -23,9 +23,9 @@ export function CardsList({ pokemon }) {
         const poke = pokemon[0];
         
         return (
-            <DivCardContainerSearch style={{ color: theme.color, backgroundColor: theme.background }}>
+            <DivCardContainerSearch style={{color: theme.color, backgroundColor: theme.background}}>
                 <Link to={`/details/${poke.name}`}>
-                    <DivCard style={{ color: hidden === -1 ? theme.color : theme.hover, backgroundColor: hidden === -1 ? theme.cardBackground : theme.hover, border: theme.cardBorder}} 
+                    <DivCard style={{color: hidden === -1 ? theme.color : theme.hover, backgroundColor: hidden === -1 ? theme.cardBackground : theme.hover, border: theme.cardBorder}} 
                     onMouseEnter={() => setHidden(0)}
                     onMouseLeave={() => setHidden(-1)}>
                         <h4>{poke.name}</h4>
@@ -44,7 +44,7 @@ export function CardsList({ pokemon }) {
                             {noImage.includes(poke.name) ? <img className='noImage' src={NoImagePlaceHolder} alt={poke.name} width={'250px'} /> : null}
                             
                         </DivImgCard>
-                        {hidden === 0 ? <h1 style={{ color: theme.detail}}>Click for details</h1> : null }                                              
+                        {hidden === 0 ? <h1 style={{color: theme.detail}}>Click for details</h1> : null}                                              
                     </DivCard>
                 </Link>
                 <Button
@@ -59,11 +59,11 @@ export function CardsList({ pokemon }) {
     }      
         
     return (
-        <DivCardContainer style={{ color: theme.color, backgroundColor: theme.background }}>
+        <DivCardContainer style={{color: theme.color, backgroundColor: theme.background}}>
                 {pokemon.map((poke, index) => (
                 
                 <Link key={index} to={`/details/${poke.name}`}>
-                <DivCard key={index} style={ {color: hidden === index ? theme.hover : theme.color, backgroundColor: hidden === index ? theme.hover : theme.cardBackground, border: theme.cardBorder }} 
+                <DivCard key={index} style={{color: hidden === index ? theme.hover : theme.color, backgroundColor: hidden === index ? theme.hover : theme.cardBackground, border: theme.cardBorder }} 
                             onMouseEnter={() => setHidden(index)}
                             onMouseLeave={() => setHidden(-1)} >
                     
@@ -83,7 +83,7 @@ export function CardsList({ pokemon }) {
                         {noImage.includes(poke.name) ? <img className='noImage' src={NoImagePlaceHolder} alt={poke.name} width={'250px'} /> : null}
                                                             
                     </DivImgCard>
-                    {hidden === index ? <h1 style={{ color: theme.detail}}>Click for details</h1> : null}
+                    {hidden === index ? <h1 style={{color: theme.detail}}>Click for details</h1> : null}
                 </DivCard>
                 </Link>
             ))}
