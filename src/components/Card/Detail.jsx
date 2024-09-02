@@ -72,6 +72,7 @@ export function CardDetails() {
         typeslength: response.data.types.length,
         exception: response.data.sprites.other["official-artwork"].front_shiny,
         exception2: response.data.sprites.other.home.front_shiny,
+        namesize: response.data.name.length
 
       })
     
@@ -80,23 +81,25 @@ export function CardDetails() {
         types: response.data.types.map(element => element.type.name),
         abilities: uniqueAbilityNames.map((element,index) => ({
         name: element.ability.name,
-        text: abilitiesTexts[index]
-
+        text: abilitiesTexts[index],
         })),
+        abilitieslength: uniqueAbilityNames.length,
         moves: response.data.moves.map(element => element.move.name),
+        moveslength: response.data.moves.length,
       }))
       
     } catch (error) {
       console.error('Error geting Pokémon data:', error);
     }
   };
- 
-  
+    
   useEffect(() => {
     getPokemons()
     getAbilitiesText()
   }, [])
 
+  // console.log(pokemonDetails.moves)
+  console.log(pokemonDetails)
 
   const { theme } = useContext(ThemeContext)
   return (
@@ -132,7 +135,7 @@ export function CardDetails() {
           
               <Poke>
                   
-                  <h3>{pokemonDetails.name}</h3>
+                  {pokemonDetails.namesize >= 18 ? <h3 className="largeName">{pokemonDetails.name}</h3> : <h3>{pokemonDetails.name}</h3>}
 
                   {pokemonDetails.image !== undefined && pokemonDetails.image !== null && pokemonDetails.name !== 'mimikyu-busted' && pokemonDetails.name !== 'mimikyu-totem-busted' && !noImage.includes(pokemonDetails.name) ? <img src={pokemonDetails.image} alt={pokemonDetails.name} width={'300px'} height={'300px'} /> : null}
 
@@ -151,7 +154,7 @@ export function CardDetails() {
           </ContainerDetailsDiv>
           
           <TitlesDiv>
-            <h4>Abilities:</h4>
+            {pokemonDetails.abilitieslength <= 1  ? <h4>Ability:</h4> : <h4>Abilities</h4>}
           </TitlesDiv>
           
           <UlAbilities style={{border:theme.btnBorder, backgroundColor: theme.detailsHeaderColor}}>
@@ -169,7 +172,10 @@ export function CardDetails() {
           <UlMovesDiv>
             
             <UlMoves style={{border:theme.btnBorder, backgroundColor: theme.detailsHeaderColor}}>
-              {pokemonDetails.moves?.sort().map((move, index) => (
+              {/* {pokemonDetails.moves?.sort().map((move, index) => (
+                <li key={index}>{move}</li>
+              ))} */}
+              {pokemonDetails.moveslength === 0  ? <p className='NoMoves'>No listed moves</p> : pokemonDetails.moves?.sort().map((move, index) => (
                 <li key={index}>{move}</li>
               ))}
             </UlMoves>
@@ -269,6 +275,28 @@ const HeaderDetails = styled.div`
         width: 250px;
       }
     }
+
+    @media screen and (min-width: 501px) and (max-width: 767px) {
+        
+      max-width: 100vw;
+      padding: 10px;
+      height: 20vh;
+      justify-content: space-around;
+      
+      div{
+        flex-direction:column;
+        gap: 0;  
+      }
+
+      button{
+        width: 130px;
+        padding:15px; 
+      }
+
+      img{
+        width: 280px;
+      }
+    }
 `
 
 const Container = styled.div`
@@ -290,6 +318,12 @@ const Container = styled.div`
     height: 80vh;
 
     }
+    
+    @media screen and (min-width: 501px) and (max-width: 767px) {
+
+    height: 80vh;
+
+    }    
 `
 
 const ContainerDetailsDiv = styled.div`
@@ -360,6 +394,13 @@ const Type = styled.div`
           margin-right: 15px;
 
     }
+
+    @media screen and (min-width: 501px) and (max-width: 767px) {
+
+
+          margin-right: 5px;
+
+    }
 `
 
 const Poke = styled.div`
@@ -368,6 +409,8 @@ const Poke = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+
   
   h3 {
       max-width: 400px;
@@ -381,20 +424,29 @@ const Poke = styled.div`
   @media screen and (min-width: 320px) and (max-width: 374px) {
 
     h3 {
-      font-size: 24px;      
+      font-size: 24px
+    }
+
+    .largeName{
+      font-size: 16px
     }
 
     img{
       width: 180px;
       height: 180px;
     }
+    
 
   }
 
   @media screen and (min-width: 375px) and (max-width: 425px) {
 
     h3 {
-      font-size: 26px;      
+      font-size: 26px
+    }
+
+    .largeName{
+      font-size: 20px
     }
 
     img{
@@ -406,6 +458,10 @@ const Poke = styled.div`
 
 
   @media screen and (min-width: 426px) and (max-width: 500px) {
+
+    .largeName{
+      font-size: 22px
+    }
 
     img{
       width: 220px;
@@ -444,10 +500,18 @@ const TitlesDiv = styled.div`
     margin-left: 10px;
 
   }
+
+  @media screen and (min-width: 501px) and (max-width: 767px) {
+
+    max-width: 90vw;
+    margin-left: 10px;
+
+  }
 `
 
 const UlAbilities = styled.ul`
   width: 600px;
+  min-height: 50px;
   max-height: 140px;
   border-radius: 5px;
   padding: 8px;
@@ -466,7 +530,7 @@ const UlAbilities = styled.ul`
         }
     }
 
-    @media screen and (min-width: 320px) and (max-width: 500px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) {
 
       max-width: 90vw;
 
@@ -492,11 +556,12 @@ const UlMovesDiv = styled.ul`
   width: 600px;
   justify-content: space-between;
 
-  @media screen and (min-width: 320px) and (max-width: 500px) {
+  @media screen and (min-width: 320px) and (max-width: 670px) {
 
     width: 90vw;
           
   }
+
 `
 
 const UlMoves = styled.ul`
@@ -519,10 +584,19 @@ const UlMoves = styled.ul`
       text-transform: uppercase;
     }
 
-    @media screen and (min-width: 320px) and (max-width: 500px) {
+    .NoMoves{
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 700;
+      list-style: none;
+      font-family: "Roboto", sans-serif;
+      text-transform: uppercase;
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 600px) {
       display: flex;
       flex-direction: column;
-      
+            
       li {
         font-size: 0.8rem;
         }

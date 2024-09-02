@@ -20,8 +20,10 @@ export function MainPage() {
 
     const pokeNamesWithNumbers = ['zygarde-10' , 'zygarde-50', 'zygarde-10-power-construct', 'zygarde-50-power-construct', 'porygon2' ]
     
-
+    const [loadingRandom, setLoadingRandom] = useState(false);
     const getPokemons = async () => {
+        
+        setLoadingRandom(true);
         try {
             const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`)
             const pokemonData = await Promise.all(response.data.results.map(async (pokemon) => {
@@ -41,7 +43,9 @@ export function MainPage() {
             
         } catch (error) {
             console.error('Error fetching Pokémon data:', error);
-        }
+        }finally {
+            setLoadingRandom(false);
+          }
     };
 
     useEffect(() => {
@@ -75,7 +79,7 @@ export function MainPage() {
             }
             setPokemons([pokemonData]);
 
-            if( search.trim() === pokemonData.name){
+            if(search.trim() === pokemonData.name){
                 setVisible(false)
                 scrollDown()
             
@@ -96,7 +100,7 @@ export function MainPage() {
 
     const getName = (event) => {
                
-        const query = event.target.value;    
+        const query = event.target.value.replace(/\s/g, '');    
         let inputNonLettersCheck = /^[a-zA-Z-]+$/;
 
         if(!isNaN(query) && query.trim() !== '') {
@@ -175,22 +179,22 @@ export function MainPage() {
 
         return (
 
-            <DivMainPage style={{ color: theme.color, backgroundColor: theme.background }}>
+            <DivMainPage style={{color: theme.color, backgroundColor: theme.background }}>
                 <DivSearchPoke>
                     <label htmlFor="input">Search for a Pokémon</label>
                     
                     <SearchInput
                         id='input'
                         placeholder='By Name'
-                        style={{ color: theme.color, backgroundColor: theme.background, border: visible === true ? theme.btnBorderHover : theme.btnBorder, boxShadow: visible === true ? theme.shaddow : null}}
+                        style={{color: theme.color, backgroundColor: theme.background, border: visible === true ? theme.btnBorderHover : theme.btnBorder, boxShadow: visible === true ? theme.shaddow : null}}
                         onChange={getName}
                         type='input'
                         className={shake ? 'animate invalidinput': ''}
                         onAnimationEnd={() => setShake(false)}
-                        onKeyDown={ e => e.key ==='Enter' ? handleEnter() :''}                        
+                        onKeyDown={e => e.key ==='Enter' ? handleEnter() :''}                        
                     
                     />
-                    <button onClick={ () => {handleEnter(); handleClick()}} onMouseEnter={() => setHovering(0)} onMouseLeave={() => setHovering(-1)} style={{ color: hovering ? theme.color : theme.revcolor, backgroundColor: hovering ? theme.background : theme.color, border: theme.btnBorder }}><img src={Go} alt="GO logo"></img>!</button>
+                    <button onClick={() => {handleEnter(); handleClick()}} onMouseEnter={() => setHovering(0)} onMouseLeave={() => setHovering(-1)} style={{color: hovering ? theme.color : theme.revcolor, backgroundColor: hovering ? theme.background : theme.color, border: theme.btnBorder }}><img src={Go} alt="GO logo"></img>!</button>
                     {visible === true ? <h2 key={errorMessage} style={{color: 'red'}}>{errorMessage}</h2> : null}
                     {loading ? <p className={'load'}>Loading...</p> : ''}
                     
@@ -204,20 +208,20 @@ export function MainPage() {
         
     return (
 
-        <DivMainPage style={{ color: theme.color, backgroundColor: theme.background }}>
+        <DivMainPage style={{color: theme.color, backgroundColor: theme.background }}>
             <DivSearchPoke>
                 <label htmlFor="input">Search for a Pokémon</label>
                 <SearchInput
                     id='input'
                     placeholder='By Name'
-                    style={{ color: theme.color, backgroundColor: theme.background, border: visible === true ? theme.btnBorderHover : theme.btnBorder, boxShadow: visible === true ? theme.shaddow : null}}
+                    style={{color: theme.color, backgroundColor: theme.background, border: visible === true ? theme.btnBorderHover : theme.btnBorder, boxShadow: visible === true ? theme.shaddow : null}}
                     onChange={getName}
                     type='input'
                     className={shake ? 'animate invalidinput': ''}
                     onAnimationEnd={() => setShake(false)}
-                    onKeyDown={ e => e.key ==='Enter' ? handleEnter() :''}
+                    onKeyDown={e => e.key ==='Enter' ? handleEnter() :''}
                 />
-                <button onClick={ () => {handleEnter(); handleClick()}} onMouseEnter={() => setHovering(0)} onMouseLeave={() => setHovering(-1)} style={{ color: hovering ? theme.color : theme.revcolor, backgroundColor: hovering ? theme.background : theme.color, border: theme.btnBorder }}><img src={Go} alt="GO logo"></img>!</button>
+                <button onClick={() => {handleEnter(); handleClick()}} onMouseEnter={() => setHovering(0)} onMouseLeave={() => setHovering(-1)} style={{ color: hovering ? theme.color : theme.revcolor, backgroundColor: hovering ? theme.background : theme.color, border: theme.btnBorder }}><img src={Go} alt="GO logo"></img>!</button>
                 {visible === true ? <h2 key={errorMessage} style={{color: 'red'}}>{errorMessage}</h2> : null}
                 {loading ? <p className={'load'} >Loading...</p> : ''}
                 
@@ -228,8 +232,9 @@ export function MainPage() {
             {value === true ?  <Random>
                                     <h2>Random Pokemóns</h2>
                                     <CardsList pokemon={pokemons} />
+                                    <DivLoading>{loadingRandom ? <p className={'loadrandom'} >Loading...</p> : ''}</DivLoading>
                                     <LoadMoreButton onClick={() => getPokemons()} />
-                                    <ScrollButton />
+                                    <ScrollButton />                                    
                                 </Random> : <PokemonByTypeList/> 
             }
 
@@ -249,6 +254,38 @@ const Random = styled.div`
         text-align: center;
     }
 `
+
+const DivLoading = styled.div`
+    height: 30px;
+    justify-content: center;    
+    align-content: center;
+
+    .loadrandom{
+            font-family: "Orbitron", sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            opacity: 1;
+            animation-name: fadeInOpacity;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in;
+            animation-duration: 0.3s;
+            color: red;
+            text-shadow: 1px 1px black;
+            
+        }
+
+        @keyframes fadeInOpacity {
+            0% {
+            opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        } 
+
+`
+
 
 const DivMainPage = styled.div`
     padding: 1rem;

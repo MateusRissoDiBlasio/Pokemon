@@ -30,7 +30,7 @@ const PokemonByTypeList = () => {
     
     const noImage = ['koraidon-limited-build', 'koraidon-sprinting-build', 'koraidon-swimming-build', 'koraidon-gliding-build', 'miraidon-low-power-mode', 'miraidon-drive-mode', 'miraidon-aquatic-mode', 'miraidon-glide-mode'];
     
-    const offsetLimits = [{types: ['ground', 'rock', 'bug', 'ghost', 'steel', 'fire', 'electric', 'ice', 'dragon', 'dark', 'fairy', 'fighting'], limitValue: 1300 }, {types: ['poison', 'psychic'], limitValue: 1400}, {types: ['flying', 'grass'], limitValue: 1700}, {types: ['normal'], limitValue: 1800}, {types: ['water'], limitValue: 2100}]
+    const offsetLimits = [{types: ['ground', 'rock', 'bug', 'ghost', 'steel', 'fire', 'electric', 'ice', 'dragon', 'dark', 'fairy', 'fighting'], limitValue: 1300 }, {types: ['poison'], limitValue: 1400}, {types: ['psychic'], limitValue: 1500}, {types: ['flying', 'grass'], limitValue: 1700}, {types: ['normal'], limitValue: 1800}, {types: ['water'], limitValue: 2100}]
 
 
     const { theme } = useContext(ThemeContext)
@@ -45,28 +45,43 @@ const PokemonByTypeList = () => {
     const [loading, setLoading] = useState(false);
     useEffect(() => {
         setLoading(true);
+        setTryAgain(false);
        
         async function fetchData() {
         
         try{
             
-            (value !== ('All' && 'all')) ? setLimit(0) : setLimit(limit)                             
+            if ((value === "poison" && offset === 400) || (value === "poison" && offset === 500)) {setTryAgain(true), setLoading(false)}
+
+            if ((value === "ground" || value === "bug" || value === "steel") && offset === 100) {
+                setTryAgain(true), setLoading(false)}  
             
+            if (value === "water" && offset === 200) {setTryAgain(true), setLoading(false)}
+            
+            if (value === "dragon" && offset === 500) {setTryAgain(true), setLoading(false)}
+
+            // if ((value === "dark" || value === "dragon") && uniqueName.length === 0) {setTryAgain(true), setLoading(false)}
+
+            if ((value === "dark" || value === "dragon") && offset === 0) {setOffset(+100)}
+
+            (value !== ('All' && 'all')) ? setLimit(0) : setLimit(limit) 
             const renderPokemons = await getPokemons(limit+100, offset)
             setPokemons([...pokemons, ...renderPokemons])
        
         }catch(error){
-            console.log(error)
+            console.log(error);
+             
         }
 
         finally {
-            setLoading(false);
+            setLoading(false);            
          }
  
     }
         fetchData()
     }, [limit, offset, value]);
 
+    const [tryAgain, setTryAgain] = useState(false);
 
     if(offset === loadLimit && value !== 'All'){
         setActive(false)
@@ -89,6 +104,8 @@ const PokemonByTypeList = () => {
 
     const limitFilteredPokemons = filteredPokemons.slice(0, renderAmount);
     const uniqueName = limitFilteredPokemons.filter((obj,index) => limitFilteredPokemons.findIndex((item) => item.name === obj.name) === index);
+
+    console.log(uniqueName.length);
         
     const [hidden, setHidden] = useState(-1);
 
@@ -130,7 +147,13 @@ const PokemonByTypeList = () => {
                                 )
                             })}
                         </DivCardContainer>
+                        
+                        <DivLoading>
+                            {loading ? <p className={'load'}>Loading...</p> : ''}
+                            {tryAgain ? <p className={'load'}>Try again...</p> : ''}
 
+                        </DivLoading>
+                        
                         <DivBtn>
                             {filteredTypes.includes(value) && active ? <LoadMoreTypes setRenderAmount={setRenderAmount} renderAmount={renderAmount} setOffset={setOffset} offset={offset} /> : <p className={show ? 'limitreached' : 'hide'}>WE RAN OUT OF POKÉMONS<br/>FROM THIS TYPE <br/> THERE ARE {uniqueName.length} {value} POKÉMONS</p>}                           
                         </DivBtn>
@@ -139,7 +162,7 @@ const PokemonByTypeList = () => {
                             {filteredTypes.includes(value) ? <ScrollButton /> : null}
                         </DivScrollBtn>  
 
-                        {loading ? <p className={'load'}>Loading...</p> : ''}
+                        
                                           
 
         </DivCardByType>
@@ -178,11 +201,16 @@ const DivCardByType = styled.div`
             display:flex;
             justify-content: center;               
         }
-        p{
-            display:flex;
-            justify-content: center;
-        }
-        .load{
+        
+`
+
+const DivLoading = styled.div`
+    margin-top: 10px;
+    display: flex;
+    height: 15px;
+    justify-content: center;
+    
+    .load{
             font-size: 1.5rem;
             font-family: "Orbitron", sans-serif;
             font-weight: 700;
@@ -195,7 +223,10 @@ const DivCardByType = styled.div`
             color: red;
             text-shadow: 1px 1px black;
             margin-top: 5px;
-        }           
+        }     
+    p{
+        
+    }                  
 `
 
 const DivBtn = styled.div`
@@ -245,8 +276,8 @@ const DivBtn = styled.div`
 
     @media screen and (min-width: 320px) and (max-width: 374px) {
         .limitreached{      
-            font-size: 18px;
-            margin-bottom: 25px;
+            font-size: 16px;
+            margin-bottom: 20px;
             max-width: 90vw;
         }
     }

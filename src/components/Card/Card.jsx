@@ -95,7 +95,7 @@ export function CardsList({ pokemon }) {
 
 const DivCardContainer = styled.div`
    display: flex;
-   max-width: 80vw;
+   max-width: 75vw;
    flex-wrap: wrap;
    align-items: center;
    justify-content: center;
