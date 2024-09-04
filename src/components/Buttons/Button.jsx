@@ -25,6 +25,7 @@ const BtnGeneral  = styled.button`
     cursor: pointer;
     font-size: 1rem; 
     margin: 10px;
+    min-width: 120.5px;
     
     &:focus {
       outline: none

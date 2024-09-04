@@ -300,9 +300,9 @@ const DivMainPage = styled.div`
         font-family: "Orbitron", sans-serif;
         text-align: center;
     }
-    button{
-        min-width:7rem;
-    }
+    // button{
+    //     min-width:7rem;
+    // }
 `
 
 const SearchInput = styled.input`

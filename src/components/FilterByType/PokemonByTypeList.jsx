@@ -43,9 +43,11 @@ const PokemonByTypeList = () => {
     }
     
     const [loading, setLoading] = useState(false);
+    const [disabled, setDisabled] = useState(false);
     useEffect(() => {
         setLoading(true);
         setTryAgain(false);
+        setDisabled(true);
        
         async function fetchData() {
         
@@ -60,8 +62,6 @@ const PokemonByTypeList = () => {
             
             if (value === "dragon" && offset === 500) {setTryAgain(true), setLoading(false)}
 
-            // if ((value === "dark" || value === "dragon") && uniqueName.length === 0) {setTryAgain(true), setLoading(false)}
-
             if ((value === "dark" || value === "dragon") && offset === 0) {setOffset(+100)}
 
             (value !== ('All' && 'all')) ? setLimit(0) : setLimit(limit) 
@@ -74,7 +74,8 @@ const PokemonByTypeList = () => {
         }
 
         finally {
-            setLoading(false);            
+            setLoading(false);
+            setDisabled(false);            
          }
  
     }
@@ -88,6 +89,8 @@ const PokemonByTypeList = () => {
         setShow(true)
         setOffset(loadLimit+100)
     };
+
+    console.log(disabled)
 
 
     const filteredPokemons = pokemons.filter((pokemon) => {
@@ -108,6 +111,7 @@ const PokemonByTypeList = () => {
     console.log(uniqueName.length);
         
     const [hidden, setHidden] = useState(-1);
+    
 
     return (
         <DivCardByType style={{color: theme.color, backgroundColor: theme.background}}>
@@ -155,7 +159,7 @@ const PokemonByTypeList = () => {
                         </DivLoading>
                         
                         <DivBtn>
-                            {filteredTypes.includes(value) && active ? <LoadMoreTypes setRenderAmount={setRenderAmount} renderAmount={renderAmount} setOffset={setOffset} offset={offset} /> : <p className={show ? 'limitreached' : 'hide'}>WE RAN OUT OF POKÉMONS<br/>FROM THIS TYPE <br/> THERE ARE {uniqueName.length} {value} POKÉMONS</p>}                           
+                            {filteredTypes.includes(value) && active ? <LoadMoreTypes setRenderAmount={setRenderAmount} renderAmount={renderAmount} setOffset={setOffset} offset={offset} /> : <p className={show ? 'limitreached' : 'hide'}>WE RAN OUT OF POKÉMONS<br/>FROM THIS TYPE <br/> THERE ARE {uniqueName.length} <br/> {value} POKÉMONS</p>}
                         </DivBtn>
 
                         <DivScrollBtn>
@@ -238,7 +242,8 @@ const DivBtn = styled.div`
 
     p{
         display: flex;
-        height: 102px;
+        min-height: 102px;
+        max-height: 120px;
         text-align: center;
     }
 
@@ -250,12 +255,13 @@ const DivBtn = styled.div`
         font-size:20px;
         justify-content: center;
         padding: 5px;
-        align-itens: center
+        align-itens: center;
         opacity: 1;
         animation-name: fadeInOpacity;
         animation-iteration-count: 1;
         animation-timing-function: ease-in;
         animation-duration: 2s;
+        margin-bottom: 15px;
         
     }
 
@@ -277,16 +283,16 @@ const DivBtn = styled.div`
     @media screen and (min-width: 320px) and (max-width: 374px) {
         .limitreached{      
             font-size: 16px;
-            margin-bottom: 20px;
-            max-width: 90vw;
+            margin-bottom: 15px;
+            max-width: 75vw;
         }
     }
 
     @media screen and (min-width: 375px) and (max-width: 425px) {
         .limitreached{      
             font-size: 18px;
-            margin-bottom: 25px;
-            max-width: 90vw;
+            margin-bottom: 20px;
+            max-width: 75vw;
     }
             
     }
@@ -294,8 +300,8 @@ const DivBtn = styled.div`
     @media screen and (min-width: 426px) and (max-width: 500px) {
         .limitreached{      
             font-size: 18px;
-            margin-bottom: 25px;
-            max-width: 90vw;
+            margin-bottom: 20px;
+            max-width: 75vw;
         }
     }
 `
