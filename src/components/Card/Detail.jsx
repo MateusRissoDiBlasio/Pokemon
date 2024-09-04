@@ -154,7 +154,7 @@ export function CardDetails() {
           </ContainerDetailsDiv>
           
           <TitlesDiv>
-            {pokemonDetails.abilitieslength <= 1  ? <h4>Ability:</h4> : <h4>Abilities</h4>}
+            {pokemonDetails.abilitieslength <= 1  ? <h4>Ability:</h4> : <h4>Abilities:</h4>}
           </TitlesDiv>
           
           <UlAbilities style={{border:theme.btnBorder, backgroundColor: theme.detailsHeaderColor}}>

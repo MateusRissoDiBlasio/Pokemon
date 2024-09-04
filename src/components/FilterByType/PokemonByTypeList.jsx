@@ -247,7 +247,12 @@ const DivBtn = styled.div`
         text-align: center;
     }
 
+    .alert{
+        color: yellow;
+    }
+
     .limitreached{
+        margin-top: -25px;
         color: red;
         font-family: "Orbitron", sans-serif;
         font-weight: 700;
@@ -283,7 +288,7 @@ const DivBtn = styled.div`
     @media screen and (min-width: 320px) and (max-width: 374px) {
         .limitreached{      
             font-size: 16px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             max-width: 75vw;
         }
     }
