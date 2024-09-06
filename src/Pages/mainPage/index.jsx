@@ -228,6 +228,8 @@ export function MainPage() {
             </DivSearchPoke>
             
             <Button onClick={()=> setValue(value === true ? false : true )}>{value === true ? "By Type" : "Random List" }</Button>
+            
+            {/* { value !== true ? <Button onClick={()=> setValue(value !== true ? true : true )}>reload</Button> : ''} */}
 
             {value === true ?  <Random>
                                     <h2>Random Pokemóns</h2>
@@ -235,8 +237,7 @@ export function MainPage() {
                                     <DivLoading>{loadingRandom ? <p className={'loadrandom'} >Loading...</p> : ''}</DivLoading>
                                     <LoadMoreButton onClick={() => getPokemons()} />
                                     <ScrollButton />                                    
-                                </Random> : <PokemonByTypeList/> 
-            }
+                                </Random> : <PokemonByTypeList/>            }
 
         </DivMainPage>
     )

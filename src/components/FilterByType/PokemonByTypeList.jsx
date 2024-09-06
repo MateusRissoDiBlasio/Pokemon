@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import { LoadMoreTypes } from "../Buttons/LoadMore"
 import { ScrollButton } from "../Buttons/ScrollButton"
 import NoImagePlaceHolder from '/No-Pokemon-Image-card.png'
+import { Button } from "../Buttons/Button"
 
 const response = await fetch(`https://pokeapi.co/api/v2/type`)
     const data = await response.json([])
@@ -112,11 +113,13 @@ const PokemonByTypeList = () => {
         
     const [hidden, setHidden] = useState(-1);
     
+    
 
     return (
         <DivCardByType style={{color: theme.color, backgroundColor: theme.background}}>
             
-            <Select value={value} onChange={handleSelectChange} />
+            <Select value={value} onChange={handleSelectChange}/>
+            { value !== 'All' ? <Button className={'reload'} onClick={()=> {setOffset(0), setLimit(0), setPokemons([]), setValue('All'), setRenderAmount(10), setActive(false), setShow(false), setLoadLimit('')}}>Reload</Button> : ''}
         
                         <DivCardContainer >
                             {uniqueName.map((pokemon,index) => {
@@ -204,6 +207,10 @@ const DivCardByType = styled.div`
         label{
             display:flex;
             justify-content: center;               
+        }
+        .reload{
+        width: 40px;
+        align-self: center;
         }
         
 `
