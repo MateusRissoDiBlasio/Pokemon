@@ -228,8 +228,6 @@ export function MainPage() {
             </DivSearchPoke>
             
             <Button onClick={()=> setValue(value === true ? false : true )}>{value === true ? "By Type" : "Random List" }</Button>
-            
-            {/* { value !== true ? <Button onClick={()=> setValue(value !== true ? true : true )}>reload</Button> : ''} */}
 
             {value === true ?  <Random>
                                     <h2>Random Pokemóns</h2>
@@ -301,9 +299,6 @@ const DivMainPage = styled.div`
         font-family: "Orbitron", sans-serif;
         text-align: center;
     }
-    // button{
-    //     min-width:7rem;
-    // }
 `
 
 const SearchInput = styled.input`
@@ -338,6 +333,7 @@ const DivSearchPoke = styled.div`
         animation-duration: 0.3s;
         color: red;
         text-shadow: 1px 1px black;
+        font-size: 22px;
     }
 
     button{
@@ -409,6 +405,9 @@ const DivSearchPoke = styled.div`
         h2{
             font-size: 16px;
         }
+        .load{
+            font-size: 16px;
+        }
     }
 
     @media screen and (min-width: 375px) and (max-width: 425px) {
@@ -416,14 +415,15 @@ const DivSearchPoke = styled.div`
         h2{
             font-size: 20px;
         }
-        
+        .load{
+            font-size: 20px;
+        }
     }
 
     @media screen and (min-width: 426px) and (max-width: 500px) {
         height:300px;
         h2{
             font-size: 22px;
-        }
-        
+        }        
     }
 `

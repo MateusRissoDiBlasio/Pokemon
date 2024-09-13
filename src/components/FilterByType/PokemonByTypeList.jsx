@@ -1,13 +1,14 @@
-import { useContext, useEffect, useState, useRef } from "react"
+import { useContext, useEffect, useState } from "react"
 import { getPokemons } from "../../components/FilterByType/GetPokemons"
 import { ThemeContext } from "../../Context/theme"
-import { Select, SelectStyle } from "../../components/FilterByType/FilterByType"
+import { Select } from "../../components/FilterByType/FilterByType"
 import styled from "styled-components"
 import { Link } from 'react-router-dom'
 import { LoadMoreTypes } from "../Buttons/LoadMore"
 import { ScrollButton } from "../Buttons/ScrollButton"
 import NoImagePlaceHolder from '/No-Pokemon-Image-card.png'
-import { Button } from "../Buttons/Button"
+import UseAnimations from 'react-useanimations';
+import lock from 'react-useanimations/lib/lock';
 
 const response = await fetch(`https://pokeapi.co/api/v2/type`)
     const data = await response.json([])
@@ -41,6 +42,8 @@ const PokemonByTypeList = () => {
         const filteredLimits = offsetLimits.filter(l => l.types.includes(e.target.value));
         setActive(true);
         setLoadLimit(filteredLimits[0].limitValue);
+        setIsLockDisabled(false)
+        setChecked(false)
     }
     
     const [loading, setLoading] = useState(false);
@@ -91,8 +94,6 @@ const PokemonByTypeList = () => {
         setOffset(loadLimit+100)
     };
 
-    console.log(disabled)
-
 
     const filteredPokemons = pokemons.filter((pokemon) => {
         if (pokemon.types.length > 1 && pokemon.types[1].type.name === value) {
@@ -108,10 +109,26 @@ const PokemonByTypeList = () => {
 
     const limitFilteredPokemons = filteredPokemons.slice(0, renderAmount);
     const uniqueName = limitFilteredPokemons.filter((obj,index) => limitFilteredPokemons.findIndex((item) => item.name === obj.name) === index);
-
-    console.log(uniqueName.length);
         
     const [hidden, setHidden] = useState(-1);
+    const [checked, setChecked] = useState(false);
+    const [lockHover, setLockHover] = useState(-1);
+    const [isLockDisabled, setIsLockDisabled] = useState(true);
+
+    const LockPuro = () => {
+        
+        return (
+          <DivLockPuro style={{color: lockHover === -1 ? theme.color : theme.revcolor , backgroundColor: lockHover === -1 ? theme.btnBackground : theme.revBtnBackground, border: theme.btnBorder}}
+          className={`container ${isLockDisabled ? 'disabled' : ''}`}
+          onMouseEnter={() => setLockHover(0)}
+          onMouseLeave={() => setLockHover(-1)}
+          onClick={()=> {setOffset(0), setLimit(0), setPokemons([]), setValue('All'), setRenderAmount(10), setActive(false), setShow(false), setLoadLimit(''), setLockHover(-1), setTimeout(() => {setChecked(!checked); setIsLockDisabled(true), setLockHover(-1) }, 100), setTimeout(() => {setChecked(false)}, 2500)}}
+          >
+            <UseAnimations size={50} wrapperStyle={{ marginTop: '5px' }} animation={lock} autoplay={checked} strokeColor={lockHover === -1 ? theme.color: theme.revcolor}/>
+                Unlock <br/> Selection
+          </DivLockPuro>
+        );
+      };  
     
     
 
@@ -119,8 +136,10 @@ const PokemonByTypeList = () => {
         <DivCardByType style={{color: theme.color, backgroundColor: theme.background}}>
             
             <Select value={value} onChange={handleSelectChange}/>
-            { value !== 'All' ? <Button className={'reload'} onClick={()=> {setOffset(0), setLimit(0), setPokemons([]), setValue('All'), setRenderAmount(10), setActive(false), setShow(false), setLoadLimit('')}}>Reload</Button> : ''}
-        
+            
+            <div className={isLockDisabled ? 'disabledDivOn' : 'disabledDiv'}>
+                <LockPuro />
+            </div>
                         <DivCardContainer >
                             {uniqueName.map((pokemon,index) => {
                                 
@@ -203,16 +222,28 @@ const DivCardByType = styled.div`
                 &:focus {
                 outline: none
                 }
+                
         }
         label{
             display:flex;
             justify-content: center;               
         }
-        .reload{
-        width: 40px;
-        align-self: center;
+
+        .disabledDiv{
+            justify-content: center;               
+            max-width: 130px;
+            align-self: center;
+            margin-bottom: 10px;
         }
-        
+        .disabledDivOn{
+            justify-content: center;               
+            max-width: 130px;
+            align-self: center;
+            margin-bottom: 10px;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+          
 `
 
 const DivLoading = styled.div`
@@ -234,10 +265,7 @@ const DivLoading = styled.div`
             color: red;
             text-shadow: 1px 1px black;
             margin-top: 5px;
-        }     
-    p{
-        
-    }                  
+        }                      
 `
 
 const DivBtn = styled.div`
@@ -378,5 +406,26 @@ const DivScrollBtn = styled.div`
     cursor: pointer;
     justify-content: center;
 `
+
+const DivLockPuro = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 5px 20px 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1rem; 
+    margin: 10px;
+    align-self: center;
+    text-align: center;
+    
+    div{
+        align-self: center;
+    }
+    
+    &:focus {
+      outline: none
+    }
+`
+
 
 export { PokemonByTypeList }

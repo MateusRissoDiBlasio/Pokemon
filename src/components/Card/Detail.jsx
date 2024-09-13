@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { ThemeContext, themes } from '../../Context/theme';
+import { ThemeContext } from '../../Context/theme';
 import { Button } from '../Buttons/Button'
 import { ThemeToggleButton } from '../Buttons/Theme-toggle';
 import PokemonImage from '/pokemon.svg'
@@ -22,7 +22,7 @@ export function CardDetails() {
       const abilitiesTexts = await Promise.all(abilities.map(async (ability) => {
         const response = await axios.get(`https://pokeapi.co/api/v2/ability/${ability}`);
 
-        const filteredAbilities = response.data.flavor_text_entries
+        const filteredAbilities = response.data.flavor_text_entries;
         const filteredAbilitiesText = filteredAbilities.filter(filteredAbility => { return filteredAbility.language.name === 'en' });
 
         if (response.data.effect_entries.length === 1){
@@ -98,9 +98,7 @@ export function CardDetails() {
     getAbilitiesText()
   }, [])
 
-  // console.log(pokemonDetails.moves)
-  console.log(pokemonDetails)
-
+  
   const { theme } = useContext(ThemeContext)
   return (
     

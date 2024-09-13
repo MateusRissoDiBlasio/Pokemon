@@ -5,8 +5,6 @@ async function getPokemons(limit, offset) {
     const data = await response.json([])
     const { results } = data
 
-    console.log(data)
-
     const pokemonsNames = results.map((pokemon) => {
         return pokemon.name
     })
