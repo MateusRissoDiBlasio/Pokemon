@@ -79,7 +79,8 @@ const PokemonByTypeList = () => {
 
         finally {
             setLoading(false);
-            setDisabled(false);            
+            setDisabled(false);
+                   
          }
  
     }
@@ -119,8 +120,8 @@ const PokemonByTypeList = () => {
         
         return (
           <DivLockPuro style={{color: lockHover === -1 ? theme.color : theme.revcolor , backgroundColor: lockHover === -1 ? theme.btnBackground : theme.revBtnBackground, border: theme.btnBorder}}
-          className={`container ${isLockDisabled ? 'disabled' : ''}`}
-          onClick={()=> {setOffset(0), setLimit(0), setPokemons([]), setValue('All'), setRenderAmount(10), setActive(false), setShow(false), setLoadLimit(''), setTimeout(() => {setChecked(true), setLockHover(-1), setIsLockDisabled(true)}, 150), setTimeout(() => {setChecked(false)}, 2000)}}
+          
+          onClick={()=> {setOffset(0), setLimit(0), setPokemons([]), setValue('All'), setRenderAmount(10), setActive(false), setShow(false), setLoadLimit(''), setTimeout(() => {setChecked(true)}, 150), setTimeout(() => {setChecked(false), setIsLockDisabled(true), setLockHover(-1)}, 1000)}}
           >
             <UseAnimations size={50} wrapperStyle={{ marginTop: '5px' }} animation={lock} autoplay={checked} strokeColor={lockHover === -1 ? theme.color: theme.revcolor}/>
                 Unlock <br/> Selection
