@@ -120,9 +120,7 @@ const PokemonByTypeList = () => {
         return (
           <DivLockPuro style={{color: lockHover === -1 ? theme.color : theme.revcolor , backgroundColor: lockHover === -1 ? theme.btnBackground : theme.revBtnBackground, border: theme.btnBorder}}
           className={`container ${isLockDisabled ? 'disabled' : ''}`}
-          onMouseEnter={() => setLockHover(0)}
-          onMouseLeave={() => setLockHover(-1)}
-          onClick={()=> {setOffset(0), setLimit(0), setPokemons([]), setValue('All'), setRenderAmount(10), setActive(false), setShow(false), setLoadLimit(''), setLockHover(-1), setTimeout(() => {setChecked(!checked); setIsLockDisabled(true), setLockHover(-1) }, 100), setTimeout(() => {setChecked(false)}, 2500)}}
+          onClick={()=> {setOffset(0), setLimit(0), setPokemons([]), setValue('All'), setRenderAmount(10), setActive(false), setShow(false), setLoadLimit(''), setTimeout(() => {setChecked(!checked); setIsLockDisabled(true), setLockHover(-1) }, 100), setTimeout(() => {setChecked(false)}, 2500)}}
           >
             <UseAnimations size={50} wrapperStyle={{ marginTop: '5px' }} animation={lock} autoplay={checked} strokeColor={lockHover === -1 ? theme.color: theme.revcolor}/>
                 Unlock <br/> Selection
@@ -137,7 +135,7 @@ const PokemonByTypeList = () => {
             
             <Select value={value} onChange={handleSelectChange}/>
             
-            <div className={isLockDisabled ? 'disabledDivOn' : 'disabledDiv'}>
+            <div className={isLockDisabled ? 'disabledDivOn' : 'disabledDiv'} onMouseEnter={() => setLockHover(0)} onMouseLeave={() => setLockHover(-1)}>
                 <LockPuro />
             </div>
                         <DivCardContainer >
@@ -241,7 +239,7 @@ const DivCardByType = styled.div`
             align-self: center;
             margin-bottom: 10px;
             pointer-events: none;
-            opacity: 0.7;
+            opacity: 0.3;
         }
           
 `
