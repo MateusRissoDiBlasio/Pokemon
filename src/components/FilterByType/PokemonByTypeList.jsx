@@ -116,14 +116,27 @@ const PokemonByTypeList = () => {
     const [lockHover, setLockHover] = useState(-1);
     const [isLockDisabled, setIsLockDisabled] = useState(true);
 
+    // const LockPuro = () => {
+        
+    //     return (
+    //       <DivLockPuro style={{color: lockHover === -1 ? theme.color : theme.revcolor , backgroundColor: lockHover === -1 ? theme.btnBackground : theme.revBtnBackground, border: theme.btnBorder}}
+          
+    //       onClick={()=> {setOffset(0), setLimit(0), setPokemons([]), setValue('All'), setRenderAmount(10), setActive(false), setShow(false), setLoadLimit(''), setTimeout(() => {setChecked(true)}, 150), setTimeout(() => {setChecked(false), setIsLockDisabled(true), setLockHover(-1)}, 1000)}}
+    //       >
+    //         <UseAnimations size={50} wrapperStyle={{ marginTop: '5px' }} animation={lock} autoplay={checked} strokeColor={lockHover === -1 ? theme.color: theme.revcolor}/>
+    //             Unlock <br/> Selection
+    //       </DivLockPuro>
+    //     );
+    //   };  
+
     const LockPuro = () => {
         
         return (
           <DivLockPuro style={{color: lockHover === -1 ? theme.color : theme.revcolor , backgroundColor: lockHover === -1 ? theme.btnBackground : theme.revBtnBackground, border: theme.btnBorder}}
-          
-          onClick={()=> {setOffset(0), setLimit(0), setPokemons([]), setValue('All'), setRenderAmount(10), setActive(false), setShow(false), setLoadLimit(''), setTimeout(() => {setChecked(true)}, 150), setTimeout(() => {setChecked(false), setIsLockDisabled(true), setLockHover(-1)}, 1000)}}
-          >
-            <UseAnimations size={50} wrapperStyle={{ marginTop: '5px' }} animation={lock} autoplay={checked} strokeColor={lockHover === -1 ? theme.color: theme.revcolor}/>
+
+                onClick={()=> {setChecked(true), setIsLockDisabled(true), setTimeout(() => {setLockHover(-1), setOffset(0), setLimit(0), setPokemons([]), setValue('All'), setRenderAmount(10), setActive(false), setShow(false), setLoadLimit(''), setChecked(false)},650)}}>
+
+                <UseAnimations size={50} wrapperStyle={{ marginTop: '5px' }} animation={lock} autoplay={checked} strokeColor={lockHover === -1 ? theme.color: theme.revcolor}/>
                 Unlock <br/> Selection
           </DivLockPuro>
         );
