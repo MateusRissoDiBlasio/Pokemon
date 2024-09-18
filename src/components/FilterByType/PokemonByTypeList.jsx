@@ -44,6 +44,7 @@ const PokemonByTypeList = () => {
         setLoadLimit(filteredLimits[0].limitValue);
         setIsLockDisabled(false)
         setChecked(false)
+        setIsPointerDisabled(false)
     }
     
     const [loading, setLoading] = useState(false);
@@ -115,6 +116,7 @@ const PokemonByTypeList = () => {
     const [checked, setChecked] = useState(false);
     const [lockHover, setLockHover] = useState(-1);
     const [isLockDisabled, setIsLockDisabled] = useState(true);
+    const [isPointerDisabled, setIsPointerDisabled] = useState(true);
 
     // const LockPuro = () => {
         
@@ -134,7 +136,7 @@ const PokemonByTypeList = () => {
         return (
           <DivLockPuro style={{color: lockHover === -1 ? theme.color : theme.revcolor , backgroundColor: lockHover === -1 ? theme.btnBackground : theme.revBtnBackground, border: theme.btnBorder}}
 
-                onClick={()=> {setChecked(true), setIsLockDisabled(true), setTimeout(() => {setLockHover(-1), setOffset(0), setLimit(0), setPokemons([]), setValue('All'), setRenderAmount(10), setActive(false), setShow(false), setLoadLimit(''), setChecked(false)},650)}}>
+                onClick={()=> {setChecked(true), setIsPointerDisabled(true), setTimeout(() => {setLockHover(-1), setIsLockDisabled(true), setOffset(0), setLimit(0), setPokemons([]), setValue('All'), setRenderAmount(10), setActive(false), setShow(false), setLoadLimit(''), setChecked(false)},650)}}>
 
                 <UseAnimations size={50} wrapperStyle={{ marginTop: '5px' }} animation={lock} autoplay={checked} strokeColor={lockHover === -1 ? theme.color: theme.revcolor}/>
                 Unlock <br/> Selection
@@ -149,7 +151,7 @@ const PokemonByTypeList = () => {
             
             <Select value={value} onChange={handleSelectChange}/>
             
-            <div className={isLockDisabled ? 'disabledDivOn' : 'disabledDiv'} onMouseEnter={() => setLockHover(0)} onMouseLeave={() => setLockHover(-1)}>
+            <div className={`${isLockDisabled ? 'disabledDivOn' : 'disabledDiv'} ${isPointerDisabled ? 'preventclick' : ''}`} onMouseEnter={() => setLockHover(0)} onMouseLeave={() => setLockHover(-1)}>
                 <LockPuro />
             </div>
                         <DivCardContainer >
@@ -243,18 +245,23 @@ const DivCardByType = styled.div`
 
         .disabledDiv{
             justify-content: center;               
-            max-width: 130px;
+            min-width: 130px;
+            max-width: 150px;
             align-self: center;
             margin-bottom: 10px;
         }
         .disabledDivOn{
             justify-content: center;               
-            max-width: 130px;
+            min-width: 130px;
+            max-width: 150px;
             align-self: center;
             margin-bottom: 10px;
-            pointer-events: none;
             opacity: 0.3;
         }
+        .preventclick{
+           	pointer-events: none;
+        }
+
           
 `
 
