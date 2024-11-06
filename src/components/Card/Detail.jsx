@@ -649,7 +649,7 @@ const UlAbilities = styled.ul`
 
     @media screen and (orientation: landscape) and (max-height: 400px) {
       width: 420px;
-      height: 130px;
+      height: 100px;
       
       margin-left: -280px;
       margin-top: -110px;
