@@ -1105,7 +1105,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
     @media screen and (orientation: landscape) and (max-height: 400px) {
       width: 420px;
-      height: 130px;
+      height: 100px;
       
       margin-left: -280px;
       margin-top: -110px;
