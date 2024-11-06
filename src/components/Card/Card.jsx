@@ -105,7 +105,7 @@ const DivCardContainer = styled.div`
 
 const DivCardContainerSearch = styled.div`
     padding: 1.5rem;
-    height: 55vh;
+    height: 105vh;
     display: flex;
     flex-direction: column;
         button{

@@ -152,7 +152,7 @@ export function CardDetails() {
           </ContainerDetailsDiv>
           
           <TitlesDiv>
-            {pokemonDetails.abilitieslength <= 1  ? <h4>Ability:</h4> : <h4>Abilities:</h4>}
+            {pokemonDetails.abilitieslength <= 1  ? <h4 className='abilities'>Ability:</h4> : <h4 className='abilities'>Abilities:</h4>}
           </TitlesDiv>
           
           <UlAbilities style={{border:theme.btnBorder, backgroundColor: theme.detailsHeaderColor}}>
@@ -164,7 +164,7 @@ export function CardDetails() {
           </UlAbilities>
           
           <TitlesDiv>
-            <h4>Moves:</h4>
+            <h4 className='moves'>Moves:</h4>
           </TitlesDiv>
 
           <UlMovesDiv>
@@ -191,6 +191,7 @@ export function CardDetails() {
 
 const HeaderDetails = styled.div`
   height: 12vh;
+  // min-height: 85px;
   padding: 10px 50px;
   display: flex;
   align-items: center;
@@ -202,6 +203,32 @@ const HeaderDetails = styled.div`
     gap: 10px
   }
 
+    @media screen and (orientation: landscape) and (max-height: 400px) {
+        
+          max-width: 100vw;
+            padding: 5px;
+            height: 18vh;            
+            
+            div{
+              flex-direction: row;
+              gap: 0;
+              margin-left: 10px;
+            }
+
+            button{
+              width: 150px;
+              padding:7px; 
+              margin-bottom:0;
+              margin-top:0px;
+              font-size: 14px;
+            }
+
+            img{
+              width: 120px;
+              margin-right: 30px;
+            }
+        
+       }
 
     @media screen and (min-width: 320px) and (max-width: 374px) {
       
@@ -274,7 +301,7 @@ const HeaderDetails = styled.div`
       }
     }
 
-    @media screen and (min-width: 501px) and (max-width: 767px) {
+    @media screen and (min-width: 501px) and (max-width: 767px) and (portrait) {
         
       max-width: 100vw;
       padding: 10px;
@@ -305,6 +332,13 @@ const Container = styled.div`
   height: 88vh;
   padding: 0.5rem;
 
+    @media screen and (orientation: landscape) and (max-height: 400px) {
+    height: 82vh;
+    padding:0;
+  
+    
+    }
+
     @media screen and (min-width: 320px) and (max-width: 374px) {
 
     height: 84vh;
@@ -317,11 +351,17 @@ const Container = styled.div`
 
     }
     
-    @media screen and (min-width: 501px) and (max-width: 767px) {
+    @media screen and (min-width: 501px) and (max-width: 767px) and (orientation: portrait) {
 
-    height: 80vh;
+    height: 110vh;
 
-    }    
+    }
+    
+    @media screen and (min-width: 768px) and (orientation: portrait) {
+    
+    height: 100vh;
+    
+    }
 `
 
 const ContainerDetailsDiv = styled.div`
@@ -329,7 +369,10 @@ const ContainerDetailsDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
+    @media screen and (orientation: landscape) and (max-height: 400px) {
+      width: 100vw;
+      padding: 0;
+    }
 `
 
 const Type = styled.div`
@@ -359,6 +402,29 @@ const Type = styled.div`
   img{ 
     display: flex;
     width: 50%;
+    }
+
+    @media screen and (orientation: landscape) and (max-height: 400px) {
+      width: 60vw ;
+      flex-direction: row;
+      align-self: flex-start;
+      padding: 0.5rem;
+      justify-content: left;
+      margin-top: 0px;
+
+      img{
+                
+        width:10%;
+      }
+
+      h4{
+        font-size: 1.4rem;
+      }
+
+      p{
+        font-size: 1.0rem;
+      }
+    
     }
 
    @media screen and (min-width: 320px) and (max-width: 500px) {
@@ -417,6 +483,35 @@ const Poke = styled.div`
       font-size: 30px;
       text-transform: uppercase;
       margin-bottom: 10px;
+  }
+
+  @media screen and (orientation: landscape) and (max-height: 400px) {
+  width: 40vw;
+  
+  h3 {
+      font-size: 22px;
+      min-height: 40px;
+      max-width: 200px;
+    }
+
+    .largeName{
+      font-size: 16px
+    }
+
+    img{
+      width: 200px;
+      height: 200px;
+      
+    }
+
+    .noImage{
+      width: 200px;
+      height: 200px;
+      margin-left: 10px;
+      border-radius: 15px;
+
+    }
+
   }
   
   @media screen and (min-width: 320px) and (max-width: 374px) {
@@ -481,6 +576,30 @@ const TitlesDiv = styled.div`
     font-weight: 300;
   }
 
+  @media screen and (orientation: landscape) and (max-height: 400px) {
+    margin-top: 0px;
+    margin-left: -100px;
+    z-index: 1;
+    h4{
+    font-size: 1.4rem;
+    }
+   
+    .abilities{
+    margin-top: -135px;
+    margin-left: 5px;
+    }
+
+    .moves{
+        margin-left: 350px;
+        margin-top: -285px;
+    }
+    // div :last-child {
+    
+    // margin-top: 40px;
+    // }
+  
+  }
+
   @media screen and (min-width: 320px) and (max-width: 425px) {
     
     max-width: 90vw;
@@ -499,7 +618,7 @@ const TitlesDiv = styled.div`
 
   }
 
-  @media screen and (min-width: 501px) and (max-width: 767px) {
+  @media screen and (min-width: 501px) and (max-width: 767px) and (orientation: portrait) {
 
     max-width: 90vw;
     margin-left: 10px;
@@ -528,6 +647,19 @@ const UlAbilities = styled.ul`
         }
     }
 
+    @media screen and (orientation: landscape) and (max-height: 400px) {
+      width: 420px;
+      height: 130px;
+      
+      margin-left: -280px;
+      margin-top: -110px;
+      z-index:1;
+      li {
+        font-size: 1.0rem;
+      }
+      
+    }
+
     @media screen and (min-width: 320px) and (max-width: 767px) {
 
       max-width: 90vw;
@@ -553,12 +685,27 @@ const UlMovesDiv = styled.ul`
   display: flex;
   width: 600px;
   justify-content: space-between;
+  position: relative;
+  z-index: 0;
 
   @media screen and (min-width: 320px) and (max-width: 670px) {
 
     width: 90vw;
           
   }
+
+  @media screen and (orientation: landscape) and (max-height: 400px) {
+  
+    margin-top: -260px;
+    width: 200px;
+    margin-left: 140px;
+    display: flex;
+    flex-direction: column;
+    
+
+
+  }
+  
 
 `
 
@@ -589,6 +736,19 @@ const UlMoves = styled.ul`
       list-style: none;
       font-family: "Roboto", sans-serif;
       text-transform: uppercase;
+    }
+
+    @media screen and (orientation: landscape) and (max-height: 400px) {
+      width: 150px;
+      height: 100px ;
+      display: flex;
+      flex-direction: column;
+      z-index:0;
+      position: relative;
+      li {
+        font-size: 0.8rem;
+        }
+
     }
 
     @media screen and (min-width: 320px) and (max-width: 600px) {
@@ -632,10 +792,29 @@ const UlGif = styled.ul`
               opacity: 1;
           }
       }
-    }
+    
 
     .noImage{
       border-radius: 15px;
+      margin-bottom: 3px;
+    }    
+
+    @media screen and (orientation: landscape) and (max-height: 400px) {
+    width: 150px; 
+    height: 120px;
+    align-items: flex-end;
+    position: relative;
+    margin-left: -190px;
+    margin-top: -102px;
+      img{
+        max-height: 120px;
+      }
+
+      .noImage{     
+        width: 90px;
+        height: 90px;
+      }
+
     }
 
     @media screen and (min-width: 320px) and (max-width: 374px) {
