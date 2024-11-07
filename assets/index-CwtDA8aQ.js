@@ -692,7 +692,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }
 
             img{
-              width: 120px;
+              width: 130px;
               margin-right: 30px;
             }
         
@@ -947,7 +947,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
   @media screen and (orientation: landscape) and (max-height: 400px) {
   width: 40vw;
-  
+  margin-left: 40px;
+
   h3 {
       font-size: 22px;
       min-height: 40px;
@@ -1049,7 +1050,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
     .moves{
         margin-left: 350px;
-        margin-top: -285px;
+        margin-top: -255px;
     }
     // div :last-child {
     
@@ -1150,7 +1151,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
   @media screen and (orientation: landscape) and (max-height: 400px) {
   
-    margin-top: -260px;
+    margin-top: -230px;
     width: 200px;
     margin-left: 140px;
     display: flex;
