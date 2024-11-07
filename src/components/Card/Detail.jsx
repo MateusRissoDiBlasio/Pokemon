@@ -133,7 +133,7 @@ export function CardDetails() {
           
               <Poke>
                   
-                  {pokemonDetails.namesize >= 18 ? <h3 className="largeName">{pokemonDetails.name}</h3> : <h3>{pokemonDetails.name}</h3>}
+                  {pokemonDetails.namesize >= 18 ? <h3 className="largeName ">{pokemonDetails.name}</h3> : <h3>{pokemonDetails.name}</h3>}
 
                   {pokemonDetails.image !== undefined && pokemonDetails.image !== null && pokemonDetails.name !== 'mimikyu-busted' && pokemonDetails.name !== 'mimikyu-totem-busted' && !noImage.includes(pokemonDetails.name) ? <img src={pokemonDetails.image} alt={pokemonDetails.name} width={'300px'} height={'300px'} /> : null}
 
@@ -490,9 +490,10 @@ const Poke = styled.div`
   margin-left: 40px;
 
   h3 {
-      font-size: 22px;
-      min-height: 40px;
+      font-size: 18px;
+      min-height: 44px;
       max-width: 200px;
+      
     }
 
     .largeName{
@@ -592,7 +593,7 @@ const TitlesDiv = styled.div`
 
     .moves{
         margin-left: 350px;
-        margin-top: -255px;
+        margin-top: -260px;
     }
     // div :last-child {
     
@@ -697,7 +698,7 @@ const UlMovesDiv = styled.ul`
 
   @media screen and (orientation: landscape) and (max-height: 400px) {
   
-    margin-top: -230px;
+    margin-top: -235px;
     width: 200px;
     margin-left: 140px;
     display: flex;
