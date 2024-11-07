@@ -224,7 +224,7 @@ const HeaderDetails = styled.div`
             }
 
             img{
-              width: 120px;
+              width: 130px;
               margin-right: 30px;
             }
         
@@ -487,7 +487,8 @@ const Poke = styled.div`
 
   @media screen and (orientation: landscape) and (max-height: 400px) {
   width: 40vw;
-  
+  margin-left: 40px;
+
   h3 {
       font-size: 22px;
       min-height: 40px;
@@ -591,7 +592,7 @@ const TitlesDiv = styled.div`
 
     .moves{
         margin-left: 350px;
-        margin-top: -285px;
+        margin-top: -255px;
     }
     // div :last-child {
     
@@ -696,7 +697,7 @@ const UlMovesDiv = styled.ul`
 
   @media screen and (orientation: landscape) and (max-height: 400px) {
   
-    margin-top: -260px;
+    margin-top: -230px;
     width: 200px;
     margin-left: 140px;
     display: flex;
