@@ -164,7 +164,7 @@ Error generating stack: `+c.message+`
    gap: 2rem;   
 `,DivCardContainerSearch=pt.div`
     padding: 1.5rem;
-    height: 105vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
         button{
@@ -177,7 +177,14 @@ Error generating stack: `+c.message+`
                 &:focus {
                 outline: none
                 }
-        }  
+        }
+                
+    @media screen and (orientation: landscape) and (max-height: 400px) {
+    
+    height: 120vh;
+
+    }
+
 `,DivCard$1=pt.div`
     min-width: 200px;
     max-width: 220px;
@@ -817,15 +824,15 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
     }
     
-    @media screen and (min-width: 501px) and (max-width: 767px) and (orientation: portrait) {
+    @media screen and (min-width: 501px) and (max-width: 767px) and (orientation: portrait){
 
-    height: 110vh;
+    height: 95vh;
 
     }
     
     @media screen and (min-width: 768px) and (orientation: portrait) {
     
-    height: 100vh;
+    height: 95vh;
     
     }
 `,ContainerDetailsDiv=pt.div`
@@ -1045,13 +1052,13 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
    
     .abilities{
-    margin-top: -135px;
+    margin-top: -125px;
     margin-left: 5px;
     }
 
     .moves{
         margin-left: 350px;
-        margin-top: -260px;
+        margin-top: -270px;
     }
     // div :last-child {
     
@@ -1106,11 +1113,11 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
 
     @media screen and (orientation: landscape) and (max-height: 400px) {
-      width: 420px;
+      width: 470px;
       height: 100px;
       
-      margin-left: -280px;
-      margin-top: -110px;
+      margin-left: -235px;
+      margin-top: -100px;
       z-index:1;
       li {
         font-size: 1.0rem;
@@ -1152,9 +1159,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
   @media screen and (orientation: landscape) and (max-height: 400px) {
   
-    margin-top: -235px;
+    margin-top: -245px;
     width: 200px;
-    margin-left: 140px;
+    margin-left: 135px;
     display: flex;
     flex-direction: column;
     
