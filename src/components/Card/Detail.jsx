@@ -587,13 +587,13 @@ const TitlesDiv = styled.div`
     }
    
     .abilities{
-    margin-top: -125px;
+    margin-top: -135px;
     margin-left: 5px;
     }
 
     .moves{
         margin-left: 350px;
-        margin-top: -270px;
+        margin-top: -260px;
     }
     // div :last-child {
     
@@ -654,7 +654,7 @@ const UlAbilities = styled.ul`
       height: 100px;
       
       margin-left: -235px;
-      margin-top: -100px;
+      margin-top: -110px;
       z-index:1;
       li {
         font-size: 1.0rem;
@@ -698,7 +698,7 @@ const UlMovesDiv = styled.ul`
 
   @media screen and (orientation: landscape) and (max-height: 400px) {
   
-    margin-top: -245px;
+    margin-top: -235px;
     width: 200px;
     margin-left: 135px;
     display: flex;
@@ -807,7 +807,7 @@ const UlGif = styled.ul`
     align-items: flex-end;
     position: relative;
     margin-left: -190px;
-    margin-top: -102px;
+    margin-top: -98px;
       img{
         max-height: 120px;
       }
