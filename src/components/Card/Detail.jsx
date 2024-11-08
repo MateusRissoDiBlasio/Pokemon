@@ -351,15 +351,15 @@ const Container = styled.div`
 
     }
     
-    @media screen and (min-width: 501px) and (max-width: 767px) and (orientation: portrait) {
+    @media screen and (min-width: 501px) and (max-width: 767px) and (orientation: portrait){
 
-    height: 110vh;
+    height: 95vh;
 
     }
     
     @media screen and (min-width: 768px) and (orientation: portrait) {
     
-    height: 100vh;
+    height: 95vh;
     
     }
 `
@@ -587,13 +587,13 @@ const TitlesDiv = styled.div`
     }
    
     .abilities{
-    margin-top: -135px;
+    margin-top: -125px;
     margin-left: 5px;
     }
 
     .moves{
         margin-left: 350px;
-        margin-top: -260px;
+        margin-top: -270px;
     }
     // div :last-child {
     
@@ -650,11 +650,11 @@ const UlAbilities = styled.ul`
     }
 
     @media screen and (orientation: landscape) and (max-height: 400px) {
-      width: 420px;
+      width: 470px;
       height: 100px;
       
-      margin-left: -280px;
-      margin-top: -110px;
+      margin-left: -235px;
+      margin-top: -100px;
       z-index:1;
       li {
         font-size: 1.0rem;
@@ -698,9 +698,9 @@ const UlMovesDiv = styled.ul`
 
   @media screen and (orientation: landscape) and (max-height: 400px) {
   
-    margin-top: -235px;
+    margin-top: -245px;
     width: 200px;
-    margin-left: 140px;
+    margin-left: 135px;
     display: flex;
     flex-direction: column;
     

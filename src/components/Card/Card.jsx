@@ -105,7 +105,7 @@ const DivCardContainer = styled.div`
 
 const DivCardContainerSearch = styled.div`
     padding: 1.5rem;
-    height: 105vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
         button{
@@ -118,7 +118,14 @@ const DivCardContainerSearch = styled.div`
                 &:focus {
                 outline: none
                 }
-        }  
+        }
+                
+    @media screen and (orientation: landscape) and (max-height: 400px) {
+    
+    height: 120vh;
+
+    }
+
 `
 
 const DivCard = styled.div`
