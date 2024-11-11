@@ -21,10 +21,14 @@ export function MainPage() {
     const pokeNamesWithNumbers = ['zygarde-10' , 'zygarde-50', 'zygarde-10-power-construct', 'zygarde-50-power-construct', 'porygon2' ]
     
     const [loadingRandom, setLoadingRandom] = useState(false);
+
+
     const getPokemons = async () => {
         
         setLoadingRandom(true);
+        // setTimeout(() => {setLoadingRandom(true)}, 2000)
         try {
+            await new Promise((resolve) => setTimeout(resolve, 1000));
             const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`)
             const pokemonData = await Promise.all(response.data.results.map(async (pokemon) => {
             const pokemonResponse = await axios.get(pokemon.url);

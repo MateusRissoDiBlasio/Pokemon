@@ -57,7 +57,7 @@ const PokemonByTypeList = () => {
         async function fetchData() {
         
         try{
-            
+            await new Promise((resolve) => setTimeout(resolve, 1000));
             if ((value === "poison" && offset === 400) || (value === "poison" && offset === 500)) {setTryAgain(true), setLoading(false)}
 
             if ((value === "ground" || value === "bug" || value === "steel") && offset === 100) {
@@ -320,6 +320,8 @@ const DivBtn = styled.div`
         animation-iteration-count: 1;
         animation-timing-function: ease-in;
         animation-duration: 2s;
+        animation-delay: 1s;
+        animation-fill-mode: both;
         margin-bottom: 15px;
         
     }

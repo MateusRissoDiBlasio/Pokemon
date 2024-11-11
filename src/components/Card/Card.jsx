@@ -101,6 +101,7 @@ const DivCardContainer = styled.div`
    justify-content: center;
    padding: 1.5rem;
    gap: 2rem;   
+   min-height: 18vh;
 `
 
 const DivCardContainerSearch = styled.div`
