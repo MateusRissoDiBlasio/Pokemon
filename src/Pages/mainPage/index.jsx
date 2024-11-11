@@ -59,7 +59,7 @@ export function MainPage() {
     const scrollDown = () => {
         window.scrollBy({
             
-        top: 350,
+        top: 450,
         behavior: 'smooth'
 
         });

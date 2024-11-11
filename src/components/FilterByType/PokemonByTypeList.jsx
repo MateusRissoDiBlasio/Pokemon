@@ -49,10 +49,12 @@ const PokemonByTypeList = () => {
     
     const [loading, setLoading] = useState(false);
     const [disabled, setDisabled] = useState(false);
+    const [buttonText, setButtonText] = useState('Load More')
     useEffect(() => {
         setLoading(true);
         setTryAgain(false);
         setDisabled(true);
+        setButtonText('Wait...')
        
         async function fetchData() {
         
@@ -81,6 +83,7 @@ const PokemonByTypeList = () => {
         finally {
             setLoading(false);
             setDisabled(false);
+            setButtonText('Load More')
                    
          }
  
@@ -195,7 +198,7 @@ const PokemonByTypeList = () => {
                         </DivLoading>
                         
                         <DivBtn>
-                            {filteredTypes.includes(value) && active ? <LoadMoreTypes setRenderAmount={setRenderAmount} renderAmount={renderAmount} setOffset={setOffset} offset={offset} /> : <p className={show ? 'limitreached' : 'hide'}>WE RAN OUT OF POKÉMONS<br/>FROM THIS TYPE <br/> THERE ARE {uniqueName.length} <br/> {value} POKÉMONS</p>}
+                            {filteredTypes.includes(value) && active ? <LoadMoreTypes setRenderAmount={setRenderAmount} renderAmount={renderAmount} setOffset={setOffset} offset={offset} buttonText={buttonText} disabled={disabled}/> : <p className={show ? 'limitreached' : 'hide'}>WE RAN OUT OF POKÉMONS<br/>FROM THIS TYPE <br/> THERE ARE {uniqueName.length} <br/> {value} POKÉMONS</p>}
                         </DivBtn>
 
                         <DivScrollBtn>

@@ -10,19 +10,19 @@ export function LoadMoreButton({ onClick }) {
   )
 }
 
-export const LoadMoreTypes = ({ renderAmount, setRenderAmount, setOffset, offset }) => {
-  const [disabled, setDisabled] = useState(false);
-  const [buttonText, setButtonText] = useState('Load More');
+export const LoadMoreTypes = ({ renderAmount, setRenderAmount, setOffset, offset, disabled, buttonText }) => {
+  // const [disabled, setDisabled] = useState(false);
+  // const [buttonText, setButtonText] = useState('Load More');
 
-  function handleClick () {
+  // function handleClick () {
 
-    setDisabled(true); setButtonText('Wait...'); setTimeout(() => {setDisabled(false); setButtonText('Load More') }, 1200);
+  //   setDisabled(true); setButtonText('Wait...'); setTimeout(() => {setDisabled(false); setButtonText('Load More') }, 1200);
 
-  }
+  // }
 
   return (
         <div>
-          <Button onClick={() => {handleClick(); setRenderAmount(renderAmount + 10); setOffset(offset + 100)}} disabled={disabled} >{buttonText}</Button>
+          <Button onClick={() => { setRenderAmount(renderAmount + 10); setOffset(offset + 100)}} disabled={disabled} >{buttonText}</Button>
         </div>
   )
 }
