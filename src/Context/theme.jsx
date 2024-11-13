@@ -12,13 +12,13 @@ export const themes = {
         btnBorderHover:'2px solid #FF0000',
         cardBackground: '#708090',
         cardBorder: '4px solid #000000',
-        cardBorderHover: '4px solid #FF0000',
         detailsHeaderColor: "lightgrey",
         detail: "#F5F5F5",
         hover: '#FF0000',
         scroll:"#F5F5F5",
-        typesBorder: '5px solid #000000',
-        shaddow: '0 0 0.6rem #ff0000'
+        shaddow: '0 0 0.6rem #ff0000',
+        textshadow: '1px 1px #000000',
+        cardshadow: '0px -10px 2.6rem #ff0000'
     },
 
     dark: {
@@ -32,13 +32,13 @@ export const themes = {
         revBtnBorder:'2px solid #000000',
         cardBackground: '#000000',
         cardBorder: '4px solid #FFFFFF',
-        cardBorderHover: '4px solid #FF0000',
         detailsHeaderColor: "grey",
         detail: "#FFFFFF",
         hover:"#FF0000",
         scroll:"#000000",
-        typesBorder: '5px solid #FFFFFF',
-        shaddow: '0 0 0.6rem #ff0000'
+        shaddow: '0 0 0.6rem #ff0000',
+        textshadow: '0 0 0.6rem #ff0000',
+        cardshadow: '0px 0px 2.6rem #ff0000'
     }
 }
 

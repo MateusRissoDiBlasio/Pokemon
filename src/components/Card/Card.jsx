@@ -59,7 +59,7 @@ export function CardsList({ pokemon }) {
                 {pokemon.map((poke, index) => (
                 
                 <Link key={index} to={`/details/${poke.name}`}>
-                <DivCard key={index} style={{color: hidden === index ? theme.hover : theme.color, backgroundColor: hidden === index ? theme.hover : theme.cardBackground, border: theme.cardBorder }} 
+                <DivCard key={index} style={{color: hidden === index ? theme.hover : theme.color, backgroundColor: hidden === index ? theme.hover : theme.cardBackground, border: theme.cardBorder, boxShadow: hidden === index ? theme.cardshadow : '' }} 
                             onMouseEnter={() => setHidden(index)}
                             onMouseLeave={() => setHidden(-1)} >
                     

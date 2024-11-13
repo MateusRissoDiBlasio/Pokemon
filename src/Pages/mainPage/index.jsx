@@ -199,7 +199,7 @@ export function MainPage() {
                     
                     />
                     <button onClick={() => {handleEnter(); handleClick()}} onMouseEnter={() => setHovering(0)} onMouseLeave={() => setHovering(-1)} style={{color: hovering ? theme.color : theme.revcolor, backgroundColor: hovering ? theme.background : theme.color, border: theme.btnBorder }}><img src={Go} alt="GO logo"></img>!</button>
-                    {visible === true ? <h2 key={errorMessage} style={{color: 'red'}}>{errorMessage}</h2> : null}
+                    {visible === true ? <h2 key={errorMessage} style={{color: 'red', textShadow: theme.textshadow}}>{errorMessage}</h2> : null}
                     {loading ? <p className={'load'}>Loading...</p> : ''}
                     
                 </DivSearchPoke>
@@ -226,7 +226,7 @@ export function MainPage() {
                     onKeyDown={e => e.key ==='Enter' ? handleEnter() :''}
                 />
                 <button onClick={() => {handleEnter(); handleClick()}} onMouseEnter={() => setHovering(0)} onMouseLeave={() => setHovering(-1)} style={{ color: hovering ? theme.color : theme.revcolor, backgroundColor: hovering ? theme.background : theme.color, border: theme.btnBorder }}><img src={Go} alt="GO logo"></img>!</button>
-                {visible === true ? <h2 key={errorMessage} style={{color: 'red'}}>{errorMessage}</h2> : null}
+                {visible === true ? <h2 key={errorMessage} style={{color: 'red', textShadow: theme.textshadow}}>{errorMessage}</h2> : null}
                 {loading ? <p className={'load'} >Loading...</p> : ''}
                 
             </DivSearchPoke>
@@ -374,7 +374,8 @@ const DivSearchPoke = styled.div`
         animation-duration: 0.5s;
         text-align: center;
         max-width: 450px;
-        text-shadow: 0 0 0.5rem #ff0000;
+        // text-shadow: 1px 1px black;
+        // filter: drop-shadow(1px -2px 0.15rem #ff0000);    
     }
     
     @keyframes fadeInOpacity {
