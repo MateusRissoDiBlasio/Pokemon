@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useContext } from 'react';
 import { ThemeContext } from '../../Context/theme';
 import styled from 'styled-components';
@@ -51,11 +50,8 @@ export function CardsList({ pokemon }) {
                     onClick={reloadPage}
                 >Back to the List
                 </Button>
-               
             </DivCardContainerSearch>
-
         );
-        
     }      
         
     return (
@@ -89,54 +85,54 @@ export function CardsList({ pokemon }) {
             ))}
         </DivCardContainer>    
     )
-    
 }
 
 
 const DivCardContainer = styled.div`
-   display: flex;
-   max-width: 75vw;
-   flex-wrap: wrap;
-   align-items: center;
-   justify-content: center;
-   padding: 1.5rem;
-   gap: 2rem;   
-   min-height: 18vh;
+    
+    display: flex;
+    max-width: 75vw;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    gap: 2rem;   
+    min-height: 18vh;
 `
 
 const DivCardContainerSearch = styled.div`
+    
     padding: 1.5rem;
     height: 60vh;
     display: flex;
     flex-direction: column;
-        button{
-                padding: 10px 20px;
-                border-radius: 15px;
-                cursor: pointer;
-                font-size: 1rem; 
-                margin-top: 1rem; 
-
-                &:focus {
-                outline: none
-                }
-        }
-                
-    @media screen and (orientation: landscape) and (max-height: 400px) {
     
-    height: 120vh;
+    button{
+            padding: 10px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 1rem; 
+            margin-top: 1rem; 
 
+            &:focus {
+            outline: none
+            }
+    }              
+
+    @media screen and (orientation: landscape) and (max-height: 400px) {   
+        height: 120vh;
     }
-
 `
 
 const DivCard = styled.div`
+]
     min-width: 200px;
     max-width: 220px;
     min-height: 290px;
     max-height: 325px;
     border-radius: 5px;
     padding: 0.5rem;
-
+    
     h4 {
         text-transform: uppercase;
         text-align: center;
@@ -145,34 +141,33 @@ const DivCard = styled.div`
         max-width: 200px;
         font-family: "Orbitron", sans-serif;
         font-size: 20px;
-    }
+    }   
     
     img {
         height:150px;
         width: 180px;
-        filter: drop-shadow(10px 10px 20px #FFF);
-        
+        filter: drop-shadow(10px 10px 20px #FFF);        
     }
-
+    
     &:hover img {
         filter: drop-shadow(10px 10px 20px #000000);
         }
-
+    
     h1{ 
         font-size: 1rem; 
         display: flex;
         justify-content: center;
         margin-top: 10px;
     }
-
+    
     h1{
         opacity: 1;
 	    animation-name: fadeInOpacity;
 	    animation-iteration-count: 1;
 	    animation-timing-function: ease-in;
 	    animation-duration: 0.5s;
-    }
-        
+    }   
+    
     @keyframes fadeInOpacity {
         0% {
 		opacity: 0;
@@ -181,10 +176,8 @@ const DivCard = styled.div`
             opacity: 1;
         }
     }
-    
 `
 
 const DivImgCard = styled.div`
-   
-   margin: 0.5rem;
+    margin: 0.5rem;
 `

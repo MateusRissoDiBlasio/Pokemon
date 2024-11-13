@@ -170,10 +170,7 @@ export function CardDetails() {
           <UlMovesDiv>
             
             <UlMoves style={{border:theme.btnBorder, backgroundColor: theme.detailsHeaderColor}}>
-              {/* {pokemonDetails.moves?.sort().map((move, index) => (
-                <li key={index}>{move}</li>
-              ))} */}
-              {pokemonDetails.moveslength === 0  ? <p className='NoMoves'>No listed moves</p> : pokemonDetails.moves?.sort().map((move, index) => (
+                {pokemonDetails.moveslength === 0  ? <p className='NoMoves'>No listed moves</p> : pokemonDetails.moves?.sort().map((move, index) => (
                 <li key={index}>{move}</li>
               ))}
             </UlMoves>
@@ -190,8 +187,8 @@ export function CardDetails() {
 
 
 const HeaderDetails = styled.div`
+  
   height: 12vh;
-  // min-height: 85px;
   padding: 10px 50px;
   display: flex;
   align-items: center;
@@ -203,128 +200,131 @@ const HeaderDetails = styled.div`
     gap: 10px
   }
 
-    @media screen and (orientation: landscape) and (max-height: 400px) {
-        
-          max-width: 100vw;
-            padding: 5px;
-            height: 18vh;            
-            
-            div{
-              flex-direction: row;
-              gap: 0;
-              margin-left: 10px;
-            }
-
-            button{
-              width: 150px;
-              padding:7px; 
-              margin-bottom:0;
-              margin-top:0px;
-              font-size: 14px;
-            }
-
-            img{
-              width: 130px;
-              margin-right: 30px;
-            }
-        
-       }
-
-    @media screen and (min-width: 320px) and (max-width: 374px) {
-      
-      max-width: 100vw;
-      padding: 0;
-      height:16vh;
-      justify-content: center;
-      
-      div{
-        flex-direction: column;
-        gap: 0;
-        margin: 0;
-      }
-
-      button{
-        width: 100px;
-        padding:7px; 
-        margin-bottom:0;
-        margin-top:5px;
-      }
-
-      img{
-        width: 180px;
-      }
-
+  @media screen and (orientation: landscape) and (max-height: 400px) {     
+    
+    max-width: 100vw;
+    padding: 5px;
+    height: 18vh;              
+    
+    div{
+      flex-direction: row;
+      gap: 0;
+      margin-left: 10px;
+    }
+    
+    button{
+      width: 150px;
+      padding:7px; 
+      margin-bottom:0;
+      margin-top:0px;
+      font-size: 14px;
+    }
+    
+    img{
+      width: 130px;
+      margin-right: 30px;
     }
 
-    @media screen and (min-width: 375px) and (max-width: 425px) {
-     
-      max-width: 100vw;
-      padding: 0;
-      height: 20vh;
-      justify-content: space-around;
-      
-      div{
-        flex-direction: column;
-        gap: 0;
-        margin: 0;
-      }
-
-      button{
-        width: 120px;
-        padding:10px; 
-      }
-
-      img{
-        width: 220px;
-      }
+  }
+  @media screen and (min-width: 320px) and (max-width: 374px) {
+    
+    max-width: 100vw;
+    padding: 0;
+    height:16vh;
+    justify-content: center;
+    
+    div{
+      flex-direction: column;
+      gap: 0;
+      margin: 0;
+    }
+    
+    button{
+      width: 100px;
+      padding:7px; 
+      margin-bottom:0;
+      margin-top:5px;
+    }
+    
+    img{
+      width: 180px;
+    }
+  
+  }
+  
+  @media screen and (min-width: 375px) and (max-width: 425px) {
+    
+    max-width: 100vw;
+    padding: 0;
+    height: 20vh;
+    justify-content: space-around;
+    
+    div{
+      flex-direction: column;
+      gap: 0;
+      margin: 0;
     }
 
-    @media screen and (min-width: 426px) and (max-width: 500px) {
-        
-      max-width: 100vw;
-      padding: 10px;
-      height: 20vh;
-      justify-content: space-around;
-      
-      div{
-        flex-direction:column;
-        gap: 0;  
-      }
-
-      button{
-        width: 120px;
-        padding:10px; 
-      }
-
-      img{
-        width: 250px;
-      }
+    button{
+      width: 120px;
+      padding:10px; 
     }
 
-    @media screen and (min-width: 501px) and (max-width: 767px) and (portrait) {
-        
-      max-width: 100vw;
-      padding: 10px;
-      height: 20vh;
-      justify-content: space-around;
-      
-      div{
-        flex-direction:column;
-        gap: 0;  
-      }
-
-      button{
-        width: 130px;
-        padding:15px; 
-      }
-
-      img{
-        width: 280px;
-      }
+    img{
+      width: 220px;
     }
+
+  }
+
+  @media screen and (min-width: 426px) and (max-width: 500px) {
+      
+    max-width: 100vw;
+    padding: 10px;
+    height: 20vh;
+    justify-content: space-around;
+    
+    div{
+      flex-direction:column;
+      gap: 0;  
+    }
+
+    button{
+      width: 120px;
+      padding:10px; 
+    }
+
+    img{
+      width: 250px;
+    }
+  
+  }
+
+  @media screen and (min-width: 501px) and (max-width: 767px) and (portrait) {
+      
+    max-width: 100vw;
+    padding: 10px;
+    height: 20vh;
+    justify-content: space-around;
+    
+    div{
+      flex-direction:column;
+      gap: 0;  
+    }
+
+    button{
+      width: 130px;
+      padding:15px; 
+    }
+
+    img{
+      width: 280px;
+    }
+
+  }
 `
 
 const Container = styled.div`
+  
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -333,38 +333,29 @@ const Container = styled.div`
   padding: 0.5rem;
 
     @media screen and (orientation: landscape) and (max-height: 400px) {
-    height: 82vh;
-    padding:0;
-  
-    
+      height: 82vh;
+      padding:0;   
     }
 
     @media screen and (min-width: 320px) and (max-width: 374px) {
-
-    height: 84vh;
-
+      height: 84vh;
     }
 
     @media screen and (min-width: 375px) and (max-width: 500px) {
-
-    height: 80vh;
-
+      height: 80vh;
     }
     
     @media screen and (min-width: 501px) and (max-width: 767px) and (orientation: portrait){
-
-    height: 95vh;
-
+      height: 95vh;
     }
     
-    @media screen and (min-width: 768px) and (orientation: portrait) {
-    
-    height: 95vh;
-    
+    @media screen and (min-width: 768px) and (orientation: portrait) { 
+      height: 95vh;
     }
 `
 
 const ContainerDetailsDiv = styled.div`
+  
   padding: 0.5rem;
   display: flex;
   align-items: center;
@@ -376,6 +367,7 @@ const ContainerDetailsDiv = styled.div`
 `
 
 const Type = styled.div`
+  
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -405,7 +397,7 @@ const Type = styled.div`
     }
 
     @media screen and (orientation: landscape) and (max-height: 400px) {
-      width: 60vw ;
+      width: 65vw ;
       flex-direction: row;
       align-self: flex-start;
       padding: 0.5rem;
@@ -428,97 +420,82 @@ const Type = styled.div`
     }
 
    @media screen and (min-width: 320px) and (max-width: 500px) {
-
       padding: 0;
        gap: 5px;
-
     }
 
     @media screen and (min-width: 320px) and (max-width: 374px) {
-
-          margin-right: 5px;
-
+      margin-right: 5px;
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) {
+      h4{
+        font-size: 1.5rem;
+      }
 
-          h4{
-            font-size: 1.5rem;
-          }
-
-          p{
-            font-size: 1.0rem;
-          }
+      p{
+        font-size: 1.0rem;
+      }
 
     }
 
     @media screen and (min-width: 375px) and (max-width: 500px) {
-
-
-          margin-right: 15px;
-
+      margin-right: 15px;
     }
 
     @media screen and (min-width: 501px) and (max-width: 767px) {
-
-
-          margin-right: 5px;
-
+      margin-right: 5px;
     }
 `
 
 const Poke = styled.div`
+  
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-
   
   h3 {
-      max-width: 400px;
-      text-align: center;
-      font-family: "Orbitron", sans-serif;
-      font-size: 30px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
+    max-width: 400px;
+    text-align: center;
+    font-family: "Orbitron", sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
   }
 
   @media screen and (orientation: landscape) and (max-height: 400px) {
-  width: 40vw;
-  margin-left: 40px;
+    width: 35vw;
+    margin-left: 40px;
 
-  h3 {
-      font-size: 18px;
-      min-height: 44px;
-      max-width: 200px;
-      
-    }
+      h3{
+        font-size: 18px;
+        min-height: 44px;
+        max-width: 200px;
+      }
 
-    .largeName{
-      font-size: 16px
-    }
+      .largeName{
+        font-size: 16px
+      }
 
-    img{
-      width: 200px;
-      height: 200px;
-      
-    }
+      img{
+        width: 200px;
+        height: 200px;
+      }
 
-    .noImage{
-      width: 200px;
-      height: 200px;
-      margin-left: 10px;
-      border-radius: 15px;
-
-    }
+      .noImage{
+        width: 200px;
+        height: 200px;
+        margin-left: 10px;
+        border-radius: 15px;
+      }
 
   }
   
   @media screen and (min-width: 320px) and (max-width: 374px) {
 
-    h3 {
+    h3{
       font-size: 24px
     }
 
@@ -531,12 +508,11 @@ const Poke = styled.div`
       height: 180px;
     }
     
-
   }
 
   @media screen and (min-width: 375px) and (max-width: 425px) {
 
-    h3 {
+    h3{
       font-size: 26px
     }
 
@@ -567,6 +543,7 @@ const Poke = styled.div`
 `
 
 const TitlesDiv = styled.div` 
+  
   width: 600px;
   display: flex;
   justify-content: left;
@@ -582,28 +559,23 @@ const TitlesDiv = styled.div`
     margin-top: 0px;
     margin-left: -100px;
     z-index: 1;
+    
     h4{
-    font-size: 1.4rem;
+      font-size: 1.4rem;
     }
    
     .abilities{
-    margin-top: -135px;
-    margin-left: 5px;
+      margin-top: -135px;
+      margin-left: 5px;
     }
 
     .moves{
-        margin-left: 350px;
-        margin-top: -260px;
-    }
-    // div :last-child {
-    
-    // margin-top: 40px;
-    // }
-  
+      margin-left: 360px;
+      margin-top: -260px;
+    }  
   }
 
   @media screen and (min-width: 320px) and (max-width: 425px) {
-    
     max-width: 90vw;
     margin-left: 10px;
 
@@ -614,21 +586,18 @@ const TitlesDiv = styled.div`
   }
 
   @media screen and (min-width: 426px) and (max-width: 500px) {
-
     max-width: 90vw;
     margin-left: 10px;
-
   }
 
   @media screen and (min-width: 501px) and (max-width: 767px) and (orientation: portrait) {
-
     max-width: 90vw;
     margin-left: 10px;
-
   }
 `
 
 const UlAbilities = styled.ul`
+  
   width: 600px;
   min-height: 50px;
   max-height: 140px;
@@ -643,19 +612,21 @@ const UlAbilities = styled.ul`
       font-family: "Roboto", sans-serif;
       text-align: justify;
       margin-bottom: 10px;
-        strong{
-          text-transform: uppercase;
-          font-family: "Orbitron", sans-serif;
-        }
+    
+    strong{
+      text-transform: uppercase;
+      font-family: "Orbitron", sans-serif;
     }
 
+  }
+
     @media screen and (orientation: landscape) and (max-height: 400px) {
-      width: 470px;
+      width: 480px;
       height: 100px;
-      
-      margin-left: -235px;
+      margin-left: -225px;
       margin-top: -110px;
       z-index:1;
+      
       li {
         font-size: 1.0rem;
       }
@@ -663,27 +634,23 @@ const UlAbilities = styled.ul`
     }
 
     @media screen and (min-width: 320px) and (max-width: 767px) {
-
       max-width: 90vw;
-
     }
 
     @media screen and (min-width: 320px) and (max-width: 374px) {
-
       max-height: 120px;
-
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) {
-
       li {
         font-size: 1.0rem;   
       }
-          
+
     }
 `
 
 const UlMovesDiv = styled.ul`
+  
   display: flex;
   width: 600px;
   justify-content: space-between;
@@ -691,27 +658,20 @@ const UlMovesDiv = styled.ul`
   z-index: 0;
 
   @media screen and (min-width: 320px) and (max-width: 670px) {
-
     width: 90vw;
-          
   }
 
   @media screen and (orientation: landscape) and (max-height: 400px) {
-  
     margin-top: -235px;
-    width: 200px;
-    margin-left: 135px;
+    width: 210px;
+    margin-left: 165px;
     display: flex;
     flex-direction: column;
-    
-
-
   }
-  
-
 `
 
 const UlMoves = styled.ul`
+  
   display: grid;
   grid-template-columns: auto 200px;
   overflow-y: auto;
@@ -747,6 +707,7 @@ const UlMoves = styled.ul`
       flex-direction: column;
       z-index:0;
       position: relative;
+     
       li {
         font-size: 0.8rem;
         }
@@ -772,10 +733,12 @@ const UlMoves = styled.ul`
 `
 
 const UlGif = styled.ul`
+  
   display: flex;
   justify-content: center;
   width: 200px;
   align-items: center;
+    
     img{
       opacity: 1;
       animation-name: fadeInOpacity;
@@ -784,17 +747,16 @@ const UlGif = styled.ul`
       animation-duration: 2s;
       max-width: 120px;
       max-height: 120px;
-      }
+    }
       
-      @keyframes fadeInOpacity {
-          0% {
-      opacity: 0;
-          }
-          100% {
-              opacity: 1;
-          }
-      }
-    
+    @keyframes fadeInOpacity {
+        0% {
+    opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }   
 
     .noImage{
       border-radius: 15px;
@@ -808,6 +770,7 @@ const UlGif = styled.ul`
     position: relative;
     margin-left: -190px;
     margin-top: -98px;
+      
       img{
         max-height: 120px;
       }
@@ -824,5 +787,6 @@ const UlGif = styled.ul`
       .noImage{
       margin-left: 5px;
       }
+      
     }
 `

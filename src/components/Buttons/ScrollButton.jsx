@@ -40,10 +40,11 @@ export const ScrollButton = () =>{
   ); 
 } 
   
-const ScrollButtonDiv = styled.div`
 
-display: flex;
-font-size: 50px;
-border-radius: 50%;
-cursor: pointer;
+const ScrollButtonDiv = styled.div`
+  
+  display: flex;
+  font-size: 50px;
+  border-radius: 50%;
+  cursor: pointer;
 `

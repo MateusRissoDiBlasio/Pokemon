@@ -220,7 +220,7 @@ export function MainPage() {
                     placeholder='By Name'
                     style={{color: theme.color, backgroundColor: theme.background, border: visible === true ? theme.btnBorderHover : theme.btnBorder, boxShadow: visible === true ? theme.shaddow : null}}
                     onChange={getName}
-                    type='input'
+                    type='search'
                     className={shake ? 'animate invalidinput': ''}
                     onAnimationEnd={() => setShake(false)}
                     onKeyDown={e => e.key ==='Enter' ? handleEnter() :''}
@@ -231,7 +231,7 @@ export function MainPage() {
                 
             </DivSearchPoke>
             
-            <Button onClick={()=> setValue(value === true ? false : true )}>{value === true ? "By Type" : "Random List" }</Button>
+            <Button onClick={()=> {document.getElementById('input').value = '';setValue(value === true ? false : true ); setVisible(false)}}>{value === true ? "By Type" : "Random List" }</Button>
 
             {value === true ?  <Random>
                                     <h2>Random Pokemóns</h2>
@@ -247,6 +247,7 @@ export function MainPage() {
 }
 
 const Random = styled.div`
+    
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -259,6 +260,7 @@ const Random = styled.div`
 `
 
 const DivLoading = styled.div`
+    
     height: 30px;
     justify-content: center;    
     align-content: center;
@@ -291,6 +293,7 @@ const DivLoading = styled.div`
 
 
 const DivMainPage = styled.div`
+    
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -306,6 +309,7 @@ const DivMainPage = styled.div`
 `
 
 const SearchInput = styled.input`
+    
     height: 3rem;
     width: 100%;
     padding: 10px 20px;
@@ -319,11 +323,12 @@ const SearchInput = styled.input`
 `
 
 const DivSearchPoke = styled.div`
+    
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: center;
-    height: 285px;
+    height: 300px;
     width: 80vw;
 
     .load{
@@ -369,6 +374,7 @@ const DivSearchPoke = styled.div`
         animation-duration: 0.5s;
         text-align: center;
         max-width: 450px;
+        text-shadow: 0 0 0.5rem #ff0000;
     }
     
     @keyframes fadeInOpacity {
@@ -388,18 +394,18 @@ const DivSearchPoke = styled.div`
         box-shadow: 0 0 0.6rem #ff0000;
     }
 
-     @keyframes shake {
-            0% {
-                margin-left: 0rem;
-            }
-            25% {
-                margin-left: 0.5rem;
-            }
-            75% {
-                margin-left: -0.5rem;
-            }
-            100% {
-                margin-left: 0rem;
+    @keyframes shake {
+        0% {
+            margin-left: 0rem;
+        }
+        25% {
+            margin-left: 0.5rem;
+        }
+        75% {
+            margin-left: -0.5rem;
+        }
+        100% {
+            margin-left: 0rem;
         } 
     }
 
@@ -409,6 +415,7 @@ const DivSearchPoke = styled.div`
         h2{
             font-size: 16px;
         }
+        
         .load{
             font-size: 16px;
         }
@@ -416,9 +423,11 @@ const DivSearchPoke = styled.div`
 
     @media screen and (min-width: 375px) and (max-width: 425px) {
         height:300px;
+        
         h2{
             font-size: 20px;
         }
+        
         .load{
             font-size: 20px;
         }
@@ -426,8 +435,18 @@ const DivSearchPoke = styled.div`
 
     @media screen and (min-width: 426px) and (max-width: 500px) {
         height:300px;
+        
         h2{
             font-size: 22px;
         }        
+    }
+
+    @media screen and (orientation: landscape) and (max-height: 400px) {
+        height:300px;
+        
+        h2{                
+            font-size: 22px;
+            min-height: 60px;
+        }  
     }
 `

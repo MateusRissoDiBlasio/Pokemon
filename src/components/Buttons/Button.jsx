@@ -2,10 +2,11 @@ import React, { useContext, useState } from 'react';
 import { ThemeContext } from '../../Context/theme';
 import styled from 'styled-components';
 
+
 export function Button(props) {
 
   const [hover, setHover] = useState(-1);
-    const { theme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
    <BtnGeneral  
@@ -20,15 +21,15 @@ export function Button(props) {
 }
 
 const BtnGeneral  = styled.button`
-    padding: 10px 20px;
-    border-radius: 15px;
-    cursor: pointer;
-    font-size: 1rem; 
-    margin: 10px;
-    min-width: 120.5px;
-    
-    &:focus {
-      outline: none
-    }
-
+  
+  padding: 10px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1rem; 
+  margin: 10px;
+  min-width: 120.5px;
+  
+  &:focus {
+    outline: none
+  }
 `

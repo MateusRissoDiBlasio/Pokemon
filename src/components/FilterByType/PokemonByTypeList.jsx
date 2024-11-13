@@ -121,19 +121,6 @@ const PokemonByTypeList = () => {
     const [isLockDisabled, setIsLockDisabled] = useState(true);
     const [isPointerDisabled, setIsPointerDisabled] = useState(true);
 
-    // const LockPuro = () => {
-        
-    //     return (
-    //       <DivLockPuro style={{color: lockHover === -1 ? theme.color : theme.revcolor , backgroundColor: lockHover === -1 ? theme.btnBackground : theme.revBtnBackground, border: theme.btnBorder}}
-          
-    //       onClick={()=> {setOffset(0), setLimit(0), setPokemons([]), setValue('All'), setRenderAmount(10), setActive(false), setShow(false), setLoadLimit(''), setTimeout(() => {setChecked(true)}, 150), setTimeout(() => {setChecked(false), setIsLockDisabled(true), setLockHover(-1)}, 1000)}}
-    //       >
-    //         <UseAnimations size={50} wrapperStyle={{ marginTop: '5px' }} animation={lock} autoplay={checked} strokeColor={lockHover === -1 ? theme.color: theme.revcolor}/>
-    //             Unlock <br/> Selection
-    //       </DivLockPuro>
-    //     );
-    //   };  
-
     const LockPuro = () => {
         
         return (
@@ -213,7 +200,8 @@ const PokemonByTypeList = () => {
 }
 
 const DivCardContainer = styled.div`
-   display: flex;
+   
+    display: flex;
    flex-wrap: wrap;
    align-items: Flex-start;
    max-width: 75vw;
@@ -223,24 +211,26 @@ const DivCardContainer = styled.div`
 `
 
 const DivCardByType = styled.div`
+    
     padding: 1.5rem;
     min-height: 80vh;
     display: flex;
     flex-direction: column;   
 
         button{
-                padding: 10px 20px;
-                border-radius: 15px;
-                cursor: pointer;
-                font-size: 1rem; 
-                border: 2px solid var(--card-yellow);
-                margin-top: 1rem; 
+            padding: 10px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 1rem; 
+            border: 2px solid var(--card-yellow);
+            margin-top: 1rem; 
 
-                &:focus {
-                outline: none
-                }
+            &:focus {
+            outline: none
+            }
                 
         }
+
         label{
             display:flex;
             justify-content: center;               
@@ -253,6 +243,7 @@ const DivCardByType = styled.div`
             align-self: center;
             margin-bottom: 10px;
         }
+
         .disabledDivOn{
             justify-content: center;               
             min-width: 130px;
@@ -261,41 +252,43 @@ const DivCardByType = styled.div`
             margin-bottom: 10px;
             opacity: 0.3;
         }
+
         .preventclick{
            	pointer-events: none;
-        }
-
-          
+        }       
 `
 
 const DivLoading = styled.div`
+    
     margin-top: 10px;
     display: flex;
     height: 15px;
     justify-content: center;
     
     .load{
-            font-size: 1.5rem;
-            font-family: "Orbitron", sans-serif;
-            font-weight: 700;
-            text-transform: uppercase;
-            opacity: 1;
-            animation-name: fadeInOpacity;
-            animation-iteration-count: 1;
-            animation-timing-function: ease-in;
-            animation-duration: 0.3s;
-            color: red;
-            text-shadow: 1px 1px black;
-            margin-top: 5px;
+        font-size: 1.5rem;
+        font-family: "Orbitron", sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        opacity: 1;
+        animation-name: fadeInOpacity;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+        animation-duration: 0.3s;
+        color: red;
+        text-shadow: 1px 1px black;
+        margin-top: 5px;
         }                      
 `
 
 const DivBtn = styled.div`
+    
     margin-top: 1rem;
-        div{
-                justify-content: center;
-                display: flex;
-            }
+    
+    div{
+            justify-content: center;
+            display: flex;
+        }
 
     p{
         display: flex;
@@ -325,23 +318,20 @@ const DivBtn = styled.div`
         animation-duration: 2s;
         animation-delay: 1s;
         animation-fill-mode: both;
-        margin-bottom: 15px;
-        
+        margin-bottom: 15px; 
     }
 
     .hide{
-        
         opacity: 0;
-
     }
 
     @keyframes fadeInOpacity {
-            0% {
-            opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
+        0% {
+        opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
 
     @media screen and (min-width: 320px) and (max-width: 374px) {
@@ -357,7 +347,7 @@ const DivBtn = styled.div`
             font-size: 18px;
             margin-bottom: 20px;
             max-width: 75vw;
-    }
+        }
             
     }
 
@@ -371,6 +361,7 @@ const DivBtn = styled.div`
 `
 
 const DivCard = styled.div`
+    
     min-width: 220px;
     min-height: 290px;
     border-radius: 5px;
@@ -409,6 +400,7 @@ const DivCard = styled.div`
 	    animation-timing-function: ease-in;
 	    animation-duration: 0.5s;
     }
+
     @keyframes fadeInOpacity {
         0% {
 		opacity: 0;
@@ -420,10 +412,12 @@ const DivCard = styled.div`
 `
 
 const DivImgCard = styled.div`
+    
     margin: 0.5rem;
 `
 
 const DivScrollBtn = styled.div`
+    
     display: flex;
     font-size: 40px;
     border-radius: 40px;
@@ -432,6 +426,7 @@ const DivScrollBtn = styled.div`
 `
 
 const DivLockPuro = styled.div`
+    
     display: flex;
     flex-direction: column;
     padding: 5px 20px 10px 20px;

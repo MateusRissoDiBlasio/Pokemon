@@ -28,8 +28,7 @@ export const Select = ({ value, onChange }) => {
             setPokemonType(pokemonTypes)   
         }
         fetchType();
-        
-        
+                
         
     }, []);
     
@@ -52,6 +51,7 @@ export const Select = ({ value, onChange }) => {
 }
 
 export const SelectStyle = styled.select`
+
 width: 150px;
 text-align: center;
 font-family: font-family: "Roboto", sans-serif;
