@@ -149,7 +149,7 @@ const PokemonByTypeList = () => {
                                 
                                 return (
                                     <Link key={index} to={`/details/${pokemon.name}`}>
-                                        <DivCard key={index} style={{color: hidden === pokemon ? theme.hover : theme.color, backgroundColor: hidden === pokemon ? theme.hover : theme.cardBackground, border: theme.cardBorder}} 
+                                        <DivCard key={index} style={{color: hidden === pokemon ? theme.hover : theme.color, backgroundColor: hidden === pokemon ? theme.hover : theme.cardBackground, border: theme.cardBorder, boxShadow: hidden === pokemon ? theme.cardshadow : ''}} 
                                                 onMouseEnter={() => setHidden(pokemon)}
                                                 onMouseLeave={() => setHidden(-1)} >
                                             

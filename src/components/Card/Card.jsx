@@ -24,7 +24,7 @@ export function CardsList({ pokemon }) {
         return (
             <DivCardContainerSearch style={{color: theme.color, backgroundColor: theme.background}}>
                 <Link to={`/details/${poke.name}`}>
-                    <DivCard style={{color: hidden === -1 ? theme.color : theme.hover, backgroundColor: hidden === -1 ? theme.cardBackground : theme.hover, border: theme.cardBorder}} 
+                    <DivCard style={{color: hidden === -1 ? theme.color : theme.hover, backgroundColor: hidden === -1 ? theme.cardBackground : theme.hover, border: theme.cardBorder, boxShadow: hidden === 0 ? theme.cardshadow : ''}} 
                     onMouseEnter={() => setHidden(0)}
                     onMouseLeave={() => setHidden(-1)}>
                         <h4>{poke.name}</h4>
