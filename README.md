@@ -1,6 +1,6 @@
 # DevQuest - Desafio PokeAPI <img src="./public/readme/images/pokeballicon.png">
 
-## Pokémon Cards App 
+## Pokémon Cards App
 
 Esta aplicação foi desenvolvida para que através da API PokeAPI apresentar aos usuários listas de Pokémons, nas
 quais é possível através de um clique em algum Pokémon apresentado na tela em um formato de Cartão, obter acesso
@@ -84,7 +84,8 @@ Toggle (alternar entre tema claro e escuro).
   <img src="./public/readme/images/DetailPage.png">
 </a>
 
-## Mobile
+## Mobile <img src="./public/readme/images/pokeballicon.png">
+
 ### Detail Page (Portrait Orientation) Light Theme
 <a href="#" target="_blank">
   <img src="./public/readme/images/DetailPageMobile.png">
