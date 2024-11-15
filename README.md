@@ -71,25 +71,25 @@ Toggle (alternar entre tema claro e escuro).
 
 ### HomePage
 <a href="#" target="_blank">
-  <img src="./imagens/HomePage.png">
+  <img src="./public/readme/images/HomePage.png">
 </a>
 
 ### By Type List
 <a href="#" target="_blank">
-  <img src="./imagens/TypeListExample.png">
+  <img src="./public/readme/images/TypeListExample.png">
 </a>
 
 ### Details Page
 <a href="#" target="_blank">
-  <img src="./imagens/DetailPage.png">
+  <img src="./public/readme/images/DetailPage.png">
 </a>
 
 ## Mobile
 
 ### Detail Page (Portrait Orientation) and (Landscape Orientation) Dark Theme
 <a href="#" target="_blank">
-  <img src="./imagens/DetailPageMobile.png">
-  <img src="./imagens/DetailPageMobileLandscapeOrientationDarkTheme.png">
+  <img src="./public/readme/images/DetailPageMobile.png">
+  <img src="./public/readme/images/DetailPageMobileLandscapeOrientationDarkTheme.png">
 </a>
 
 
