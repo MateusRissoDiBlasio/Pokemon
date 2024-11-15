@@ -1,4 +1,4 @@
-# DevQuest - Desafio PokeAPI
+# DevQuest - Desafio PokeAPI <img src="./public/readme/images/pokeballicon.png">
 
 ## Pokémon Cards App 
 
@@ -105,3 +105,29 @@ https://github.com/user-attachments/assets/5feb012c-3853-49d7-bfff-c0e3aad42da5
 - Context API utilizado para criação dos temas "Light" (claro) e "Dark" (escuro). Maneira eficaz para estilização dos componentes em alternância dos temas escolhidos pelo usuário através do clique.
 - Styled-components: biblioteca para realizar as estilizações de forma mais direta e dinâmica sem a necessidade de um arquivo .css.
 - React-router-dom utilizado para realizar as ligações dos caminhos do SPA, exemplo: troca entre a home page e a página interna.
+- Projeto criado com VITE.
+
+# Procedimentos para instalação e execução do app
+
+Certifique-se de que o Node.js está instalado em seu computador.
+
+Faça um clone do repositório e acesse o diretório.
+Para clonar o repositório, abra um terminal no VsCode - teclas de atalho: `ctrl+shift+'` . 
+
+Na linha de comandos digite:
+
+`git clone https://github.com/MateusRissoDiBlasio/Pokemon.git`
+
+Acesse o diretório:
+
+`cd Pokemon`
+
+Instalação das dependências:
+
+`npm install`
+
+Executar a aplicação:
+
+`npm run dev`
+
+Clique no link gerado pelo terminal.
