@@ -99,7 +99,7 @@ Toggle (alternar entre tema claro e escuro).
 
 https://github.com/user-attachments/assets/5feb012c-3853-49d7-bfff-c0e3aad42da5
 
-[![Watch the video](https://raw.githubusercontent.com/MateusRissoDiBlasio/Pokemon/main/public/readme/images/HomePage.png)](https://raw.githubusercontent.com/MateusRissoDiBlasio/Pokemon/main/public/readme/images/video/480.mp4)
+[![Watch the video](https://raw.githubusercontent.com/MateusRissoDiBlasio/Pokemon/main/public/readme/images/HomePage.png)](https://raw.githubusercontent.com/MateusRissoDiBlasio/Pokemon/main/public/readme/images/video/480p.mp4)
 
 
 ## Ferramentas utilizadas
