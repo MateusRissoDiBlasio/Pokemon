@@ -96,7 +96,7 @@ Toggle (alternar entre tema claro e escuro).
   <img src="./public/readme/images/DetailPageMobileLandscapeOrientationDarkTheme.png">
 </a>
 
-## Usage
+## Clipe
 
 https://github.com/user-attachments/assets/5feb012c-3853-49d7-bfff-c0e3aad42da5
 
