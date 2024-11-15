@@ -99,9 +99,6 @@ Toggle (alternar entre tema claro e escuro).
 
 https://github.com/user-attachments/assets/5feb012c-3853-49d7-bfff-c0e3aad42da5
 
-[![Watch the video](https://raw.githubusercontent.com/MateusRissoDiBlasio/Pokemon/main/public/readme/images/HomePage.png)](https://raw.githubusercontent.com/MateusRissoDiBlasio/Pokemon/main/public/readme/images/video/480p.mp4)
-
-
 ## Ferramentas utilizadas
 - React.js: utilizado para criar componentes e a interface do usuário, deixando o código mais limpo e sem o código se tornar muito repetitivo.
 - Single Page Application (SPA), Página com estrutura SPA, tornando as respostas de navegação mais rápidas e sem necessidade de recarregar a página.
