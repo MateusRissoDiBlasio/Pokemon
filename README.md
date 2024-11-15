@@ -84,7 +84,7 @@ Toggle (alternar entre tema claro e escuro).
   <img src="./public/readme/images/DetailPage.png">
 </a>
 
-## Mobile <img src="./public/readme/images/pokeballicon.png">
+## Mobile <img src="./public/readme/images/cellphone.png">
 
 ### Detail Page (Portrait Orientation) Light Theme
 <a href="#" target="_blank">
