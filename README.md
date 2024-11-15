@@ -85,14 +85,19 @@ Toggle (alternar entre tema claro e escuro).
 </a>
 
 ## Mobile
-
-### Detail Page (Portrait Orientation) and (Landscape Orientation) Dark Theme
+### Detail Page (Portrait Orientation) Light Theme
 <a href="#" target="_blank">
   <img src="./public/readme/images/DetailPageMobile.png">
+</a> 
+
+### Detail Page (Landscape Orientation) Dark Theme
+<a href="#" target="_blank">    
   <img src="./public/readme/images/DetailPageMobileLandscapeOrientationDarkTheme.png">
 </a>
 
+## Usage
 
+https://github.com/user-attachments/assets/5feb012c-3853-49d7-bfff-c0e3aad42da5
 
 
 ## Ferramentas utilizadas
