@@ -113,7 +113,7 @@ Toggle (alternar entre tema claro e escuro).
 </div>
 </div>
 
-<H1> Clipe <img src="./public/readme/images/100px.gif" width="50"> </H1> 
+## Clipe <img src="./public/readme/images/100px.gif" width="50">
 
 <div align="center">
     
