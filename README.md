@@ -113,9 +113,13 @@ Toggle (alternar entre tema claro e escuro).
 </div>
 </div>
 
-## Clipe
+## Clipe ![40px](https://github.com/user-attachments/assets/116dab9f-106f-47f9-8ef1-0c6ae9d83113)
 
+<div align="center">
+    
 https://github.com/user-attachments/assets/5feb012c-3853-49d7-bfff-c0e3aad42da5
+
+</div>
 
 ## Ferramentas utilizadas
 - React.js: utilizado para criar componentes e a interface do usuário, deixando o código mais limpo e sem o código se tornar muito repetitivo.
