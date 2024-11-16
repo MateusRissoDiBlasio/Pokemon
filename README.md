@@ -92,7 +92,7 @@ Toggle (alternar entre tema claro e escuro).
 
 </div>
 
-## Mobile <img src="./public/readme/images/cellphone.png">
+## Mobile <img src="./public/readme/images/cellphonebig.png" width="30">
 
  
 <div align="center">
