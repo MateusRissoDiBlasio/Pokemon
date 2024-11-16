@@ -1,4 +1,4 @@
-# DevQuest - Desafio PokeAPI <img src="./public/readme/images/pokeballicon.png">
+# DevQuest - Desafio PokeAPI <img src="./public/readme/images/pokeball-300.png" width="30">
 
 ## Pokémon Cards App
 <div align="justify">
@@ -113,7 +113,7 @@ Toggle (alternar entre tema claro e escuro).
 </div>
 </div>
 
-## Clipe ![40px](https://github.com/user-attachments/assets/116dab9f-106f-47f9-8ef1-0c6ae9d83113)
+<H1> Clipe <img src="./public/readme/images/100px.gif" width="50"> </H1> 
 
 <div align="center">
     
