@@ -117,18 +117,18 @@ Para clonar o repositório, abra um terminal no VsCode - teclas de atalho: `ctrl
 
 Na linha de comandos digite:
 
-`git clone https://github.com/MateusRissoDiBlasio/Pokemon.git`
+    git clone https://github.com/MateusRissoDiBlasio/Pokemon.git
 
 Acesse o diretório:
 
-`cd Pokemon`
+    cd Pokemon
 
 Instalação das dependências:
 
-`npm install`
+    npm install
 
 Executar a aplicação:
 
-`npm run dev`
+    npm run dev
 
 Clique no link gerado pelo terminal.
