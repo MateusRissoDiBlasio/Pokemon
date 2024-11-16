@@ -1,9 +1,10 @@
 # DevQuest - Desafio PokeAPI <img src="./public/readme/images/pokeballicon.png">
 
 ## Pokémon Cards App
+<div align="justify">
 
 Esta aplicação foi desenvolvida para que através da API PokeAPI apresentar aos usuários listas de Pokémons, nas
-quais é possível através de um clique em algum Pokémon apresentado na tela em um formato de Cartão, obter acesso
+quais é possível através de um clique em algum Pokémon apresentado na tela em formato de Cartão, obter acesso
 às informações sobre o respectivo Pokémon em uma outra página interna. Seus Tipo(s), Habilidade(s) e Movimentos.
 
 A lista inicial "Pokémons Aleatórios" contém 10 cards iniciais, logo abaixo da lista há um botão, que a cada
@@ -25,9 +26,11 @@ retornar à pagina principal é clicando na Logo do Pokémon na barra do menu. E
 temas "Light/Dark".
 
 Por padrão preferi utilizar o Inglês como idioma do app. 
-
+</div>
 
 ## Pontos de ajustes:
+
+<div align="justify">
 
 Botão de "scroll up" - em formato de seta pra cima - para retornar ao topo da página, condicionado ao tamanho atual
 da página, após incrementar as listas de Pokémons Aleatórios e por tipo o botão é inserido na página, tornando um atalho
@@ -63,7 +66,7 @@ A aplicação desenvolvida é compatível com dispositivos móveis.
 
 Estilização realizada com o styled-components, o react-router para as rotas e o API Context para para a criação de um Theme
 Toggle (alternar entre tema claro e escuro).
-
+</div>
 
 # Telas
 
@@ -113,7 +116,7 @@ https://github.com/user-attachments/assets/5feb012c-3853-49d7-bfff-c0e3aad42da5
 Certifique-se de que o Node.js está instalado em seu computador.
 
 Faça um clone do repositório e acesse o diretório.
-Para clonar o repositório, abra um terminal no VsCode - teclas de atalho: `ctrl+shift+'` . 
+Para clonar o repositório, abra um terminal no VsCode - teclas de atalho: **`ctrl+shift+'`** . 
 
 Na linha de comandos digite:
 
