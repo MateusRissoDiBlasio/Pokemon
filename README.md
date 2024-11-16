@@ -33,7 +33,7 @@ Por padrão preferi utilizar o Inglês como idioma do app.
 <div align="justify">
 
 Botão de "scroll up" - em formato de seta pra cima - para retornar ao topo da página, condicionado ao tamanho atual
-da página, após incrementar as listas de Pokémons Aleatórios e por tipo o botão é inserido na página, tornando um atalho
+da página, após incrementar as listas de Pokémons Aleatórios e por tipo o botão é inserido na página, tornando-se um atalho
 mais fácil retornar ao início da página.
 
 Botão para alternar entre os temas "Light" (Claro) e "Dark" (Escuro), opção para alternar as propriedades dos componentes
@@ -47,7 +47,7 @@ Aviso de "Loading" ao clicar em botões que realizam solicitações à API. Form
 de Pokémons por Tipo, ao carregar mais Pokémons.
 
 Ao alternar entre as opções por tipo do campo "Select" eram apresentadas falhas nas listas, divergencias nas quantidades de
-Pokémons nos resultados finais a solução encrontrada foi a inserção de um botão com um ícone animado de um cadeado, que ao 
+Pokémons nos resultados finais, a solução encrontrada foi a inserção de um botão com um ícone animado de um cadeado, que ao 
 realizar a seleção o campo "Select" fica inativo, ativando o botão "Unlock Selection" que permitirá liberar a alteração do 
 campo "Select". Ao chegar ao final da lista por Tipo, é apresentada uma mensagem com a quantidade e o tipo de Pokémons na
 lista apresentada.
