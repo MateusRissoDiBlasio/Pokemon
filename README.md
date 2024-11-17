@@ -9,7 +9,7 @@
   - [Pokémon Cards App](#pokémon-cards-app)
   - [Telas](#telas)
     -  [Desktop](#desktop)
-    -  [Mobile]([#Mobile])
+    -  [Mobile](#[Mobile])
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned-and-difficulties)
