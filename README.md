@@ -13,7 +13,7 @@
   - [Built with](#built-with)
   - [What I learned](#what-i-learned-and-difficulties)
   - [Continue developing](#continue-developing)
-  - [Run Project in your computer](#how-you-can-run-the-project-in-your-computer)
+  - [Instalação](#procedimentos-para-instalação-e-execução-do-app)
 - [Author](#author)
 
 <br>
