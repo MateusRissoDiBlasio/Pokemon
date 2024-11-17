@@ -8,7 +8,7 @@
   -  [Desktop](#desktop)
   -  [Mobile](https://github.com/MateusRissoDiBlasio/Pokemon?tab=readme-ov-file#mobile-)
  
-- [Ferramentas utilizadas](#ferramentas-utilizadas)
+- [Ferramentas Utilizadas](#ferramentas-utilizadas)
     
 - [My process](#my-process)
   - [Built with](#built-with)
