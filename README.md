@@ -6,15 +6,16 @@
 
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
+  - [Pokémon Cards App](#pokémon-cards-app)
+  - [Telas](#telas)
+    -  [Desktop](#desktop)
+    -  [Mobile](#mobile)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned-and-difficulties)
   - [Continue developing](#continue-developing)
   - [Instalação](#procedimentos-para-instalação-e-execução-do-app)
-- [Author](#author)
+- [Autor](#autor)
 
 <br>
 
