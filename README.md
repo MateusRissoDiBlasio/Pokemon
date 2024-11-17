@@ -9,7 +9,7 @@
   - [Pokémon Cards App](#pokémon-cards-app)
   - [Telas](#telas)
     -  [Desktop](#desktop)
-    -  [Mobile](#[Mobile])
+    -  [Mobile](https://github.com/MateusRissoDiBlasio/Pokemon/edit/main/README.md#mobile-)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned-and-difficulties)
