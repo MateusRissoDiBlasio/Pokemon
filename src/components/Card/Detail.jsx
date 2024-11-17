@@ -110,7 +110,7 @@ export function CardDetails() {
           <ThemeToggleButton />
           <a href="/Pokemon/"> <Button>Go back</Button></a>
         </div>
-        <img src={PokemonImage} alt="" width={'200px'} />
+        <a href="/Pokemon/"><img src={PokemonImage} alt="" width={'200px'} /></a>
         
       </HeaderDetails>
 
