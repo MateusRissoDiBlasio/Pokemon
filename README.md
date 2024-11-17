@@ -1,20 +1,21 @@
 # - DevQuest - <br><br> Desafio PokeAPI <img src="./public/readme/images/pokeball-300.png" width="30">
 <br>
 
-## Table of contents
-
-
-
-- [Overview](#overview)
-  - [Pokémon Cards App](#pokémon-cards-app)
-  - [Telas](#telas)
-    -  [Desktop](#desktop)
-    -  [Mobile](https://github.com/MateusRissoDiBlasio/Pokemon?tab=readme-ov-file#mobile-)
+## Índice
+- [Pokémon Cards App](#pokémon-cards-app)
+- [Pontos de Ajustes](#pontos-de-ajustes)
+- [Telas](#telas)
+  -  [Desktop](#desktop)
+  -  [Mobile](https://github.com/MateusRissoDiBlasio/Pokemon?tab=readme-ov-file#mobile-)
+ 
+- [Ferramentas utilizadas](#ferramentas-utilizadas)
+    
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned-and-difficulties)
   - [Continue developing](#continue-developing)
-  - [Instalação](#procedimentos-para-instalação-e-execução-do-app)
+
+- [Instalação](#procedimentos-para-instalação-e-execução-do-app)
 - [Autor](#autor)
 
 <br>
@@ -173,3 +174,9 @@ Executar a aplicação:
     npm run dev
 
 Clique no link gerado pelo terminal.
+
+
+# Autor
+
+
+
