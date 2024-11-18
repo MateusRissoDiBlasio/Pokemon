@@ -7,6 +7,7 @@
 - [Telas](#telas)
   -  [Desktop](#desktop)
   -  [Mobile](https://github.com/MateusRissoDiBlasio/Pokemon?tab=readme-ov-file#mobile-)
+  -  [Clipe](#clipe)
  
 - [Ferramentas Utilizadas](#ferramentas-utilizadas)
     
