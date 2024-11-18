@@ -8,13 +8,13 @@
   -  [Desktop](#desktop)
   -  [Mobile](https://github.com/MateusRissoDiBlasio/Pokemon?tab=readme-ov-file#mobile-)
   -  [Clipe](https://github.com/MateusRissoDiBlasio/Pokemon/tree/main#clipe-)
- 
-- [Ferramentas Utilizadas](#ferramentas-utilizadas)
     
-- [My process](#my-process)
+- [Aprendizagem](#aprendizagem)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned-and-difficulties)
   - [Continue developing](#continue-developing)
+  - [Ferramentas Utilizadas](#ferramentas-utilizadas)
+  
 
 - [Instalação](#procedimentos-para-instalação-e-execução-do-app)
 - [Autor](#autor)
@@ -142,6 +142,8 @@ Toggle (alternar entre tema claro e escuro).
 https://github.com/user-attachments/assets/5feb012c-3853-49d7-bfff-c0e3aad42da5
 
 </div>
+
+# Aprendizagem
 
 ## Ferramentas utilizadas
 - React.js: utilizado para criar componentes e a interface do usuário, deixando o código mais limpo e sem o código se tornar muito repetitivo.
