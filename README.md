@@ -108,7 +108,7 @@ Por padrão preferi utilizar o Inglês como idioma do app.
     
 ### Detail Page (Portrait Orientation) Light Theme
 <a href="#" target="_blank">                                  
-  <img src="./public/readme/images/DetailPageMobile.png">
+  <img src="./public/readme/images/DetailPageMobilegrande.png" width="200">
 </a> 
 </div>
 
@@ -116,7 +116,7 @@ Por padrão preferi utilizar o Inglês como idioma do app.
     
 ### Detail Page (Landscape Orientation) Dark Theme
 <a href="#" target="_blank">    
-  <img src="./public/readme/images/DetailPageMobileLandscapeOrientationDarkTheme.png">
+  <img src="./public/readme/images/DetailPageMobileLandscapeOrientationDarkThemegrande.png" width="400">
 </a>
 </div>
 </div>
