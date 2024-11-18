@@ -1,4 +1,6 @@
-## - DevQuest - <br><br>  Desafio [![My Skills](https://skillicons.dev/icons?i=react)](https://skillicons.dev) PokeAPI <img src="./public/readme/images/pokeball-300.png" width="30">
+# - DevQuest -
+
+## Desafio [![My Skills](https://skillicons.dev/icons?i=react)](https://skillicons.dev) PokeAPI <img src="./public/readme/images/pokeball-300.png" width="30">
 <br>
 
 ## Índice
