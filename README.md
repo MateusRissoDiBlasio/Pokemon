@@ -207,3 +207,11 @@ Clique no link gerado pelo terminal.
 
 <img loading="lazy" src="https://avatars.githubusercontent.com/u/139410293?s=400&u=42addb6ad785b3b4878173602d0b2a2437688fc5&v=4" width="115"><br><sub>Mateus Risso Di Blasio</sub>
 
+<a href="https://www.instagram.com/devdiblasio/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=flat&logo=instagram&logoColor=white"></a>
+
+<a href="www.linkedin.com/in/mateus-risso-443603321"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white"></a>
+
+<a href="https://github.com/MateusRissoDiBlasio"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white
+"></a>
+
+
