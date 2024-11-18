@@ -156,7 +156,7 @@ Após percorrer por todos esses caminhos, pensar, repensar e aperfeiçoar, fique
   
 </div>
 
-## Permanecer Evoluindo
+## Evolução
 
 <div align="justify">
 
