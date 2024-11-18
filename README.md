@@ -10,12 +10,10 @@
   -  [Clipe](https://github.com/MateusRissoDiBlasio/Pokemon/tree/main#clipe-)
     
 - [Aprendizagem](#aprendizagem)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned-and-difficulties)
-  - [Continue developing](#continue-developing)
+  - [Fases de Todo Processo](#fases-de-todo-processo)
+  - [Permanecer Evoluindo](#permanecer-evoluindo)
   - [Ferramentas Utilizadas](#ferramentas-utilizadas)
   
-
 - [Instalação](#procedimentos-para-instalação-e-execução-do-app)
 - [Autor](#autor)
 
@@ -144,6 +142,26 @@ https://github.com/user-attachments/assets/5feb012c-3853-49d7-bfff-c0e3aad42da5
 </div>
 
 # Aprendizagem
+
+## Fases de Todo Processo
+
+<div align="justify">
+
+Em diversos momentos fiquei travado, e somente após ver e rever as possibilidades, de por em prática da forma que gostaria, realizar diversos testes, que me levavam a outros ajustes, consegui atingir o resultado pretendido.
+Até o presente momento, foi o projeto mais desafiador que realizei, primeiro em manipulação de dados de um API, muitos testes para filtrar as informações específicas na estruturação do app.
+
+As partes em que tive mais dificuldades, foram na filtragem das informações na página de detalhes de cada Pokémon filtrando os dados seguindo um padrão, que na API não estão, creio q de forma propositadamente. E na parte lógica de qual seria a forma de filtrar por tipo, e de que forma eu a faria. A mecânica que encontrei faz buscas por etapas, a cada 100 Pokémons de todos os possíveis, adiciona os do tipo informado, e ao clicar no botão "Load More" ele passa aos próximos 100 para filtrar novamente os próximos a serem renderizados, até atingir o número total disponível na API. E a parte que tive mais dificuldade, foi na prevenção de erros nos resultados dessa lista, objetivo alcançado após muitos e muitos testes.
+Após percorrer por todos esses caminhos, pensar, repensar e aperfeiçoar, fiquei bastante satisfeito com o resultado alcançado.
+  
+</div>
+
+## Permanecer Evoluindo
+
+<div align="justify">
+
+Sempre haverão diversas formas de alcançar o mesmo objetivo, mais simples, mais complexas, mas o interessante, é o aprendizado obtido. E sempre buscar mais conhecimento para as soluções dentro de cada projeto. Sabendo que sempre haverá formas de aperfeiçoar, refatorar o código deve virar um lema.
+
+</div>
 
 ## Ferramentas utilizadas
 - React.js: utilizado para criar componentes e a interface do usuário, deixando o código mais limpo e sem o código se tornar muito repetitivo.
