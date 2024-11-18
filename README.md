@@ -72,7 +72,7 @@ Por padrão preferi utilizar o Inglês como idioma do app.
 
 - A aplicação desenvolvida é compatível com dispositivos móveis.
 
-- Estilização realizada com o styled-components, o react-router para as rotas e o API Context para para a criação de um Theme Toggle (alternar entre temas: claro e escuro).
+- Estilização realizada com o styled-components, react-router para as rotas e o API Context para para a criação de um Theme Toggle (alternar entre temas: claro e escuro).
 
 </div>
 
@@ -147,7 +147,7 @@ Após percorrer por todos esses caminhos, pensar, repensar e aperfeiçoar, fique
 
 <div align="justify">
 
-Sempre haverão diversas formas de alcançar o mesmo objetivo, mais simples, mais complexas, mas o interessante, é o aprendizado obtido. E sempre buscar mais conhecimento para as soluções dentro de cada projeto. Sabendo que sempre haverá formas de aperfeiçoar, refatorar o código deve virar um lema.
+Sempre haverá diversas formas de alcançar o mesmo objetivo, mais simples, mais complexas, mas o interessante, é o aprendizado obtido. E sempre buscar mais conhecimento para as soluções dentro de cada projeto. Sabendo que sempre haverá formas de aperfeiçoar, refatorar o código deve virar um lema.
 
 </div>
 
