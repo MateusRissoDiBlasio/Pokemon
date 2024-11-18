@@ -3,7 +3,7 @@
 
 ## Índice
 - [Pokémon Cards App](#pokémon-cards-app)
-- [Pontos de Ajustes](#pontos-de-ajustes)
+- [Funcionalidades](#funcionalidades)
 - [Telas](#telas)
   -  [Desktop](#desktop)
   -  [Mobile](https://github.com/MateusRissoDiBlasio/Pokemon?tab=readme-ov-file#mobile-)
@@ -48,44 +48,45 @@ temas "Light/Dark".
 Por padrão preferi utilizar o Inglês como idioma do app. 
 </div>
 
-## Pontos de ajustes:
+## Funcionalidades:
 
 <div align="justify">
 
-Botão de "scroll up" - em formato de seta pra cima - para retornar ao topo da página, condicionado ao tamanho atual
+- Botão de "scroll up" - em formato de seta pra cima - para retornar ao topo da página, condicionado ao tamanho atual
 da página, após incrementar as listas de Pokémons Aleatórios e por tipo o botão é inserido na página, tornando-se um atalho
 mais fácil retornar ao início da página.
 
-Botão para alternar entre os temas "Light" (Claro) e "Dark" (Escuro), opção para alternar as propriedades dos componentes
+- Botão para alternar entre os temas "Light" (Claro) e "Dark" (Escuro), opção para alternar as propriedades dos componentes
 por temas.
     
-Ao iniciar a implementação do app me deparei com algumas situações nas quais me desafiei a minimizar possíveis erros/falhas
+- Ao iniciar a implementação do app me deparei com algumas situações nas quais me desafiei a minimizar possíveis erros/falhas
 no retorno das informações acessadas na API, exemplos: Pokémons sem imagem de retorno, busquei caminhos para imagens
 alternativas, e criei imagens padrão onde este dado não era disponibilizado.
 
-Aviso de "Loading" ao clicar em botões que realizam solicitações à API. Forma encontrada de previnir possíveis erros na lista
+- Aviso de "Loading" ao clicar em botões que realizam solicitações à API. Forma encontrada de previnir possíveis erros na lista
 de Pokémons por Tipo, ao carregar mais Pokémons.
 
-Ao alternar entre as opções por tipo do campo "Select" eram apresentadas falhas nas listas, divergencias nas quantidades de
+- Ao alternar entre as opções por tipo do campo "Select" eram apresentadas falhas nas listas, divergencias nas quantidades de
 Pokémons nos resultados finais, a solução encrontrada foi a inserção de um botão com um ícone animado de um cadeado, que ao 
 realizar a seleção o campo "Select" fica inativo, ativando o botão "Unlock Selection" que permitirá liberar a alteração do 
 campo "Select". Ao chegar ao final da lista por Tipo, é apresentada uma mensagem com a quantidade e o tipo de Pokémons na
 lista apresentada.
 
-Inseri algumas imagens ao projeto que não são diretamente da API, referentes aos tipos de Pokémons.
+- Inseri algumas imagens ao projeto que não são diretamente da API, referentes aos tipos de Pokémons.
 
-Na tela de detalhes do Pokémon, ao realizar testes, constatei que existem Pokémons com apenas uma habilidade, sem movimentos
+- Na tela de detalhes do Pokémon, ao realizar testes, constatei que existem Pokémons com apenas uma habilidade, sem movimentos
 listados, e de apenas um tipo. Realizei as adequações para apresentar as informações de forma coerente.
 
-Outra possível falha encontrada durante o processo, a lista de habilidades retornavam dados em duplicidade, inseri um filtro
+- Outra possível falha encontrada durante o processo, a lista de habilidades retornavam dados em duplicidade, inseri um filtro
 para trazer habilidades únicas, realizando a comparação pelo nome da habilidade, e a descrição da habilidade aparecia de forma
 intercalada entre idiomas diferentes, alemão, inglês, italiano, etc, não seguindo um padrão. Realizei o filtro, puxando somente
 no idioma Inglês, buscando padronizar as informações.
 
-A aplicação desenvolvida é compatível com dispositivos móveis.
+- A aplicação desenvolvida é compatível com dispositivos móveis.
 
-Estilização realizada com o styled-components, o react-router para as rotas e o API Context para para a criação de um Theme
+- Estilização realizada com o styled-components, o react-router para as rotas e o API Context para para a criação de um Theme
 Toggle (alternar entre tema claro e escuro).
+
 </div>
 
 # Telas
