@@ -119,7 +119,7 @@ Toggle (alternar entre tema claro e escuro).
 <div>
     
 ### Detail Page (Portrait Orientation) Light Theme
-<a href="#" target="_blank">                                  
+<a href="./public/readme/images/DetailPageMobile.png" target="_blank">                                  
   <img src="./public/readme/images/DetailPageMobile.png">
 </a> 
 </div>
