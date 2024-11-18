@@ -165,12 +165,17 @@ Sempre haverão diversas formas de alcançar o mesmo objetivo, mais simples, mai
 </div>
 
 ## Ferramentas utilizadas
-- React.js: utilizado para criar componentes e a interface do usuário, deixando o código mais limpo e sem o código se tornar muito repetitivo.
+
+<div align="justify">
+
+  - React.js: utilizado para criar componentes e a interface do usuário, deixando o código mais limpo e sem o código se tornar muito repetitivo.
 - Single Page Application (SPA), Página com estrutura SPA, tornando as respostas de navegação mais rápidas e sem necessidade de recarregar a página.
 - Context API utilizado para criação dos temas "Light" (claro) e "Dark" (escuro). Maneira eficaz para estilização dos componentes em alternância dos temas escolhidos pelo usuário através do clique.
 - Styled-components: biblioteca para realizar as estilizações de forma mais direta e dinâmica sem a necessidade de um arquivo .css.
 - React-router-dom utilizado para realizar as ligações dos caminhos do SPA, exemplo: troca entre a home page e a página interna.
 - Projeto criado com VITE.
+
+</div>
 
 # Procedimentos para instalação e execução do app
 
