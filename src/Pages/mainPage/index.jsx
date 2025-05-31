@@ -7,7 +7,7 @@ import { LoadMoreButton } from '../../components/Buttons/LoadMore';
 import { PokemonByTypeList } from '../../components/FilterByType/PokemonByTypeList';
 import { Button } from '../../components/Buttons/Button';
 import { ScrollButton } from '../../components/Buttons/ScrollButton'
-import Go from '../images/go.png'
+import Go from '/images/go.png'
 
 export function MainPage() {
     const { theme } = useContext(ThemeContext)

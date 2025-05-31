@@ -6,7 +6,7 @@ import styled from "styled-components"
 import { Link } from 'react-router-dom'
 import { LoadMoreTypes } from "../Buttons/LoadMore"
 import { ScrollButton } from "../Buttons/ScrollButton"
-import NoImagePlaceHolder from './images/No-Pokemon-Image-card.png'
+import NoImagePlaceHolder from '/images/No-Pokemon-Image-card.png'
 import UseAnimations from 'react-useanimations';
 import lock from 'react-useanimations/lib/lock';
 
