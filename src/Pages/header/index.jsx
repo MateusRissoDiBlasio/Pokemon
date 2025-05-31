@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../Context/theme';
 import styled from 'styled-components';
-import PokemonImage from '/pokemon.svg';
-import PokeBallGif from '/pokeball.gif';
+import PokemonImage from '../images/pokemon.svg';
+import PokeBallGif from '../images/pokeball.gif';
 import { ThemeToggleButton } from '../../components/Buttons/Theme-toggle';
 
 
