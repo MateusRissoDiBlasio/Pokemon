@@ -4,7 +4,7 @@ import { ThemeContext } from '../../Context/theme';
 import { Button } from '../Buttons/Button'
 import { ThemeToggleButton } from '../Buttons/Theme-toggle';
 import { Link } from 'react-router-dom';
-import PokemonImage from '../pokemon.svg'
+import PokemonImage from './pokemon.svg'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import NoImagePlaceHolder from '/No-Pokemon-Image-Placeholder.png'
