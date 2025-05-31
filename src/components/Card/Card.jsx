@@ -17,6 +17,7 @@ export function CardsList({ pokemon }) {
     const [hidden, setHidden] = useState(-1);
     const noImage = ['koraidon-limited-build', 'koraidon-sprinting-build', 'koraidon-swimming-build', 'koraidon-gliding-build', 'miraidon-low-power-mode', 'miraidon-drive-mode', 'miraidon-aquatic-mode', 'miraidon-glide-mode'];
 
+    
     if (pokemon.length === 1) {
 
         const poke = pokemon[0];

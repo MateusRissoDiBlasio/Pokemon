@@ -18,7 +18,9 @@ export const themes = {
         scroll:"#F5F5F5",
         shaddow: '0 0 0.6rem #ff0000',
         textshadow: '1px 1px #000000',
-        cardshadow: '0px -10px 2.6rem #ff0000'
+        cardshadow: '0px -10px 2.6rem #ff0000',
+        name:'light'
+        
     },
 
     dark: {
@@ -38,7 +40,8 @@ export const themes = {
         scroll:"#000000",
         shaddow: '0 0 0.6rem #ff0000',
         textshadow: '0 0 0.6rem #ff0000',
-        cardshadow: '0px 0px 2.6rem #ff0000'
+        cardshadow: '0px 0px 2.6rem #ff0000',
+        name:'dark'
     }
 }
 

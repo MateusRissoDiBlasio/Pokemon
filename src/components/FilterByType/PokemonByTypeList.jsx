@@ -97,7 +97,7 @@ const PokemonByTypeList = () => {
         setActive(false)
         setShow(true)
         setOffset(loadLimit+100)
-    };
+    }
 
 
     const filteredPokemons = pokemons.filter((pokemon) => {
