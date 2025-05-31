@@ -550,9 +550,9 @@ const [megaExceptions, setMegaExceptions] = useState(false);
         
         <div>
           <ThemeToggleButton />
-          <a href="/"> <Button>Go back</Button></a>
+          <a href="/Pokemon"> <Button>Go back</Button></a>
         </div>
-        <a href="/"><img src={PokemonImage} alt="" width={'200px'} /></a>
+        <a href="/Pokemon"><img src={PokemonImage} alt="" width={'200px'} /></a>
         
       </HeaderDetails>
 
@@ -655,7 +655,7 @@ const [megaExceptions, setMegaExceptions] = useState(false);
 
 
             {/* SETA 1 */}
-            { evolutionDetails.noInfo !== true ? <img className='seta' src="/images/seta-pequena.svg" alt="seta pequena" /> : ''}
+            { evolutionDetails.noInfo !== true ? <img className='seta' src="../images/seta-pequena.svg" alt="seta pequena" /> : ''}
             
             {/* STAGE 2 PADRÃO */}
             { evolutionDetails.noInfo !== true && !Exceptions.includes(pokemonDetails.name) ? 
@@ -1100,7 +1100,7 @@ const [megaExceptions, setMegaExceptions] = useState(false);
             </Swiper> : ''}
          
             {/* SETA 2 */}
-            { evolutionDetails.stage3 !== undefined ? <img className='seta' src="/images/seta-pequena.svg" alt="seta pequena" /> : ''}
+            { evolutionDetails.stage3 !== undefined ? <img className='seta' src="../images/seta-pequena.svg" alt="seta pequena" /> : ''}
             
             {/* STAGE 3 PADRÃO */}
             { evolutionDetails.stage3 !== undefined && !Exceptions.includes(pokemonDetails.name) ?
