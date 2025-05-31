@@ -7,7 +7,7 @@ export const AppRoutes = () => (
 
 // PARA ENVIAR AO GITHUB TEM Q SER DESSA MANEIRA 
 
-    <BrowserRouter basename="/">
+    <BrowserRouter basename="/Pokemon">
         <Routes>
             <Route exact path='/' element={<HomePage />} />
             <Route exact path='/details/:id' element={<CardDetailsPage />} />

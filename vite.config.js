@@ -17,7 +17,7 @@ import svgr from 'vite-plugin-svgr'
 
 export default defineConfig({
   plugins: [svgr(), react()],
-  base: "/Pokemon",
+  base: "/",
   build: {
     target: 'esnext'
   }
