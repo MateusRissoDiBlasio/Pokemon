@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import PokemonImage from '../images/pokemon.svg'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import NoImagePlaceHolder from './images/No-Pokemon-Image-Placeholder.png'
+import NoImagePlaceHolder from '../images/No-Pokemon-Image-Placeholder.png'
 import '../../css/styles.css';
 import {Stage1Light, Stage2Light, Stage3Light, Stage1Dark, Stage2Dark, Stage3Dark}  from '../Icons/StagesLogos';
 import { MegaLight, MegaDark, MegaLightSelected, MegaDarkSelected } from '../Icons/Mega';
