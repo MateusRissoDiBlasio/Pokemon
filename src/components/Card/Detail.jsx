@@ -4,7 +4,7 @@ import { ThemeContext } from '../../Context/theme';
 import { Button } from '../Buttons/Button'
 import { ThemeToggleButton } from '../Buttons/Theme-toggle';
 import { Link } from 'react-router-dom';
-import PokemonImage from '/pokemon.svg'
+import PokemonImage from '/images/pokemon.svg'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import NoImagePlaceHolder from '/No-Pokemon-Image-Placeholder.png'
@@ -655,7 +655,7 @@ const [megaExceptions, setMegaExceptions] = useState(false);
 
 
             {/* SETA 1 */}
-            { evolutionDetails.noInfo !== true ? <img className='seta' src="../seta-pequena.svg" alt="seta pequena" /> : ''}
+            { evolutionDetails.noInfo !== true ? <img className='seta' src="../images/seta-pequena.svg" alt="seta pequena" /> : ''}
             
             {/* STAGE 2 PADRÃO */}
             { evolutionDetails.noInfo !== true && !Exceptions.includes(pokemonDetails.name) ? 
@@ -1100,7 +1100,7 @@ const [megaExceptions, setMegaExceptions] = useState(false);
             </Swiper> : ''}
          
             {/* SETA 2 */}
-            { evolutionDetails.stage3 !== undefined ? <img className='seta' src="../seta-pequena.svg" alt="seta pequena" /> : ''}
+            { evolutionDetails.stage3 !== undefined ? <img className='seta' src="../images/seta-pequena.svg" alt="seta pequena" /> : ''}
             
             {/* STAGE 3 PADRÃO */}
             { evolutionDetails.stage3 !== undefined && !Exceptions.includes(pokemonDetails.name) ?
