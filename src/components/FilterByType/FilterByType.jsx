@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getPokemonTypes } from "../../components/FilterByType/Get-type";
 import styled from "styled-components";
 
