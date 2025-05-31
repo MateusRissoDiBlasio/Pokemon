@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Button } from '../../components/Buttons/Button'
-import NoImagePlaceHolder from '/No-Pokemon-Image-card.png'
+import NoImagePlaceHolder from '/images/No-Pokemon-Image-card.png'
 
 
 export function CardsList({ pokemon }) {
