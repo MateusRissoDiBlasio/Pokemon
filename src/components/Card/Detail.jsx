@@ -655,7 +655,7 @@ const [megaExceptions, setMegaExceptions] = useState(false);
 
 
             {/* SETA 1 */}
-            { evolutionDetails.noInfo !== true ? <img className='seta' src="/seta-pequena.svg" alt="seta pequena" /> : ''}
+            { evolutionDetails.noInfo !== true ? <img className='seta' src="./seta-pequena.svg" alt="seta pequena" /> : ''}
             
             {/* STAGE 2 PADRÃO */}
             { evolutionDetails.noInfo !== true && !Exceptions.includes(pokemonDetails.name) ? 
@@ -1100,7 +1100,7 @@ const [megaExceptions, setMegaExceptions] = useState(false);
             </Swiper> : ''}
          
             {/* SETA 2 */}
-            { evolutionDetails.stage3 !== undefined ? <img className='seta' src="/seta-pequena.svg" alt="seta pequena" /> : ''}
+            { evolutionDetails.stage3 !== undefined ? <img className='seta' src="./seta-pequena.svg" alt="seta pequena" /> : ''}
             
             {/* STAGE 3 PADRÃO */}
             { evolutionDetails.stage3 !== undefined && !Exceptions.includes(pokemonDetails.name) ?
