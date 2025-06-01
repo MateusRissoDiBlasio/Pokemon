@@ -25,7 +25,7 @@ import {DelayedLink} from '../Buttons/DelayedLink';
 register();
 
 
-export function CardDetails() {
+export function CardDetails2() {
 
   const [pokemonDetails, setPokemonDetails] = useState({});
   const { id } = useParams();
