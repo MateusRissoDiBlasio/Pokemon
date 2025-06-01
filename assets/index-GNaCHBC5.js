@@ -885,7 +885,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
 
     @media screen and (min-width: 320px) and (max-width: 374px) {
-      height: 84vh;
+      height: 83vh;
+      margin-top: 1vh;
     }
 
     @media screen and (min-width: 375px) and (max-width: 500px) {
@@ -1565,8 +1566,8 @@ text-align: center;
       margin-top: -10px;
 
       .seta{
-      width: 30px;
-      margin-top: 0px;
+      width: 25px;
+      margin-top: -10px;
       }
 
       h4{
@@ -1586,7 +1587,7 @@ text-align: center;
       .stagesgif{
       
         img{
-        max-width: 100px;
+        max-width: 90px;
         }
       }    
 
@@ -1971,7 +1972,7 @@ text-align: center;
     width: 100px;
     }
   @media screen and (min-width: 320px) and (max-width: 425px) {
-      width: 95px;
+      width: 100px;
   }
 
 `,StageMega=pt.div`
