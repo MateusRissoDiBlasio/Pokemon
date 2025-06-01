@@ -1496,7 +1496,8 @@ const Container = styled.div`
     }
 
     @media screen and (min-width: 375px) and (max-width: 500px) {
-      height: 80vh;
+      height: 78vh;
+      margin-top: 2vh;
     }
     
     @media screen and (min-width: 501px) and (max-width: 767px) and (orientation: portrait){

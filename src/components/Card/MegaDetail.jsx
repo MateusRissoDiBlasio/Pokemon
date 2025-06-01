@@ -138,7 +138,7 @@ const { theme } = useContext(ThemeContext)
           
               <Poke>             
 
-                  {pokemonDetails.namesize >= 18 ? <h3 className="largeName ">{pokemonDetails.name}</h3> : <h3>{pokemonDetails.name}</h3>}
+                  {pokemonDetails.namesize >= 9 ? <h3 className="largeName ">{pokemonDetails.name}</h3> : <h3>{pokemonDetails.name}</h3>}
                   <img src={pokemonDetails.altimage} alt={pokemonDetails.name} width={'200px'} height={'200px'} />
 
               </Poke>
@@ -149,8 +149,7 @@ const { theme } = useContext(ThemeContext)
             {pokemonDetails.abilitieslength <= 1  ? <h4 className='abilities'>Ability:</h4> : <h4 className='abilities'>Abilities:</h4>}
 
             <div className='mega2'> {theme.name === 'light' ? <MegaLightSelected /> : <MegaDarkSelected />} </div>
-
-            <h4 className='moves-evolution'>Moves</h4>
+ 
           </TitlesDiv>
           
           <UlAbilities style={{border:theme.btnBorder, backgroundColor: theme.detailsHeaderColor}}>
@@ -731,7 +730,11 @@ const TitlesDiv = styled.div`
     margin-right: 0px;
     margin-left: -208px
     
-    
+    }
+
+    .mega2{
+      margin-top: -30px
+
     }
 
     // MEXER AQUI
@@ -762,6 +765,7 @@ const TitlesDiv = styled.div`
       margin-left: -400px;
     }
 
+    
     .moves{
       margin-top: -10px
     }
@@ -821,11 +825,11 @@ const UlAbilities = styled.ul`
     }
 
     @media screen and (min-width: 320px) and (max-width: 374px) {
-      max-height: 120px;
+      max-height: 100px;
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) {
-      max-height: 60px;
+      max-height: 100px;
     
       li {
         font-size: 1.0rem;   
