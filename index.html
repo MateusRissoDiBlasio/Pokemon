@@ -10,23 +10,8 @@
     
     <title>Pokémons</title>
 
-    <script type="text/javascript">
-      (function (l) {
-        if (l.search[1] === "/") {
-          var decoded = l.search
-            .slice(1)
-            .split("&")
-            .map(function (s) {
-              return s.replace(/~and~/g, "&");
-            })
-            .join("?");
-          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
-        }
-      })(window.location);
-    </script>
-    
-    <script type="module" crossorigin src="./assets/index-W_6Sc29a.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-B9TsZyIR.css">
+    <script type="module" crossorigin src="/Pokemon/assets/index-6hxgzDXP.js"></script>
+    <link rel="stylesheet" crossorigin href="/Pokemon/assets/index-B9TsZyIR.css">
   </head>
   <body>
     <div id="root"></div>
