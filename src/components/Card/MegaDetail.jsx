@@ -11,9 +11,6 @@ import '../../css/styles.css';
 import { MegaLightSelected, MegaDarkSelected } from '../Icons/Mega';
 
 
-
-
-
 export function MegaDetails() {
 
   const [pokemonDetails, setPokemonDetails] = useState({});
