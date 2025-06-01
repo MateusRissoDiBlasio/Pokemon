@@ -148,9 +148,7 @@ const { theme } = useContext(ThemeContext)
           <TitlesDiv>
             {pokemonDetails.abilitieslength <= 1  ? <h4 className='abilities'>Ability:</h4> : <h4 className='abilities'>Abilities:</h4>}
 
-            {pokemonDetails.name ==='charizard-mega-y' || pokemonDetails.name ==='charizard-mega-x' ? <div className='mega2'> {theme.name === 'light' ? <MegaLightSelected /> : <MegaDarkSelected />} </div> : ''}
-
-            {pokemonDetails.name ==='mewtwo-mega-y' || pokemonDetails.name ==='mewtwo-mega-x' ? <div className='mega2'> {theme.name === 'light' ? <MegaLightSelected /> : <MegaDarkSelected />} </div> : ''}
+            <div className='mega2'> {theme.name === 'light' ? <MegaLightSelected /> : <MegaDarkSelected />} </div>
 
             <h4 className='moves-evolution'>Moves</h4>
           </TitlesDiv>
