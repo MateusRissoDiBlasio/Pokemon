@@ -605,7 +605,7 @@ const [megaExceptions, setMegaExceptions] = useState(false);
 
             {Mega.includes(pokemonDetails.name) || pokemonDetails.name ==='charizard' || pokemonDetails.name ==='mewtwo' ? <div className='emptydiv'></div> : <div className={MegaFull.includes(pokemonDetails.name) ? 'emptydiv box2' : 'emptydiv box'}></div>}
             
-            {Mega.includes(pokemonDetails.name) && pokemonDetails.name !=='charizard' && pokemonDetails.name !=='mewtwo' ? <div onClick={handleMegaClick} className='mega'> {theme.name === 'light' ? <DelayedLink reloadDocument to={`/details/${pokemonDetails.name}-mega`}><MegaLight /></DelayedLink> : <DelayedLink reloadDocument to={`/details/${pokemonDetails.name}-mega`}><MegaDark /></DelayedLink>} </div> : '' }
+            {Mega.includes(pokemonDetails.name) && pokemonDetails.name !=='charizard' && pokemonDetails.name !=='mewtwo' ? <div onClick={handleMegaClick} className='mega'> {theme.name === 'light' ? <DelayedLink to={`/megadetails/${pokemonDetails.name}-mega`}><MegaLight /></DelayedLink> : <DelayedLink to={`/megadetails/${pokemonDetails.name}-mega`}><MegaDark /></DelayedLink>} </div> : '' }
             
             {MegaFull.includes(pokemonDetails.name) && theme.name === 'light' ? <div className='mega1'> <MegaLightSelected /> </div> : ''}
             
@@ -652,7 +652,6 @@ const [megaExceptions, setMegaExceptions] = useState(false);
             </Stage1>
             </Link> 
             : <h4 className='noEvolutionInfo'>No Evolution Data</h4> }
-
 
             {/* SETA 1 */}
             { evolutionDetails.noInfo !== true ? <img className='seta' src="../images/seta-pequena.svg" alt="seta pequena" /> : ''}
