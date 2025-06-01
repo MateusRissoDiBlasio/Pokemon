@@ -889,7 +889,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
 
     @media screen and (min-width: 375px) and (max-width: 500px) {
-      height: 80vh;
+      height: 78vh;
+      margin-top: 2vh;
     }
     
     @media screen and (min-width: 501px) and (max-width: 767px) and (orientation: portrait){
@@ -2007,7 +2008,7 @@ text-align: center;
       width: 50vw;
   }
 
-`;function CardDetailsPage(){return jsxRuntimeExports.jsx(CardDetails,{})}function MegaDetails(){const[e,i]=reactExports.useState({}),{id:s}=useParams(),a=async d=>{try{return await Promise.all(d.map(async b=>{const tt=await axios.get(`https://pokeapi.co/api/v2/ability/${b}`),vt=tt.data.flavor_text_entries.filter(gt=>gt.language.name==="en");return tt.data.effect_entries.length===1?tt.data.effect_entries[0].effect:tt.data.effect_entries.length===0?vt[0].flavor_text:tt.data.effect_entries.length>1&&tt.data.effect_entries[1].language.name!=="de"?tt.data.effect_entries[1].effect:tt.data.effect_entries[0].effect}))}catch(et){return console.error("Error while geting ability details:",et),null}},o=async()=>{try{const d=await axios.get(`https://pokeapi.co/api/v2/pokemon/${s}`),et=await a(d.data.abilities.map(tt=>tt.ability.name)),b=d.data.abilities.reduce((tt,rt)=>(tt.find(vt=>vt.ability.name===rt.ability.name)||tt.push(rt),tt),[]);i({image:d.data.sprites.other.dream_world.front_default,name:d.data.name,altimage:d.data.sprites.other["official-artwork"].front_default,imagegif:d.data.sprites.other.showdown.front_default,typeslength:d.data.types.length,exception:d.data.sprites.other["official-artwork"].front_shiny,exception2:d.data.sprites.other.home.front_shiny,namesize:d.data.name.length}),i(tt=>({...tt,types:d.data.types.map(rt=>rt.type.name),abilities:b.map((rt,vt)=>({name:rt.ability.name,text:et[vt]})),abilitieslength:b.length,moves:d.data.moves.map(rt=>rt.move.name),moveslength:d.data.moves.length}))}catch(d){console.error("Error geting Pokémon data:",d)}};reactExports.useEffect(()=>{o(),a()},[]);const{theme:c}=reactExports.useContext(ThemeContext);return jsxRuntimeExports.jsxs("div",{style:{color:c.color,backgroundColor:c.background},children:[jsxRuntimeExports.jsxs(HeaderDetails,{style:{color:c.cardColor,backgroundColor:c.detailsHeaderColor},children:[jsxRuntimeExports.jsxs("div",{children:[jsxRuntimeExports.jsx(ThemeToggleButton,{}),jsxRuntimeExports.jsxs("a",{href:"/Pokemon/",children:[" ",jsxRuntimeExports.jsx(Button,{children:"Go back"})]})]}),jsxRuntimeExports.jsx("a",{href:"/Pokemon/",children:jsxRuntimeExports.jsx("img",{src:PokemonImage,alt:"",width:"200px"})})]}),jsxRuntimeExports.jsxs(Container,{children:[jsxRuntimeExports.jsxs(ContainerDetailsDiv,{children:[jsxRuntimeExports.jsxs(Type,{children:[e.typeslength===2?jsxRuntimeExports.jsx("h4",{children:"Types:"}):jsxRuntimeExports.jsx("h4",{children:"Type:"}),e.types?.map((d,et)=>jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment,{children:[jsxRuntimeExports.jsx("img",{src:`../Mezastar/${d}.png`,alt:d},d),jsxRuntimeExports.jsx("p",{children:d},et)]}))]}),jsxRuntimeExports.jsxs(Poke,{children:[e.namesize>=18?jsxRuntimeExports.jsx("h3",{className:"largeName ",children:e.name}):jsxRuntimeExports.jsx("h3",{children:e.name}),jsxRuntimeExports.jsx("img",{src:e.altimage,alt:e.name,width:"200px",height:"200px"})]})]}),jsxRuntimeExports.jsxs(TitlesDiv,{children:[e.abilitieslength<=1?jsxRuntimeExports.jsx("h4",{className:"abilities",children:"Ability:"}):jsxRuntimeExports.jsx("h4",{className:"abilities",children:"Abilities:"}),jsxRuntimeExports.jsxs("div",{className:"mega2",children:[" ",c.name==="light"?jsxRuntimeExports.jsx(MegaLightSelected,{}):jsxRuntimeExports.jsx(MegaDarkSelected,{})," "]}),jsxRuntimeExports.jsx("h4",{className:"moves-evolution",children:"Moves"})]}),jsxRuntimeExports.jsx(UlAbilities,{style:{border:c.btnBorder,backgroundColor:c.detailsHeaderColor},children:e.abilities?.map((d,et)=>jsxRuntimeExports.jsxs("li",{children:[jsxRuntimeExports.jsx("strong",{children:d.name}),": ",d.text]},et))}),jsxRuntimeExports.jsx(TitlesDiv,{children:jsxRuntimeExports.jsx("h4",{className:"moves box",children:"Moves:"})}),jsxRuntimeExports.jsxs(UlMovesDiv,{children:[jsxRuntimeExports.jsx(UlMoves,{style:{border:c.btnBorder,backgroundColor:c.detailsHeaderColor},children:e.moveslength===0?jsxRuntimeExports.jsx("p",{className:"NoMoves",children:"No listed moves"}):e.moves?.sort().map((d,et)=>jsxRuntimeExports.jsx("li",{children:d},et))}),jsxRuntimeExports.jsx(UlGif,{children:e.imagegif!==null?jsxRuntimeExports.jsx("img",{src:e.imagegif,alt:e.name,width:"",height:""}):jsxRuntimeExports.jsx("img",{className:"noImage",src:NoImagePlaceHolder,alt:e.name,width:"120px",height:"120px"})})]})]})]})}const HeaderDetails=pt.div`
+`;function CardDetailsPage(){return jsxRuntimeExports.jsx(CardDetails,{})}function MegaDetails(){const[e,i]=reactExports.useState({}),{id:s}=useParams(),a=async d=>{try{return await Promise.all(d.map(async b=>{const tt=await axios.get(`https://pokeapi.co/api/v2/ability/${b}`),vt=tt.data.flavor_text_entries.filter(gt=>gt.language.name==="en");return tt.data.effect_entries.length===1?tt.data.effect_entries[0].effect:tt.data.effect_entries.length===0?vt[0].flavor_text:tt.data.effect_entries.length>1&&tt.data.effect_entries[1].language.name!=="de"?tt.data.effect_entries[1].effect:tt.data.effect_entries[0].effect}))}catch(et){return console.error("Error while geting ability details:",et),null}},o=async()=>{try{const d=await axios.get(`https://pokeapi.co/api/v2/pokemon/${s}`),et=await a(d.data.abilities.map(tt=>tt.ability.name)),b=d.data.abilities.reduce((tt,rt)=>(tt.find(vt=>vt.ability.name===rt.ability.name)||tt.push(rt),tt),[]);i({image:d.data.sprites.other.dream_world.front_default,name:d.data.name,altimage:d.data.sprites.other["official-artwork"].front_default,imagegif:d.data.sprites.other.showdown.front_default,typeslength:d.data.types.length,exception:d.data.sprites.other["official-artwork"].front_shiny,exception2:d.data.sprites.other.home.front_shiny,namesize:d.data.name.length}),i(tt=>({...tt,types:d.data.types.map(rt=>rt.type.name),abilities:b.map((rt,vt)=>({name:rt.ability.name,text:et[vt]})),abilitieslength:b.length,moves:d.data.moves.map(rt=>rt.move.name),moveslength:d.data.moves.length}))}catch(d){console.error("Error geting Pokémon data:",d)}};reactExports.useEffect(()=>{o(),a()},[]);const{theme:c}=reactExports.useContext(ThemeContext);return jsxRuntimeExports.jsxs("div",{style:{color:c.color,backgroundColor:c.background},children:[jsxRuntimeExports.jsxs(HeaderDetails,{style:{color:c.cardColor,backgroundColor:c.detailsHeaderColor},children:[jsxRuntimeExports.jsxs("div",{children:[jsxRuntimeExports.jsx(ThemeToggleButton,{}),jsxRuntimeExports.jsxs("a",{href:"/Pokemon/",children:[" ",jsxRuntimeExports.jsx(Button,{children:"Go back"})]})]}),jsxRuntimeExports.jsx("a",{href:"/Pokemon/",children:jsxRuntimeExports.jsx("img",{src:PokemonImage,alt:"",width:"200px"})})]}),jsxRuntimeExports.jsxs(Container,{children:[jsxRuntimeExports.jsxs(ContainerDetailsDiv,{children:[jsxRuntimeExports.jsxs(Type,{children:[e.typeslength===2?jsxRuntimeExports.jsx("h4",{children:"Types:"}):jsxRuntimeExports.jsx("h4",{children:"Type:"}),e.types?.map((d,et)=>jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment,{children:[jsxRuntimeExports.jsx("img",{src:`../Mezastar/${d}.png`,alt:d},d),jsxRuntimeExports.jsx("p",{children:d},et)]}))]}),jsxRuntimeExports.jsxs(Poke,{children:[e.namesize>=9?jsxRuntimeExports.jsx("h3",{className:"largeName ",children:e.name}):jsxRuntimeExports.jsx("h3",{children:e.name}),jsxRuntimeExports.jsx("img",{src:e.altimage,alt:e.name,width:"200px",height:"200px"})]})]}),jsxRuntimeExports.jsxs(TitlesDiv,{children:[e.abilitieslength<=1?jsxRuntimeExports.jsx("h4",{className:"abilities",children:"Ability:"}):jsxRuntimeExports.jsx("h4",{className:"abilities",children:"Abilities:"}),jsxRuntimeExports.jsxs("div",{className:"mega2",children:[" ",c.name==="light"?jsxRuntimeExports.jsx(MegaLightSelected,{}):jsxRuntimeExports.jsx(MegaDarkSelected,{})," "]})]}),jsxRuntimeExports.jsx(UlAbilities,{style:{border:c.btnBorder,backgroundColor:c.detailsHeaderColor},children:e.abilities?.map((d,et)=>jsxRuntimeExports.jsxs("li",{children:[jsxRuntimeExports.jsx("strong",{children:d.name}),": ",d.text]},et))}),jsxRuntimeExports.jsx(TitlesDiv,{children:jsxRuntimeExports.jsx("h4",{className:"moves box",children:"Moves:"})}),jsxRuntimeExports.jsxs(UlMovesDiv,{children:[jsxRuntimeExports.jsx(UlMoves,{style:{border:c.btnBorder,backgroundColor:c.detailsHeaderColor},children:e.moveslength===0?jsxRuntimeExports.jsx("p",{className:"NoMoves",children:"No listed moves"}):e.moves?.sort().map((d,et)=>jsxRuntimeExports.jsx("li",{children:d},et))}),jsxRuntimeExports.jsx(UlGif,{children:e.imagegif!==null?jsxRuntimeExports.jsx("img",{src:e.imagegif,alt:e.name,width:"",height:""}):jsxRuntimeExports.jsx("img",{className:"noImage",src:NoImagePlaceHolder,alt:e.name,width:"120px",height:"120px"})})]})]})]})}const HeaderDetails=pt.div`
   
   height: 12vh;
   padding: 10px 50px;
@@ -2541,7 +2542,11 @@ text-align: center;
     margin-right: 0px;
     margin-left: -208px
     
-    
+    }
+
+    .mega2{
+      margin-top: -30px
+
     }
 
     // MEXER AQUI
@@ -2572,6 +2577,7 @@ text-align: center;
       margin-left: -400px;
     }
 
+    
     .moves{
       margin-top: -10px
     }
@@ -2629,11 +2635,11 @@ text-align: center;
     }
 
     @media screen and (min-width: 320px) and (max-width: 374px) {
-      max-height: 120px;
+      max-height: 100px;
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) {
-      max-height: 60px;
+      max-height: 100px;
     
       li {
         font-size: 1.0rem;   
