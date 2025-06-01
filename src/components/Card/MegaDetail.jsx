@@ -11,6 +11,9 @@ import '../../css/styles.css';
 import { MegaLightSelected, MegaDarkSelected } from '../Icons/Mega';
 
 
+
+
+
 export function MegaDetails() {
 
   const [pokemonDetails, setPokemonDetails] = useState({});
@@ -135,8 +138,7 @@ const { theme } = useContext(ThemeContext)
           
               <Poke>             
 
-                  {pokemonDetails.namesize >= 18 ? <h3 className="largeName ">{pokemonDetails.name}</h3> : ''}
-
+                  {pokemonDetails.namesize >= 18 ? <h3 className="largeName ">{pokemonDetails.name}</h3> : <h3>{pokemonDetails.name}</h3>}
                   <img src={pokemonDetails.altimage} alt={pokemonDetails.name} width={'200px'} height={'200px'} />
 
               </Poke>
@@ -150,7 +152,7 @@ const { theme } = useContext(ThemeContext)
 
             {pokemonDetails.name ==='mewtwo-mega-y' || pokemonDetails.name ==='mewtwo-mega-x' ? <div className='mega2'> {theme.name === 'light' ? <MegaLightSelected /> : <MegaDarkSelected />} </div> : ''}
 
-            
+            <h4 className='moves-evolution'>Moves</h4>
           </TitlesDiv>
           
           <UlAbilities style={{border:theme.btnBorder, backgroundColor: theme.detailsHeaderColor}}>
