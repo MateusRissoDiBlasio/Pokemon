@@ -889,8 +889,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
 
     @media screen and (min-width: 375px) and (max-width: 500px) {
-      height: 76.5vh;
-      margin-top: 3.5vh;
+      height: 75.5vh;
+      margin-top: 4.5vh;
     }
     
     @media screen and (min-width: 501px) and (max-width: 767px) and (orientation: portrait){
@@ -1362,7 +1362,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) {
-      height: 100px;
+      max-height: 100px;
     
       li {
         font-size: 1.0rem;   
@@ -1971,7 +1971,7 @@ text-align: center;
     width: 100px;
     }
   @media screen and (min-width: 320px) and (max-width: 425px) {
-      width: 100px;
+      width: 95px;
   }
 
 `,StageMega=pt.div`
