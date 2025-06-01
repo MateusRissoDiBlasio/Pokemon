@@ -1257,7 +1257,7 @@ const [megaExceptions, setMegaExceptions] = useState(false);
             
             <MegaExceptions>
             
-                <Link style={{color: theme.color}} className='MegaExceptions mega-x' reloadDocument to={`/details/${pokemonDetails.name+'-mega-x'}`}>
+                <Link style={{color: theme.color}} className='MegaExceptions mega-x' reloadDocument to={`/megadetails/${pokemonDetails.name+'-mega-x'}`}>
                   <StageMega>
 
                         <h4>{pokemonDetails.name+'-mega-x'}</h4>                        
@@ -1269,7 +1269,7 @@ const [megaExceptions, setMegaExceptions] = useState(false);
                     </StageMega>
                 </Link> 
                       
-                <Link style={{color: theme.color}} className='MegaExceptions' reloadDocument to={`/details/${pokemonDetails.name+'-mega-y'}`}>
+                <Link style={{color: theme.color}} className='MegaExceptions' reloadDocument to={`/megadetails/${pokemonDetails.name+'-mega-y'}`}>
                     <StageMega>
                         
                         <h4>{pokemonDetails.name+'-mega-y'}</h4>                        
@@ -1288,7 +1288,7 @@ const [megaExceptions, setMegaExceptions] = useState(false);
             
             <MegaExceptions>
             
-                <Link style={{color: theme.color}} className='MegaExceptions mega-x' reloadDocument to={`/details/${pokemonDetails.name+'-mega-x'}`}>
+                <Link style={{color: theme.color}} className='MegaExceptions mega-x' reloadDocument to={`/megadetails/${pokemonDetails.name+'-mega-x'}`}>
                   <StageMega>
 
                         <h4>{pokemonDetails.name+'-mega-x'}</h4>                        
@@ -1300,7 +1300,7 @@ const [megaExceptions, setMegaExceptions] = useState(false);
                     </StageMega>
                 </Link> 
                       
-                <Link style={{color: theme.color}} className='MegaExceptions' reloadDocument to={`/details/${pokemonDetails.name+'-mega-y'}`}>
+                <Link style={{color: theme.color}} className='MegaExceptions' reloadDocument to={`/megadetails/${pokemonDetails.name+'-mega-y'}`}>
                     <StageMega>
                         
                         <h4>{pokemonDetails.name+'-mega-y'}</h4>                        

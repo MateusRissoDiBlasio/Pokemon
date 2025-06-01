@@ -11,6 +11,7 @@ export const AppRoutes = () => (
         <Routes>
             <Route exact path='/' element={<HomePage />} />
             <Route exact path='/details/:id' element={<CardDetailsPage />} />
+            <Route exact path='/megadetails/:id' element={<CardDetailsPage />} />
         </Routes>
     </BrowserRouter>
 )
