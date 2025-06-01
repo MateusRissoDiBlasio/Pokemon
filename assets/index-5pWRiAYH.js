@@ -889,8 +889,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
 
     @media screen and (min-width: 375px) and (max-width: 500px) {
-      height: 78vh;
-      margin-top: 2vh;
+      height: 77.5vh;
+      margin-top: 2.5vh;
     }
     
     @media screen and (min-width: 501px) and (max-width: 767px) and (orientation: portrait){
@@ -1251,7 +1251,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
 
     .mega{
-    margin-top: -515px;
+    margin-top: -485px;
     margin-left:-255px;
     
     }
@@ -1362,7 +1362,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) {
-      max-height: 60px;
+      max-height: 100px;
     
       li {
         font-size: 1.0rem;   
