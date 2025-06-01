@@ -1496,8 +1496,8 @@ const Container = styled.div`
     }
 
     @media screen and (min-width: 375px) and (max-width: 500px) {
-      height: 77.5vh;
-      margin-top: 2.5vh;
+      height: 76.5vh;
+      margin-top: 3.5vh;
     }
     
     @media screen and (min-width: 501px) and (max-width: 767px) and (orientation: portrait){
@@ -1979,7 +1979,7 @@ const UlAbilities = styled.ul`
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) {
-      max-height: 100px;
+      height: 100px;
     
       li {
         font-size: 1.0rem;   
