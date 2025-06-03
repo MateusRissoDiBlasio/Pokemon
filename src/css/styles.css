@@ -1230,6 +1230,158 @@ scale: 0.8;
     
 }
 
+
+#mega-com-estrelas-black.megablackactive2{
+    cursor: pointer;
+    transform-origin: 50% 50%;
+        scale: 1.2;
+        transition: 0.3s;
+
+    #fill-black{
+        display: initial;
+        animation: lettersfill2 1s forwards;
+    }
+
+    #fundo-branco-total-black{
+        fill: #F5F5F5;
+    }
+
+    #borda-parte-baixa-black{
+    
+        #borda-parte-baixa-m-black{
+            fill: #000000;
+            stroke: #000000;
+        }
+    
+        #borda-parte-baixaega-black{
+            fill: #000000;
+            stroke: #000000;
+        }
+        
+    }
+
+    #borda-branca-tapa-fill-black{
+        fill: #F5F5F5;
+    }
+
+    #borda-mega-black{
+        fill: none;
+        stroke: #000000;
+    }
+
+    
+    #fundo-preto-black{
+        fill: #000000;
+        stroke: #000000;
+    }
+
+    #bordas-letras-black{
+        #borda-a-black{
+            fill: #000000;
+            stroke: #000000;
+        }
+
+        #borda-e-black{
+            fill: #000000;
+        }
+
+        #borda-g-black{
+            fill: #000000;
+        }
+    }
+
+    #fundo-branco-black{
+
+        #estrela-esquerda-black{
+            fill:white;
+            transition: 1.1s;
+            transition-delay: 0.6s;
+        }
+
+        #estrela-centro-black{
+            fill:white;
+            transition: 0.1s;
+            transition-delay: 0.9s;
+        }
+
+        #estrela-direita-black{
+            fill:white;
+            transition: 0.1s;
+            transition-delay: 1.3s;
+        }
+
+        #estrela-grande-centro-black{
+            fill:white;
+            clip-path: circle(100%);
+            transition-delay: 1.9s;
+        }
+
+    }
+
+    #estrelas-black{
+        #direita-black{
+            fill:#ffcc00;
+            clip-path: circle(100%);
+            transition-delay: 1s;
+        }
+
+        #centro-grande-black{
+            fill:#ffcc00;
+            clip-path: circle(100%);
+            transition-delay: 1.8s;
+        }
+
+        #centro-black{
+            fill:#ffcc00;
+            clip-path: circle(100%);
+            transition-delay: 0.7s;
+        }
+
+        #esquerda-black{
+            fill:#ffcc00;
+            clip-path: circle(100%);
+            transition-delay: 0.4s;
+        }
+
+    }
+
+    #borda-estrelas-black{
+        display: initial;
+        
+        #estrela-esquerda-black{
+            fill: white;
+            animation: leftstar 0.5s forwards, turnblack 0.5s 0.7s forwards ;
+    
+        }
+
+        #estrela-centro-black{                      
+            fill: white;
+            animation: centerstar 0.5s forwards, turnblack 0.5s 1s forwards ;
+    
+        }
+
+        #estrela-direita-black{
+            fill: white;
+            animation: rightstar 0.5s forwards, turnblack 0.5s 1.3s forwards ;
+    
+        }
+
+        #estrela-grande-centro-black{
+            
+            fill: white;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            transition: 1s;
+            transition-delay: 1s;
+            animation: shinebaby 1.5s 2.2s infinite, turnblack 1s 2s forwards ;
+            
+            
+        }
+    }
+    
+
+    
+}
+
 /* #mega-com-estrelas-black.megablackactive{
     cursor: pointer;
     transform-origin: 50% 50%;
@@ -1474,7 +1626,7 @@ scale: 0.8;
         width:100px;
     }
 
-    #mega-com-estrelas-black:hover, #mega-com-estrelas-black.megablackactive{
+    #mega-com-estrelas-black:hover, #mega-com-estrelas-black.megablackactive, #mega-com-estrelas-black.megablackactive2{
         scale: 1;
     }
 }
@@ -1494,7 +1646,7 @@ scale: 0.8;
         width:120px;
     }
 
-    #mega-com-estrelas-black:hover, #mega-com-estrelas-black.megablackactive{
+    #mega-com-estrelas-black:hover, #mega-com-estrelas-black.megablackactive, #mega-com-estrelas-black.megablackactive2{
         scale: 1.2;
     }
 }

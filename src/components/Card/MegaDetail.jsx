@@ -100,6 +100,19 @@ export function MegaDetails() {
     getAbilitiesText()
   }, [])
 
+const megaselected = document.getElementById('mega-com-estrelas');
+const megablackselected = document.getElementById('mega-com-estrelas-black');    
+
+setTimeout(() => {
+       if(theme.name === 'light'){
+    megaselected.classList.add('megaactive');
+  }
+
+  if(theme.name === 'dark'){
+    megablackselected.classList.add('megablackactive2');
+  }    
+    }, 500);
+
 
 const { theme } = useContext(ThemeContext)
 
@@ -627,7 +640,7 @@ const TitlesDiv = styled.div`
     }
    
     .abilities{
-      margin-top: -80px;
+      margin-top: -108px;
       margin-left: 10px;
     }
 
@@ -670,9 +683,9 @@ const TitlesDiv = styled.div`
     justify-content: center;
     height: 80px;
     align-items: center;
-    margin-left: -172px;
+    margin-left: -185px;
     margin-right: 60px;
-    margin-top: -220px;
+    margin-top: -210px;
     }
 
     .evolution-moves{

@@ -896,8 +896,7 @@ export const MegaDarkSelected = () => (
       xmlns="http://www.w3.org/2000/svg"
       id="mega-com-estrelas-black"
       version="1.1"
-      viewBox="0 0 200 115"
-      className="megablackactive"
+      viewBox="0 0 200 115"      
       
     >
       <g id="camada1">

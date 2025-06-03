@@ -1256,7 +1256,7 @@ const [megaExceptions, setMegaExceptions] = useState(false);
             
             <MegaExceptions>
             
-                <Link style={{color: theme.color}} className='MegaExceptions mega-x' to={`/megadetails/${pokemonDetails.name+'-mega-x'}`}>
+                <Link style={{color: theme.color, backgroundColor: theme.background}} className='MegaExceptions mega-x' to={`/megadetails/${pokemonDetails.name+'-mega-x'}`}>
                   <StageMega>
 
                         <h4>{pokemonDetails.name+'-mega-x'}</h4>                        
@@ -1268,7 +1268,7 @@ const [megaExceptions, setMegaExceptions] = useState(false);
                     </StageMega>
                 </Link> 
                       
-                <Link style={{color: theme.color}} className='MegaExceptions' to={`/megadetails/${pokemonDetails.name+'-mega-y'}`}>
+                <Link style={{color: theme.color, backgroundColor: theme.background}} className='MegaExceptions' to={`/megadetails/${pokemonDetails.name+'-mega-y'}`}>
                     <StageMega>
                         
                         <h4>{pokemonDetails.name+'-mega-y'}</h4>                        
@@ -2139,7 +2139,7 @@ display:flex;
 position: absolute;
 align-content: center;
 justify-content: center;
-background-color: #F5F5F5;
+
 margin-top: 5px;
 
 h4{ 
@@ -2157,18 +2157,21 @@ text-align: center;
 }
 
 @media screen and (min-width: 320px) and (max-width: 425px) {
-      width: 100vw;
-      margin-top: 15px;
-  }
+  width: 100vw;
+  margin-top: 15px;
+}
 
+@media screen and (min-width: 320px) and (max-width: 425px) and (max-height: 700px){
+  margin-top: 6px;
+}
 
-  @media screen and (orientation: landscape) and (max-height: 400px) {
-  
-  width: 332px;
-  height: 153px;
-  margin-top: 30px;
-  margin-left: 35px;
-  }
+@media screen and (orientation: landscape) and (max-height: 400px) {
+
+width: 332px;
+height: 153px;
+margin-top: 30px;
+margin-left: 35px;
+}
 
 `
 
@@ -2220,7 +2223,7 @@ const EvolutionDiv = styled.div`
 
       .swiper-wrapper {
       height: 150px;
-        margin-top: 10px;
+        margin-top: 12px;
         h4{
         margin-top: 0px;
         }
@@ -2231,6 +2234,15 @@ const EvolutionDiv = styled.div`
         left: var(--swiper-navigation-sides-offset, 5px);
         right: var(--swiper-navigation-sides-offset, 5px);
       }
+
+      // .swiper-button-prev, .swiper-rtl .swiper-button-next {
+      //   left: var(--swiper-navigation-sides-offset, 45px);
+      //   right: var(--swiper-navigation-sides-offset, auto);
+      // }
+      //   .swiper-button-next, .swiper-rtl .swiper-button-prev{
+      //   left: var(--swiper-navigation-sides-offset, 160px);
+      //   right: var(--swiper-navigation-sides-offset, auto);
+      // }
 
       .MegaExceptions{
         display: flex;
@@ -2614,7 +2626,7 @@ const StageMega = styled.div`
 
   display: flex;
   flex-direction: column;
-  width: 150px;
+  width: 170px;
   height: 150px;
   justify-content: space-between;
   position: relative;
@@ -2622,6 +2634,7 @@ const StageMega = styled.div`
   text-transform: uppercase;
   margin-left: 62.5px;
   margin-right: 62.5px;
+  
 
     h4{
       font-family: "Orbitron", sans-serif;
@@ -2639,6 +2652,11 @@ const StageMega = styled.div`
       animation-timing-function: ease-in;
       animation-duration: 1s;
     }
+
+  @media screen and (min-width: 320px) and (max-width: 425px) {
+      width: 50vw;
+      margin: 0;
+  }
 
   @media screen and (min-width: 320px) and (max-width: 425px) {
       width: 50vw;

@@ -17,6 +17,8 @@ export function CardsList({ pokemon }) {
     const [hidden, setHidden] = useState(-1);
     const noImage = ['koraidon-limited-build', 'koraidon-sprinting-build', 'koraidon-swimming-build', 'koraidon-gliding-build', 'miraidon-low-power-mode', 'miraidon-drive-mode', 'miraidon-aquatic-mode', 'miraidon-glide-mode'];
 
+    let MegaFull = ['abomasnow-mega', 'absol-mega', 'aerodactyl-mega', 'aggron-mega', 'alakazam-mega', 'altaria-mega', 'ampharos-mega', 'audino-mega', 'banette-mega', 'beedrill-mega', 'blastoise-mega', 'blaziken-mega', 'camerupt-mega', 'charizard-mega-x', 'charizard-mega-y', 'diancie-mega', 'gallade-mega', 'garchomp-mega', 'gardevoir-mega', 'gengar-mega', 'glalie-mega', 'gyarados-mega', 'heracross-mega', 'houndoom-mega', 'kangaskhan-mega', 'latias-mega', 'latios-mega', 'lopunny-mega', 'lucario-mega', 'manectric-mega', 'mawile-mega', 'medicham-mega', 'metagross-mega', 'mewtwo-mega-x', 'mewtwo-mega-y', 'pidgeot-mega', 'pinsir-mega', 'rayquaza-mega', 'sableye-mega', 'salamence-mega', 'sceptile-mega', 'scizor-mega', 'sharpedo-mega', 'slowbro-mega', 'steelix-mega', 'swampert-mega', 'tyranitar-mega', 'venusaur-mega']
+
     
     if (pokemon.length === 1) {
 
@@ -24,6 +26,32 @@ export function CardsList({ pokemon }) {
         
         return (
             <DivCardContainerSearch style={{color: theme.color, backgroundColor: theme.background}}>
+
+                {MegaFull.includes(poke.name) ? 
+                <Link to={`/megadetails/${poke.name}`}>
+                    <DivCard style={{color: hidden === -1 ? theme.color : theme.hover, backgroundColor: hidden === -1 ? theme.cardBackground : theme.hover, border: theme.cardBorder, boxShadow: hidden === 0 ? theme.cardshadow : ''}} 
+                    onMouseEnter={() => setHidden(0)}
+                    onMouseLeave={() => setHidden(-1)}>
+                        <h4>{poke.name}</h4>
+                        <DivImgCard>
+                            
+                            {poke.image === undefined ? <img src={poke.altimage} alt={poke.name} /> : null}
+                            
+                            {poke.image === null && poke.name !== 'mimikyu-busted' && poke.name !== 'mimikyu-totem-busted' && !noImage.includes(poke.name) ? <img src={poke.altimage} alt={poke.name} /> : null}
+                            
+                            {poke.image !== undefined && poke.image !== null && poke.name !== 'mimikyu-busted' && poke.name !== 'mimikyu-totem-busted' && !noImage.includes(poke.name) ? <img src={poke.image} alt={poke.name} /> : null}
+                            
+                            {poke.name === 'mimikyu-busted' ? <img src={poke.exception} alt={poke.name} width={'300px'} /> : null}
+                            
+                            {poke.name === 'mimikyu-totem-busted' ? <img src={poke.exception2} alt={poke.name} width={'300px'} /> : null}
+                            
+                            {noImage.includes(poke.name) ? <img className='noImage' src={NoImagePlaceHolder} alt={poke.name} width={'250px'} /> : null}
+                            
+                        </DivImgCard>
+                        {hidden === 0 ? <h1 style={{color: theme.detail}}>Click for details</h1> : null}                                              
+                    </DivCard>
+                </Link>
+                :
                 <Link to={`/details/${poke.name}`}>
                     <DivCard style={{color: hidden === -1 ? theme.color : theme.hover, backgroundColor: hidden === -1 ? theme.cardBackground : theme.hover, border: theme.cardBorder, boxShadow: hidden === 0 ? theme.cardshadow : ''}} 
                     onMouseEnter={() => setHidden(0)}
@@ -47,6 +75,7 @@ export function CardsList({ pokemon }) {
                         {hidden === 0 ? <h1 style={{color: theme.detail}}>Click for details</h1> : null}                                              
                     </DivCard>
                 </Link>
+                }
                 <Button
                     onClick={reloadPage}
                 >Back to the List
