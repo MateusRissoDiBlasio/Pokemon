@@ -1221,7 +1221,7 @@ export function CardDetails() {
             
             <MegaExceptions>
             
-                <Link style={{color: theme.color, backgroundColor: theme.background}} className='MegaExceptions mega-x' to={`/megadetails/${pokemonDetails.name+'-mega-x'}`}>
+                <Link style={{color: theme.color, backgroundColor: theme.background}} className='MegaExceptions' to={`/megadetails/${pokemonDetails.name+'-mega-x'}`}>
                   <StageMega>
 
                         <h4>{pokemonDetails.name+'-mega-x'}</h4>                        
@@ -1233,7 +1233,7 @@ export function CardDetails() {
                     </StageMega>
                 </Link> 
                       
-                <Link style={{color: theme.color, backgroundColor: theme.background}} className='MegaExceptions' to={`/megadetails/${pokemonDetails.name+'-mega-y'}`}>
+                <Link style={{color: theme.color, backgroundColor: theme.background}} className='MegaExceptions mega-y' to={`/megadetails/${pokemonDetails.name+'-mega-y'}`}>
                     <StageMega>
                         
                         <h4>{pokemonDetails.name+'-mega-y'}</h4>                        
@@ -1604,6 +1604,7 @@ const Poke = styled.div`
       img{
         width: 200px;
         height: 200px;
+        margin-top: -22px;
       }
 
       .noImage{
@@ -1752,7 +1753,7 @@ const TitlesDiv = styled.div`
 
     .moves{
       margin-left: 350px;
-      margin-top: -270px;
+      margin-top: -260px;
     } 
 
     .moves.box{
@@ -1763,7 +1764,7 @@ const TitlesDiv = styled.div`
     width: 200px;
     margin-top: -300px;
     // margin-left:-140px;
-    margin-left:-115px;
+    margin-left:-120px;
     margin-right: 60px;
     justify-self: center;
     align-self: center;
@@ -1795,15 +1796,15 @@ const TitlesDiv = styled.div`
     }
 
     .evolution-moves{
-      margin-left: 310px;
+      margin-left: 330px;
       margin-right: 0px;
       margin-top: 10px;
     }
     
     .moves-evolution{
-    margin-left: 350px;
-    margin-right:0px;
-    margin-top: 10px;
+      margin-left: 360px;
+      margin-right:0px;
+      margin-top: 10px;
     }
 
     .emptydiv{
@@ -2099,7 +2100,7 @@ const UlGif = styled.ul`
 const MegaExceptions = styled.div`
 
 width: 100vw;
-height: 165px;
+height: 150px;
 display:flex;
 position: absolute;
 align-content: center;
@@ -2116,8 +2117,8 @@ text-align: center;
   justify-self: center;
     
   .mega-y{
-  height:140px;
-  width:170px;
+    height:130px;
+    width:158px;
   }
 }
 
@@ -2128,15 +2129,30 @@ text-align: center;
 
 @media screen and (min-width: 320px) and (max-width: 425px) and (max-height: 700px){
   margin-top: 6px;
+
 }
 
 @media screen and (orientation: landscape) and (max-height: 400px) {
 
 width: 332px;
-height: 140px;
-margin-top: 12px;
+height: 130px;
+margin-top: 22px;
 margin-left: 24px;
+h4{
+    margin-top: 10px;
+  }
+
+.mega-y{
+  margin-top: -10px;
+  height:140px;
+
+  h4{
+    margin-top: 20px;
+  }
 }
+
+}
+
 
 `
 
@@ -2188,13 +2204,18 @@ const EvolutionDiv = styled.div`
 
       .swiper-wrapper {
       height: 150px;
-        // margin-top: 12px;
+        margin-top: 10.5px;
         h4{
         margin-top: 0px;
         }
 
       }
 
+      .noEvolutionInfo{
+      margin-top: 30px;
+      }
+
+  
       .swiper-button-prev, .swiper-rtl .swiper-button-next {
         left: var(--swiper-navigation-sides-offset, 5px);
         right: var(--swiper-navigation-sides-offset, 5px);
@@ -2530,6 +2551,7 @@ const Stage2 = styled.div`
   @media screen and (min-width: 320px) and (max-width: 425px) {
     width: 100px;
     height: 150px;
+    // margin-top: 10.5px;
     .qtd{
         display: none;
       }
