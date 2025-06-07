@@ -111,7 +111,7 @@ setTimeout(() => {
   if(theme.name === 'dark'){
     megablackselected.classList.add('megablackactive2');
   }    
-    }, 500);
+    }, 200);
 
 
 const { theme } = useContext(ThemeContext)
@@ -613,6 +613,18 @@ const TitlesDiv = styled.div`
     margin-top: -55px;
     }
 
+    .mega2{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 80px;
+    align-items: center;
+    margin-top: -55px;
+    margin-left: 35px;
+    }
+
   .emptydiv{
     width:200px;
     margin-left: -180px;
@@ -746,8 +758,7 @@ const TitlesDiv = styled.div`
     }
 
     .mega2{
-      margin-top: -30px
-
+      margin-left: -35px;
     }
 
     // MEXER AQUI

@@ -17,6 +17,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+// import 'swiper/css/effect-fade';
+// import 'swiper/css/effect-flip';
 import { register } from 'swiper/element/bundle';
 import {DelayedLink} from '../Buttons/DelayedLink';
 
@@ -140,7 +142,18 @@ export function CardDetails() {
     try{
       const response = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
       const chainId = response.data.evolution_chain.url.replace('https://pokeapi.co/api/v2/evolution-chain/','');
-      const responseEvolution = await axios.get(`https://pokeapi.co/api/v2/evolution-chain/${chainId}`);    
+      // console.log(chainId)
+      const responseEvolution = await axios.get(`https://pokeapi.co/api/v2/evolution-chain/${chainId}`);
+      // console.log(responseEvolution.data.chain.evolves_to.length);
+      // console.log(responseEvolution.data.chain.evolves_to[0] === undefined);
+      // console.log(responseEvolution.data.chain.evolves_to.length) 
+      // console.log(responseEvolution.data.chain.evolves_to[0] === undefined && responseEvolution.data.chain.evolves_to.length === 0)
+      
+
+      // REGRAS DE EXCEÇÕES CRIADAS
+      // console.log(responseEvolution.data.chain.species.name)
+      console.log(responseEvolution)
+      console.log(pokemonDetails.name)
 
       if(pokemonDetails.name === undefined){
         getPokemons();
@@ -162,61 +175,76 @@ export function CardDetails() {
             const responseStage2Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[0]}`);
             const responseStage2Option2 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[1]}`);
             const responseStage3Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage3[0]}`);
-            const responseStage3Option2 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage3[1]}`);           
+            const responseStage3Option2 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage3[1]}`);
+            
       
             setSpeciesEvolutionImgs({
               stage1Img: responseStage1Img.data.sprites.other.showdown.front_default,
               stage2Img: [ responseStage2Img.data.sprites.other.showdown.front_default, responseStage2Option2.data.sprites.other.showdown.front_default ],
-              stage3Img: [ responseStage3Img.data.sprites.other.showdown.front_default, responseStage3Option2.data.sprites.other.showdown.front_default ]              
+              stage3Img: [ responseStage3Img.data.sprites.other.showdown.front_default, responseStage3Option2.data.sprites.other.showdown.front_default ]
+              
           })
             }catch (error) {
-                console.error('Error fetching Pokémon data:', error);      
+                console.error('Error fetching Pokémon data:', error);
+      
             }
     
         }else          
       
         if(ExceptionsBurmy.includes(responseEvolution.data.chain.species.name)){
-          setEvolutionDetails({
+        setEvolutionDetails({
           
-            stage1: responseEvolution.data.chain.species.name,
-            stage2: [ responseEvolution.data.chain.evolves_to[0].species.name, responseEvolution.data.chain.evolves_to[1].species.name]
+        stage1: responseEvolution.data.chain.species.name,
+        stage2: [ responseEvolution.data.chain.evolves_to[0].species.name, responseEvolution.data.chain.evolves_to[1].species.name]
         
-          })
+      })
       
-        try{
+      try{
     
-          const responseStage1Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage1}`);
-          const responseStage2Option2 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[1]}`);
-    
-          setSpeciesEvolutionImgs({
-            stage1Img: responseStage1Img.data.sprites.other.showdown.front_default,
-            stage2Img: [ undefined , responseStage2Option2.data.sprites.other.showdown.front_default ]
-                    
-          })
+        const responseStage1Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage1}`);
+        const responseStage2Option2 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[1]}`);
+        
+        
+  
+        setSpeciesEvolutionImgs({
+          stage1Img: responseStage1Img.data.sprites.other.showdown.front_default,
+          stage2Img: [ undefined , responseStage2Option2.data.sprites.other.showdown.front_default ]
+        
+          
+      })
         }catch (error) {
             console.error('Error fetching Pokémon data:', error);
   
         }
+    
+    
+    
+    
         }else      
       
         if(ExceptionsTyrogue.includes(responseEvolution.data.chain.species.name)){
-          setEvolutionDetails({
-          
-            stage1: responseEvolution.data.chain.species.name,
-            stage2: [ responseEvolution.data.chain.evolves_to[0].species.name, responseEvolution.data.chain.evolves_to[1].species.name, responseEvolution.data.chain.evolves_to[2].species.name ]
-          })      
+        setEvolutionDetails({
+        
+          stage1: responseEvolution.data.chain.species.name,
+          stage2: [ responseEvolution.data.chain.evolves_to[0].species.name, responseEvolution.data.chain.evolves_to[1].species.name, responseEvolution.data.chain.evolves_to[2].species.name ]
+      })
+      console.log(evolutionDetails)
     
-        try{
-      
-          const responseStage1Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage1}`);
-          const responseStage2Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[0]}`);
-          const responseStage2Option2 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[1]}`);
-          const responseStage2Option3 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[2]}`);
+      try{
+    
+        const responseStage1Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage1}`);
+        const responseStage2Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[0]}`);
+        const responseStage2Option2 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[1]}`);
+        const responseStage2Option3 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[2]}`);
+        
+        
+  
+        setSpeciesEvolutionImgs({
+          stage1Img: responseStage1Img.data.sprites.other.showdown.front_default,
+          stage2Img: [ responseStage2Img.data.sprites.other.showdown.front_default , responseStage2Option2.data.sprites.other.showdown.front_default, responseStage2Option3.data.sprites.other.showdown.front_default ]
+        
           
-          setSpeciesEvolutionImgs({
-            stage1Img: responseStage1Img.data.sprites.other.showdown.front_default,
-            stage2Img: [ responseStage2Img.data.sprites.other.showdown.front_default , responseStage2Option2.data.sprites.other.showdown.front_default, responseStage2Option3.data.sprites.other.showdown.front_default ]            
-          })
+      })
         }catch (error) {
             console.error('Error fetching Pokémon data:', error);
   
@@ -224,51 +252,55 @@ export function CardDetails() {
         }else
       
         if(ExceptionsPoliwag.includes(responseEvolution.data.chain.species.name) || ExceptionsOddish.includes(responseEvolution.data.chain.species.name) || ExceptionsRalts.includes(responseEvolution.data.chain.species.name) ) {
-          setEvolutionDetails({
-          
-            stage1: responseEvolution.data.chain.species.name,
-            stage2: responseEvolution.data.chain.evolves_to[0].species.name,
-            stage3: [ responseEvolution.data.chain.evolves_to[0].evolves_to[0].species.name, responseEvolution.data.chain.evolves_to[0].evolves_to[1].species.name ]
-          })
+        setEvolutionDetails({
+        
+          stage1: responseEvolution.data.chain.species.name,
+          stage2: responseEvolution.data.chain.evolves_to[0].species.name,
+          stage3: [ responseEvolution.data.chain.evolves_to[0].evolves_to[0].species.name, responseEvolution.data.chain.evolves_to[0].evolves_to[1].species.name ]
+      })
     
-        try{
-      
-          const responseStage1Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage1}`);
-          const responseStage2Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2}`);
-          const responseStage3Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage3[0]}`);
-          const responseStage3Option2 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage3[1]}`);
-              
-          setSpeciesEvolutionImgs({
-            stage1Img: responseStage1Img.data.sprites.other.showdown.front_default,
-            stage2Img: responseStage2Img.data.sprites.other.showdown.front_default,
-            stage3Img: [ responseStage3Img.data.sprites.other.showdown.front_default, responseStage3Option2.data.sprites.other.showdown.front_default ]
-            
-          })
+      try{
+    
+        const responseStage1Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage1}`);
+        const responseStage2Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2}`);
+        const responseStage3Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage3[0]}`);
+        const responseStage3Option2 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage3[1]}`);
+        
+  
+        setSpeciesEvolutionImgs({
+          stage1Img: responseStage1Img.data.sprites.other.showdown.front_default,
+          stage2Img: responseStage2Img.data.sprites.other.showdown.front_default,
+          stage3Img: [ responseStage3Img.data.sprites.other.showdown.front_default, responseStage3Option2.data.sprites.other.showdown.front_default ]
+          
+      })
         }catch (error) {
             console.error('Error fetching Pokémon data:', error);
   
-        }    
+        }
+    
+    
         }else
       
         if(ExceptionsSlowpoke.includes(responseEvolution.data.chain.species.name) || ExceptionsNincada.includes(responseEvolution.data.chain.species.name) || ExceptionsClamperl.includes(responseEvolution.data.chain.species.name) || ExceptionsSnorunt.includes(responseEvolution.data.chain.species.name)){
-          setEvolutionDetails({
-          
-            stage1: responseEvolution.data.chain.species.name,
-            stage2: [ responseEvolution.data.chain.evolves_to[0].species.name, responseEvolution.data.chain.evolves_to[1].species.name ]
-                    
-          })
+        setEvolutionDetails({
+        
+          stage1: responseEvolution.data.chain.species.name,
+          stage2: [ responseEvolution.data.chain.evolves_to[0].species.name, responseEvolution.data.chain.evolves_to[1].species.name ]
+                  
+      })
     
-        try{
-      
-          const responseStage1Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage1}`);
-          const responseStage2Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[0]}`);
-          const responseStage2Option2 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[1]}`);               
+      try{
     
-          setSpeciesEvolutionImgs({
-            stage1Img: responseStage1Img.data.sprites.other.showdown.front_default,
-            stage2Img: [ responseStage2Img.data.sprites.other.showdown.front_default , responseStage2Option2.data.sprites.other.showdown.front_default ]
-                    
-          })
+        const responseStage1Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage1}`);
+        const responseStage2Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[0]}`);
+        const responseStage2Option2 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[1]}`);        
+        
+  
+        setSpeciesEvolutionImgs({
+          stage1Img: responseStage1Img.data.sprites.other.showdown.front_default,
+          stage2Img: [ responseStage2Img.data.sprites.other.showdown.front_default , responseStage2Option2.data.sprites.other.showdown.front_default ]
+                  
+      })
         }catch (error) {
             console.error('Error fetching Pokémon data:', error);
   
@@ -276,29 +308,31 @@ export function CardDetails() {
         }else
           
         if(ExceptionsEevee.includes(responseEvolution.data.chain.species.name) === true){
-          setEvolutionDetails({
+        setEvolutionDetails({
           
-            stage1: 'eevee',
-            stage2: ['vaporeon', 'jolteon', 'flareon', 'espeon', 'umbreon', 'leafeon', 'glaceon', 'sylveon']
+          
+          stage1: 'eevee',
+          stage2: ['vaporeon', 'jolteon', 'flareon', 'espeon', 'umbreon', 'leafeon', 'glaceon', 'sylveon']
                   
-          })
-      
-        try{
+      })
+      console.log(evolutionDetails)
+      try{
+        
+        const responseStage1Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage1}`);
+        const responseStage2Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[0]}`);
+        const responseStage2Option2 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[1]}`);
+        const responseStage2Option3 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[2]}`);
+        const responseStage2Option4 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[3]}`);
+        const responseStage2Option5 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[4]}`);
+        const responseStage2Option6 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[5]}`);
+        const responseStage2Option7 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[6]}`);
+        const responseStage2Option8 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[7]}`);
+  
+        setSpeciesEvolutionImgs({
+          stage1Img: responseStage1Img.data.sprites.other.showdown.front_default,
+          stage2Img: [ responseStage2Img.data.sprites.other.showdown.front_default, responseStage2Option2.data.sprites.other.showdown.front_default, responseStage2Option3.data.sprites.other.showdown.front_default, responseStage2Option4.data.sprites.other.showdown.front_default, responseStage2Option5.data.sprites.other.showdown.front_default, responseStage2Option6.data.sprites.other.showdown.front_default, responseStage2Option7.data.sprites.other.showdown.front_default, responseStage2Option8.data.sprites.other.showdown.front_default ]    
           
-          const responseStage1Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage1}`);
-          const responseStage2Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[0]}`);
-          const responseStage2Option2 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[1]}`);
-          const responseStage2Option3 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[2]}`);
-          const responseStage2Option4 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[3]}`);
-          const responseStage2Option5 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[4]}`);
-          const responseStage2Option6 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[5]}`);
-          const responseStage2Option7 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[6]}`);
-          const responseStage2Option8 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2[7]}`);
-    
-          setSpeciesEvolutionImgs({
-            stage1Img: responseStage1Img.data.sprites.other.showdown.front_default,
-            stage2Img: [ responseStage2Img.data.sprites.other.showdown.front_default, responseStage2Option2.data.sprites.other.showdown.front_default, responseStage2Option3.data.sprites.other.showdown.front_default, responseStage2Option4.data.sprites.other.showdown.front_default, responseStage2Option5.data.sprites.other.showdown.front_default, responseStage2Option6.data.sprites.other.showdown.front_default, responseStage2Option7.data.sprites.other.showdown.front_default, responseStage2Option8.data.sprites.other.showdown.front_default ]                
-          })
+      })
         }catch (error) {
             console.error('Error fetching Pokémon data:', error);
   
@@ -307,19 +341,25 @@ export function CardDetails() {
         }else
 
         // REGRAS FORA DAS EXCEÇÕES
+
+
         if (responseEvolution.data.chain.evolves_to[0] === undefined && responseEvolution.data.chain.evolves_to.length === 0 && !Exceptions.includes(pokemonDetails.name)){
           setEvolutionDetails({
             noInfo: true
           });
+        console.log(responseEvolution.data.chain.evolves_to[0] === undefined && responseEvolution.data.chain.evolves_to.length === 0 && !Exceptions.includes(pokemonDetails.name))   
           
         }else if(responseEvolution.data.chain.evolves_to[0].evolves_to[0] === undefined && responseEvolution.data.chain.evolves_to[0].species.name !== undefined && !Exceptions.includes(pokemonDetails.name)){
 
-          setEvolutionDetails({
-          
-            stage1: responseEvolution.data.chain.species.name,
-            stage2: responseEvolution.data.chain.evolves_to[0].species.name
+        setEvolutionDetails({
+        
+          stage1: responseEvolution.data.chain.species.name,
+          stage2: responseEvolution.data.chain.evolves_to[0].species.name
+    
 
-          })
+        })
+        console.log(responseEvolution.data.chain.evolves_to[0].evolves_to[0] === undefined && responseEvolution.data.chain.evolves_to[0].species.name !== undefined && !Exceptions.includes(pokemonDetails.name))
+        ;
         }else if(!Exceptions.includes(pokemonDetails.name)){
 
           setEvolutionDetails({
@@ -328,8 +368,11 @@ export function CardDetails() {
             stage2: responseEvolution.data.chain.evolves_to[0].species.name,
             stage3: responseEvolution.data.chain.evolves_to[0].evolves_to[0].species.name
       
-          });          
+          });
+
+          
         }
+        console.log(!Exceptions.includes(pokemonDetails.name))
       
     } catch (error) {
 
@@ -344,27 +387,33 @@ export function CardDetails() {
   
   }
   
+
   const getSpeciesEvolutionImgs = async () => {
     
+    // condição 1
+    // console.log(evolutionDetails.stage3 !== undefined && evolutionDetails.noInfo !== true && !Exceptions.includes(pokemonDetails.name))
+    // condição 2
+    // console.log(evolutionDetails.stage3 === undefined && !Exceptions.includes(pokemonDetails.name) && pokemonDetails.name !== undefined)
     if(pokemonDetails.name === undefined){
+      // alert('caiu aqui')
       getPokemons();
       getSpeciesEvolution();
     }else
 
     if(evolutionDetails.stage3 !== undefined && evolutionDetails.noInfo !== true && !Exceptions.includes(pokemonDetails.name)){
 
-      try{
+    try{
 
-        const responseStage1Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage1}`);
-        const responseStage2Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2}`);
-        const responseStage3Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage3}`);
+      const responseStage1Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage1}`);
+      const responseStage2Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2}`);
+      const responseStage3Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage3}`);
 
-        setSpeciesEvolutionImgs({
-          stage1Img: responseStage1Img.data.sprites.other.showdown.front_default,
-          stage2Img: responseStage2Img.data.sprites.other.showdown.front_default,
-          stage3Img: responseStage3Img.data.sprites.other.showdown.front_default
-                
-        })
+      setSpeciesEvolutionImgs({
+        stage1Img: responseStage1Img.data.sprites.other.showdown.front_default,
+        stage2Img: responseStage2Img.data.sprites.other.showdown.front_default,
+        stage3Img: responseStage3Img.data.sprites.other.showdown.front_default
+              
+    })
       }catch (error) {
           console.error('Error fetching Pokémon data:', error);
           
@@ -375,142 +424,153 @@ export function CardDetails() {
 
         const responseStage1Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage1}`);
         const responseStage2Img = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evolutionDetails.stage2}`);
-        setSpeciesEvolutionImgs({
-          stage1Img: responseStage1Img.data.sprites.other.showdown.front_default,
-          stage2Img: responseStage2Img.data.sprites.other.showdown.front_default
+      setSpeciesEvolutionImgs({
+        stage1Img: responseStage1Img.data.sprites.other.showdown.front_default,
+        stage2Img: responseStage2Img.data.sprites.other.showdown.front_default
 
-        })
+    })
       }catch(error) {
         console.error('Error fetching Pokémon data:', error);
       }}else if(evolutionDetails === undefined ){
+          console.log('reloading');
           setActivateEvolution(false);
           setActivateEvolution(true);
       }
-  }
+    }
+    // console.log(speciesEvolutionImgs);
+    // console.log(evolutionDetails.stage2);
   
-  useEffect(() => {
-    getSpeciesEvolution()
-    getSpeciesEvolutionImgs()  
-  }, [activateEvolution, pokemonDetails, pokemonEvolutionDetails]);
+    useEffect(() => {
+      getSpeciesEvolution()
+      getSpeciesEvolutionImgs()  
+    }, [activateEvolution, pokemonDetails, pokemonEvolutionDetails]);
 
+  // console.log(evolutionDetails.stage2.length)
+
+    const [firstSwiper, setFirstSwiper] = useState(null);
+    const [secondSwiper, setSecondSwiper] = useState(null);
   
-  const [firstSwiper, setFirstSwiper] = useState(null);
-  const [secondSwiper, setSecondSwiper] = useState(null);
-
-  const stage1pokemon = document.getElementById('stage1pokemon');
-  const stage2pokemon = document.getElementById('stage2pokemon');
-  const stage2pokemon2 = document.getElementById('stage2pokemon2');
-  const stage3pokemon = document.getElementById('stage3pokemon');
-  const stage3pokemon2 = document.getElementById('stage3pokemon2');
+    const stage1pokemon = document.getElementById('stage1pokemon');
+    const stage2pokemon = document.getElementById('stage2pokemon');
+    const stage2pokemon2 = document.getElementById('stage2pokemon2');
+    const stage3pokemon = document.getElementById('stage3pokemon');
+    const stage3pokemon2 = document.getElementById('stage3pokemon2');
+    
+    
+    const handleMouseEnter1 = () => {
+      stage2pokemon.classList.remove('selected');
+      if(pokemonDetails.name === evolutionDetails.stage2[1]){
+        stage2pokemon2.classList.remove('selected');
+      } 
+      stage3pokemon.classList.remove('selected');
+      if(pokemonDetails.name === evolutionDetails.stage3[1]){
+        stage3pokemon2.classList.remove('selected');
+      }
+    };
   
+    const handleMouseEnter2 = () => {
+      stage1pokemon.classList.remove('selected');
+      stage3pokemon.classList.remove('selected');
+      if(pokemonDetails.name === evolutionDetails.stage3[1]){
+        stage3pokemon2.classList.remove('selected');
+      }
+    };
+
+    const handleMouseEnter3 = () => {
+      stage1pokemon.classList.remove('selected');
+      stage2pokemon.classList.remove('selected');
+      if(pokemonDetails.name === evolutionDetails.stage2[1]){
+        stage2pokemon2.classList.remove('selected');
+      }      
+    };
   
-  const handleMouseEnter1 = () => {
-    stage2pokemon.classList.remove('selected');
-    if(pokemonDetails.name === evolutionDetails.stage2[1]){
-      stage2pokemon2.classList.remove('selected');
-    } 
-    stage3pokemon.classList.remove('selected');
-    if(pokemonDetails.name === evolutionDetails.stage3[1]){
-      stage3pokemon2.classList.remove('selected');
-    }
-  };
-  
-  const handleMouseEnter2 = () => {
-    stage1pokemon.classList.remove('selected');
-    stage3pokemon.classList.remove('selected');
-    if(pokemonDetails.name === evolutionDetails.stage3[1]){
-      stage3pokemon2.classList.remove('selected');
-    }
-  };
+const handleMouseleave = () => {
+     if(pokemonDetails.name === evolutionDetails.stage1 ){
+      stage1pokemon.classList.add('selected');
+     }
 
-  const handleMouseEnter3 = () => {
-    stage1pokemon.classList.remove('selected');
-    stage2pokemon.classList.remove('selected');
-    if(pokemonDetails.name === evolutionDetails.stage2[1]){
-      stage2pokemon2.classList.remove('selected');
-    }      
-  };
-  
-  const handleMouseleave = () => {
-    if(pokemonDetails.name === evolutionDetails.stage1 ){
-    stage1pokemon.classList.add('selected');
-    }
+     if(pokemonDetails.name === evolutionDetails.stage2){
+      stage2pokemon.classList.add('selected');
+     }
 
-    if(pokemonDetails.name === evolutionDetails.stage2){
-    stage2pokemon.classList.add('selected');
-    }
+     if(pokemonDetails.name === evolutionDetails.stage2[0]){
+      stage2pokemon.classList.add('selected');
+     }
 
-    if(pokemonDetails.name === evolutionDetails.stage2[0]){
-    stage2pokemon.classList.add('selected');
-    }
+     if(pokemonDetails.name === evolutionDetails.stage2[1]){
+      stage2pokemon2.classList.add('selected');
+     }
 
-    if(pokemonDetails.name === evolutionDetails.stage2[1]){
-    stage2pokemon2.classList.add('selected');
-    }
+     if(pokemonDetails.name === evolutionDetails.stage3){
+      stage3pokemon.classList.add('selected');
+     }
 
-    if(pokemonDetails.name === evolutionDetails.stage3){
-    stage3pokemon.classList.add('selected');
-    }
+     if(pokemonDetails.name === evolutionDetails.stage3[0]){
+      stage3pokemon.classList.add('selected');
+     }    
 
-    if(pokemonDetails.name === evolutionDetails.stage3[0]){
-    stage3pokemon.classList.add('selected');
-    }    
-
-    if(pokemonDetails.name === evolutionDetails.stage3[1]){
-    stage3pokemon2.classList.add('selected');
-    }
+     if(pokemonDetails.name === evolutionDetails.stage3[1]){
+      stage3pokemon2.classList.add('selected');
+     }
   }
     
   const addname = /-mega/
 
-  const { theme } = useContext(ThemeContext)
+  console.log(addname.test(pokemonDetails.name))
+  
+// console.log(pokemonDetails.name.endsWith("-mega"))
 
-  const megaselected = document.getElementById('mega-com-estrelas');
-  const megablackselected = document.getElementById('mega-com-estrelas-black');    
-  const [megaExceptions, setMegaExceptions] = useState(false);
+const { theme } = useContext(ThemeContext)
 
-  const [ istoggled, setToggle] = useState(false)
+console.log(theme.name)
 
-  const handleToggle = () => {
+const megaselected = document.getElementById('mega-com-estrelas');
+const megablackselected = document.getElementById('mega-com-estrelas-black');    
+const [megaExceptions, setMegaExceptions] = useState(false);
 
-    setToggle(!istoggled);
-  };
+const [ istoggled, setToggle] = useState(false)
 
-  const handleMegaExceptionsClick = () => {  
-    handleToggle();
-    setMegaExceptions(istoggled);
-    setPokemonEvolutionDetails(istoggled);
+const handleToggle = () => {
 
-    if(theme.name === 'light' && istoggled === true){
-      megaselected.classList.add('megaactive');
-    }
+  setToggle(!istoggled);
+};
 
-    if(theme.name === 'dark' && istoggled === true){
-      megablackselected.classList.add('megablackactive');
-    }
-    
-    if(theme.name === 'light' && istoggled === false){
-      megaselected.classList.remove('megaactive');
-    }
+const handleMegaExceptionsClick = () => {  
+  handleToggle();
+  setMegaExceptions(istoggled);
+  setPokemonEvolutionDetails(istoggled);
 
-    if(theme.name === 'dark' && istoggled === false){
-      megablackselected.classList.remove('megablackactive');
-    }
-    
-  } 
-
-  const handleMegaClick = () => {  
-    handleToggle();
-    if(theme.name === 'light'&& istoggled === false) {
-      megaselected.classList.add('megaactive');
-    }
-
-    if(theme.name === 'dark'&& istoggled === false){
-      megablackselected.classList.add('megablackactive');
-    }
-
+  if(theme.name === 'light' && istoggled === true){
+    megaselected.classList.add('megaactive');
   }
 
+  if(theme.name === 'dark' && istoggled === true){
+    megablackselected.classList.add('megablackactive');
+  }
+  
+  if(theme.name === 'light' && istoggled === false){
+    megaselected.classList.remove('megaactive');
+  }
+
+  if(theme.name === 'dark' && istoggled === false){
+    megablackselected.classList.remove('megablackactive');
+  }
+  
+} 
+
+const handleMegaClick = () => {  
+  handleToggle();
+  if(theme.name === 'light'&& istoggled === false) {
+    megaselected.classList.add('megaactive');
+  }
+
+  if(theme.name === 'dark'&& istoggled === false){
+    megablackselected.classList.add('megablackactive');
+  }
+
+}
+
+  
   return (
     
     <div style={{color: theme.color, backgroundColor: theme.background}}>
@@ -544,6 +604,8 @@ export function CardDetails() {
           
               <Poke>
                   
+                  {/* {pokemonDetails.namesize >= 18 ? <h3 className="largeName ">{pokemonDetails.name}</h3> : <h3>{pokemonDetails.name}</h3>} */}
+
                   {pokemonDetails.namesize < 18 && addname.test(pokemonDetails.name) === false ? <h3>{pokemonDetails.name}</h3> : ''}
 
                   {pokemonDetails.namesize >= 18 ? <h3 className="largeName ">{pokemonDetails.name}</h3> : ''}
@@ -602,7 +664,8 @@ export function CardDetails() {
           { pokemonEvolutionDetails === true ?
           
           <EvolutionDiv>
-            
+            {/* CONFERIR CONDIÇÕES */}
+
             {/* STAGE 1 */}
             { evolutionDetails.noInfo !== true ?
             <Link style={{color: theme.color}} className='links' reloadDocument to={`/details/${evolutionDetails.stage1}`}>
@@ -639,6 +702,7 @@ export function CardDetails() {
             </Link>: ''}
 
             {/* STAGE 2 EXCEÇÕES */} 
+
             { evolutionDetails.noInfo !== true && ExceptionsWurmple.includes(pokemonDetails.name) && pokemonDetails.name === 'silcoon' || pokemonDetails.name === 'beautifly' ? 
             <Link style={{color: theme.color}} className='links' reloadDocument to={`/details/${evolutionDetails.stage2[0]}`}>
               <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
@@ -684,7 +748,7 @@ export function CardDetails() {
               </Stage2>
             </Link>: ''}
 
-            {/* SWIPER EEVEE */}
+              {/* SWIPER EEVEE */}
             { evolutionDetails.noInfo !== true && ExceptionsEevee.includes(pokemonDetails.name) ?
             <Swiper
             initialSlide={`${evolutionDetails.stage2.indexOf(`${pokemonDetails.name}`)}`}
@@ -1248,7 +1312,7 @@ export function CardDetails() {
             </MegaExceptions>
              : ''}
 
-            {megaExceptions === true && pokemonDetails.name === 'mewtwo'?
+             {megaExceptions === true && pokemonDetails.name === 'mewtwo'?
             
             <MegaExceptions>
             
@@ -1279,10 +1343,13 @@ export function CardDetails() {
             </MegaExceptions>
              : ''}
            
-          </EvolutionDiv> :         
+
+          </EvolutionDiv> :
+          
           
           <UlMovesDiv>
-              
+  
+            
             <UlMoves style={{border:theme.btnBorder, backgroundColor: theme.detailsHeaderColor}}>
                 {pokemonDetails.moveslength === 0  ? <p className='NoMoves'>No listed moves</p> : pokemonDetails.moves?.sort().map((move, index) => (
                 <li key={index}>{move}</li>
@@ -1299,6 +1366,7 @@ export function CardDetails() {
     </div>
   )
 }
+
 
 
 const HeaderDetails = styled.div`
@@ -1588,13 +1656,11 @@ const Poke = styled.div`
   @media screen and (orientation: landscape) and (max-height: 400px) {
     width: 35vw;
     margin-left: 40px;
-    margin-bottom: 10px;
 
       h3{
         font-size: 18px;
         min-height: 44px;
         max-width: 200px;
-        margin-bottom: 0px;
       }
 
       .largeName{
@@ -1737,7 +1803,7 @@ const TitlesDiv = styled.div`
   }
 
   @media screen and (orientation: landscape) and (max-height: 400px) {
-    margin-top: -20px;
+    margin-top: 0px;
     margin-left: -100px;
     z-index: 1;
     
@@ -1746,13 +1812,13 @@ const TitlesDiv = styled.div`
     }
    
     .abilities{
-      margin-top: -68px;
+      margin-top: -80px;
       margin-left: 10px;
     }
 
     .moves{
       margin-left: 350px;
-      margin-top: -270px;
+      margin-top: -300px;
     } 
 
     .moves.box{
@@ -1761,9 +1827,9 @@ const TitlesDiv = styled.div`
     } 
     .mega{
     width: 200px;
-    margin-top: -300px;
+    margin-top: -380px;
     // margin-left:-140px;
-    margin-left:-115px;
+    margin-left:-100px;
     margin-right: 60px;
     justify-self: center;
     align-self: center;
@@ -1797,13 +1863,11 @@ const TitlesDiv = styled.div`
     .evolution-moves{
       margin-left: 310px;
       margin-right: 0px;
-      margin-top: 10px;
     }
     
     .moves-evolution{
     margin-left: 350px;
     margin-right:0px;
-    margin-top: 10px;
     }
 
     .emptydiv{
@@ -2074,7 +2138,7 @@ const UlGif = styled.ul`
     align-items: flex-end;
     position: relative;
     margin-left: -190px;
-    margin-top: -88px;
+    margin-top: -98px;
       
       img{
         max-height: 120px;
@@ -2133,9 +2197,9 @@ text-align: center;
 @media screen and (orientation: landscape) and (max-height: 400px) {
 
 width: 332px;
-height: 140px;
-margin-top: 12px;
-margin-left: 24px;
+height: 153px;
+margin-top: 30px;
+margin-left: 35px;
 }
 
 `
@@ -2219,30 +2283,26 @@ const EvolutionDiv = styled.div`
     }
 
     @media screen and (orientation: landscape) and (max-height: 400px) {
-      margin-top: -245px;
-      width: 330px;
-      height: 160px;
+      margin-top: -295px;
+      width: 210px;
       margin-left: -120px;
       display: flex;
       z-index: 1;
       
       gap: 2px;
       
-      .swiper-slide.swiper-slide-active, .swiper-slide.swiper-slide-next, .swiper-slide.swiper-slide-prev {
-        height: 140px;
-      }
 
       .seta{
-      width: 27px;
-      margin-top: -15px;
+      width: 30px;
+      margin-top: 0px;
       }
 
       h4{
-      font-size: 10px;
+      font-size: 11px;
       }
 
       .links{
-        width: 90px;
+        width: 100px;
         justify-self: center;
         align-self: center;
       }
@@ -2254,13 +2314,13 @@ const EvolutionDiv = styled.div`
       .stagesgif{
       
         img{
-        max-width: 88px;
+        max-width: 100px;
         }
       }    
 
       .swiper-wrapper {
-      height: 140px;
-      margin-top: 10px;
+      height: 150px;
+        margin-top: 10px;
         h4{
         margin-top: 0px;
         }
@@ -2282,51 +2342,42 @@ const EvolutionDiv = styled.div`
       .noEvolutionInfo{
       margin-top: 20px;
       }
-      .stagesgif{
-      display: grid;
-      width: 90px;
-      height: 70px;  
-      align-content: flex-end; 
-      justify-items: center;     
-      }
-      .qtd{
-        display:none;
-      }
-         
+        
+      
     }
 
-  .noEvolutionInfo{
-    height: 120px;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    list-style: none;
-    font-family: "Roboto", sans-serif;
-    text-transform: uppercase;
-    justify-content: center;
-    align-content: center;
-    pointer-events: none;
-  }
+    .noEvolutionInfo{
+      height: 120px;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      list-style: none;
+      font-family: "Roboto", sans-serif;
+      text-transform: uppercase;
+      justify-content: center;
+      align-content: center;
+      pointer-events: none;
+    }
 
-  .stageslogos{
-    align-self: center;
-  }
+    .stageslogos{
+      align-self: center;
+    }
 
-  .stagesgif{
-    display: grid;
-    min-width: 90px;
-    min-height: 80px; 
-    align-content: flex-end; 
-    justify-items: center;     
-  }
+    .stagesgif{
+      display: grid;
+      min-width: 100px;
+      min-height: 80px;  
+      align-content: flex-end; 
+      justify-items: center;     
+    }
 
-  .links{
-    text-decoration: none;
-  }
+    .links{
+      text-decoration: none;
+    }
 
-  .qtd{
-    margin-top: 10px;
-  }
+    .qtd{
+      margin-top: 10px;
+    }
 
 `
 
@@ -2410,11 +2461,7 @@ const Stage1 = styled.div`
     }
 
     @media screen and (orientation: landscape) and (max-height: 400px) {
-      width: 90px;
-      height: 140px;
-      #stage1pokemon{
-        height:50px;
-      }
+    width: 100px;
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) {
@@ -2519,14 +2566,8 @@ const Stage2 = styled.div`
   }
 
   @media screen and (orientation: landscape) and (max-height: 400px) {
-    width: 90px;
-    height: 140px;
-
-    #stage2pokemon, #stage2pokemon1, #stage2pokemon2, #stage2pokemon3, #stage2pokemon4, #stage2pokemon5, #stage2pokemon6, #stage2pokemon7{
-      height:50px;
-    }    
-
-  }
+    width: 100px;
+    }
   @media screen and (min-width: 320px) and (max-width: 425px) {
     width: 100px;
     height: 150px;
@@ -2607,16 +2648,8 @@ const Stage3 = styled.div`
   }
 
   @media screen and (orientation: landscape) and (max-height: 400px) {
-    width: 90px;
-    height: 140px;
-
-    #stage3pokemon{
-      height:50px;
+    width: 100px;
     }
-    #stage3pokemon2{
-      height:50px;
-    }
-  }
   @media screen and (min-width: 320px) and (max-width: 425px) {
       width: 100px;
       height: 150px;
@@ -2632,7 +2665,7 @@ const StageMega = styled.div`
   display: flex;
   flex-direction: column;
   width: 170px;
-  height: 140px;
+  height: 150px;
   justify-content: space-between;
   position: relative;
   z-index: 0;
