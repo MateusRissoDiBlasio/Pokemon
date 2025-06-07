@@ -1519,7 +1519,7 @@ const Type = styled.div`
       align-self: flex-start;
       padding: 0.5rem;
       justify-content: left;
-      margin-top: 0px;
+      margin-top: -5px;
 
       img{
                 
@@ -1604,7 +1604,7 @@ const Poke = styled.div`
       img{
         width: 200px;
         height: 200px;
-        margin-top: -22px;
+        margin-top: -27px;
       }
 
       .noImage{
@@ -1764,7 +1764,7 @@ const TitlesDiv = styled.div`
     width: 200px;
     margin-top: -300px;
     // margin-left:-140px;
-    margin-left:-120px;
+    margin-left:-130px;
     margin-right: 60px;
     justify-self: center;
     align-self: center;
@@ -1796,13 +1796,13 @@ const TitlesDiv = styled.div`
     }
 
     .evolution-moves{
-      margin-left: 330px;
+      margin-left: 350px;
       margin-right: 0px;
       margin-top: 10px;
     }
     
     .moves-evolution{
-      margin-left: 360px;
+      margin-left: 380px;
       margin-right:0px;
       margin-top: 10px;
     }
@@ -2100,7 +2100,7 @@ const UlGif = styled.ul`
 const MegaExceptions = styled.div`
 
 width: 100vw;
-height: 150px;
+height: 160px;
 display:flex;
 position: absolute;
 align-content: center;
