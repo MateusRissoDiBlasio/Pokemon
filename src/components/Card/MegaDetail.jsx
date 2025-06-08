@@ -652,7 +652,7 @@ const TitlesDiv = styled.div`
     }
    
     .abilities{
-      margin-top: -108px;
+      margin-top: -113px;
       margin-left: 10px;
     }
 
@@ -833,9 +833,9 @@ const UlAbilities = styled.ul`
 
     @media screen and (orientation: landscape) and (max-height: 400px) {
       width: 470px;
-      height: 100px;
+      height: 85px;
       margin-left: -220px;
-      margin-top: -80px;
+      margin-top: -85px;
       z-index:1;
       
       li {

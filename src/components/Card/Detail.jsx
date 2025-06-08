@@ -568,7 +568,7 @@ export function CardDetails() {
           </ContainerDetailsDiv>
           
           <TitlesDiv>
-            {pokemonDetails.abilitieslength <= 1  ? <h4 className='abilities'>Ability:</h4> : <h4 className='abilities'>Abilities:</h4>}
+            {pokemonDetails.abilitieslength <= 1  ? <h4 className='ability'>Ability:</h4> : <h4 className='abilities'>Abilities:</h4>}
 
             {Mega.includes(pokemonDetails.name) || pokemonDetails.name ==='charizard' || pokemonDetails.name ==='mewtwo' ? <div className='emptydiv'></div> : <div className={MegaFull.includes(pokemonDetails.name) ? 'emptydiv box2' : 'emptydiv box'}></div>}
             
@@ -1252,7 +1252,7 @@ export function CardDetails() {
             
             <MegaExceptions>
             
-                <Link style={{color: theme.color, backgroundColor: theme.background}} className='MegaExceptions mega-x' to={`/megadetails/${pokemonDetails.name+'-mega-x'}`}>
+                <Link style={{color: theme.color, backgroundColor: theme.background}} className='MegaExceptions' to={`/megadetails/${pokemonDetails.name+'-mega-x'}`}>
                   <StageMega>
 
                         <h4>{pokemonDetails.name+'-mega-x'}</h4>                        
@@ -1602,9 +1602,9 @@ const Poke = styled.div`
       }
 
       img{
-        width: 200px;
-        height: 200px;
-        margin-top: -27px;
+        width: 180px;
+        height: 180px;
+        margin-top: -7px;
       }
 
       .noImage{
@@ -1746,7 +1746,14 @@ const TitlesDiv = styled.div`
       font-size: 1.4rem;
     }
    
+    .ability{
+      margin-top: -68px;
+      margin-left: 10px;
+      margin-right: 15px;
+    }
+
     .abilities{
+      // width: 107.36px;
       margin-top: -68px;
       margin-left: 10px;
     }
@@ -1807,6 +1814,18 @@ const TitlesDiv = styled.div`
       margin-top: 10px;
     }
 
+    // .evolution-moves.exception{
+    //   margin-left: 350px;
+    //   margin-right: 0px;
+    //   margin-top: 10px;
+    // }
+
+    // .moves-evolution.exception{
+    //   margin-left: 380px;
+    //   margin-right:0px;
+    //   margin-top: 10px;
+    // }
+
     .emptydiv{
       width:200px;
       margin-left: 5px;
@@ -1814,7 +1833,7 @@ const TitlesDiv = styled.div`
     
     .emptydiv.box{
       width:200px;
-      margin-right: 70px;
+      margin-right: 30px;
     }
     .emptydiv.box2{
       width:200px;
@@ -2100,7 +2119,7 @@ const UlGif = styled.ul`
 const MegaExceptions = styled.div`
 
 width: 100vw;
-height: 160px;
+height: 170px;
 display:flex;
 position: absolute;
 align-content: center;
@@ -2110,6 +2129,7 @@ margin-top: 5px;
 
 h4{ 
 text-align: center;
+width: 180px;
 }
 
 .stagesgifexceptions{
@@ -2135,16 +2155,17 @@ text-align: center;
 @media screen and (orientation: landscape) and (max-height: 400px) {
 
 width: 332px;
-height: 130px;
+height: 133px;
 margin-top: 22px;
 margin-left: 24px;
 h4{
     margin-top: 10px;
+    width: 140px;
   }
 
 .mega-y{
   margin-top: -10px;
-  height:140px;
+  height:143px;
 
   h4{
     margin-top: 20px;
