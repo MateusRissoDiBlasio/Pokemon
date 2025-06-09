@@ -23,7 +23,7 @@ import {DelayedLink} from '../Buttons/DelayedLink';
 register();
 
 
-export function CardDetails() {
+export function Stage2Details() {
 
   const [pokemonDetails, setPokemonDetails] = useState({});
   const { id } = useParams();
@@ -603,14 +603,10 @@ export function CardDetails() {
           
           <EvolutionDiv>
             
-{/* MEXER DAQUI !!!! */}
-
             {/* STAGE 1 */}
-            { evolutionDetails.noInfo === true ? <h4 className='noEvolutionInfo'>No Evolution Data</h4> :'' }
-
-            { evolutionDetails.noInfo !== true && pokemonDetails.name !== evolutionDetails.stage1 ?
+            { evolutionDetails.noInfo !== true ?
             <Link style={{color: theme.color}} className='links' to={`/stage1details/${evolutionDetails.stage1}`}>
-              <Stage1 onMouseEnter={handleMouseEnter1} onMouseLeave={handleMouseleave}>
+             <Stage1 onMouseEnter={handleMouseEnter1} onMouseLeave={handleMouseleave}>
                 
                 <div id='stage1pokemon' className={pokemonDetails.name === evolutionDetails.stage1 ? 'selected stageslogos': 'stageslogos'}>
                   {theme.name === 'light' ? <Stage1Light /> : <Stage1Dark />}
@@ -619,46 +615,15 @@ export function CardDetails() {
                 <div className='stagesgif'>
                   {speciesEvolutionImgs.stage1Img !== null ? <img src={speciesEvolutionImgs.stage1Img} alt={evolutionDetails.stage1} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage1} width={'60px'} height={'60px'} /> }
                 </div>
-              </Stage1>
+            </Stage1>
             </Link> 
-            : '' }
-
-            { evolutionDetails.noInfo !== true && pokemonDetails.name === evolutionDetails.stage1 ?
-            <div style={{color: theme.color}} className='links'>
-              <Stage1 onMouseEnter={handleMouseEnter1} onMouseLeave={handleMouseleave}>
-                
-                <div id='stage1pokemon' className={pokemonDetails.name === evolutionDetails.stage1 ? 'selected stageslogos': 'stageslogos'}>
-                  {theme.name === 'light' ? <Stage1Light /> : <Stage1Dark />}
-                </div>
-                <h4>{evolutionDetails.stage1}</h4>
-                <div className='stagesgif'>
-                  {speciesEvolutionImgs.stage1Img !== null ? <img src={speciesEvolutionImgs.stage1Img} alt={evolutionDetails.stage1} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage1} width={'60px'} height={'60px'} /> }
-                </div>
-              </Stage1>
-            </div> 
-            : '' }
-
+            : <h4 className='noEvolutionInfo'>No Evolution Data</h4> }
 
             {/* SETA 1 */}
             { evolutionDetails.noInfo !== true ? <img className='seta' src="../images/seta-pequena.svg" alt="seta pequena" /> : ''}
             
             {/* STAGE 2 PADRÃO */}
-            { evolutionDetails.noInfo !== true && !Exceptions.includes(pokemonDetails.name) && pokemonDetails.name !== evolutionDetails.stage2 ? 
-            <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2}`}>
-              <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
-                
-
-                <div id='stage2pokemon' className={pokemonDetails.name === evolutionDetails.stage2 ? 'selected stageslogos': 'stageslogos'}>
-                  {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
-                </div>
-                <h4>{evolutionDetails.stage2}</h4>
-                <div className='stagesgif'>
-                  {speciesEvolutionImgs.stage2Img !== null ? <img src={speciesEvolutionImgs.stage2Img} alt={evolutionDetails.stage2} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage2} width={'60px'} height={'60px'} /> }
-                </div>
-              </Stage2>
-            </Link>: ''}
-
-            { evolutionDetails.noInfo !== true && !Exceptions.includes(pokemonDetails.name) && pokemonDetails.name === evolutionDetails.stage2 ? 
+            { evolutionDetails.noInfo !== true && !Exceptions.includes(pokemonDetails.name) ? 
             <div style={{color: theme.color}} className='links'>
               <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
@@ -672,25 +637,9 @@ export function CardDetails() {
                 </div>
               </Stage2>
             </div>: ''}
-
 
             {/* STAGE 2 EXCEÇÕES */} 
-            { evolutionDetails.noInfo !== true && ExceptionsWurmple.includes(pokemonDetails.name) && pokemonDetails.name !== evolutionDetails.stage2[0] && (pokemonDetails.name === 'silcoon' || pokemonDetails.name === 'beautifly') ? 
-            <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[0]}`}>
-              <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
-                
-
-                <div id='stage2pokemon2' className={pokemonDetails.name === evolutionDetails.stage2[0] ? 'selected stageslogos': 'stageslogos'}>
-                  {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
-                </div>
-                <h4>{evolutionDetails.stage2[0]}</h4>
-                <div className='stagesgif'>
-                  {speciesEvolutionImgs.stage2Img[0] !== null ? <img src={speciesEvolutionImgs.stage2Img[0]} alt={evolutionDetails.stage2[0]} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage2} width={'60px'} height={'60px'} /> }
-                </div>
-              </Stage2>
-            </Link>: ''}
-
-            { evolutionDetails.noInfo !== true && ExceptionsWurmple.includes(pokemonDetails.name) && pokemonDetails.name === evolutionDetails.stage2[0] ? 
+            { evolutionDetails.noInfo !== true && ExceptionsWurmple.includes(pokemonDetails.name) && pokemonDetails.name === 'silcoon' || pokemonDetails.name === 'beautifly' ? 
             <div style={{color: theme.color}} className='links'>
               <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
@@ -705,22 +654,7 @@ export function CardDetails() {
               </Stage2>
             </div>: ''}
 
-            { evolutionDetails.noInfo !== true && ExceptionsWurmple.includes(pokemonDetails.name) && pokemonDetails.name !== evolutionDetails.stage2[1] &&  pokemonDetails.name === 'cascoon' || pokemonDetails.name === 'dustox' ? 
-            <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[1]}`}>
-              <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
-                
-
-                <div id='stage2pokemon2' className={pokemonDetails.name === evolutionDetails.stage2[1] ? 'selected stageslogos': 'stageslogos'}>
-                  {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
-                </div>
-                <h4>{evolutionDetails.stage2[1]}</h4>
-                <div className='stagesgif'>
-                  {speciesEvolutionImgs.stage2Img[1] !== null ? <img src={speciesEvolutionImgs.stage2Img[1]} alt={evolutionDetails.stage2[1]} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage2} width={'60px'} height={'60px'} /> }
-                </div>
-              </Stage2>
-            </Link>: ''} 
-
-            { evolutionDetails.noInfo !== true && ExceptionsWurmple.includes(pokemonDetails.name) && pokemonDetails.name === evolutionDetails.stage2[1] ? 
+            { evolutionDetails.noInfo !== true && ExceptionsWurmple.includes(pokemonDetails.name) && pokemonDetails.name === 'cascoon' || pokemonDetails.name === 'dustox'  ? 
             <div style={{color: theme.color}} className='links'>
               <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
@@ -733,24 +667,9 @@ export function CardDetails() {
                   {speciesEvolutionImgs.stage2Img[1] !== null ? <img src={speciesEvolutionImgs.stage2Img[1]} alt={evolutionDetails.stage2[1]} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage2} width={'60px'} height={'60px'} /> }
                 </div>
               </Stage2>
-            </div>: ''} 
-
-            { evolutionDetails.noInfo !== true && (ExceptionsOddish.includes(pokemonDetails.name) || ExceptionsPoliwag.includes(pokemonDetails.name) || ExceptionsRalts.includes(pokemonDetails.name)) && pokemonDetails.name !== evolutionDetails.stage2 ? 
-            <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2}`}>
-              <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
-                
-
-                <div id='stage2pokemon' className={pokemonDetails.name === evolutionDetails.stage2 ? 'selected stageslogos': 'stageslogos'}>
-                  {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
-                </div>
-                <h4>{evolutionDetails.stage2}</h4>
-                <div className='stagesgif'>
-                  {speciesEvolutionImgs.stage2Img !== null ? <img src={speciesEvolutionImgs.stage2Img} alt={evolutionDetails.stage2} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage2} width={'60px'} height={'60px'} /> }
-                </div>
-              </Stage2>
-            </Link>: ''}  
-          
-            { evolutionDetails.noInfo !== true && (ExceptionsOddish.includes(pokemonDetails.name) || ExceptionsPoliwag.includes(pokemonDetails.name) || ExceptionsRalts.includes(pokemonDetails.name)) && pokemonDetails.name === evolutionDetails.stage2 ? 
+            </div>: ''}           
+            
+            { evolutionDetails.noInfo !== true && ExceptionsOddish.includes(pokemonDetails.name) || ExceptionsPoliwag.includes(pokemonDetails.name) || ExceptionsRalts.includes(pokemonDetails.name) ? 
             <div style={{color: theme.color}} className='links'>
               <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
@@ -765,6 +684,7 @@ export function CardDetails() {
               </Stage2>
             </div>: ''}
 
+{/* REVER DAQUI !!!!!!! */}
 
             {/* SWIPER EEVEE */}
             { evolutionDetails.noInfo !== true && ExceptionsEevee.includes(pokemonDetails.name) ?
@@ -780,7 +700,7 @@ export function CardDetails() {
               <SwiperSlide  >
                 
                 {pokemonDetails.name !== evolutionDetails.stage2[0] ?
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[0]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[0]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                         
                         <div id='stage2pokemon' className={pokemonDetails.name === evolutionDetails.stage2[0] ? 'selected stageslogos': 'stageslogos'}>
@@ -814,7 +734,7 @@ export function CardDetails() {
               <SwiperSlide >
 
                 {pokemonDetails.name !== evolutionDetails.stage2[1] ?
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[1]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[1]}`}>
                   <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
@@ -850,7 +770,7 @@ export function CardDetails() {
               <SwiperSlide >
 
                 {pokemonDetails.name !== evolutionDetails.stage2[2] ?
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[2]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[2]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
@@ -886,7 +806,7 @@ export function CardDetails() {
               <SwiperSlide >
                 
                 {pokemonDetails.name !== evolutionDetails.stage2[3] ?
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[3]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[3]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
                         <div id='stage2pokemon3' className={pokemonDetails.name === evolutionDetails.stage2[3] ? 'selected stageslogos': 'stageslogos'}>
@@ -918,7 +838,7 @@ export function CardDetails() {
               <SwiperSlide >
                 
                 {pokemonDetails.name !== evolutionDetails.stage2[4] ?
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[4]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[4]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
@@ -953,7 +873,7 @@ export function CardDetails() {
               <SwiperSlide >
                 
                 {pokemonDetails.name !== evolutionDetails.stage2[5] ?
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[5]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[5]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
@@ -988,7 +908,7 @@ export function CardDetails() {
               <SwiperSlide >
 
                 {pokemonDetails.name !== evolutionDetails.stage2[6] ?                
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[6]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[6]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
                         <div id='stage2pokemon6' className={pokemonDetails.name === evolutionDetails.stage2[6] ? 'selected stageslogos': 'stageslogos'}>
@@ -1020,7 +940,7 @@ export function CardDetails() {
               <SwiperSlide >
                 
                 {pokemonDetails.name !== evolutionDetails.stage2[7] ?
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[7]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[7]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
                         <div id='stage2pokemon7' className={pokemonDetails.name === evolutionDetails.stage2[7] ? 'selected stageslogos': 'stageslogos'}>
@@ -1065,7 +985,7 @@ export function CardDetails() {
             >
               <SwiperSlide  >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[0]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[0]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                         
                         <div id='stage2pokemon' className={pokemonDetails.name === evolutionDetails.stage2[0] ? 'selected stageslogos': 'stageslogos'}>
@@ -1083,7 +1003,7 @@ export function CardDetails() {
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[1]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[1]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
@@ -1099,7 +1019,7 @@ export function CardDetails() {
                   </Stage2> : ''}
                 </Link> 
               </SwiperSlide>
-     
+      
             </Swiper> : ''}
 
             { evolutionDetails.noInfo !== true && ExceptionsBurmy.includes(pokemonDetails.name) ? 
@@ -1114,7 +1034,7 @@ export function CardDetails() {
             >
               <SwiperSlide  >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage1}`}>
+                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage1}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                         
                         <div id='stage2pokemon' className={pokemonDetails.name === evolutionDetails.stage2[0] ? 'selected stageslogos': 'stageslogos'}>
@@ -1133,7 +1053,7 @@ export function CardDetails() {
               <SwiperSlide >
                 
                 {pokemonDetails.name !== evolutionDetails.stage2[1] ?
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[1]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[1]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
@@ -1180,7 +1100,7 @@ export function CardDetails() {
               <SwiperSlide  >
                 
                 {pokemonDetails.name !== evolutionDetails.stage2[0] ?
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[0]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[0]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                         
                         <div id='stage2pokemon' className={pokemonDetails.name === evolutionDetails.stage2[0] ? 'selected stageslogos': 'stageslogos'}>
@@ -1212,7 +1132,7 @@ export function CardDetails() {
               <SwiperSlide >
                 
                 {pokemonDetails.name !== evolutionDetails.stage2[1] ?
-                <Link style={{color: theme.color}} className='links' reloadDocument to={`/stage2details/${evolutionDetails.stage2[1]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[1]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
@@ -1247,7 +1167,7 @@ export function CardDetails() {
               <SwiperSlide >
                 
                 {pokemonDetails.name !== evolutionDetails.stage2[2] ?
-                <Link style={{color: theme.color}} className='links' reloadDocument to={`/stage2details/${evolutionDetails.stage2[2]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[2]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
@@ -1293,7 +1213,7 @@ export function CardDetails() {
             >
               <SwiperSlide  >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[0]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[0]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                         
                         <div id='stage2pokemon' className={pokemonDetails.name === evolutionDetails.stage2[0] ? 'selected stageslogos': 'stageslogos'}>
@@ -1311,7 +1231,7 @@ export function CardDetails() {
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[1]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[1]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
@@ -1327,7 +1247,7 @@ export function CardDetails() {
                   </Stage2> : ''}
                 </Link> 
               </SwiperSlide>
-     
+      
             </Swiper> : ''}
 
             { evolutionDetails.noInfo !== true && (ExceptionsSlowpoke.includes(pokemonDetails.name) || ExceptionsClamperl.includes(pokemonDetails.name) || ExceptionsSnorunt.includes(pokemonDetails.name) || ExceptionsNincada.includes(pokemonDetails.name)) && pokemonDetails.name === evolutionDetails.stage2[0] ?
@@ -1360,7 +1280,7 @@ export function CardDetails() {
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[1]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[1]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
@@ -1376,7 +1296,7 @@ export function CardDetails() {
                   </Stage2> : ''}
                 </Link> 
               </SwiperSlide>
-     
+      
             </Swiper> : ''}
 
             { evolutionDetails.noInfo !== true && (ExceptionsSlowpoke.includes(pokemonDetails.name) || ExceptionsClamperl.includes(pokemonDetails.name) || ExceptionsSnorunt.includes(pokemonDetails.name) || ExceptionsNincada.includes(pokemonDetails.name)) && pokemonDetails.name === evolutionDetails.stage2[1] ?
@@ -1391,7 +1311,7 @@ export function CardDetails() {
             >
               <SwiperSlide  >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[0]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[0]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                         
                         <div id='stage2pokemon' className={pokemonDetails.name === evolutionDetails.stage2[0] ? 'selected stageslogos': 'stageslogos'}>
@@ -1427,40 +1347,28 @@ export function CardDetails() {
               </SwiperSlide>
     
             </Swiper> : ''}
+
+
+{/* ATÉ AQUI */}
          
             {/* SETA 2 */}
             { evolutionDetails.stage3 !== undefined ? <img className='seta' src="../images/seta-pequena.svg" alt="seta pequena" /> : ''}
             
             {/* STAGE 3 PADRÃO */}
-            { evolutionDetails.stage3 !== undefined && !Exceptions.includes(pokemonDetails.name) && pokemonDetails.name !== evolutionDetails.stage3 ?
+            { evolutionDetails.stage3 !== undefined && !Exceptions.includes(pokemonDetails.name) ?
             <Link style={{color: theme.color}} className='links' to={`/stage3details/${evolutionDetails.stage3}`}>
-              <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
+             <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
               
               
-                <div id='stage3pokemon' className={pokemonDetails.name === evolutionDetails.stage3 ? 'selected stageslogos': 'stageslogos'}>
-                  {theme.name === 'light' ? <Stage3Light /> : <Stage3Dark />}
-                </div>
-                <h4>{evolutionDetails.stage3}</h4>
-                <div className='stagesgif'>
-                  {speciesEvolutionImgs.stage3Img !== null ? <img src={speciesEvolutionImgs.stage3Img} alt={evolutionDetails.stage3} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage3} width={'60px'} height={'60px'} /> }
-                </div>
-              </Stage3>
+              <div id='stage3pokemon' className={pokemonDetails.name === evolutionDetails.stage3 ? 'selected stageslogos': 'stageslogos'}>
+                {theme.name === 'light' ? <Stage3Light /> : <Stage3Dark />}
+              </div>
+              <h4>{evolutionDetails.stage3}</h4>
+              <div className='stagesgif'>
+                {speciesEvolutionImgs.stage3Img !== null ? <img src={speciesEvolutionImgs.stage3Img} alt={evolutionDetails.stage3} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage3} width={'60px'} height={'60px'} /> }
+              </div>
+            </Stage3>
             </Link>  : ''}
-
-            { evolutionDetails.stage3 !== undefined && !Exceptions.includes(pokemonDetails.name) && pokemonDetails.name === evolutionDetails.stage3 ?
-            <div style={{color: theme.color}} className='links'>
-              <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
-              
-              
-                <div id='stage3pokemon' className={pokemonDetails.name === evolutionDetails.stage3 ? 'selected stageslogos': 'stageslogos'}>
-                  {theme.name === 'light' ? <Stage3Light /> : <Stage3Dark />}
-                </div>
-                <h4>{evolutionDetails.stage3}</h4>
-                <div className='stagesgif'>
-                  {speciesEvolutionImgs.stage3Img !== null ? <img src={speciesEvolutionImgs.stage3Img} alt={evolutionDetails.stage3} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage3} width={'60px'} height={'60px'} /> }
-                </div>
-              </Stage3>
-            </div>  : ''}
 
             {/* STAGE 3 EXCEÇÕES */}
             { evolutionDetails.stage3 !== undefined && ExceptionsWurmple.includes(pokemonDetails.name) && pokemonDetails.name === 'wurmple'?
@@ -1477,7 +1385,7 @@ export function CardDetails() {
             >
               <SwiperSlide  >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage3details/${evolutionDetails.stage3[0]}`}>
+                <Link style={{color: theme.color}} className='links' reloadDocument to={`/stage3details/${evolutionDetails.stage3[0]}`}>
                     <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
                         
                         <div id='stage3pokemon' className={pokemonDetails.name === evolutionDetails.stage3[0] ? 'selected stageslogos': 'stageslogos'}>
@@ -1497,7 +1405,7 @@ export function CardDetails() {
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage3details/${evolutionDetails.stage3[1]}`}>
+                <Link style={{color: theme.color}} className='links' reloadDocument to={`/stage3details/${evolutionDetails.stage3[1]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
                       
 
@@ -1516,7 +1424,7 @@ export function CardDetails() {
      
             </Swiper> : ''}
 
-            { evolutionDetails.noInfo !== true && ExceptionsWurmple.includes(pokemonDetails.name) && pokemonDetails.name !== evolutionDetails.stage3[0] && (pokemonDetails.name === 'silcoon' || pokemonDetails.name === 'beautifly') ? 
+            { evolutionDetails.noInfo !== true && ExceptionsWurmple.includes(pokemonDetails.name) && pokemonDetails.name === 'silcoon' || pokemonDetails.name === 'beautifly'  ? 
             <Link style={{color: theme.color}} className='links' to={`/stage3details/${evolutionDetails.stage3[0]}`}>
               <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
                 
@@ -1531,22 +1439,7 @@ export function CardDetails() {
               </Stage3>
             </Link>: ''}
 
-            { evolutionDetails.noInfo !== true && ExceptionsWurmple.includes(pokemonDetails.name) && pokemonDetails.name === evolutionDetails.stage3[0] && (pokemonDetails.name === 'silcoon' || pokemonDetails.name === 'beautifly') ?
-            <div style={{color: theme.color}} className='links'>
-              <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
-              
-
-                <div id='stage3pokemon' className={pokemonDetails.name === evolutionDetails.stage3[0] ? 'selected stageslogos': 'stageslogos'}>
-                  {theme.name === 'light' ? <Stage3Light /> : <Stage3Dark />}
-                </div>
-                <h4>{evolutionDetails.stage3[0]}</h4>
-                <div className='stagesgif'>
-                  {speciesEvolutionImgs.stage3Img[0] !== null ? <img src={speciesEvolutionImgs.stage3Img[0]} alt={evolutionDetails.stage3[0]} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage2} width={'60px'} height={'60px'} /> }
-                </div>
-              </Stage3>
-            </div>: ''}
-
-            { evolutionDetails.noInfo !== true && ExceptionsWurmple.includes(pokemonDetails.name) && pokemonDetails.name !== evolutionDetails.stage3[1] && (pokemonDetails.name === 'cascoon' || pokemonDetails.name === 'dustox') ? 
+            { evolutionDetails.noInfo !== true && ExceptionsWurmple.includes(pokemonDetails.name) && pokemonDetails.name === 'cascoon' || pokemonDetails.name === 'dustox'  ? 
             <Link style={{color: theme.color}} className='links' to={`/stage3details/${evolutionDetails.stage3[1]}`}>
               <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
                 
@@ -1560,24 +1453,8 @@ export function CardDetails() {
                 </div>
               </Stage3>
             </Link>: ''}
-
-            { evolutionDetails.noInfo !== true && ExceptionsWurmple.includes(pokemonDetails.name) && pokemonDetails.name === evolutionDetails.stage3[1] && (pokemonDetails.name === 'cascoon' || pokemonDetails.name === 'dustox') ? 
-            <div style={{color: theme.color}} className='links'>
-              <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
-                
-
-                <div id='stage3pokemon' className={pokemonDetails.name === evolutionDetails.stage3[1] ? 'selected stageslogos': 'stageslogos'}>
-                  {theme.name === 'light' ? <Stage3Light /> : <Stage3Dark />}
-                </div>
-                <h4>{evolutionDetails.stage3[1]}</h4>
-                <div className='stagesgif'>
-                  {speciesEvolutionImgs.stage3Img[1] !== null ? <img src={speciesEvolutionImgs.stage3Img[1]} alt={evolutionDetails.stage3[1]} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage2} width={'60px'} height={'60px'} /> }
-                </div>
-              </Stage3>
-            </div>: ''}
-
             
-            { evolutionDetails.noInfo !== true && (ExceptionsOddish.includes(pokemonDetails.name) || ExceptionsPoliwag.includes(pokemonDetails.name) || ExceptionsRalts.includes(pokemonDetails.name)) && pokemonDetails.name !== evolutionDetails.stage3[0] && pokemonDetails.name !== evolutionDetails.stage3[1] ?
+            { evolutionDetails.noInfo !== true && ExceptionsOddish.includes(pokemonDetails.name) || ExceptionsPoliwag.includes(pokemonDetails.name) || ExceptionsRalts.includes(pokemonDetails.name) ?
             <Swiper
             initialSlide={`${evolutionDetails.stage3.indexOf(`${pokemonDetails.name}`)}`}
             // effect="flip"
@@ -1589,7 +1466,7 @@ export function CardDetails() {
             >
               <SwiperSlide  >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage3details/${evolutionDetails.stage3[0]}`}>
+                <Link style={{color: theme.color}} className='links' reloadDocument to={`/stage3details/${evolutionDetails.stage3[0]}`}>
                     <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
                         
                         <div id='stage3pokemon' className={pokemonDetails.name === evolutionDetails.stage3[0] ? 'selected stageslogos': 'stageslogos'}>
@@ -1609,58 +1486,7 @@ export function CardDetails() {
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage3details/${evolutionDetails.stage3[1]}`}>
-                    <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
-                        
-
-                        <div id='stage3pokemon2' className={pokemonDetails.name === evolutionDetails.stage3[1] ? 'selected stageslogos': 'stageslogos'}>
-                          {theme.name === 'light' ? <Stage3Light /> : <Stage3Dark />}
-                        </div>
-                        
-                        <h4>{evolutionDetails.stage3[1]}</h4>
-                        <div className='stagesgif'>
-                          {speciesEvolutionImgs.stage3Img !== null ? <img src={speciesEvolutionImgs.stage3Img[1]} alt={evolutionDetails.stage3[1]} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage3[1]} width={'60px'} height={'60px'} /> }
-                        </div>
-                        <h4 className='qtd' >2-2</h4>
-                    </Stage3>
-                </Link> 
-              </SwiperSlide>
-    
-            </Swiper> : ''}
-
-            { evolutionDetails.noInfo !== true && (ExceptionsOddish.includes(pokemonDetails.name) || ExceptionsPoliwag.includes(pokemonDetails.name) || ExceptionsRalts.includes(pokemonDetails.name)) && pokemonDetails.name === evolutionDetails.stage3[0] ?
-            <Swiper
-            initialSlide={`${evolutionDetails.stage3.indexOf(`${pokemonDetails.name}`)}`}
-            // effect="flip"
-            slidesPerView={1}
-            // onSlideChange={() => setSlideChange(true)}
-            // onSwiper={() => setSlideChange(true)}
-            // pagination={{clickable: true}}
-            navigation
-            >
-              <SwiperSlide  >
-                
-                <div style={{color: theme.color}} className='links'>
-                    <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
-                        
-                        <div id='stage3pokemon' className={pokemonDetails.name === evolutionDetails.stage3[0] ? 'selected stageslogos': 'stageslogos'}>
-                          {theme.name === 'light' ? <Stage3Light /> : <Stage3Dark />}
-                        </div>
-
-                        <h4>{evolutionDetails.stage3[0]}</h4>                        
-
-                        <div className='stagesgif'>
-                          {speciesEvolutionImgs.stage3Img !== null ? <img src={speciesEvolutionImgs.stage3Img[0]} alt={evolutionDetails.stage3[0]} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage3[0]} width={'60px'} height={'60px'} /> }
-                        </div>
-                        <h4 className='qtd' >1-2</h4>
-                    </Stage3>
-                </div> 
-                
-              </SwiperSlide>
-
-              <SwiperSlide >
-                
-                <Link style={{color: theme.color}} className='links' to={`/stage3details/${evolutionDetails.stage3[1]}`}>
+                <Link style={{color: theme.color}} className='links' reloadDocument to={`/stage3details/${evolutionDetails.stage3[1]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
                       
 
@@ -1676,60 +1502,8 @@ export function CardDetails() {
                   </Stage3> : ''}
                 </Link> 
               </SwiperSlide>
-    
+     
             </Swiper> : ''}
-
-            { evolutionDetails.noInfo !== true && (ExceptionsOddish.includes(pokemonDetails.name) || ExceptionsPoliwag.includes(pokemonDetails.name) || ExceptionsRalts.includes(pokemonDetails.name)) && pokemonDetails.name === evolutionDetails.stage3[1] ?
-            <Swiper
-            initialSlide={`${evolutionDetails.stage3.indexOf(`${pokemonDetails.name}`)}`}
-            // effect="flip"
-            slidesPerView={1}
-            // onSlideChange={() => setSlideChange(true)}
-            // onSwiper={() => setSlideChange(true)}
-            // pagination={{clickable: true}}
-            navigation
-            >
-              <SwiperSlide  >
-                
-                <Link style={{color: theme.color}} className='links' to={`/stage3details/${evolutionDetails.stage3[0]}`}>
-                    <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
-                        
-                        <div id='stage3pokemon' className={pokemonDetails.name === evolutionDetails.stage3[0] ? 'selected stageslogos': 'stageslogos'}>
-                          {theme.name === 'light' ? <Stage3Light /> : <Stage3Dark />}
-                        </div>
-
-                        <h4>{evolutionDetails.stage3[0]}</h4>                        
-
-                        <div className='stagesgif'>
-                          {speciesEvolutionImgs.stage3Img !== null ? <img src={speciesEvolutionImgs.stage3Img[0]} alt={evolutionDetails.stage3[0]} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage3[0]} width={'60px'} height={'60px'} /> }
-                        </div>
-                        <h4 className='qtd' >1-2</h4>
-                    </Stage3>
-                </Link> 
-                
-              </SwiperSlide>
-
-              <SwiperSlide >
-                
-                <div style={{color: theme.color}} className='links'>
-                  { evolutionDetails.noInfo !== true ? <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
-                      
-
-                      <div id='stage3pokemon2' className={pokemonDetails.name === evolutionDetails.stage3[1] ? 'selected stageslogos': 'stageslogos'}>
-                        {theme.name === 'light' ? <Stage3Light /> : <Stage3Dark />}
-                      </div>
-                      
-                      <h4>{evolutionDetails.stage3[1]}</h4>
-                      <div className='stagesgif'>
-                        {speciesEvolutionImgs.stage3Img !== null ? <img src={speciesEvolutionImgs.stage3Img[1]} alt={evolutionDetails.stage3[1]} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage3[1]} width={'60px'} height={'60px'} /> }
-                      </div>
-                      <h4 className='qtd' >2-2</h4>
-                  </Stage3> : ''}
-                </div> 
-              </SwiperSlide>
-    
-            </Swiper> : ''}
-
 
             {megaExceptions === true && pokemonDetails.name === 'charizard'?
             

@@ -31,6 +31,8 @@ const PokemonByTypeList = () => {
     const [loadLimit, setLoadLimit] = useState(0)
     
     const noImage = ['koraidon-limited-build', 'koraidon-sprinting-build', 'koraidon-swimming-build', 'koraidon-gliding-build', 'miraidon-low-power-mode', 'miraidon-drive-mode', 'miraidon-aquatic-mode', 'miraidon-glide-mode'];
+
+    let MegaFull = ['abomasnow-mega', 'absol-mega', 'aerodactyl-mega', 'aggron-mega', 'alakazam-mega', 'altaria-mega', 'ampharos-mega', 'audino-mega', 'banette-mega', 'beedrill-mega', 'blastoise-mega', 'blaziken-mega', 'camerupt-mega', 'charizard-mega-x', 'charizard-mega-y', 'diancie-mega', 'gallade-mega', 'garchomp-mega', 'gardevoir-mega', 'gengar-mega', 'glalie-mega', 'gyarados-mega', 'heracross-mega', 'houndoom-mega', 'kangaskhan-mega', 'latias-mega', 'latios-mega', 'lopunny-mega', 'lucario-mega', 'manectric-mega', 'mawile-mega', 'medicham-mega', 'metagross-mega', 'mewtwo-mega-x', 'mewtwo-mega-y', 'pidgeot-mega', 'pinsir-mega', 'rayquaza-mega', 'sableye-mega', 'salamence-mega', 'sceptile-mega', 'scizor-mega', 'sharpedo-mega', 'slowbro-mega', 'steelix-mega', 'swampert-mega', 'tyranitar-mega', 'venusaur-mega']
     
     const offsetLimits = [{types: ['ground', 'rock', 'bug', 'ghost', 'steel', 'fire', 'electric', 'ice', 'dragon', 'dark', 'fairy', 'fighting'], limitValue: 1300 }, {types: ['poison'], limitValue: 1400}, {types: ['psychic'], limitValue: 1500}, {types: ['flying', 'grass'], limitValue: 1700}, {types: ['normal'], limitValue: 1800}, {types: ['water'], limitValue: 2100}]
 
@@ -148,7 +150,8 @@ const PokemonByTypeList = () => {
                             {uniqueName.map((pokemon,index) => {
                                 
                                 return (
-                                    <Link key={index} to={`/details/${pokemon.name}`}>
+                                    
+                                    <Link key={index} to={MegaFull.includes(pokemon.name) ? `/megadetails/${pokemon.name}` : `/details/${pokemon.name}`}>
                                         <DivCard key={index} style={{color: hidden === pokemon ? theme.hover : theme.color, backgroundColor: hidden === pokemon ? theme.hover : theme.cardBackground, border: theme.cardBorder, boxShadow: hidden === pokemon ? theme.cardshadow : ''}} 
                                                 onMouseEnter={() => setHidden(pokemon)}
                                                 onMouseLeave={() => setHidden(-1)} >
