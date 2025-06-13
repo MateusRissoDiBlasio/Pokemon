@@ -1385,7 +1385,7 @@ export function Stage2Details() {
             >
               <SwiperSlide  >
                 
-                <Link style={{color: theme.color}} className='links' reloadDocument to={`/stage3details/${evolutionDetails.stage3[0]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/stage3details/${evolutionDetails.stage3[0]}`}>
                     <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
                         
                         <div id='stage3pokemon' className={pokemonDetails.name === evolutionDetails.stage3[0] ? 'selected stageslogos': 'stageslogos'}>
@@ -1405,7 +1405,7 @@ export function Stage2Details() {
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' reloadDocument to={`/stage3details/${evolutionDetails.stage3[1]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/stage3details/${evolutionDetails.stage3[1]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
                       
 
@@ -1466,7 +1466,7 @@ export function Stage2Details() {
             >
               <SwiperSlide  >
                 
-                <Link style={{color: theme.color}} className='links' reloadDocument to={`/stage3details/${evolutionDetails.stage3[0]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/stage3details/${evolutionDetails.stage3[0]}`}>
                     <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
                         
                         <div id='stage3pokemon' className={pokemonDetails.name === evolutionDetails.stage3[0] ? 'selected stageslogos': 'stageslogos'}>
@@ -1486,7 +1486,7 @@ export function Stage2Details() {
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' reloadDocument to={`/stage3details/${evolutionDetails.stage3[1]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/stage3details/${evolutionDetails.stage3[1]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
                       
 

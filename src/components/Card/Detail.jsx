@@ -479,7 +479,7 @@ export function CardDetails() {
   const handleMegaExceptionsClick = () => {  
     handleToggle();
     setMegaExceptions(istoggled);
-    setPokemonEvolutionDetails(istoggled);
+    setPokemonEvolutionDetails(true);
 
     if(theme.name === 'light' && istoggled === true){
       megaselected.classList.add('megaactive');
@@ -488,6 +488,21 @@ export function CardDetails() {
     if(theme.name === 'dark' && istoggled === true){
       megablackselected.classList.add('megablackactive');
     }
+    
+    if(theme.name === 'light' && istoggled === false){
+      megaselected.classList.remove('megaactive');
+    }
+
+    if(theme.name === 'dark' && istoggled === false){
+      megablackselected.classList.remove('megablackactive');
+    }
+    
+  } 
+
+  const handleMegaExceptionsClickOff = () => {  
+    setMegaExceptions(false);
+    setToggle(true);
+    
     
     if(theme.name === 'light' && istoggled === false){
       megaselected.classList.remove('megaactive');
@@ -510,6 +525,23 @@ export function CardDetails() {
     }
 
   }
+
+    const [darkMega, setDarkMega ] = useState('')
+    const [lightMega, setLightMega ] = useState('')
+  
+    if(theme.name === 'light'){
+      setTimeout(() => {
+        setDarkMega('')
+        setLightMega('megaactive')
+      }, 200);
+    }
+  
+    if(theme.name === 'dark'){
+      setTimeout(() => {
+        setLightMega('')
+        setDarkMega('megablackactive2 animate')
+      }, 200);
+    }  
 
   return (
     
@@ -578,13 +610,13 @@ export function CardDetails() {
             
             {MegaFull.includes(pokemonDetails.name) && theme.name === 'dark' ? <div className='mega1'> <MegaDarkSelected /> </div> : ''}
             
-            {pokemonDetails.name ==='charizard' || pokemonDetails.name ==='mewtwo' ? <div onClick={() => {handleMegaExceptionsClick();}} className='mega'> {theme.name === 'light' ? <MegaLight /> : <MegaDark />} </div> : ''}
+            {pokemonDetails.name ==='charizard' || pokemonDetails.name ==='mewtwo' ? <div onClick={() => {handleMegaExceptionsClick();}} className='mega'> {theme.name === 'light' ? <MegaLight className={megaExceptions === true ? lightMega : ''} /> : <MegaDark className={megaExceptions === true ? darkMega : ''} />} </div> : ''}
 
             {pokemonDetails.name ==='charizard-mega-y' || pokemonDetails.name ==='charizard-mega-x' ? <div className='mega2'> {theme.name === 'light' ? <MegaLightSelected /> : <MegaDarkSelected />} </div> : ''}
 
             {pokemonDetails.name ==='mewtwo-mega-y' || pokemonDetails.name ==='mewtwo-mega-x' ? <div className='mega2'> {theme.name === 'light' ? <MegaLightSelected /> : <MegaDarkSelected />} </div> : ''}
 
-            {pokemonEvolutionDetails === false ? <h4 onClick={() => {setPokemonEvolutionDetails(true); setActivateEvolution(true); getSpeciesEvolution()}} className='evolution-moves'> EVOLUTION</h4> : <h4 onClick={() => {handleMegaExceptionsClick(); setPokemonEvolutionDetails(false); {setActivateEvolution(false); setMegaExceptions(false)}}} className='moves-evolution'>Moves</h4>}
+            {pokemonEvolutionDetails === false ? <h4 onClick={() => {setPokemonEvolutionDetails(true); setActivateEvolution(true); getSpeciesEvolution(); handleMegaExceptionsClickOff();}} className='evolution-moves'> EVOLUTION</h4> : <h4 onClick={() => {setPokemonEvolutionDetails(false); setActivateEvolution(false); handleMegaExceptionsClickOff();}} className='moves-evolution'>Moves</h4>}
           </TitlesDiv>
           
           <UlAbilities style={{border:theme.btnBorder, backgroundColor: theme.detailsHeaderColor}}>
@@ -1212,7 +1244,7 @@ export function CardDetails() {
               <SwiperSlide >
                 
                 {pokemonDetails.name !== evolutionDetails.stage2[1] ?
-                <Link style={{color: theme.color}} className='links' reloadDocument to={`/stage2details/${evolutionDetails.stage2[1]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[1]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
@@ -1247,7 +1279,7 @@ export function CardDetails() {
               <SwiperSlide >
                 
                 {pokemonDetails.name !== evolutionDetails.stage2[2] ?
-                <Link style={{color: theme.color}} className='links' reloadDocument to={`/stage2details/${evolutionDetails.stage2[2]}`}>
+                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[2]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 

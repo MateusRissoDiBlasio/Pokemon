@@ -117,6 +117,23 @@ setTimeout(() => {
 const { theme } = useContext(ThemeContext)
 
 
+
+const [darkMega, setDarkMega ] = useState('')
+const [lightMega, setLightMega ] = useState('')
+
+  if(theme.name === 'light'){
+    setTimeout(() => {
+      setDarkMega('')
+      setLightMega('megaactive')
+    }, 200);
+  }
+
+  if(theme.name === 'dark'){
+    setTimeout(() => {
+      setLightMega('')
+      setDarkMega('megablackactive2 animate')
+    }, 200);
+  }   
   
   return (
     
@@ -161,7 +178,7 @@ const { theme } = useContext(ThemeContext)
           <TitlesDiv>
             {pokemonDetails.abilitieslength <= 1  ? <h4 className='abilities'>Ability:</h4> : <h4 className='abilities'>Abilities:</h4>}
 
-            <div className='mega2'> {theme.name === 'light' ? <MegaLightSelected /> : <MegaDarkSelected />} </div>
+            <div className='mega2'> {theme.name === 'light' ? <MegaLightSelected className={lightMega} /> : <MegaDarkSelected className={darkMega} />} </div>
  
           </TitlesDiv>
           
