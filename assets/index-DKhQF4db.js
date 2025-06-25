@@ -775,7 +775,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
 
   }
-  @media screen and (min-width: 320px) and (max-width: 374px) {
+  @media screen and (min-width: 320px) and (max-width: 375px) {
     
     max-width: 100vw;
     padding: 0;
@@ -801,7 +801,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   
   }
   
-  @media screen and (min-width: 375px) and (max-width: 425px) {
+  @media screen and (min-width: 376px) and (max-width: 425px) {
     
     max-width: 100vw;
     padding: 0;
@@ -884,12 +884,12 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       padding:0;   
     }
 
-    @media screen and (min-width: 320px) and (max-width: 374px) {
+    @media screen and (min-width: 320px) and (max-width: 375px) {
       height: 83vh;
       margin-top: 1vh;
     }
 
-    @media screen and (min-width: 375px) and (max-width: 500px) {
+    @media screen and (min-width: 376px) and (max-width: 500px) {
       height: 75.5vh;
       margin-top: 4.5vh;
     }
@@ -969,7 +969,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
        gap: 5px;
     }
 
-    @media screen and (min-width: 320px) and (max-width: 374px) {
+    @media screen and (min-width: 320px) and (max-width: 375px) {
       margin-right: 5px;
     }
 
@@ -985,7 +985,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
     }
 
-    @media screen and (min-width: 375px) and (max-width: 500px) {
+    @media screen and (min-width: 376px) and (max-width: 500px) {
       margin-right: 15px;
     }
 
@@ -1042,7 +1042,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
   }
   
-  @media screen and (min-width: 320px) and (max-width: 374px) {
+  @media screen and (min-width: 320px) and (max-width: 375px) {
 
     h3{
       font-size: 24px
@@ -1059,7 +1059,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     
   }
 
-  @media screen and (min-width: 375px) and (max-width: 425px) {
+  @media screen and (min-width: 376px) and (max-width: 425px) {
 
     h3{
       font-size: 26px
@@ -1382,7 +1382,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       max-width: 90vw;
     }
 
-    @media screen and (min-width: 320px) and (max-width: 374px) {
+    @media screen and (min-width: 320px) and (max-width: 375px) {
       max-height: 120px;
     }
 
@@ -1523,7 +1523,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
     }
 
-    @media screen and (min-width: 320px) and (max-width: 374px) {
+    @media screen and (min-width: 320px) and (max-width: 375px) {
   
       .noImage{
       margin-left: 5px;
@@ -1636,7 +1636,7 @@ h4{
       }    
 
       .swiper-wrapper {
-      height: 150px;
+      height: 140px;
         margin-top: 10.5px;
         h4{
         margin-top: 0px;
