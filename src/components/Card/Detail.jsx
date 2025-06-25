@@ -1887,7 +1887,7 @@ const HeaderDetails = styled.div`
     }
 
   }
-  @media screen and (min-width: 320px) and (max-width: 374px) {
+  @media screen and (min-width: 320px) and (max-width: 375px) {
     
     max-width: 100vw;
     padding: 0;
@@ -1913,7 +1913,7 @@ const HeaderDetails = styled.div`
   
   }
   
-  @media screen and (min-width: 375px) and (max-width: 425px) {
+  @media screen and (min-width: 376px) and (max-width: 425px) {
     
     max-width: 100vw;
     padding: 0;
@@ -1998,12 +1998,12 @@ const Container = styled.div`
       padding:0;   
     }
 
-    @media screen and (min-width: 320px) and (max-width: 374px) {
+    @media screen and (min-width: 320px) and (max-width: 375px) {
       height: 83vh;
       margin-top: 1vh;
     }
 
-    @media screen and (min-width: 375px) and (max-width: 500px) {
+    @media screen and (min-width: 376px) and (max-width: 500px) {
       height: 75.5vh;
       margin-top: 4.5vh;
     }
@@ -2087,7 +2087,7 @@ const Type = styled.div`
        gap: 5px;
     }
 
-    @media screen and (min-width: 320px) and (max-width: 374px) {
+    @media screen and (min-width: 320px) and (max-width: 375px) {
       margin-right: 5px;
     }
 
@@ -2103,7 +2103,7 @@ const Type = styled.div`
 
     }
 
-    @media screen and (min-width: 375px) and (max-width: 500px) {
+    @media screen and (min-width: 376px) and (max-width: 500px) {
       margin-right: 15px;
     }
 
@@ -2162,7 +2162,7 @@ const Poke = styled.div`
 
   }
   
-  @media screen and (min-width: 320px) and (max-width: 374px) {
+  @media screen and (min-width: 320px) and (max-width: 375px) {
 
     h3{
       font-size: 24px
@@ -2179,7 +2179,7 @@ const Poke = styled.div`
     
   }
 
-  @media screen and (min-width: 375px) and (max-width: 425px) {
+  @media screen and (min-width: 376px) and (max-width: 425px) {
 
     h3{
       font-size: 26px
@@ -2506,7 +2506,7 @@ const UlAbilities = styled.ul`
       max-width: 90vw;
     }
 
-    @media screen and (min-width: 320px) and (max-width: 374px) {
+    @media screen and (min-width: 320px) and (max-width: 375px) {
       max-height: 120px;
     }
 
@@ -2653,7 +2653,7 @@ const UlGif = styled.ul`
 
     }
 
-    @media screen and (min-width: 320px) and (max-width: 374px) {
+    @media screen and (min-width: 320px) and (max-width: 375px) {
   
       .noImage{
       margin-left: 5px;
@@ -2770,7 +2770,7 @@ const EvolutionDiv = styled.div`
       }    
 
       .swiper-wrapper {
-      height: 150px;
+      height: 140px;
         margin-top: 10.5px;
         h4{
         margin-top: 0px;
