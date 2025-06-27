@@ -2770,8 +2770,9 @@ const EvolutionDiv = styled.div`
       }    
 
       .swiper-wrapper {
-      height: 140px;
-        margin-top: 10.5px;
+        height: 140px;
+        // margin-top: 10.5px;
+        margin-top: 20px;
         h4{
         margin-top: 0px;
         }
