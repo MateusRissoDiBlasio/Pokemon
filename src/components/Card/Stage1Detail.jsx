@@ -2226,7 +2226,7 @@ const EvolutionDiv = styled.div`
       .swiper-wrapper {
       height: 150px;
         // margin-top: 10.5px;
-        margin-top: 20px;
+        // margin-top: 20px;
         h4{
         margin-top: 0px;
         }
@@ -2293,8 +2293,25 @@ const EvolutionDiv = styled.div`
 
     @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 711px) and (max-height: 720px) {
       .swiper-wrapper {
-        margin-top: 15px;
-        
+        margin-top: 15px; 
+      }
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 721px) and (max-height: 730px) {
+      .swiper-wrapper {
+        margin-top: 20px; 
+      }
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 731px) and (max-height: 800px) {
+      .swiper-wrapper {
+        margin-top: 25px; 
+      }
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 801px){
+      .swiper-wrapper {
+        margin-top: 25px; 
       }
     }
 
