@@ -2549,6 +2549,43 @@ const EvolutionDiv = styled.div`
 
     }
 
+    @media screen and (min-width: 320px) and (max-width: 425px) and (max-height: 675px) {
+      .swiper-wrapper {
+        margin-top: 0px;
+      }
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 676px) and (max-height: 685px) {
+      .swiper-wrapper {
+        margin-top: 2px;
+      }
+    }
+    
+    @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 686px) and (max-height: 695px) {
+      .swiper-wrapper {
+        margin-top: 6px;
+      }
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 696px) and (max-height: 700px) {
+      .swiper-wrapper {
+        margin-top: 9px;
+      }
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 701px) and (max-height: 710px) {
+      .swiper-wrapper {
+        margin-top: 12px;
+      }
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 711px) and (max-height: 720px) {
+      .swiper-wrapper {
+        margin-top: 15px;
+        
+      }
+    }
+
     @media screen and (orientation: landscape) and (max-height: 400px) {
       margin-top: -245px;
       width: 330px;
