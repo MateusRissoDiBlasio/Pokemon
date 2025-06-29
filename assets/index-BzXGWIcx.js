@@ -1676,7 +1676,7 @@ h4{
     @media screen and (min-width: 320px) and (max-width: 425px) and (max-height: 675px) {
       .swiper-wrapper {
         background-color: aqua;
-        margin-top: 25px;
+        margin-top: 22px;
       }
     }
 
@@ -3119,7 +3119,7 @@ h4{
 
     @media screen and (min-width: 320px) and (max-width: 425px) and (max-height: 675px) {
       .swiper-wrapper {
-        margin-top: 0px;
+        margin-top: 22px;
       }
     }
 
@@ -4554,7 +4554,7 @@ h4{
 
     @media screen and (min-width: 320px) and (max-width: 425px) and (max-height: 675px) {
       .swiper-wrapper {
-        margin-top: 0px;
+        margin-top: 22px;
       }
     }
 
@@ -5988,7 +5988,7 @@ h4{
 
     @media screen and (min-width: 320px) and (max-width: 425px) and (max-height: 675px) {
       .swiper-wrapper {
-        margin-top: 0px;
+        margin-top: 22px;
       }
     }
 
