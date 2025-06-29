@@ -1675,54 +1675,63 @@ h4{
 
     @media screen and (min-width: 320px) and (max-width: 425px) and (max-height: 675px) {
       .swiper-wrapper {
+        background-color: red;
         margin-top: 0px;
       }
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 676px) and (max-height: 685px) {
       .swiper-wrapper {
+      background-color: blue;
         margin-top: 2px;
       }
     }
     
     @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 686px) and (max-height: 695px) {
       .swiper-wrapper {
+      background-color: orangered;
         margin-top: 6px;
       }
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 696px) and (max-height: 700px) {
       .swiper-wrapper {
+      background-color: pink;
         margin-top: 9px;
       }
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 701px) and (max-height: 710px) {
       .swiper-wrapper {
+      background-color: grey;
         margin-top: 12px;
       }
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 711px) and (max-height: 720px) {
       .swiper-wrapper {
+      background-color: black;
         margin-top: 15px; 
       }
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 721px) and (max-height: 730px) {
       .swiper-wrapper {
+      background-color: aqua;
         margin-top: 20px; 
       }
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 731px) and (max-height: 800px) {
       .swiper-wrapper {
+      background-color: blueviolet;
         margin-top: 25px; 
       }
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 801px){
       .swiper-wrapper {
+      background-color: darksalmon;
         margin-top: 25px; 
       }
     }
@@ -6073,7 +6082,7 @@ h4{
 
       .swiper-wrapper {
       height: 140px;
-      margin-top: 10px;
+      // margin-top: 10px;
         h4{
         margin-top: 0px;
         }
