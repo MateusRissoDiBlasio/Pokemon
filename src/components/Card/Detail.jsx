@@ -2809,8 +2809,8 @@ const EvolutionDiv = styled.div`
 
     @media screen and (min-width: 320px) and (max-width: 425px) and (max-height: 675px) {
       .swiper-wrapper {
-        background-color: red;
-        margin-top: 30px;
+        background-color: aqua;
+        margin-top: 25px;
       }
     }
 
