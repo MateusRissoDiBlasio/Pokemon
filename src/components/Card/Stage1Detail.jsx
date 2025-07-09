@@ -18,7 +18,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { register } from 'swiper/element/bundle';
-import {DelayedLink} from '../Buttons/DelayedLink';
+import {DelayedLink, DelayedLinkMega} from '../Buttons/DelayedLink';
 
 register();
 
@@ -572,7 +572,7 @@ export function Stage1Details() {
 
             {Mega.includes(pokemonDetails.name) || pokemonDetails.name ==='charizard' || pokemonDetails.name ==='mewtwo' ? <div className='emptydiv'></div> : <div className={MegaFull.includes(pokemonDetails.name) ? 'emptydiv box2' : 'emptydiv box'}></div>}
             
-            {Mega.includes(pokemonDetails.name) && pokemonDetails.name !=='charizard' && pokemonDetails.name !=='mewtwo' ? <div onClick={() => {handleMegaClick();}} className='mega'> {theme.name === 'light' ? <DelayedLink to={`/megadetails/${pokemonDetails.name}-mega`}><MegaLight /></DelayedLink> : <DelayedLink to={`/megadetails/${pokemonDetails.name}-mega`}><MegaDark /></DelayedLink>} </div> : '' }
+            {Mega.includes(pokemonDetails.name) && pokemonDetails.name !=='charizard' && pokemonDetails.name !=='mewtwo' ? <div onClick={() => {handleMegaClick();}} className='mega'> {theme.name === 'light' ? <DelayedLinkMega to={`/megadetails/${pokemonDetails.name}-mega`}><MegaLight /></DelayedLinkMega> : <DelayedLinkMega to={`/megadetails/${pokemonDetails.name}-mega`}><MegaDark /></DelayedLinkMega>} </div> : '' }
             
             {MegaFull.includes(pokemonDetails.name) && theme.name === 'light' ? <div className='mega1'> <MegaLightSelected /> </div> : ''}
             
@@ -2196,6 +2196,11 @@ const EvolutionDiv = styled.div`
       width: 100vw;
       gap: 2px;
       margin-top: -10px;
+
+      a{
+        height: 150px;
+        align-self: center;
+      }
 
       .seta{
       width: 25px;
