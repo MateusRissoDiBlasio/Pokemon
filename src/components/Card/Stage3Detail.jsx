@@ -2323,11 +2323,6 @@ const EvolutionDiv = styled.div`
   position: relative;
   z-index: 0;
   gap: 10px;
-  
-    a{
-        height: 150px;
-        align-self: center;
-      }  
 
     .seta{
       width: 50px;
@@ -2338,6 +2333,11 @@ const EvolutionDiv = styled.div`
       width: 100vw;
       gap: 2px;
       margin-top: -10px;
+
+      a{
+        height: 150px;
+        align-self: center;
+      }
 
       .seta{
       width: 25px;
