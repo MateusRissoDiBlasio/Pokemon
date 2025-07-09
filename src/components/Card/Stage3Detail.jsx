@@ -605,7 +605,7 @@ export function Stage3Details() {
             
             {/* STAGE 1 */}
             { evolutionDetails.noInfo !== true ?
-            <Link style={{color: theme.color}} className='links' to={`/stage1details/${evolutionDetails.stage1}`}>
+            <DelayedLink style={{color: theme.color}} className='links' to={`/stage1details/${evolutionDetails.stage1}`}>
              <Stage1 onMouseEnter={handleMouseEnter1} onMouseLeave={handleMouseleave}>
                 
                 <div id='stage1pokemon' className={pokemonDetails.name === evolutionDetails.stage1 ? 'selected stageslogos': 'stageslogos'}>
@@ -616,7 +616,7 @@ export function Stage3Details() {
                   {speciesEvolutionImgs.stage1Img !== null ? <img src={speciesEvolutionImgs.stage1Img} alt={evolutionDetails.stage1} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage1} width={'60px'} height={'60px'} /> }
                 </div>
             </Stage1>
-            </Link> 
+            </DelayedLink> 
             : <h4 className='noEvolutionInfo'>No Evolution Data</h4> }
 
             {/* SETA 1 */}
@@ -624,7 +624,7 @@ export function Stage3Details() {
             
             {/* STAGE 2 PADRÃO */}
             { evolutionDetails.noInfo !== true && !Exceptions.includes(pokemonDetails.name) ? 
-            <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2}`}>
+            <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2}`}>
               <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
 
@@ -636,11 +636,11 @@ export function Stage3Details() {
                   {speciesEvolutionImgs.stage2Img !== null ? <img src={speciesEvolutionImgs.stage2Img} alt={evolutionDetails.stage2} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage2} width={'60px'} height={'60px'} /> }
                 </div>
               </Stage2>
-            </Link>: ''}
+            </DelayedLink>: ''}
 
             {/* STAGE 2 EXCEÇÕES */} 
             { evolutionDetails.noInfo !== true && ExceptionsWurmple.includes(pokemonDetails.name) && pokemonDetails.name === 'silcoon' || pokemonDetails.name === 'beautifly' ? 
-            <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[0]}`}>
+            <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[0]}`}>
               <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
 
@@ -652,10 +652,10 @@ export function Stage3Details() {
                   {speciesEvolutionImgs.stage2Img[0] !== null ? <img src={speciesEvolutionImgs.stage2Img[0]} alt={evolutionDetails.stage2[0]} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage2} width={'60px'} height={'60px'} /> }
                 </div>
               </Stage2>
-            </Link>: ''}
+            </DelayedLink>: ''}
 
             { evolutionDetails.noInfo !== true && ExceptionsWurmple.includes(pokemonDetails.name) && pokemonDetails.name === 'cascoon' || pokemonDetails.name === 'dustox'  ? 
-            <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[1]}`}>
+            <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[1]}`}>
               <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
 
@@ -667,10 +667,10 @@ export function Stage3Details() {
                   {speciesEvolutionImgs.stage2Img[1] !== null ? <img src={speciesEvolutionImgs.stage2Img[1]} alt={evolutionDetails.stage2[1]} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage2} width={'60px'} height={'60px'} /> }
                 </div>
               </Stage2>
-            </Link>: ''}           
+            </DelayedLink>: ''}           
             
             { evolutionDetails.noInfo !== true && ExceptionsOddish.includes(pokemonDetails.name) || ExceptionsPoliwag.includes(pokemonDetails.name) || ExceptionsRalts.includes(pokemonDetails.name) ? 
-            <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2}`}>
+            <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2}`}>
               <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
 
@@ -682,7 +682,7 @@ export function Stage3Details() {
                   {speciesEvolutionImgs.stage2Img !== null ? <img src={speciesEvolutionImgs.stage2Img} alt={evolutionDetails.stage2} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage2} width={'60px'} height={'60px'} /> }
                 </div>
               </Stage2>
-            </Link>: ''}
+            </DelayedLink>: ''}
 
             {/* SWIPER EEVEE */}
             { evolutionDetails.noInfo !== true && ExceptionsEevee.includes(pokemonDetails.name) ?
@@ -697,7 +697,7 @@ export function Stage3Details() {
             >
               <SwiperSlide  >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[0]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[0]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                         
                         <div id='stage2pokemon' className={pokemonDetails.name === evolutionDetails.stage2[0] ? 'selected stageslogos': 'stageslogos'}>
@@ -710,13 +710,13 @@ export function Stage3Details() {
                         <h4 className='qtd' >1-8</h4>
                     </Stage2>
                     
-                </Link> 
+                </DelayedLink> 
                 
               </SwiperSlide>
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[1]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[1]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
@@ -730,12 +730,12 @@ export function Stage3Details() {
                       </div>
                       <h4 className='qtd' >2-8</h4>
                   </Stage2> : ''}
-                </Link> 
+                </DelayedLink> 
               </SwiperSlide>
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[2]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[2]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
@@ -749,12 +749,12 @@ export function Stage3Details() {
                       </div>
                       <h4 className='qtd' >3-8</h4>
                   </Stage2> : ''}
-                </Link> 
+                </DelayedLink> 
               </SwiperSlide>
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[3]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[3]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
                         <div id='stage2pokemon3' className={pokemonDetails.name === evolutionDetails.stage2[3] ? 'selected stageslogos': 'stageslogos'}>
@@ -766,13 +766,13 @@ export function Stage3Details() {
                         </div>
                         <h4 className='qtd' >4-8</h4>
                     </Stage2>
-                </Link> 
+                </DelayedLink> 
                 
               </SwiperSlide>
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[4]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[4]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
@@ -786,12 +786,12 @@ export function Stage3Details() {
                       </div>
                       <h4 className='qtd' >5-8</h4>
                   </Stage2> : ''}
-                </Link> 
+                </DelayedLink> 
               </SwiperSlide>
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[5]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[5]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
@@ -805,12 +805,12 @@ export function Stage3Details() {
                       </div>
                       <h4 className='qtd' >6-8</h4>
                   </Stage2> : ''}
-                </Link> 
+                </DelayedLink> 
               </SwiperSlide>
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[6]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[6]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
                         <div id='stage2pokemon6' className={pokemonDetails.name === evolutionDetails.stage2[6] ? 'selected stageslogos': 'stageslogos'}>
@@ -822,13 +822,13 @@ export function Stage3Details() {
                         </div>
                         <h4 className='qtd' >7-8</h4>
                     </Stage2>
-                </Link> 
+                </DelayedLink> 
                 
               </SwiperSlide>
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[7]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[7]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
                         <div id='stage2pokemon7' className={pokemonDetails.name === evolutionDetails.stage2[7] ? 'selected stageslogos': 'stageslogos'}>
@@ -840,7 +840,7 @@ export function Stage3Details() {
                         </div>
                         <h4 className='qtd' >8-8</h4>
                     </Stage2>
-                </Link> 
+                </DelayedLink> 
                 
               </SwiperSlide>
      
@@ -860,7 +860,7 @@ export function Stage3Details() {
             >
               <SwiperSlide  >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[0]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[0]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                         
                         <div id='stage2pokemon' className={pokemonDetails.name === evolutionDetails.stage2[0] ? 'selected stageslogos': 'stageslogos'}>
@@ -872,13 +872,13 @@ export function Stage3Details() {
                         </div>
                         <h4 className='qtd' >1-2</h4>
                     </Stage2>
-                </Link> 
+                </DelayedLink> 
                 
               </SwiperSlide>
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[1]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[1]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
@@ -892,7 +892,7 @@ export function Stage3Details() {
                       </div>
                       <h4 className='qtd' >2-2</h4>
                   </Stage2> : ''}
-                </Link> 
+                </DelayedLink> 
               </SwiperSlide>
      
             </Swiper> : ''}
@@ -909,7 +909,7 @@ export function Stage3Details() {
             >
               <SwiperSlide  >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage1}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage1}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                         
                         <div id='stage2pokemon' className={pokemonDetails.name === evolutionDetails.stage2[0] ? 'selected stageslogos': 'stageslogos'}>
@@ -921,13 +921,13 @@ export function Stage3Details() {
                         </div>
                         <h4 className='qtd' >1-2</h4>
                     </Stage2>
-                </Link> 
+                </DelayedLink> 
                 
               </SwiperSlide>
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[1]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[1]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
@@ -941,7 +941,7 @@ export function Stage3Details() {
                       </div>
                       <h4 className='qtd' >2-2</h4>
                   </Stage2> : ''}
-                </Link> 
+                </DelayedLink> 
               </SwiperSlide>
      
             </Swiper> : ''}
@@ -958,7 +958,7 @@ export function Stage3Details() {
             >
               <SwiperSlide  >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[0]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[0]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                         
                         <div id='stage2pokemon' className={pokemonDetails.name === evolutionDetails.stage2[0] ? 'selected stageslogos': 'stageslogos'}>
@@ -970,13 +970,13 @@ export function Stage3Details() {
                         </div>
                         <h4 className='qtd' >1-3</h4>
                     </Stage2>
-                </Link> 
+                </DelayedLink> 
                 
               </SwiperSlide>
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[1]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[1]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
@@ -990,12 +990,12 @@ export function Stage3Details() {
                       </div>
                       <h4 className='qtd' >2-3</h4>
                   </Stage2> : ''}
-                </Link> 
+                </DelayedLink> 
               </SwiperSlide>
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[2]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[2]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
@@ -1009,7 +1009,7 @@ export function Stage3Details() {
                       </div>
                       <h4 className='qtd'>3-3</h4>
                   </Stage2> : ''}
-                </Link> 
+                </DelayedLink> 
               </SwiperSlide>
      
             </Swiper> : ''}
@@ -1026,7 +1026,7 @@ export function Stage3Details() {
             >
               <SwiperSlide  >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[0]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[0]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                         
                         <div id='stage2pokemon' className={pokemonDetails.name === evolutionDetails.stage2[0] ? 'selected stageslogos': 'stageslogos'}>
@@ -1038,13 +1038,13 @@ export function Stage3Details() {
                         </div>
                         <h4 className='qtd' >1-2</h4>
                     </Stage2>
-                </Link> 
+                </DelayedLink> 
                 
               </SwiperSlide>
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[1]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[1]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
@@ -1058,7 +1058,7 @@ export function Stage3Details() {
                       </div>
                       <h4 className='qtd' >2-2</h4>
                   </Stage2> : ''}
-                </Link> 
+                </DelayedLink> 
               </SwiperSlide>
      
             </Swiper> : ''}
@@ -1099,7 +1099,7 @@ export function Stage3Details() {
             >
               <SwiperSlide  >
                 
-                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage3[0]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage3[0]}`}>
                     <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
                         
                         <div id='stage3pokemon' className={pokemonDetails.name === evolutionDetails.stage3[0] ? 'selected stageslogos': 'stageslogos'}>
@@ -1113,13 +1113,13 @@ export function Stage3Details() {
                         </div>
                         <h4 className='qtd' >1-2</h4>
                     </Stage3>
-                </Link> 
+                </DelayedLink> 
                 
               </SwiperSlide>
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage3[1]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage3[1]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
                       
 
@@ -1133,13 +1133,13 @@ export function Stage3Details() {
                       </div>
                       <h4 className='qtd' >2-2</h4>
                   </Stage3> : ''}
-                </Link> 
+                </DelayedLink> 
               </SwiperSlide>
       
             </Swiper> : ''}
 
             { evolutionDetails.noInfo !== true && ExceptionsWurmple.includes(pokemonDetails.name) && pokemonDetails.name !== evolutionDetails.stage3[0] && (pokemonDetails.name === 'silcoon' || pokemonDetails.name === 'beautifly') ? 
-            <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage3[0]}`}>
+            <DelayedLink style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage3[0]}`}>
               <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
                 
 
@@ -1151,7 +1151,7 @@ export function Stage3Details() {
                   {speciesEvolutionImgs.stage3Img[0] !== null ? <img src={speciesEvolutionImgs.stage3Img[0]} alt={evolutionDetails.stage3[0]} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage2} width={'60px'} height={'60px'} /> }
                 </div>
               </Stage3>
-            </Link>: ''}
+            </DelayedLink>: ''}
 
             { evolutionDetails.noInfo !== true && ExceptionsWurmple.includes(pokemonDetails.name) && pokemonDetails.name === evolutionDetails.stage3[0] && (pokemonDetails.name === 'silcoon' || pokemonDetails.name === 'beautifly') ?
             <div style={{color: theme.color}} className='links'>
@@ -1169,7 +1169,7 @@ export function Stage3Details() {
             </div>: ''}
 
             { evolutionDetails.noInfo !== true && ExceptionsWurmple.includes(pokemonDetails.name) && pokemonDetails.name !== evolutionDetails.stage3[1] && (pokemonDetails.name === 'cascoon' || pokemonDetails.name === 'dustox') ? 
-            <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage3[1]}`}>
+            <DelayedLink style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage3[1]}`}>
               <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
                 
 
@@ -1181,7 +1181,7 @@ export function Stage3Details() {
                   {speciesEvolutionImgs.stage3Img[1] !== null ? <img src={speciesEvolutionImgs.stage3Img[1]} alt={evolutionDetails.stage3[1]} /> : <img className='noImage' src={NoImagePlaceHolder} alt={evolutionDetails.stage2} width={'60px'} height={'60px'} /> }
                 </div>
               </Stage3>
-            </Link>: ''}
+            </DelayedLink>: ''}
 
             { evolutionDetails.noInfo !== true && ExceptionsWurmple.includes(pokemonDetails.name) && pokemonDetails.name === evolutionDetails.stage3[1] && (pokemonDetails.name === 'cascoon' || pokemonDetails.name === 'dustox') ? 
             <div style={{color: theme.color}} className='links'>
@@ -1211,7 +1211,7 @@ export function Stage3Details() {
             >
               <SwiperSlide  >
                 
-                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage3[0]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage3[0]}`}>
                     <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
                         
                         <div id='stage3pokemon' className={pokemonDetails.name === evolutionDetails.stage3[0] ? 'selected stageslogos': 'stageslogos'}>
@@ -1225,13 +1225,13 @@ export function Stage3Details() {
                         </div>
                         <h4 className='qtd' >1-2</h4>
                     </Stage3>
-                </Link> 
+                </DelayedLink> 
                 
               </SwiperSlide>
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage3[1]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage3[1]}`}>
                     <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
                         
 
@@ -1245,7 +1245,7 @@ export function Stage3Details() {
                         </div>
                         <h4 className='qtd' >2-2</h4>
                     </Stage3>
-                </Link> 
+                </DelayedLink> 
               </SwiperSlide>
     
             </Swiper> : ''}
@@ -1282,7 +1282,7 @@ export function Stage3Details() {
 
               <SwiperSlide >
                 
-                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage3[1]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage3[1]}`}>
                   { evolutionDetails.noInfo !== true ? <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
                       
 
@@ -1296,7 +1296,7 @@ export function Stage3Details() {
                       </div>
                       <h4 className='qtd' >2-2</h4>
                   </Stage3> : ''}
-                </Link> 
+                </DelayedLink> 
               </SwiperSlide>
     
             </Swiper> : ''}
@@ -1313,7 +1313,7 @@ export function Stage3Details() {
             >
               <SwiperSlide  >
                 
-                <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage3[0]}`}>
+                <DelayedLink style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage3[0]}`}>
                     <Stage3 onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave}>
                         
                         <div id='stage3pokemon' className={pokemonDetails.name === evolutionDetails.stage3[0] ? 'selected stageslogos': 'stageslogos'}>
@@ -1327,7 +1327,7 @@ export function Stage3Details() {
                         </div>
                         <h4 className='qtd' >1-2</h4>
                     </Stage3>
-                </Link> 
+                </DelayedLink> 
                 
               </SwiperSlide>
 
