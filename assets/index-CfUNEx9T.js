@@ -1558,20 +1558,21 @@ width: 180px;
 
 @media screen and (min-width: 320px) and (max-width: 425px) {
   width: 100vw;
-  margin-top: 15px;
+  height: 175px;
+  margin-top: 10px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 425px) and (max-height: 700px){
-  margin-top: 6px;
-
+  margin-top: 4px;
 }
 
 @media screen and (orientation: landscape) and (max-height: 400px) {
 
 width: 332px;
 height: 133px;
-margin-top: 22px;
+margin-top: 10px;
 margin-left: 24px;
+
 h4{
     margin-top: 10px;
     width: 140px;
@@ -1742,12 +1743,18 @@ h4{
 
 
     @media screen and (orientation: landscape) and (max-height: 400px) {
-      margin-top: -245px;
+      margin-top: -234px;
       width: 330px;
-      height: 160px;
+      height: 140px;
       margin-left: -120px;
       display: flex;
       z-index: 1;
+      jusyify-content: center;
+      align-content: center;
+
+      a{
+        height: 132px;
+      }
       
       gap: 2px;
       
@@ -3006,12 +3013,12 @@ width: 180px;
 
 @media screen and (min-width: 320px) and (max-width: 425px) {
   width: 100vw;
-  margin-top: 15px;
+  height: 175px;
+  margin-top: 10px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 425px) and (max-height: 700px){
-  margin-top: 6px;
-
+  margin-top: 4px;
 }
 
 @media screen and (orientation: landscape) and (max-height: 400px) {
@@ -3182,9 +3189,9 @@ h4{
 
 
     @media screen and (orientation: landscape) and (max-height: 400px) {
-      margin-top: -245px;
+      margin-top: -234px;
       width: 330px;
-      height: 160px;
+      height: 140px;
       margin-left: -120px;
       display: flex;
       z-index: 1;
@@ -4446,12 +4453,12 @@ width: 180px;
 
 @media screen and (min-width: 320px) and (max-width: 425px) {
   width: 100vw;
-  margin-top: 15px;
+  height: 175px;
+  margin-top: 10px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 425px) and (max-height: 700px){
-  margin-top: 6px;
-
+  margin-top: 4px;
 }
 
 @media screen and (orientation: landscape) and (max-height: 400px) {
@@ -4621,9 +4628,9 @@ h4{
     }
 
     @media screen and (orientation: landscape) and (max-height: 400px) {
-      margin-top: -245px;
+      margin-top: -234px;
       width: 330px;
-      height: 160px;
+      height: 140px;
       margin-left: -120px;
       display: flex;
       z-index: 1;
@@ -5885,19 +5892,19 @@ width: 180px;
 
 @media screen and (min-width: 320px) and (max-width: 425px) {
   width: 100vw;
-  margin-top: 15px;
+  height: 175px;
+  margin-top: 10px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 425px) and (max-height: 700px){
-  margin-top: 6px;
-
+  margin-top: 4px;
 }
 
 @media screen and (orientation: landscape) and (max-height: 400px) {
 
 width: 332px;
 height: 133px;
-margin-top: 22px;
+margin-top: 10px;
 margin-left: 24px;
 h4{
     margin-top: 10px;
@@ -6060,9 +6067,9 @@ h4{
     }
 
     @media screen and (orientation: landscape) and (max-height: 400px) {
-      margin-top: -245px;
+      margin-top: -234px;
       width: 330px;
-      height: 160px;
+      height: 140px;
       margin-left: -120px;
       display: flex;
       z-index: 1;
