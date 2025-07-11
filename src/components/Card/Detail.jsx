@@ -400,6 +400,7 @@ export function CardDetails() {
   const stage1pokemon = document.getElementById('stage1pokemon');
   const stage2pokemon = document.getElementById('stage2pokemon');
   const stage2pokemon2 = document.getElementById('stage2pokemon2');
+  const stage2pokemon3 = document.getElementById('stage2pokemon3');
   const stage3pokemon = document.getElementById('stage3pokemon');
   const stage3pokemon2 = document.getElementById('stage3pokemon2');
   
@@ -408,11 +409,15 @@ export function CardDetails() {
     stage2pokemon.classList.remove('selected');
     if(pokemonDetails.name === evolutionDetails.stage2[1]){
       stage2pokemon2.classList.remove('selected');
-    } 
+    }
+    if(pokemonDetails.name === evolutionDetails.stage2[2]){
+      stage2pokemon3.classList.remove('selected');
+    }
     stage3pokemon.classList.remove('selected');
     if(pokemonDetails.name === evolutionDetails.stage3[1]){
       stage3pokemon2.classList.remove('selected');
     }
+    
   };
   
   const handleMouseEnter2 = () => {
@@ -446,6 +451,10 @@ export function CardDetails() {
 
     if(pokemonDetails.name === evolutionDetails.stage2[1]){
     stage2pokemon2.classList.add('selected');
+    }
+    
+    if(pokemonDetails.name === evolutionDetails.stage2[2]){
+    stage2pokemon3.classList.add('selected');
     }
 
     if(pokemonDetails.name === evolutionDetails.stage3){
@@ -850,7 +859,7 @@ export function CardDetails() {
                   <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
-                      <div id='stage2pokemon1' className={pokemonDetails.name === evolutionDetails.stage2[1] ? 'selected stageslogos': 'stageslogos'}>
+                      <div id='stage2pokemon2' className={pokemonDetails.name === evolutionDetails.stage2[1] ? 'selected stageslogos': 'stageslogos'}>
                         {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                       </div>
                       
@@ -865,7 +874,7 @@ export function CardDetails() {
                   <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
-                      <div id='stage2pokemon1' className={pokemonDetails.name === evolutionDetails.stage2[1] ? 'selected stageslogos': 'stageslogos'}>
+                      <div id='stage2pokemon2' className={pokemonDetails.name === evolutionDetails.stage2[1] ? 'selected stageslogos': 'stageslogos'}>
                         {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                       </div>
                       
@@ -886,7 +895,7 @@ export function CardDetails() {
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
-                      <div id='stage2pokemon2' className={pokemonDetails.name === evolutionDetails.stage2[2] ? 'selected stageslogos': 'stageslogos'}>
+                      <div id='stage2pokemon3' className={pokemonDetails.name === evolutionDetails.stage2[2] ? 'selected stageslogos': 'stageslogos'}>
                         {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                       </div>
                       
@@ -901,7 +910,7 @@ export function CardDetails() {
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
-                      <div id='stage2pokemon2' className={pokemonDetails.name === evolutionDetails.stage2[2] ? 'selected stageslogos': 'stageslogos'}>
+                      <div id='stage2pokemon3' className={pokemonDetails.name === evolutionDetails.stage2[2] ? 'selected stageslogos': 'stageslogos'}>
                         {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                       </div>
                       
@@ -921,7 +930,7 @@ export function CardDetails() {
                 <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[3]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
-                        <div id='stage2pokemon3' className={pokemonDetails.name === evolutionDetails.stage2[3] ? 'selected stageslogos': 'stageslogos'}>
+                        <div id='stage2pokemon4' className={pokemonDetails.name === evolutionDetails.stage2[3] ? 'selected stageslogos': 'stageslogos'}>
                           {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                         </div>
                         <h4>{evolutionDetails.stage2[3]}</h4>
@@ -934,7 +943,7 @@ export function CardDetails() {
                 <div style={{color: theme.color}} className='links'>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
-                        <div id='stage2pokemon3' className={pokemonDetails.name === evolutionDetails.stage2[3] ? 'selected stageslogos': 'stageslogos'}>
+                        <div id='stage2pokemon4' className={pokemonDetails.name === evolutionDetails.stage2[3] ? 'selected stageslogos': 'stageslogos'}>
                           {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                         </div>
                         <h4>{evolutionDetails.stage2[3]}</h4>
@@ -954,7 +963,7 @@ export function CardDetails() {
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
-                      <div id='stage2pokemon4' className={pokemonDetails.name === evolutionDetails.stage2[4] ? 'selected stageslogos': 'stageslogos'}>
+                      <div id='stage2pokemon5' className={pokemonDetails.name === evolutionDetails.stage2[4] ? 'selected stageslogos': 'stageslogos'}>
                         {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                       </div>
                       
@@ -969,7 +978,7 @@ export function CardDetails() {
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
-                      <div id='stage2pokemon4' className={pokemonDetails.name === evolutionDetails.stage2[4] ? 'selected stageslogos': 'stageslogos'}>
+                      <div id='stage2pokemon5' className={pokemonDetails.name === evolutionDetails.stage2[4] ? 'selected stageslogos': 'stageslogos'}>
                         {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                       </div>
                       
@@ -989,7 +998,7 @@ export function CardDetails() {
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
-                      <div id='stage2pokemon5' className={pokemonDetails.name === evolutionDetails.stage2[5] ? 'selected stageslogos': 'stageslogos'}>
+                      <div id='stage2pokemon6' className={pokemonDetails.name === evolutionDetails.stage2[5] ? 'selected stageslogos': 'stageslogos'}>
                         {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                       </div>
                       
@@ -1004,7 +1013,7 @@ export function CardDetails() {
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
-                      <div id='stage2pokemon5' className={pokemonDetails.name === evolutionDetails.stage2[5] ? 'selected stageslogos': 'stageslogos'}>
+                      <div id='stage2pokemon6' className={pokemonDetails.name === evolutionDetails.stage2[5] ? 'selected stageslogos': 'stageslogos'}>
                         {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                       </div>
                       
@@ -1023,7 +1032,7 @@ export function CardDetails() {
                 <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[6]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
-                        <div id='stage2pokemon6' className={pokemonDetails.name === evolutionDetails.stage2[6] ? 'selected stageslogos': 'stageslogos'}>
+                        <div id='stage2pokemon7' className={pokemonDetails.name === evolutionDetails.stage2[6] ? 'selected stageslogos': 'stageslogos'}>
                           {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                         </div>
                         <h4>{evolutionDetails.stage2[6]}</h4>
@@ -1036,7 +1045,7 @@ export function CardDetails() {
                 <div style={{color: theme.color}} className='links'>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
-                        <div id='stage2pokemon6' className={pokemonDetails.name === evolutionDetails.stage2[6] ? 'selected stageslogos': 'stageslogos'}>
+                        <div id='stage2pokemon7' className={pokemonDetails.name === evolutionDetails.stage2[6] ? 'selected stageslogos': 'stageslogos'}>
                           {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                         </div>
                         <h4>{evolutionDetails.stage2[6]}</h4>
@@ -1055,7 +1064,7 @@ export function CardDetails() {
                 <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[7]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
-                        <div id='stage2pokemon7' className={pokemonDetails.name === evolutionDetails.stage2[7] ? 'selected stageslogos': 'stageslogos'}>
+                        <div id='stage2pokemon8' className={pokemonDetails.name === evolutionDetails.stage2[7] ? 'selected stageslogos': 'stageslogos'}>
                           {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                         </div>
                         <h4>{evolutionDetails.stage2[7]}</h4>
@@ -1068,7 +1077,7 @@ export function CardDetails() {
                 <div style={{color: theme.color}} className='links' >
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
-                        <div id='stage2pokemon7' className={pokemonDetails.name === evolutionDetails.stage2[7] ? 'selected stageslogos': 'stageslogos'}>
+                        <div id='stage2pokemon8' className={pokemonDetails.name === evolutionDetails.stage2[7] ? 'selected stageslogos': 'stageslogos'}>
                           {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                         </div>
                         <h4>{evolutionDetails.stage2[7]}</h4>
@@ -2692,6 +2701,10 @@ width: 180px;
   width: 100vw;
   height: 175px;
   margin-top: 10px;
+  .MegaExceptions{
+  height: 170px;
+  }
+
 }
 
 @media screen and (min-width: 320px) and (max-width: 425px) and (max-height: 700px){
@@ -2821,56 +2834,56 @@ const EvolutionDiv = styled.div`
 
     @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 676px) and (max-height: 685px) {
       .swiper-wrapper {
-      background-color: blue;
+      // background-color: blue;
         margin-top: 2px;
       }
     }
     
     @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 686px) and (max-height: 695px) {
       .swiper-wrapper {
-      background-color: orangered;
+      // background-color: orangered;
         margin-top: 6px;
       }
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 696px) and (max-height: 700px) {
       .swiper-wrapper {
-      background-color: pink;
+      // background-color: pink;
         margin-top: 9px;
       }
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 701px) and (max-height: 710px) {
       .swiper-wrapper {
-      background-color: grey;
+      // background-color: grey;
         margin-top: 12px;
       }
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 711px) and (max-height: 720px) {
       .swiper-wrapper {
-      background-color: black;
+      // background-color: black;
         margin-top: 15px; 
       }
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 721px) and (max-height: 730px) {
       .swiper-wrapper {
-      background-color: aqua;
+      // background-color: aqua;
         margin-top: 20px; 
       }
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 731px) and (max-height: 800px) {
       .swiper-wrapper {
-      background-color: blueviolet;
+      // background-color: blueviolet;
         margin-top: 25px; 
       }
     }
 
     @media screen and (min-width: 320px) and (max-width: 425px) and (min-height: 801px){
       .swiper-wrapper {
-      background-color: darksalmon;
+      // background-color: darksalmon;
         margin-top: 25px; 
       }
     }

@@ -400,15 +400,43 @@ export function Stage2Details() {
   const stage1pokemon = document.getElementById('stage1pokemon');
   const stage2pokemon = document.getElementById('stage2pokemon');
   const stage2pokemon2 = document.getElementById('stage2pokemon2');
+  const stage2pokemon3 = document.getElementById('stage2pokemon3');
+  const stage2pokemon4 = document.getElementById('stage2pokemon4');
+  const stage2pokemon5 = document.getElementById('stage2pokemon5');
+  const stage2pokemon6 = document.getElementById('stage2pokemon6');
+  const stage2pokemon7 = document.getElementById('stage2pokemon7');
+  const stage2pokemon8 = document.getElementById('stage2pokemon8');
   const stage3pokemon = document.getElementById('stage3pokemon');
   const stage3pokemon2 = document.getElementById('stage3pokemon2');
   
   
   const handleMouseEnter1 = () => {
     stage2pokemon.classList.remove('selected');
+    if(pokemonDetails.name === evolutionDetails.stage2[0]){
+      stage2pokemon.classList.remove('selected');
+    }
     if(pokemonDetails.name === evolutionDetails.stage2[1]){
       stage2pokemon2.classList.remove('selected');
     } 
+    if(pokemonDetails.name === evolutionDetails.stage2[2]){
+      stage2pokemon3.classList.remove('selected');
+    }
+    if(pokemonDetails.name === evolutionDetails.stage2[3]){
+      stage2pokemon4.classList.remove('selected');
+    }
+    if(pokemonDetails.name === evolutionDetails.stage2[4]){
+      stage2pokemon5.classList.remove('selected');
+    }
+    if(pokemonDetails.name === evolutionDetails.stage2[5]){
+      stage2pokemon6.classList.remove('selected');
+    }
+    if(pokemonDetails.name === evolutionDetails.stage2[6]){
+      stage2pokemon7.classList.remove('selected');
+    }
+    if(pokemonDetails.name === evolutionDetails.stage2[7]){
+      stage2pokemon8.classList.remove('selected');
+    }
+    
     stage3pokemon.classList.remove('selected');
     if(pokemonDetails.name === evolutionDetails.stage3[1]){
       stage3pokemon2.classList.remove('selected');
@@ -447,6 +475,27 @@ export function Stage2Details() {
     if(pokemonDetails.name === evolutionDetails.stage2[1]){
     stage2pokemon2.classList.add('selected');
     }
+
+    if(pokemonDetails.name === evolutionDetails.stage2[2]){
+    stage2pokemon3.classList.add('selected');
+    }
+
+    if(pokemonDetails.name === evolutionDetails.stage2[3]){
+      stage2pokemon4.classList.add('selected');
+    }
+    if(pokemonDetails.name === evolutionDetails.stage2[4]){
+    stage2pokemon5.classList.add('selected');
+    }
+    if(pokemonDetails.name === evolutionDetails.stage2[5]){
+    stage2pokemon6.classList.add('selected');
+    }
+    if(pokemonDetails.name === evolutionDetails.stage2[6]){
+    stage2pokemon7.classList.add('selected');
+    }
+    if(pokemonDetails.name === evolutionDetails.stage2[7]){
+    stage2pokemon8.classList.add('selected');
+    }
+
 
     if(pokemonDetails.name === evolutionDetails.stage3){
     stage3pokemon.classList.add('selected');
@@ -738,7 +787,7 @@ export function Stage2Details() {
                   <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
-                      <div id='stage2pokemon1' className={pokemonDetails.name === evolutionDetails.stage2[1] ? 'selected stageslogos': 'stageslogos'}>
+                      <div id='stage2pokemon2' className={pokemonDetails.name === evolutionDetails.stage2[1] ? 'selected stageslogos': 'stageslogos'}>
                         {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                       </div>
                       
@@ -753,7 +802,7 @@ export function Stage2Details() {
                   <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
-                      <div id='stage2pokemon1' className={pokemonDetails.name === evolutionDetails.stage2[1] ? 'selected stageslogos': 'stageslogos'}>
+                      <div id='stage2pokemon2' className={pokemonDetails.name === evolutionDetails.stage2[1] ? 'selected stageslogos': 'stageslogos'}>
                         {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                       </div>
                       
@@ -774,7 +823,7 @@ export function Stage2Details() {
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
-                      <div id='stage2pokemon2' className={pokemonDetails.name === evolutionDetails.stage2[2] ? 'selected stageslogos': 'stageslogos'}>
+                      <div id='stage2pokemon3' className={pokemonDetails.name === evolutionDetails.stage2[2] ? 'selected stageslogos': 'stageslogos'}>
                         {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                       </div>
                       
@@ -789,7 +838,7 @@ export function Stage2Details() {
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
-                      <div id='stage2pokemon2' className={pokemonDetails.name === evolutionDetails.stage2[2] ? 'selected stageslogos': 'stageslogos'}>
+                      <div id='stage2pokemon3' className={pokemonDetails.name === evolutionDetails.stage2[2] ? 'selected stageslogos': 'stageslogos'}>
                         {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                       </div>
                       
@@ -809,7 +858,7 @@ export function Stage2Details() {
                 <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[3]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
-                        <div id='stage2pokemon3' className={pokemonDetails.name === evolutionDetails.stage2[3] ? 'selected stageslogos': 'stageslogos'}>
+                        <div id='stage2pokemon4' className={pokemonDetails.name === evolutionDetails.stage2[3] ? 'selected stageslogos': 'stageslogos'}>
                           {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                         </div>
                         <h4>{evolutionDetails.stage2[3]}</h4>
@@ -822,7 +871,7 @@ export function Stage2Details() {
                 <div style={{color: theme.color}} className='links'>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
-                        <div id='stage2pokemon3' className={pokemonDetails.name === evolutionDetails.stage2[3] ? 'selected stageslogos': 'stageslogos'}>
+                        <div id='stage2pokemon4' className={pokemonDetails.name === evolutionDetails.stage2[3] ? 'selected stageslogos': 'stageslogos'}>
                           {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                         </div>
                         <h4>{evolutionDetails.stage2[3]}</h4>
@@ -842,7 +891,7 @@ export function Stage2Details() {
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
-                      <div id='stage2pokemon4' className={pokemonDetails.name === evolutionDetails.stage2[4] ? 'selected stageslogos': 'stageslogos'}>
+                      <div id='stage2pokemon5' className={pokemonDetails.name === evolutionDetails.stage2[4] ? 'selected stageslogos': 'stageslogos'}>
                         {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                       </div>
                       
@@ -857,7 +906,7 @@ export function Stage2Details() {
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
-                      <div id='stage2pokemon4' className={pokemonDetails.name === evolutionDetails.stage2[4] ? 'selected stageslogos': 'stageslogos'}>
+                      <div id='stage2pokemon5' className={pokemonDetails.name === evolutionDetails.stage2[4] ? 'selected stageslogos': 'stageslogos'}>
                         {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                       </div>
                       
@@ -877,7 +926,7 @@ export function Stage2Details() {
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
-                      <div id='stage2pokemon5' className={pokemonDetails.name === evolutionDetails.stage2[5] ? 'selected stageslogos': 'stageslogos'}>
+                      <div id='stage2pokemon6' className={pokemonDetails.name === evolutionDetails.stage2[5] ? 'selected stageslogos': 'stageslogos'}>
                         {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                       </div>
                       
@@ -892,7 +941,7 @@ export function Stage2Details() {
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
-                      <div id='stage2pokemon5' className={pokemonDetails.name === evolutionDetails.stage2[5] ? 'selected stageslogos': 'stageslogos'}>
+                      <div id='stage2pokemon6' className={pokemonDetails.name === evolutionDetails.stage2[5] ? 'selected stageslogos': 'stageslogos'}>
                         {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                       </div>
                       
@@ -911,7 +960,7 @@ export function Stage2Details() {
                 <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[6]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
-                        <div id='stage2pokemon6' className={pokemonDetails.name === evolutionDetails.stage2[6] ? 'selected stageslogos': 'stageslogos'}>
+                        <div id='stage2pokemon7' className={pokemonDetails.name === evolutionDetails.stage2[6] ? 'selected stageslogos': 'stageslogos'}>
                           {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                         </div>
                         <h4>{evolutionDetails.stage2[6]}</h4>
@@ -924,7 +973,7 @@ export function Stage2Details() {
                 <div style={{color: theme.color}} className='links'>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
-                        <div id='stage2pokemon6' className={pokemonDetails.name === evolutionDetails.stage2[6] ? 'selected stageslogos': 'stageslogos'}>
+                        <div id='stage2pokemon7' className={pokemonDetails.name === evolutionDetails.stage2[6] ? 'selected stageslogos': 'stageslogos'}>
                           {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                         </div>
                         <h4>{evolutionDetails.stage2[6]}</h4>
@@ -943,7 +992,7 @@ export function Stage2Details() {
                 <Link style={{color: theme.color}} className='links' to={`/details/${evolutionDetails.stage2[7]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
-                        <div id='stage2pokemon7' className={pokemonDetails.name === evolutionDetails.stage2[7] ? 'selected stageslogos': 'stageslogos'}>
+                        <div id='stage2pokemon8' className={pokemonDetails.name === evolutionDetails.stage2[7] ? 'selected stageslogos': 'stageslogos'}>
                           {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                         </div>
                         <h4>{evolutionDetails.stage2[7]}</h4>
@@ -956,7 +1005,7 @@ export function Stage2Details() {
                 <div style={{color: theme.color}} className='links' >
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
-                        <div id='stage2pokemon7' className={pokemonDetails.name === evolutionDetails.stage2[7] ? 'selected stageslogos': 'stageslogos'}>
+                        <div id='stage2pokemon8' className={pokemonDetails.name === evolutionDetails.stage2[7] ? 'selected stageslogos': 'stageslogos'}>
                           {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                         </div>
                         <h4>{evolutionDetails.stage2[7]}</h4>

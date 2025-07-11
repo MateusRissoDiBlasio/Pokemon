@@ -720,7 +720,7 @@ export function Stage1Details() {
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
-                      <div id='stage2pokemon1' className={pokemonDetails.name === evolutionDetails.stage2[1] ? 'selected stageslogos': 'stageslogos'}>
+                      <div id='stage2pokemon2' className={pokemonDetails.name === evolutionDetails.stage2[1] ? 'selected stageslogos': 'stageslogos'}>
                         {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                       </div>
                       
@@ -739,7 +739,7 @@ export function Stage1Details() {
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
-                      <div id='stage2pokemon2' className={pokemonDetails.name === evolutionDetails.stage2[2] ? 'selected stageslogos': 'stageslogos'}>
+                      <div id='stage2pokemon3' className={pokemonDetails.name === evolutionDetails.stage2[2] ? 'selected stageslogos': 'stageslogos'}>
                         {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                       </div>
                       
@@ -757,7 +757,7 @@ export function Stage1Details() {
                 <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[3]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
-                        <div id='stage2pokemon3' className={pokemonDetails.name === evolutionDetails.stage2[3] ? 'selected stageslogos': 'stageslogos'}>
+                        <div id='stage2pokemon4' className={pokemonDetails.name === evolutionDetails.stage2[3] ? 'selected stageslogos': 'stageslogos'}>
                           {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                         </div>
                         <h4>{evolutionDetails.stage2[3]}</h4>
@@ -776,7 +776,7 @@ export function Stage1Details() {
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
-                      <div id='stage2pokemon4' className={pokemonDetails.name === evolutionDetails.stage2[4] ? 'selected stageslogos': 'stageslogos'}>
+                      <div id='stage2pokemon5' className={pokemonDetails.name === evolutionDetails.stage2[4] ? 'selected stageslogos': 'stageslogos'}>
                         {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                       </div>
                       
@@ -795,7 +795,7 @@ export function Stage1Details() {
                   { evolutionDetails.noInfo !== true ? <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                       
 
-                      <div id='stage2pokemon5' className={pokemonDetails.name === evolutionDetails.stage2[5] ? 'selected stageslogos': 'stageslogos'}>
+                      <div id='stage2pokemon6' className={pokemonDetails.name === evolutionDetails.stage2[5] ? 'selected stageslogos': 'stageslogos'}>
                         {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                       </div>
                       
@@ -813,7 +813,7 @@ export function Stage1Details() {
                 <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[6]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
-                        <div id='stage2pokemon6' className={pokemonDetails.name === evolutionDetails.stage2[6] ? 'selected stageslogos': 'stageslogos'}>
+                        <div id='stage2pokemon7' className={pokemonDetails.name === evolutionDetails.stage2[6] ? 'selected stageslogos': 'stageslogos'}>
                           {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                         </div>
                         <h4>{evolutionDetails.stage2[6]}</h4>
@@ -831,7 +831,7 @@ export function Stage1Details() {
                 <DelayedLink style={{color: theme.color}} className='links' to={`/stage2details/${evolutionDetails.stage2[7]}`}>
                     <Stage2 onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave}>
                 
-                        <div id='stage2pokemon7' className={pokemonDetails.name === evolutionDetails.stage2[7] ? 'selected stageslogos': 'stageslogos'}>
+                        <div id='stage2pokemon8' className={pokemonDetails.name === evolutionDetails.stage2[7] ? 'selected stageslogos': 'stageslogos'}>
                           {theme.name === 'light' ? <Stage2Light /> : <Stage2Dark />}
                         </div>
                         <h4>{evolutionDetails.stage2[7]}</h4>
