@@ -2282,7 +2282,10 @@ width: 180px;
 @media screen and (min-width: 320px) and (max-width: 425px) {
   width: 100vw;
   height: 175px;
-  margin-top: 10px;
+  margin-top: 5px;
+  .MegaExceptions{
+  height: 170px;
+  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 425px) and (max-height: 700px){
@@ -2292,7 +2295,7 @@ width: 180px;
 @media screen and (orientation: landscape) and (max-height: 400px) {
 
 width: 332px;
-height: 133px;
+height: 134px;
 margin-top: 10px;
 margin-left: 24px;
 h4{
@@ -2761,7 +2764,7 @@ const Stage2 = styled.div`
     width: 90px;
     height: 140px;
 
-    #stage2pokemon, #stage2pokemon1, #stage2pokemon2, #stage2pokemon3, #stage2pokemon4, #stage2pokemon5, #stage2pokemon6, #stage2pokemon7{
+    #stage2pokemon, #stage2pokemon2, #stage2pokemon3, #stage2pokemon4, #stage2pokemon5, #stage2pokemon6, #stage2pokemon7, #stage2pokemon8{
       height:50px;
     }    
 

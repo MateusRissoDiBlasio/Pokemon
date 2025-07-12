@@ -2333,6 +2333,7 @@ const EvolutionDiv = styled.div`
       
       .swiper-slide.swiper-slide-active, .swiper-slide.swiper-slide-next, .swiper-slide.swiper-slide-prev {
         height: 140px;
+        margin-top:-12px;
       }
 
       .seta{
@@ -2625,9 +2626,9 @@ const Stage2 = styled.div`
     width: 90px;
     height: 140px;
 
-    #stage2pokemon, #stage2pokemon1, #stage2pokemon2, #stage2pokemon3, #stage2pokemon4, #stage2pokemon5, #stage2pokemon6, #stage2pokemon7{
+    #stage2pokemon, #stage2pokemon2, #stage2pokemon3, #stage2pokemon4, #stage2pokemon5, #stage2pokemon6, #stage2pokemon7, #stage2pokemon8{
       height:50px;
-    }    
+    } 
 
   }
   @media screen and (min-width: 320px) and (max-width: 425px) {
