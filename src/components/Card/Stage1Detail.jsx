@@ -409,6 +409,7 @@ export function Stage1Details() {
     if(pokemonDetails.name === evolutionDetails.stage2[1]){
       stage2pokemon2.classList.remove('selected');
     } 
+    
     stage3pokemon.classList.remove('selected');
     if(pokemonDetails.name === evolutionDetails.stage3[1]){
       stage3pokemon2.classList.remove('selected');

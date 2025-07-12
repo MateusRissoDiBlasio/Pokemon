@@ -2665,11 +2665,11 @@ const EvolutionDiv = styled.div`
       display: flex;
       z-index: 1;
       
-      
       gap: 2px;
       
       .swiper-slide.swiper-slide-active, .swiper-slide.swiper-slide-next, .swiper-slide.swiper-slide-prev {
         height: 140px;
+        margin-top:-2px;
       }
 
       .seta{

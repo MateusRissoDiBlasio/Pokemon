@@ -401,6 +401,11 @@ export function CardDetails() {
   const stage2pokemon = document.getElementById('stage2pokemon');
   const stage2pokemon2 = document.getElementById('stage2pokemon2');
   const stage2pokemon3 = document.getElementById('stage2pokemon3');
+  const stage2pokemon4 = document.getElementById('stage2pokemon4');
+  const stage2pokemon5 = document.getElementById('stage2pokemon5');
+  const stage2pokemon6 = document.getElementById('stage2pokemon6');
+  const stage2pokemon7 = document.getElementById('stage2pokemon7');
+  const stage2pokemon8 = document.getElementById('stage2pokemon8');
   const stage3pokemon = document.getElementById('stage3pokemon');
   const stage3pokemon2 = document.getElementById('stage3pokemon2');
   
@@ -413,6 +418,22 @@ export function CardDetails() {
     if(pokemonDetails.name === evolutionDetails.stage2[2]){
       stage2pokemon3.classList.remove('selected');
     }
+    if(pokemonDetails.name === evolutionDetails.stage2[3]){
+      stage2pokemon4.classList.remove('selected');
+    }
+    if(pokemonDetails.name === evolutionDetails.stage2[4]){
+      stage2pokemon5.classList.remove('selected');
+    }
+    if(pokemonDetails.name === evolutionDetails.stage2[5]){
+      stage2pokemon6.classList.remove('selected');
+    }
+    if(pokemonDetails.name === evolutionDetails.stage2[6]){
+      stage2pokemon7.classList.remove('selected');
+    }
+    if(pokemonDetails.name === evolutionDetails.stage2[7]){
+      stage2pokemon8.classList.remove('selected');
+    }
+
     stage3pokemon.classList.remove('selected');
     if(pokemonDetails.name === evolutionDetails.stage3[1]){
       stage3pokemon2.classList.remove('selected');
@@ -457,6 +478,26 @@ export function CardDetails() {
     stage2pokemon3.classList.add('selected');
     }
 
+    if(pokemonDetails.name === evolutionDetails.stage2[3]){
+    stage2pokemon4.classList.add('selected');
+    }
+
+    if(pokemonDetails.name === evolutionDetails.stage2[4]){
+    stage2pokemon5.classList.add('selected');
+    }
+
+    if(pokemonDetails.name === evolutionDetails.stage2[5]){
+    stage2pokemon6.classList.add('selected');
+    }
+
+    if(pokemonDetails.name === evolutionDetails.stage2[6]){
+    stage2pokemon7.classList.add('selected');
+    }
+
+    if(pokemonDetails.name === evolutionDetails.stage2[7]){
+    stage2pokemon8.classList.add('selected');
+    }
+
     if(pokemonDetails.name === evolutionDetails.stage3){
     stage3pokemon.classList.add('selected');
     }
@@ -487,7 +528,7 @@ export function CardDetails() {
 
   const handleMegaExceptionsClick = () => {  
     handleToggle();
-    setMegaExceptions(istoggled);
+    setMegaExceptions(!istoggled);
     setPokemonEvolutionDetails(true);
 
     if(theme.name === 'light' && istoggled === true){
@@ -509,8 +550,8 @@ export function CardDetails() {
   } 
 
   const handleMegaExceptionsClickOff = () => {  
-    setMegaExceptions(false);
-    setToggle(true);
+    setMegaExceptions(istoggled);
+    setToggle(istoggled);
     
     
     if(theme.name === 'light' && istoggled === false){
@@ -2714,7 +2755,7 @@ width: 180px;
 
 width: 332px;
 height: 134px;
-margin-top: 10px;
+margin-top: 11px;
 margin-left: 24px;
 
 h4{
