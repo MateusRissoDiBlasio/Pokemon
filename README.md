@@ -76,6 +76,15 @@ Por padrão preferi utilizar o Inglês como idioma do app.
 
 </div>
 
+## Bonus
+
+<div align="justify">
+
+- Informações visuais referentes à cadeia de evolução dos pokémons nas telas de detalhes, se o pokémon selecionado evolui para MEGA, há um botão "EVOLUTION" para alternar os movimentos e os detalhes dessa evolução, botões animados, tanto para o tema "Light" quanto para o "Dark".
+
+
+</div>
+
 # Telas
 
 ## Desktop
@@ -136,7 +145,7 @@ https://github.com/user-attachments/assets/5feb012c-3853-49d7-bfff-c0e3aad42da5
 <div align="justify">
 
 Em diversos momentos fiquei travado, e somente após ver e rever as possibilidades, de por em prática da forma que gostaria, realizar diversos testes, que me levavam a outros ajustes, consegui atingir o resultado pretendido.
-Até o presente momento, foi o projeto mais desafiador que realizei, primeiro em manipulação de dados de um API, muitos testes para filtrar as informações específicas na estruturação do app.
+Até o presente momento, foi o projeto mais desafiador que realizei, primeiro em manipulação de dados de uma API, muitos testes para filtrar as informações específicas na estruturação do app.
 
 As partes em que tive mais dificuldades, foram na filtragem das informações na página de detalhes de cada Pokémon filtrando os dados seguindo um padrão, que na API não estão, creio q de forma propositadamente. E na parte lógica de qual seria a forma de filtrar por tipo, e de que forma eu a faria. A mecânica que encontrei faz buscas por etapas, a cada 100 Pokémons de todos os possíveis, adiciona os do tipo informado, e ao clicar no botão "Load More" ele passa aos próximos 100 para filtrar novamente os próximos a serem renderizados, até atingir o número total disponível na API. E a parte que tive mais dificuldade, foi na prevenção de erros nos resultados dessa lista, objetivo alcançado após muitos e muitos testes.
 Após percorrer por todos esses caminhos, pensar, repensar e aperfeiçoar, fiquei bastante satisfeito com o resultado alcançado.
