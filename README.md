@@ -6,10 +6,12 @@
 ## Índice
 - [Pokémon Cards App](#pokémon-cards-app)
 - [Funcionalidades](#funcionalidades)
+- [Bonus](#Bonus)
 - [Telas](#telas)
   -  [Desktop](#desktop)
   -  [Mobile](https://github.com/MateusRissoDiBlasio/Pokemon?tab=readme-ov-file#mobile-)
   -  [Clipe](https://github.com/MateusRissoDiBlasio/Pokemon/tree/main#clipe-)
+  
     
 - [Aprendizagem](#aprendizagem)
   - [Fases de Todo Processo](#fases-de-todo-processo)
