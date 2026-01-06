@@ -80,7 +80,7 @@ Por padrão preferi utilizar o Inglês como idioma do app.
 
 <div align="justify">
 
-- Informações visuais referentes à cadeia de evolução dos pokémons nas telas de detalhes, se o pokémon selecionado evolui para MEGA, há um botão "EVOLUTION" para alternar os movimentos e os detalhes dessa evolução, botões animados, tanto para o tema "Light" quanto para o "Dark".
+- Informações visuais referentes à cadeia de evolução dos pokémons nas telas de detalhes, há um botão "EVOLUTION"/"MOVES" para alternar entre o quadro de seus movimentos específicos e os detalhes de suas possíveis evoluções, criei botões animados para seleção, tanto para o tema "Light" quanto para o "Dark". Se o pokémon selecionado evoluir para versão MEGA há outro botão que o leva para a página com suas informações detalhadas.
 
 
 </div>
@@ -117,7 +117,7 @@ Por padrão preferi utilizar o Inglês como idioma do app.
     
 ### Detail Page (Portrait Orientation) Light Theme
 <a href="#" target="_blank">                                  
-  <img src="./public/readme/images/cellphonedisplay.png" width="240">
+  <img src="./public/readme/images/cellphonedisplay.png" width="280">
 </a> 
 </div>
 
@@ -125,7 +125,7 @@ Por padrão preferi utilizar o Inglês como idioma do app.
     
 ### Detail Page (Landscape Orientation) Dark Theme
 <a href="#" target="_blank">    
-  <img src="./public/readme/images/cellphonedisplaylandscape.png" width="420">
+  <img src="./public/readme/images/cellphonedisplaylandscape.png" width="480">
 </a>
 </div>
 </div>
@@ -134,7 +134,7 @@ Por padrão preferi utilizar o Inglês como idioma do app.
 
 <div align="center">
     
-https://github.com/user-attachments/assets/5feb012c-3853-49d7-bfff-c0e3aad42da5
+https://github.com/user-attachments/assets/a750ef0d-5b3c-4dd0-968b-747909cb37de
 
 </div>
 
