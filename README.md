@@ -6,7 +6,7 @@
 ## Índice
 - [Pokémon Cards App](#pokémon-cards-app)
 - [Funcionalidades](#funcionalidades)
-- [Bonus](#Bonus)
+- [Bônus](#Bonus)
 - [Telas](#telas)
   -  [Desktop](#desktop)
   -  [Mobile](https://github.com/MateusRissoDiBlasio/Pokemon?tab=readme-ov-file#mobile-)
@@ -78,7 +78,7 @@ Por padrão preferi utilizar o Inglês como idioma do app.
 
 </div>
 
-## Bonus
+## Bônus
 
 <div align="justify">
 
