@@ -6,7 +6,7 @@
 ## Índice
 - [Pokémon Cards App](#pokémon-cards-app)
 - [Funcionalidades](#funcionalidades)
-- [Bônus](#Bônus)
+- [Bônus](#bônus)
 - [Telas](#telas)
   -  [Desktop](#desktop)
   -  [Mobile](https://github.com/MateusRissoDiBlasio/Pokemon?tab=readme-ov-file#mobile-)
