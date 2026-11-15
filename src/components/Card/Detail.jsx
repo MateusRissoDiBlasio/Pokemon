@@ -50,11 +50,16 @@ export function CardDetails() {
 
   const getAbilitiesText = async (abilities) => {
     try {
-      const abilitiesTexts = await Promise.all(abilities.map(async (ability) => {
+      var abilitiesTexts = await Promise.all(abilities.map(async (ability) => {
         const response = await axios.get(`https://pokeapi.co/api/v2/ability/${ability}`);
-
+        console.log(response.data)
         const filteredAbilities = response.data.flavor_text_entries;
+        console.log(filteredAbilities)
         const filteredAbilitiesText = filteredAbilities.filter(filteredAbility => { return filteredAbility.language.name === 'en' });
+        console.log(filteredAbilitiesText)
+
+        const filteredAbilitiesDescription = response.data.effect_entries[2];
+        console.log(filteredAbilitiesDescription)
 
         if (response.data.effect_entries.length === 1){
             
@@ -70,11 +75,11 @@ export function CardDetails() {
 
             } else{
           
-              return response.data.effect_entries[0].effect;
+              return filteredAbilitiesDescription.effect;
             }
-      
       }));
-            
+      console.log(abilitiesTexts)  
+      
       return abilitiesTexts;
       
     } catch (error) {
@@ -87,6 +92,7 @@ export function CardDetails() {
     try {
       const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
       const abilitiesTexts = await getAbilitiesText(response.data.abilities.map(ability => ability.ability.name));
+      console.log(abilitiesTexts)
       const uniqueAbilityNames = response.data.abilities.reduce((accumulator, current) => {
         if (!accumulator.find((item) => item.ability.name === current.ability.name)){
 

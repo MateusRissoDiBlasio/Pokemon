@@ -56,6 +56,9 @@ export function Stage1Details() {
         const filteredAbilities = response.data.flavor_text_entries;
         const filteredAbilitiesText = filteredAbilities.filter(filteredAbility => { return filteredAbility.language.name === 'en' });
 
+        const filteredAbilitiesDescription = response.data.effect_entries[2];
+        console.log(filteredAbilitiesDescription)
+
         if (response.data.effect_entries.length === 1){
             
         return response.data.effect_entries[0].effect
@@ -70,7 +73,7 @@ export function Stage1Details() {
 
             } else{
           
-              return response.data.effect_entries[0].effect;
+              return filteredAbilitiesDescription.effect;
             }
       
       }));
